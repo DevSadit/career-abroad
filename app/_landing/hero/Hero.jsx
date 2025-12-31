@@ -15,7 +15,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
               
               {/* Image container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform duration-500">
                 <Image src="/hero.jpg" width={100} height={100}
                   alt="Students studying abroad" 
                   className="w-full h-auto object-cover"
