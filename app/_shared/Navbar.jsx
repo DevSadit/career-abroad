@@ -96,7 +96,7 @@ const Navbar = () => {
 
         {/* Mobile Resume Button - Left of Hamburger */}
         <div className="flex items-center md:hidden">
-          <Link target="_blank" download href={"/Resume/shahmiraj_ehesan_resume.pdf"} className="mr-3 bg-[#364bc5] px-3 py-1.5 rounded text-sm text-white transition-transform duration-300 hover:shadow-md">
+          <Link target="_blank"  href="/#" className="mr-3 bg-[#364bc5] px-3 py-1.5 rounded text-sm text-white transition-transform duration-300 hover:shadow-md">
             Contact Us!
           </Link>
           
@@ -155,7 +155,7 @@ const Navbar = () => {
   {link.name}
 </Link>
           ))}
-          <Link target="_blank" download href="/Resume/shahmiraj_ehesan_resume.pdf" className="bg-[#364bc5] px-4 py-2 rounded text-xl text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
+          <Link target="_blank" href="/#" className="bg-[#364bc5] px-4 py-2 rounded text-xl text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
             Contact Us!
           </Link>
         </div>

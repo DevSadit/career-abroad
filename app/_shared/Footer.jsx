@@ -27,8 +27,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-2">
           {/* Logo and Tagline Section */}
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -38,7 +38,7 @@ const Footer = () => {
               <span className="text-2xl font-bold bg-[#364bc5] text-white" >Abroad</span>
             </div>
             <p className="text-base italic leading-relaxed text-gray-600">
-              Where education meets real-world needs.
+              Where global education journey starts
             </p>
           </div>
 
@@ -116,7 +116,7 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className=" pt-2 border-t border-gray-200">
           <p className="text-center text-gray-600 text-sm">
-            Copyright © 2025
+            Copyright © 2026
           </p>
         </div>
       </div>

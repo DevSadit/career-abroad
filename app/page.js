@@ -3,7 +3,7 @@ import Landing from "./_landing/Landing";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto container">
       <Landing/>
     </div>
   );

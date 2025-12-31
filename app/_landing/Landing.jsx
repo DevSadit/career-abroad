@@ -1,10 +1,14 @@
 import React from 'react'
 import Hero from './hero/Hero'
+import About from './about/About'
 
 const Landing = () => {
   return (
-    <div className="space-y-16">
-        <Hero/>
+    <div className="">
+      <Hero/>
+      <About/>
+      
+       
     </div>
   )
 }
