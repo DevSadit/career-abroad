@@ -139,13 +139,13 @@ export default function CourseCard({ course }) {
         {course.topics && (
           <div className="mb-6">
             <p className="text-sm font-semibold text-gray-900 mb-2.5">
-              What you'll learn
+              What {"you'll"} learn
             </p>
             <ul className="space-y-2 max-h-32 overflow-y-auto">
               {course.topics.map((topic, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-2 text-sm text-gray-900"
+                  className="flex items-start gap-2 text-[16px] text-gray-900"
                 >
                   <CheckCircle2
                     size={14}
@@ -159,10 +159,11 @@ export default function CourseCard({ course }) {
         )}
 
         {/* Action Button */}
-        <div className="pt-4 border-t border-gray-100">
+        {/* Action Button */}
+        <div className="pt-4 border-t border-gray-100 flex justify-center">
           <Link
             href={`/courses/${course.slug}`}
-            className="block w-full rounded-xl px-4 py-3.5 text-center text-base font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-md"
+            className="w-1/2 rounded-md px-4 py-3.5 text-center text-base font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-md"
             style={{ backgroundColor: "#364bc5" }}
           >
             Register Now
