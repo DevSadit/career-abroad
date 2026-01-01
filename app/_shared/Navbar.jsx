@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -89,9 +90,7 @@ const Navbar = () => {
       <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href={"/"}>
-          <h2 className="text-xl md:text-3xl text-[#364bc5] font-bold">
-            Career Abroad
-          </h2>
+          <Image src="/unnamed.png" width={100} height={100} alt="Career Abroad logo"/>
         </Link>
 
         {/* Mobile Resume Button - Left of Hamburger */}

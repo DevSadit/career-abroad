@@ -3,6 +3,7 @@ import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaLinkedin, FaTelegram, 
 import { MdEmail } from 'react-icons/md';
 import { HiUserGroup } from 'react-icons/hi';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const primaryColor = '#364bc5';
@@ -31,12 +32,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-2">
           {/* Logo and Tagline Section */}
           <div className="space-y-1">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-gray-800">Career</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold bg-[#364bc5] text-white" >Abroad</span>
-            </div>
+            <Image src="/unnamed.png" width={200} height={200} alt="Career Abroad logo"/>
             <p className="text-base italic leading-relaxed text-gray-600">
               Where global education journey starts
             </p>

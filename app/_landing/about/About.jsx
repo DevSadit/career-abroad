@@ -1,52 +1,88 @@
-"use client"
-import Image from 'next/image';
-import React from 'react';
-import { FaCheck, FaArrowRight } from 'react-icons/fa';
+"use client";
+import Image from "next/image";
+import React from "react";
+import { FaCheck, FaArrowRight } from "react-icons/fa";
 
 const About = () => {
   const features = [
-    { text: 'Best Mentor & Programs' },
-    { text: 'Trusted by Students' },
-    { text: 'Online Mentorship' },
-    { text: 'Live One on One Classes' },
-    { text: 'Amazing Support System' }
+    { text: "Best Mentor & Programs" },
+    { text: "Trusted by Students" },
+    { text: "Online Mentorship" },
+    { text: "Live One on One Classes" },
+    { text: "Amazing Support System" },
   ];
 
   return (
     <section className="py-12 md:py-16 lg:py-20 xl:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          
           {/* Image Section */}
           <div className="relative w-full h-auto">
             {/* Container for images with proper responsive sizing */}
-            <div className="relative mx-auto" style={{ width: '100%', maxWidth: '600px', aspectRatio: '1' }}>
-              
+            <div
+              className="relative mx-auto"
+              style={{ width: "100%", maxWidth: "600px", aspectRatio: "1" }}
+            >
               {/* Wave decoration - top left */}
               <div className="absolute -top-8 -left-8 opacity-20 hidden sm:block z-0">
                 <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                  <path d="M10 20 Q 15 10, 20 20 T 30 20 T 40 20" stroke="#6366f1" strokeWidth="2"/>
-                  <path d="M10 35 Q 15 25, 20 35 T 30 35 T 40 35" stroke="#6366f1" strokeWidth="2"/>
-                  <path d="M10 50 Q 15 40, 20 50 T 30 50 T 40 50" stroke="#6366f1" strokeWidth="2"/>
+                  <path
+                    d="M10 20 Q 15 10, 20 20 T 30 20 T 40 20"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M10 35 Q 15 25, 20 35 T 30 35 T 40 35"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M10 50 Q 15 40, 20 50 T 30 50 T 40 50"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                  />
                 </svg>
               </div>
 
               {/* Love text - top right */}
               <div className="absolute top-2 right-4 md:top-4 md:right-8 z-20 hidden sm:block">
                 <svg width="100" height="60" viewBox="0 0 100 60">
-                  <text x="0" y="30" fill="#ec4899" fontSize="24" fontFamily="cursive" fontStyle="italic">love</text>
-                  <line x1="75" y1="15" x2="85" y2="25" stroke="#14b8a6" strokeWidth="2"/>
-                  <line x1="85" y1="25" x2="75" y2="28" stroke="#14b8a6" strokeWidth="2"/>
+                  <text
+                    x="0"
+                    y="30"
+                    fill="#ec4899"
+                    fontSize="24"
+                    fontFamily="cursive"
+                    fontStyle="italic"
+                  >
+                    love
+                  </text>
+                  <line
+                    x1="75"
+                    y1="15"
+                    x2="85"
+                    y2="25"
+                    stroke="#14b8a6"
+                    strokeWidth="2"
+                  />
+                  <line
+                    x1="85"
+                    y1="25"
+                    x2="75"
+                    y2="28"
+                    stroke="#14b8a6"
+                    strokeWidth="2"
+                  />
                 </svg>
               </div>
 
               {/* Left image - rectangular with rounded corners */}
               <div className="absolute left-0 top-0 w-2/5 h-3/5 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg z-20">
-                <Image 
+                <Image
                   width={400}
                   height={400}
                   src="/3.jpg"
-                  alt="Students collaborating" 
+                  alt="Students collaborating"
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -56,14 +92,14 @@ const About = () => {
               <div className="absolute right-0 bottom-0 w-3/5 h-3/5">
                 {/* Teal circle background */}
                 <div className="absolute inset-0 bg-teal-400 rounded-full"></div>
-                
+
                 {/* Image inside circle */}
                 <div className="absolute inset-2 md:inset-3 rounded-full overflow-hidden border-4 md:border-6 border-white shadow-xl">
-                  <Image 
+                  <Image
                     width={400}
                     height={400}
                     src="/4.jpg"
-                    alt="Student with books" 
+                    alt="Student with books"
                     className="w-full h-full object-cover"
                     priority
                   />
@@ -77,11 +113,11 @@ const About = () => {
               <div className="absolute -bottom-4 -left-4 opacity-15 hidden sm:block z-0">
                 <svg width="120" height="120" viewBox="0 0 120 120">
                   {[...Array(30)].map((_, i) => (
-                    <circle 
+                    <circle
                       key={i}
-                      cx={(i % 6) * 20 + 10} 
-                      cy={Math.floor(i / 6) * 20 + 10} 
-                      r="3" 
+                      cx={(i % 6) * 20 + 10}
+                      cy={Math.floor(i / 6) * 20 + 10}
+                      r="3"
                       fill="#6366f1"
                     />
                   ))}
@@ -106,7 +142,11 @@ const About = () => {
 
             {/* Description */}
             <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio minima natus, ullam quisquam voluptatem nemo beatae explicabo architecto aperiam maiores officia rerum tempore eum totam adipisci non odit, aliquam voluptates neque repudiandae veritatis. Iusto ipsam a, ex numquam nemo similique.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Distinctio minima natus, ullam quisquam voluptatem nemo beatae
+              explicabo architecto aperiam maiores officia rerum tempore eum
+              totam adipisci non odit, aliquam voluptates neque repudiandae
+              veritatis. Iusto ipsam a, ex numquam nemo similique.
             </p>
 
             {/* Features Grid - 2 columns */}
@@ -118,7 +158,9 @@ const About = () => {
                       <FaCheck className="h-2.5 w-2.5 md:h-3 md:w-3 text-white" />
                     </div>
                   </div>
-                  <span className="text-gray-700 text-sm md:text-base font-medium">{feature.text}</span>
+                  <span className="text-gray-700 text-sm md:text-base font-medium">
+                    {feature.text}
+                  </span>
                 </div>
               ))}
             </div>
@@ -131,7 +173,6 @@ const About = () => {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
