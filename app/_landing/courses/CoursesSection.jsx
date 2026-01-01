@@ -14,8 +14,7 @@ const CoursesSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Most Popular Courses
           </h2>
-          {/* Underline decoration */}
-          {/* <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full"></div> */}
+
           <div>
             <Image src="/title.svg" alt="title" width={200} height={100} />
           </div>
