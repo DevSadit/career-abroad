@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-
+import courses from "../../../../data/courses.json";
+import CourseCard from "./CourseCard";
 const CoursesSection = () => {
   return (
     <section className="py-12 md:py-16 lg:py-20 xl:py-12 bg-white">
@@ -21,6 +22,11 @@ const CoursesSection = () => {
         </div>
 
         {/* card section */}
+        <div className=" my-4 grid grid-cols-1 md:grid-cols-2 ">
+          {courses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </div>
       </div>
     </section>
   );
