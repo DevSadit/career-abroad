@@ -16,11 +16,11 @@ export default function CourseCard({ course }) {
               {/* Subtle underline accent */}
               <div className="h-1 w-16 bg-[#364bc5] rounded-full mt-2"></div>
             </div>
-
+            {/* 
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium whitespace-nowrap">
               <Play size={12} />
               LIVE + Recordings
-            </span>
+            </span> */}
           </div>
 
           {/* Goal Description */}
