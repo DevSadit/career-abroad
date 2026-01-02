@@ -31,18 +31,19 @@ const Hero = () => {
           {/* Left Side - Content (appears second on mobile) */}
           <div className="flex-1 space-y-6 text-center lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Your global{" "}
               <span className=" text-[#364bc5] bg-clip-text">
-                education journey
+                Career Abroad
               </span>{" "}
-              starts here.
+              Mentorship
             </h1>
+            {/* Underline decoration */}
+            <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full"></div>
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              Discover limitless opportunities to study abroad and transform
-              your future. We connect ambitious students with world-class
-              universities across the globe, providing comprehensive support
-              from application to graduation.
+              LIVE guidance to help you win scholarships, funding, and admission
+              for graduate studies abroad. Connect directly with mentors who are
+              currently studying/working abroad and learn the complete process
+              through interactive LIVE classes + recordings.
             </p>
 
             <div className="pt-4">

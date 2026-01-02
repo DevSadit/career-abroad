@@ -4,7 +4,7 @@ import mentors from "../../../../data/mentors.json";
 
 const Mentors = () => {
   return (
-    <section className="py-8 md:py-12 lg:py-26 xl:py-20 ">
+    <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head title */}
         <div className="text-center flex flex-col justify-center mb-12 md:mb-16">

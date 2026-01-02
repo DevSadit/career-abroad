@@ -4,6 +4,7 @@ import About from "./about/About";
 import CoursesSection from "./courses/CoursesSection";
 import Faq from "./faq/Faq";
 import Mentors from "./mentors/Mentors";
+import Achivements from "./achivements/Achivements";
 const Landing = () => {
   return (
     <div className="">
@@ -11,6 +12,7 @@ const Landing = () => {
       <About />
       <CoursesSection />
       <Mentors />
+      <Achivements />
       <Faq />
     </div>
   );
