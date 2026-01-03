@@ -23,9 +23,9 @@ const Achivements = () => {
         </div>
 
         {/* slider */}
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
           <Carousel
-            // autoPlay
+            autoPlay
             interval={2500}
             infiniteLoop
             transitionTime={600}

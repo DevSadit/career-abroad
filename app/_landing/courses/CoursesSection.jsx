@@ -12,7 +12,7 @@ const CoursesSection = () => {
             Courses
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Most Popular Courses
+            Our All Courses
           </h2>
 
           <div>
