@@ -25,7 +25,7 @@ const Achivements = () => {
         {/* slider */}
         <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
           <Carousel
-            autoPlay
+            // autoPlay
             interval={2500}
             infiniteLoop
             transitionTime={600}
@@ -38,9 +38,9 @@ const Achivements = () => {
           >
             {students.map((student) => (
               <div key={student.id} className="px-3 py-6">
-                <div className="bg-white border-4 border-gray-800 rounded-lg p-8 sm:p-10 text-center relative">
+                <div className="bg-white border-4 border-[#364bc5] rounded-lg p-8 sm:p-10 text-center relative">
                   {/* Quote Icon */}
-                  <div className="absolute top-4 left-4 text-5xl md:text-8xl font-bold text-gray-800">
+                  <div className="absolute top-4 left-4 text-5xl md:text-8xl font-bold text-[#364bc5]">
                     “
                   </div>
 
@@ -70,7 +70,7 @@ const Achivements = () => {
                   </div>
 
                   {/* Name */}
-                  <h3 className="text-sm sm:text-base font-semibold text-gray-900">
+                  <h3 className="text-sm sm:text-base font-semibold text-[#364bc5]">
                     {student.name}
                   </h3>
 
