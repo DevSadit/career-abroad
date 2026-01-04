@@ -10,37 +10,41 @@ const Hero = () => {
     { text: "Live One on One Classes" },
   ];
   return (
-    <section className="mt-4 md:mt-0 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+    <section className="mt-12 md:mt-6 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Right Side - Image (appears first on mobile) */}
           <div className="flex-1 w-full max-w-md lg:max-w-lg order-1 lg:order-2">
             <div className="relative">
-              {/* Decorative blob background */}
-              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
+              {/* Soft background glow */}
+              <div className="absolute "></div>
 
-              {/* Image container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform duration-500">
+              {/* Simple image with clean styling */}
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-[#364bc5] rounded-tl-3xl"></div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#364bc5] rounded-br-3xl"></div>
+
                 <Image
-                  src="/hero.jpg"
-                  width={100}
-                  height={100}
+                  src="/croped_hero.jpeg"
+                  width={600}
+                  height={700}
                   alt="Students studying abroad"
-                  className="w-full h-auto object-cover"
+                  className="w-full rounded-md h-auto"
+                  quality={100}
+                  priority
                 />
-
-                {/* Overlay gradient */}
-                <div className="absolute inset-0  from-black/20 to-transparent"></div>
               </div>
+
+              {/* Subtle decorative elements */}
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-indigo-200 rounded-full blur-2xl opacity-30"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-200 rounded-full blur-2xl opacity-30"></div>
             </div>
           </div>
 
           {/* Left Side - Content (appears second on mobile) */}
           <div className="flex-1 space-y-6 text-center lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              <span className=" text-[#364bc5] bg-clip-text">
-                Career Abroad
-              </span>{" "}
+              <span className="text-[#364bc5] bg-clip-text">Career Abroad</span>{" "}
               Mentorship
             </h1>
             {/* Underline decoration */}
@@ -79,7 +83,7 @@ const Hero = () => {
               </div>
 
               {/* Stats or Features */}
-              <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-5 md:pt-2 ">
+              <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-5 md:pt-2">
                 <div className="text-center lg:text-left transform hover:scale-110 transition-all duration-300 hover:-translate-y-1">
                   <p className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#364bc5]">
                     100+
