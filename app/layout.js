@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Parkinsans } from "next/font/google";
 import Navbar from "./_shared/Navbar";
 import Footer from "./_shared/Footer";
 import ClientComponents from "./_components/ClientComponents";
@@ -19,12 +20,19 @@ export const metadata = {
   description: "Its time to dream",
 };
 
+const parkinsans = Parkinsans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"], // regular and bold
+  variable: "--font-parkinsans", // optional CSS variable
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${parkinsans.className} antialiased`}
       >
+        className=
         <Navbar />
         <main>
           <ClientComponents>{children}</ClientComponents>
