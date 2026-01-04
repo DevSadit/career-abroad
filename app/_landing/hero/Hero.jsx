@@ -25,7 +25,7 @@ const Hero = () => {
                 <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#364bc5] rounded-br-3xl"></div>
 
                 <Image
-                  src="/croped_hero.jpeg"
+                  src="/HERO6.PNG"
                   width={600}
                   height={700}
                   alt="Students studying abroad"
