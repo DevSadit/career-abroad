@@ -11,7 +11,6 @@ const Landing = () => {
   return (
     <div className="">
       <Hero />
-      <About />
       <CoursesSection />
       <VipCourseSection />
       <Mentors />
