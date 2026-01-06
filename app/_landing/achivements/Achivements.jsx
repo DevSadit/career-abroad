@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Achivements = () => {
   return (
-    <section className="pt-8 md:pt-12 lg:pt-26 xl:pt-20">
+    <section id="achivement" className="pt-8 md:pt-12 lg:pt-26 xl:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head title */}
         <div className="text-center flex flex-col justify-center mb-12 md:mb-16">

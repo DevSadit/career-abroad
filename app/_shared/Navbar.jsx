@@ -80,7 +80,7 @@ const Navbar = () => {
 
   // Navigation links
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "Faq", href: "#faq" },
     { name: "Achivement", href: "#achivement" },
   ];
@@ -106,7 +106,7 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <Link
             target="_blank"
-            href="/#"
+            href="https://wa.me/34613593236"
             className="mr-3 bg-[#364bc5] px-3 py-1.5 rounded text-sm text-white transition-transform duration-300 hover:shadow-md"
           >
             Contact Us!
@@ -169,7 +169,7 @@ const Navbar = () => {
           ))}
           <Link
             target="_blank"
-            href="/#"
+            href="https://wa.me/34613593236"
             className="bg-[#364bc5] px-4 py-2 rounded text-xl text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             Contact Us!

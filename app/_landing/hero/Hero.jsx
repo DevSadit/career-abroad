@@ -10,7 +10,10 @@ const Hero = () => {
     { text: "Live One on One Classes" },
   ];
   return (
-    <section className="mt-12 md:mt-6 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+    <section
+      id="/"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-14"
+    >
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Right Side - Image (appears first on mobile) */}
@@ -25,11 +28,11 @@ const Hero = () => {
                 <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#364bc5] rounded-br-3xl"></div>
 
                 <Image
-                  src="/HERO6.PNG"
+                  src="/MentorsPanel.PNG"
                   width={600}
                   height={700}
                   alt="Students studying abroad"
-                  className="w-full rounded-md h-auto"
+                  className="w-full rounded-xl h-auto"
                   quality={100}
                   priority
                 />
@@ -48,7 +51,7 @@ const Hero = () => {
               Mentorship
             </h1>
             {/* Underline decoration */}
-            <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full"></div>
+            <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full mx-auto md:mx-0"></div>
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
               LIVE guidance to help you win scholarships, funding, and admission
