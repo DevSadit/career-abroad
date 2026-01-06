@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import countries from "../../../../data/countries.json";
+import Link from "next/link";
 
 const Faq = () => {
   if (!countries || countries.length === 0) {
@@ -36,7 +37,8 @@ const Faq = () => {
         {/* Countries Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {countries.map((country, index) => (
-            <div
+            <Link
+              href={country.href}
               key={country.code}
               className="group relative bg-linear-to-br from-white to-gray-50 rounded-2xl p-8 border-2 border-gray-100 hover:border-[#364bc5] transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-[#364bc5]/10 cursor-pointer transform hover:-translate-y-2"
               style={{
@@ -73,7 +75,7 @@ const Faq = () => {
 
               {/* Corner Accent */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-[#364bc5]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-tr-2xl" />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
