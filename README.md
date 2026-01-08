@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌍 Career Abroad Mentorship
 
-## Getting Started
+**Career Abroad Mentorship** is a web-based platform designed to guide students who aspire to pursue higher education abroad. The platform focuses on mentorship, guidance, and structured information to help students make informed decisions about studying overseas.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Website - www.ahsansuny.com
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is deployed on **Vercel** and connected with a custom domain purchased from **Namecheap**.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+> ✅ The live domain always reflects the latest successful deployment from GitHub.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎯 Project Objective
 
-To learn more about Next.js, take a look at the following resources:
+The main goal of this project is to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Help students understand the study-abroad process clearly
+- Provide mentorship-focused information in a structured and user-friendly way
+- Build trust through clean UI, clear content, and professional presentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Key Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Responsive and modern UI
+- Mentorship-focused content structure
+- Optimized image handling using Next.js `Image` component
+- Fast performance with Vercel hosting
+- Automatic deployments via GitHub
+- Custom domain integration (Namecheap + Vercel)
+- SEO-friendly structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js
+- **Frontend:** React
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Domain Provider:** Namecheap
+- **Version Control:** Git & GitHub
+
+---
