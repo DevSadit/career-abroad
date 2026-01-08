@@ -80,6 +80,8 @@ const Navbar = () => {
   // Navigation links (✅ dropdown is data-driven, not hardcoded JSX)
   const navLinks = [
     { name: "Home", href: "/" },
+
+    { name: "About Us", href: "about-us" },
     {
       name: "Faq",
       href: "faq",
@@ -89,7 +91,6 @@ const Navbar = () => {
         { name: "Belgium", href: "/faq/belgium" },
       ],
     },
-    { name: "Achivement", href: "#achivement" },
   ];
 
   return (
@@ -174,7 +175,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-black relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                  className="text-black relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.name}
                 </Link>
