@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import courses from "../../../../data/courses.json";
+import courses from "../../../data/courses.json";
 import CourseCard from "./CourseCard";
 import Link from "next/link";
 const CoursesSection = () => {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 
@@ -79,10 +80,13 @@ const Hero = () => {
             {/* btn */}
             <div className="pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-center">
               <div>
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 md:gap-3">
-                  View All Program
+                <Link
+                  href={"/complete-mentorship-program"}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 md:px-7 py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 md:gap-3"
+                >
+                  Our Mentorship Program
                   <FaArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
 
               {/* Stats or Features */}

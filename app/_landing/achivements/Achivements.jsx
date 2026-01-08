@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import students from "../../../../data/students.json";
+import students from "../../../data/students.json";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Achivements = () => {

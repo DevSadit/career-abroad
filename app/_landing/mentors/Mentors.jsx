@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import mentors from "../../../../data/mentors.json";
+import mentors from "../../../data/mentors.json";
 import MentorCard from "./MentorCard";
 
 const Mentors = () => {

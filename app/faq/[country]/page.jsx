@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import FaqClient from "./FaqClient";
 
-import franceFaq from "../../../../data/france_faq.json";
-import italyFaq from "../../../../data/italy_faq.json";
-import belgiumFaq from "../../../../data//belgium_faq.json";
+import franceFaq from "../../../data/france_faq.json";
+import italyFaq from "../../../data/italy_faq.json";
+import belgiumFaq from "../../../data//belgium_faq.json";
 
 const FAQ_REGISTRY = {
   italy: { name: "Italy", flag: "/flags/it.svg", data: italyFaq },

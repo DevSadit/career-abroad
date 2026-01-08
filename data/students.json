@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "quote": "Graduate Scholarship Fall 2025",
+    "program": "Masters in Smart Grid",
+    "university": "Grenoble INP",
+    "country": "France",
+    "name": "Imran Uddin",
+    "affiliation": "Premier University, Chittagong",
+    "image": "/students/imran.jpeg"
+  },
+  {
+    "id": 2,
+    "quote": "Erusmus Mundus Scholar 2025",
+    "program": "Erasmus Mundus Scholar 2025",
+    "university": "Centrale Nantes",
+    "country": "France",
+    "name": "Aminul Islam Rifat",
+    "affiliation": "Green University",
+    "image": "/students/rifat.jpg"
+  },
+  {
+    "id": 3,
+    "quote": "Mastermind Scholar Fall 2025",
+    "program": "Masters in Photonics",
+    "university": "University of Ghent",
+    "country": "Belgium",
+    "name": "Anamul Hasan",
+    "affiliation": "University of Rajshahi",
+    "image": "/students/anamul.jpg"
+  },
+  {
+    "id": 4,
+    "quote": "Masters in Wireless IC, Fall 2024",
+    "program": "Masters in Wireless IC",
+    "university": "University Grenoble Alpes",
+    "country": "France",
+    "name": "MD Mubarak",
+    "affiliation": "Sylhet Engineering College",
+    "image": "/students/mubarak.jpg"
+  },
+  {
+    "id": 5,
+    "quote": "Masters in Wireless IC, Fall 2025",
+    "program": "Masters in Wireless IC",
+    "university": "University Grenoble Alpes",
+    "country": "France",
+    "name": "Tanzina Kona",
+    "affiliation": "International Islamic University Chittagong",
+    "image": "/students/kona.jpeg"
+  },
+  {
+    "id": 6,
+    "quote": "Graduate Research Assistantship for Fall 2023",
+    "program": "Graduate Research Assistant",
+    "university": "Buffalo State University",
+    "country": "USA",
+    "name": "Syeda Jafri Shahrin",
+    "affiliation": "Premier University, Chittagong",
+    "image": "/students/shahrin.jpeg"
+  }
+]

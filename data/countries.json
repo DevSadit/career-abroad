@@ -1,0 +1,56 @@
+[
+  {
+    "name": "France",
+    "href": "/faq/france",
+    "code": "fr",
+    "flagPath": "/flags/fr.svg"
+  },
+  {
+    "name": "Italy",
+    "href": "/faq/italy",
+    "code": "it",
+    "flagPath": "/flags/it.svg"
+  },
+  {
+    "name": "Belgium",
+    "href": "/faq/belgium",
+    "code": "be",
+    "flagPath": "/flags/be.svg"
+  },
+  {
+    "name": "Germany",
+    "href": "#",
+    "code": "de",
+    "flagPath": "/flags/de.svg"
+  },
+  {
+    "name": "Estonia",
+    "href": "#",
+    "code": "ee",
+    "flagPath": "/flags/ee.svg"
+  },
+  {
+    "name": "Spain",
+    "href": "#",
+    "code": "es",
+    "flagPath": "/flags/es.svg"
+  },
+  {
+    "name": "Hungary",
+    "href": "#",
+    "code": "hu",
+    "flagPath": "/flags/hu.svg"
+  },
+  {
+    "name": "Netherlands",
+    "href": "#",
+    "code": "nl",
+    "flagPath": "/flags/nl.svg"
+  },
+  {
+    "name": "Poland",
+    "href": "#",
+    "code": "pl",
+    "flagPath": "/flags/pl.svg"
+  }
+]

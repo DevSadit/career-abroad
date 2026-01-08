@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import Videos from "../_shared/Videos";
-import videos from "../../../data/videos.json";
+import videos from "../../data/videos.json";
 const Page = () => {
   const primary = "#364bc5";
 

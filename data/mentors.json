@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "name": "Ahsan Suny",
+    "image": "/mentors/Suny_Mentor1.png",
+    "currentStatus": "PhD Researcher (AI & Robotics)",
+    "education": [
+      "MSc in Embedded Systems – France",
+      "BSc in Electrical & Electronic Engineering"
+    ],
+    "socials": {
+      "linkedin": "",
+      "facebook": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "2",
+    "name": "Safkat Islam Tumpa",
+    "image": "/mentors/Tumpa_Mentor2.png",
+    "currentStatus": "PhD Researcher (THz Photonics)",
+    "education": [
+      "MSc in Wireless IC – France",
+      "BSc in Electrical & Electronic Engineering"
+    ],
+    "socials": {
+      "linkedin": "",
+      "facebook": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "3",
+    "name": "Rakib Al Hasan",
+    "image": "/mentors/Rakib_Mentor3.png",
+    "currentStatus": "PhD (Machine Vision, France)",
+    "education": ["MSc (Machine Vision, France)", "BSc in (CSE)"],
+    "socials": {
+      "linkedin": "",
+      "facebook": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "4",
+    "name": "Imran Uddin",
+    "image": "/mentors/Imran_Mentor4.png",
+    "currentStatus": "MSc (Power & Smart Grid, France)",
+    "education": ["BSc in (EEE)"],
+    "socials": {
+      "linkedin": "",
+      "facebook": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "5",
+    "name": "Uzzal Basu",
+    "image": "/mentors/Uzzal_Mentor5.png",
+    "currentStatus": "Dev. Engineer (USA)",
+    "education": ["MSc (Robotics, USA)", "BSc in (EEE)"],
+    "socials": {
+      "linkedin": "",
+      "facebook": "",
+      "github": ""
+    }
+  }
+]

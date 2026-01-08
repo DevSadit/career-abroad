@@ -1,0 +1,218 @@
+[
+  {
+    "id": "cv-lor-linkedin",
+    "title": "A. CV, LOR & LinkedIn",
+    "price": 2500,
+    "fake_price": 4000,
+    "currency": "BDT",
+    "slug": "cv-lor-linkedin",
+    "goal": "Build a strong academic profile package that looks international-ready.",
+    "bestFor": "Final-year students, fresh graduates, early-stage applicants",
+    "classes": {
+      "total": 4,
+      "recorded": 1,
+      "live": 3
+    },
+    "includes": ["LIVE sessions", "Recordings", "Notes", "Templates", "Q&A"],
+    "topics": [
+      "Academic & Europass CV structure",
+      "Common CV mistakes",
+      "Tailoring CV for program/professor",
+      "LOR strategy",
+      "LinkedIn optimization",
+      "Final checklist & review guideline"
+    ]
+  },
+  {
+    "id": "sop-motivation",
+    "title": "B. SOP & Motivation Letter",
+    "price": 5000,
+    "fake_price": 5500,
+    "currency": "BDT",
+    "slug": "sop-motivation",
+    "goal": "Write a convincing SOP that clearly answers why you, why this program, why now.",
+    "classes": {
+      "total": 7,
+      "recorded": 2,
+      "live": 5
+    },
+    "includes": ["SOP Samples Book", "SOP Map", "Revision Slides & PDFs"],
+    "topics": [
+      "Successful SOP structure",
+      "Presenting weak CGPA or gaps smartly",
+      "Turning research/projects into impact",
+      "Country & program fit writing",
+      "Scholarship-focused motivation letters",
+      "SOP polishing checklist"
+    ]
+  },
+  {
+    "id": "emailing",
+    "title": "C. Emailing (Professor / Admission / Scholarship)",
+    "price": 2000,
+    "fake_price": 3500,
+    "currency": "BDT",
+    "slug": "emailing",
+    "goal": "Send effective emails that actually get replies.",
+    "classes": {
+      "total": 3,
+      "recorded": 1,
+      "live": 2
+    },
+    "includes": ["Email templates", "Follow-up templates"],
+    "topics": [
+      "Whom to email",
+      "Subject lines that work",
+      "Email structure",
+      "Attachments naming",
+      "Follow-up strategy",
+      "Reply handling",
+      "Response tracking in Excel"
+    ]
+  },
+  {
+    "id": "university-application",
+    "title": "D. University Searching & Application",
+    "price": 3500,
+    "fake_price": 5000,
+    "currency": "BDT",
+    "slug": "university-application",
+    "goal": "Build a smart university list and apply correctly.",
+    "classes": {
+      "total": 5,
+      "recorded": 2,
+      "live": 3
+    },
+    "includes": ["University shortlist sheet", "Slides & PDFs"],
+    "topics": [
+      "Safe/Moderate/Ambitious listing",
+      "Program fit analysis",
+      "Application portals",
+      "Fee waiver planning",
+      "Deadline tracking",
+      "Final checklist"
+    ]
+  },
+  {
+    "id": "thesis-research",
+    "title": "E. Thesis, Research & Publication",
+    "price": 2000,
+    "fake_price": 4500,
+    "currency": "BDT",
+    "slug": "thesis-research",
+    "goal": "Make your thesis and research publication-ready.",
+    "classes": {
+      "total": 5,
+      "recorded": 2,
+      "live": 3
+    },
+    "includes": ["Literature review template", "Journal screening checklist"],
+    "topics": [
+      "Problem selection",
+      "Literature review workflow",
+      "Writing & citation",
+      "Research ethics",
+      "Conference vs journal strategy",
+      "Submission roadmap"
+    ]
+  },
+  {
+    "id": "visa",
+    "title": "F. Visa Application & Documentation",
+    "price": 10000,
+    "fake_price": 14000,
+    "currency": "BDT",
+    "slug": "visa",
+    "goal": "Prepare visa documents correctly and avoid refusal triggers.",
+    "classes": {
+      "total": 10,
+      "recorded": 3,
+      "live": 5,
+      "mock": 2
+    },
+    "includes": [
+      "Document checklist",
+      "Mock interview",
+      "Successful document samples"
+    ],
+    "topics": [
+      "Country-wise visa requirements",
+      "Financial document presentation",
+      "Sponsor & solvency",
+      "Accommodation & insurance",
+      "Visa SOP",
+      "Interview preparation"
+    ]
+  },
+  {
+    "id": "personal-website",
+    "title": "G. Personal Website",
+    "price": 1000,
+    "fake_price": 3000,
+    "currency": "BDT",
+    "slug": "personal-website",
+    "goal": "Create a simple professional website that upgrades your profile.",
+    "classes": {
+      "total": 2,
+      "recorded": 1,
+      "live": 1
+    },
+    "includes": ["Help in web building", "Structured Web"],
+    "topics": [
+      "Website structure",
+      "Free hosting tools",
+      "What to show committees",
+      "SEO basics",
+      "Final checklist"
+    ]
+  },
+  {
+    "id": "scholarships",
+    "title": "H. National & Regional Scholarships",
+    "price": 5000,
+    "fake_price": 6500,
+    "currency": "BDT",
+    "slug": "scholarships",
+    "goal": "Understand scholarship types and prepare a winning strategy.",
+    "classes": {
+      "total": 7,
+      "recorded": 2,
+      "live": 5
+    },
+    "includes": ["Scholarship tracker", "Winning SOP samples", "SOP Map"],
+    "topics": [
+      "Scholarship categories",
+      "Eligibility mapping",
+      "Document preparation",
+      "Winning patterns",
+      "Timeline roadmap",
+      "Interview & communication"
+    ]
+  },
+  {
+    "id": "advanced-robotics-embedded",
+    "title": "I. Advanced Robotics & Embedded System",
+    "price": 10000,
+    "fake_price": 15000,
+    "currency": "BDT",
+    "slug": "advanced-robotics-embedded",
+    "goal": "Gain practical, advanced Robotics & Embedded Systems skills to strengthen your higher-study profile and for the industry.",
+    "bestFor": "Students targeting Robotics/Embedded/Automation programs, and anyone building a strong technical profile",
+    "classes": {
+      "total": 15,
+      "recorded": 7,
+      "live": 7,
+      "project": 1
+    },
+    "includes": ["Slides", "PDF", "Codes"],
+    "topics": [
+      "Embedded: MCU basics, GPIO, interrupts, timers, PWM, ADC",
+      "Communication protocols: UART, I2C, SPI, CAN",
+      "Sensor integration: IMU/encoders, calibration, filtering basics",
+      "Motor Control: DC/servo/stepper, PID concept and tuning workflow",
+      "IoT: Wi-Fi, BLE, LoRa, GSM/LTE, MQTT",
+      "Robotics workflow: hardware–software integration and ROS/ROS2",
+      "Debugging: timing issues, serial debugging, power/wiring safety"
+    ]
+  }
+]

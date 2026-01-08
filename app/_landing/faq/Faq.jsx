@@ -1,7 +1,7 @@
 // "use client";
 import Image from "next/image";
 import React from "react";
-import countries from "../../../../data/countries.json";
+import countries from "../../../data/countries.json";
 import Link from "next/link";
 
 const Faq = () => {
