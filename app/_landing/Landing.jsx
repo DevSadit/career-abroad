@@ -5,14 +5,13 @@ import CoursesSection from "./courses/CoursesSection";
 import Faq from "./faq/Faq";
 import Mentors from "./mentors/Mentors";
 import Achivements from "./achivements/Achivements";
-import VipCard from "./vipCard/VipCard";
-import VipCourseSection from "./vipCard/VipCourseSection";
+
 const Landing = () => {
   return (
     <div className="">
       <Hero />
       <CoursesSection />
-      <VipCourseSection />
+      {/* <VipCourseSection /> */}
       <Mentors />
       <Achivements />
       <Faq />
