@@ -45,7 +45,7 @@ const Faq = () => {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              {/* Decorative gradient overlay on hover */}
+              {/* Decorative linear overlay on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-[#364bc5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
               <div className="relative flex flex-col items-center justify-center space-y-4">
