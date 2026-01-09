@@ -8,11 +8,7 @@
       "MSc in Embedded Systems – France",
       "BSc in Electrical & Electronic Engineering"
     ],
-    "socials": {
-      "linkedin": "",
-      "facebook": "",
-      "github": ""
-    }
+    "book_a_session": "https://cal.com/ahsansuny2026/40min"
   },
   {
     "id": "2",
@@ -23,11 +19,7 @@
       "MSc in Wireless IC – France",
       "BSc in Electrical & Electronic Engineering"
     ],
-    "socials": {
-      "linkedin": "",
-      "facebook": "",
-      "github": ""
-    }
+    "book_a_session": "https://cal.com/safkat-islam-bl56lx/60min"
   },
   {
     "id": "3",
@@ -35,11 +27,7 @@
     "image": "/mentors/Rakib_Mentor3.png",
     "currentStatus": "PhD (Machine Vision, France)",
     "education": ["MSc (Machine Vision, France)", "BSc in (CSE)"],
-    "socials": {
-      "linkedin": "",
-      "facebook": "",
-      "github": ""
-    }
+    "book_a_session": ""
   },
   {
     "id": "4",
@@ -47,11 +35,7 @@
     "image": "/mentors/Imran_Mentor4.png",
     "currentStatus": "MSc (Power & Smart Grid, France)",
     "education": ["BSc in (EEE)"],
-    "socials": {
-      "linkedin": "",
-      "facebook": "",
-      "github": ""
-    }
+    "book_a_session": ""
   },
   {
     "id": "5",
@@ -59,10 +43,6 @@
     "image": "/mentors/Uzzal_Mentor5.png",
     "currentStatus": "Dev. Engineer (USA)",
     "education": ["MSc (Robotics, USA)", "BSc in (EEE)"],
-    "socials": {
-      "linkedin": "",
-      "facebook": "",
-      "github": ""
-    }
+    "book_a_session": ""
   }
 ]
