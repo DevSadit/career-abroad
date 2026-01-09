@@ -2,12 +2,14 @@
   {
     "id": "cv-lor-linkedin",
     "title": "A. CV, LOR & LinkedIn",
+    "know_more": "",
     "price": 2500,
     "fake_price": 4000,
     "currency": "BDT",
     "slug": "cv-lor-linkedin",
     "goal": "Build a strong academic profile package that looks international-ready.",
     "bestFor": "Final-year students, fresh graduates, early-stage applicants",
+
     "classes": {
       "total": 4,
       "recorded": 1,
@@ -26,6 +28,7 @@
   {
     "id": "sop-motivation",
     "title": "B. SOP & Motivation Letter",
+    "know_more": "https://youtu.be/oBy4pNO3FKg",
     "price": 5000,
     "fake_price": 5500,
     "currency": "BDT",
@@ -49,6 +52,7 @@
   {
     "id": "emailing",
     "title": "C. Emailing (Professor / Admission / Scholarship)",
+    "know_more": "",
     "price": 2000,
     "fake_price": 3500,
     "currency": "BDT",
@@ -73,6 +77,7 @@
   {
     "id": "university-application",
     "title": "D. University Searching & Application",
+    "know_more": "https://youtu.be/R_Lf_CCHS2s",
     "price": 3500,
     "fake_price": 5000,
     "currency": "BDT",
@@ -96,6 +101,7 @@
   {
     "id": "thesis-research",
     "title": "E. Thesis, Research & Publication",
+    "know_more": "",
     "price": 2000,
     "fake_price": 4500,
     "currency": "BDT",
@@ -119,6 +125,7 @@
   {
     "id": "visa",
     "title": "F. Visa Application & Documentation",
+    "know_more": "",
     "price": 10000,
     "fake_price": 14000,
     "currency": "BDT",
@@ -147,6 +154,7 @@
   {
     "id": "personal-website",
     "title": "G. Personal Website",
+    "know_more": "",
     "price": 1000,
     "fake_price": 3000,
     "currency": "BDT",
@@ -169,6 +177,7 @@
   {
     "id": "scholarships",
     "title": "H. National & Regional Scholarships",
+    "know_more": "",
     "price": 5000,
     "fake_price": 6500,
     "currency": "BDT",
@@ -192,6 +201,7 @@
   {
     "id": "advanced-robotics-embedded",
     "title": "I. Advanced Robotics & Embedded System",
+    "know_more": "",
     "price": 10000,
     "fake_price": 15000,
     "currency": "BDT",

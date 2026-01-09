@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { CheckCircle2, Play, BookOpen, ArrowRight, Award } from "lucide-react";
+import {
+  CheckCircle2,
+  Play,
+  BookOpen,
+  ArrowRight,
+  Award,
+  Youtube,
+  Search,
+} from "lucide-react";
 
 export default function CourseCard({ course }) {
   return (
@@ -105,18 +113,36 @@ export default function CourseCard({ course }) {
         </div>
 
         {/* CTA Button - Fixed at bottom */}
-        <div className="mt-auto">
-          <Link
-            target="_blank"
-            href={`https://forms.gle/WQybuADYXdPmXrqn7`}
-            className="group/btn flex items-center justify-center gap-2 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white bg-[#364bc5] hover:bg-[#2d3da8] transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            Register Now
-            <ArrowRight
-              size={16}
-              className="group-hover/btn:translate-x-1 transition-transform"
-            />
-          </Link>
+        <div className="flex gap-3 justify-between items-center mt-auto">
+          {course.know_more && (
+            <div className="w-full">
+              <Link
+                target="_blank"
+                href={course.know_more}
+                className="group/btn flex items-center justify-center gap-2 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white bg-[#364bc5] hover:bg-[#2d3da8] transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                Know More
+                <Youtube
+                  size={16}
+                  className="group-hover/btn:translate-x-1 transition-transform"
+                />
+              </Link>
+            </div>
+          )}
+
+          <div className="w-full">
+            <Link
+              target="_blank"
+              href={`https://forms.gle/WQybuADYXdPmXrqn7`}
+              className="group/btn flex items-center justify-center gap-2 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white bg-[#364bc5] hover:bg-[#2d3da8] transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Register Now
+              <ArrowRight
+                size={16}
+                className="group-hover/btn:translate-x-1 transition-transform"
+              />
+            </Link>
+          </div>
         </div>
       </div>
 
