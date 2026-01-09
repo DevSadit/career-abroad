@@ -32,7 +32,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${parkinsans.className} antialiased`}
       >
-        className=
         <Navbar />
         <main>
           <ClientComponents>{children}</ClientComponents>

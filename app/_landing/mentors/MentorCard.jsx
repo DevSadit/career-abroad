@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const MentorCard = ({ mentor }) => {
@@ -42,7 +43,6 @@ const MentorCard = ({ mentor }) => {
 
             {/* Experience */}
             <div className="relative pl-4 border-l-2 border-[#364bc5]/20 group-hover:border-[#364bc5] transition-colors duration-300">
-              {/* Education */}
               <div className="space-y-2">
                 {mentor.education.map((edu, eduIndex) => (
                   <div
@@ -58,6 +58,36 @@ const MentorCard = ({ mentor }) => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* ✅ Book a Session Button (ONLY ADDITION) */}
+            <div className="pt-3">
+              <Link
+                href={"#"}
+                className="
+              w-full sm:w-fit
+              inline-flex items-center justify-center gap-2
+              px-6 py-3 rounded-full
+              text-sm md:text-base font-semibold text-white
+              bg-linear-to-r from-[#364bc5] to-indigo-500
+              shadow-md shadow-[#364bc5]/30
+              transition-all duration-300
+              hover:shadow-xl hover:shadow-[#364bc5]/40
+              hover:-translate-y-0.5
+              active:scale-95
+            "
+              >
+                Book a Session
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
