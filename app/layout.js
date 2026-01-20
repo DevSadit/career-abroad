@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Career Abroad",
-  description: "Its time to dream",
+  description: "Your Global Journey Partner",
 };
 
 const parkinsans = Parkinsans({
