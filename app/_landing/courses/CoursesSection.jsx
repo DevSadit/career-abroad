@@ -21,15 +21,8 @@ const CoursesSection = () => {
           </div>
         </div>
 
-        {/* card section */}
-        <div className=" my-4 gap-5 grid grid-cols-1 md:grid-cols-3 ">
-          {courses.map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
-        </div>
-
-        {/*  */}
-        <div className="max-w-full mx-auto mt-16 text-center">
+        {/* premium mentorship programme card */}
+        <div className="max-w-full mx-auto my-9 text-center">
           <div className="relative bg-linear-to-r from-[#485dd7] via-[#5a6fe3] to-[#485dd7] rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
@@ -104,6 +97,13 @@ const CoursesSection = () => {
             {/* Bottom decorative line */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-yellow-300/50 to-transparent"></div>
           </div>
+        </div>
+
+        {/* card section */}
+        <div className=" my-4 gap-5 grid grid-cols-1 md:grid-cols-3 ">
+          {courses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
         </div>
       </div>
     </section>

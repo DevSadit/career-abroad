@@ -10,7 +10,6 @@ const Landing = () => {
     <div className="">
       <Hero />
       <CoursesSection />
-      {/* <VipCourseSection /> */}
       <Mentors />
       <Achivements />
       <Faq />

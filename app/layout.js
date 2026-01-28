@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Career Abroad",
+  title: "Career Abroad Mentor",
   description: "Your Global Journey Partner",
 };
 
