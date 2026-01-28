@@ -4,6 +4,7 @@ import { Parkinsans } from "next/font/google";
 import Navbar from "./_shared/Navbar";
 import Footer from "./_shared/Footer";
 import ClientComponents from "./_components/ClientComponents";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,8 @@ export default function RootLayout({ children }) {
           <ClientComponents>{children}</ClientComponents>
         </main>
         <Footer />
+
+        <GoogleAnalytics gaId="G-ZCEWQN2PE6" />
       </body>
     </html>
   );
