@@ -4,23 +4,13 @@ import React from "react";
 import students from "../../../data/students.json";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Title from "@/app/_shared/Title";
 const Achivements = () => {
   return (
     <section id="achivement" className="pt-8 md:pt-12 lg:pt-26 xl:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head title */}
-        <div className="text-center flex flex-col justify-center mb-12 md:mb-16">
-          <p className="text-indigo-600 font-semibold text-xs md:text-sm uppercase tracking-widest">
-            Achivements
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Our Achievements
-          </h2>
-
-          <div className="flex justify-center items-center">
-            <Image src="/title.svg" alt="title" width={200} height={100} />
-          </div>
-        </div>
+        <Title title={"Achivements"} subtitle={"Our Achievements"} />
 
         {/* slider */}
         <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">

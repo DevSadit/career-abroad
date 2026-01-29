@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import countries from "../../../data/countries.json";
 import Link from "next/link";
+import Title from "@/app/_shared/Title";
 
 const Faq = () => {
   if (!countries || countries.length === 0) {
@@ -21,18 +22,7 @@ const Faq = () => {
     <section id="faq" className="py-8 md:py-12 lg:py-26 xl:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head text */}
-        <div className="text-center flex flex-col justify-center mb-12 md:mb-16">
-          <p className="text-indigo-600 font-semibold text-xs md:text-sm uppercase tracking-widest">
-            Faq
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Based On Countries
-          </h2>
-
-          <div className="flex justify-center items-center">
-            <Image src="/title.svg" alt="title" width={200} height={100} />
-          </div>
-        </div>
+        <Title title={"Faq"} subtitle={" Based On Countries"} />
 
         {/* Countries Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
