@@ -7,7 +7,7 @@
     "country": "France",
     "name": "Imran Uddin",
     "affiliation": "Premier University, Chittagong",
-    "image": "/students/imran.jpeg"
+    "image": "/students/5Imran.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "country": "France",
     "name": "Aminul Islam Rifat",
     "affiliation": "Green University",
-    "image": "/students/rifat.jpg"
+    "image": "/students/1Rifat.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "country": "Belgium",
     "name": "Anamul Hasan",
     "affiliation": "University of Rajshahi",
-    "image": "/students/anamul.jpg"
+    "image": "/students/2Anamul.png"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "country": "France",
     "name": "MD Mubarak",
     "affiliation": "Sylhet Engineering College",
-    "image": "/students/mubarak.jpg"
+    "image": "/students/6Mubarak.png"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "country": "France",
     "name": "Tanzina Kona",
     "affiliation": "International Islamic University Chittagong",
-    "image": "/students/kona.jpeg"
+    "image": "/students/3kona.png"
   },
   {
     "id": 6,
@@ -57,6 +57,6 @@
     "country": "USA",
     "name": "Syeda Jafri Shahrin",
     "affiliation": "Premier University, Chittagong",
-    "image": "/students/shahrin.jpeg"
+    "image": "/students/4Jafri.jpg"
   }
 ]
