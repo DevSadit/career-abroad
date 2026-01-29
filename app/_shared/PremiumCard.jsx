@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+import { Video, PlayCircle } from "lucide-react";
 const PremiumCard = () => {
   return (
     <div className="max-w-full mx-auto my-8 md:my-10 px-4 sm:px-6 lg:px-8">
@@ -71,17 +71,26 @@ const PremiumCard = () => {
               className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl 
           bg-white/15 backdrop-blur-xl border border-white/25 shadow-lg"
             >
-              <span className="text-3xl sm:text-4xl font-black text-yellow-300">
+              <span className="text-xl sm:text-4xl font-black text-yellow-300">
                 €150
               </span>
             </div>
 
             <div
-              className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl 
+              className="px-6 sm:px-8 flex items-center gap-2 py-3 sm:py-4 rounded-xl sm:rounded-2xl 
           bg-white/15 backdrop-blur-xl border border-white/25 shadow-lg 
           text-white font-bold text-lg sm:text-xl"
             >
-              30 LIVE SESSIONS
+              <Video size={24} /> 20 LIVE SESSIONS
+            </div>
+            <div
+              className="px-6 sm:px-8 flex items-center gap-2 py-3 sm:py-4 rounded-xl sm:rounded-2xl 
+          bg-white/15 backdrop-blur-xl border border-white/25 shadow-lg 
+          text-white font-bold text-md sm:text-xl"
+            >
+              {" "}
+              <PlayCircle size={24} />
+              10 Recorded SESSIONS
             </div>
           </div>
 

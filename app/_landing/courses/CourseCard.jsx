@@ -36,14 +36,6 @@ export default function CourseCard({ course }) {
           </span>
         </div>
 
-        {/* Best For Badge */}
-        {/* <div className="mb-4 h-20 flex items-start gap-2 min-h-11">
-          <Award size={20} className="text-[#364bc5] mt-0.5 shrink-0" />
-          <p className="text-md text-gray-700 leading-relaxed line-clamp-2">
-            {course.bestFor || "\u00A0"}
-          </p>
-        </div> */}
-
         {/* Classes Info - Compact */}
         {course.classes && (
           <div className="mb-4 text-md flex items-center gap-3">
