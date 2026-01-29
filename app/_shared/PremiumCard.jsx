@@ -58,7 +58,7 @@ const PremiumCard = () => {
         text-sm sm:text-base md:text-lg 
         max-w-xl md:max-w-2xl mx-auto"
           >
-            A premium, agency-free mentorship designed to guide you step-by-step
+            A premium, guidance program designed to guide you step-by-step,
             towards your study abroad success.
           </p>
 
