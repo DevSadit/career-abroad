@@ -11,13 +11,12 @@ const Courses = ({ courses }) => {
             Course Contents
           </p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-gray-900">
-            Look the Course Content & Enroll
+            Course Contents & Students Login
           </h2>
           <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-2xl">
-            Explore the course and enroll to get access to short, practical
-            videos covering mentorship guidance, a complete visa walkthrough,
-            and everything you need to know about pursuing a Master’s degree in
-            abroad.
+            Explore our available courses introductory videos. Only enrolled
+            students can login by using their email address. Please enroll in
+            your prospective program to get the access of our contents.
           </p>
         </div>
 
