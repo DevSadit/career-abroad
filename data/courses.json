@@ -84,8 +84,8 @@
     "slug": "university-application",
     "goal": "Build a smart university list and apply correctly.",
     "classes": {
-      "total": 5,
-      "recorded": 2,
+      "total": 9,
+      "recorded": 6,
       "live": 3
     },
     "includes": ["University shortlist sheet", "Slides & PDFs"],
