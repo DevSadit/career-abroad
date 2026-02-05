@@ -82,6 +82,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
 
     { name: "About Us", href: "/about-us" },
+    { name: "Course Contents", href: "/course-content" },
     {
       name: "Faq",
       href: "faq",
@@ -287,7 +288,7 @@ const Navbar = () => {
                   }}
                   onClick={() =>
                     setOpenMobileDropdown((prev) =>
-                      prev === link.name ? null : link.name
+                      prev === link.name ? null : link.name,
                     )
                   }
                 >

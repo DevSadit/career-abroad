@@ -16,7 +16,7 @@ const Achivements = () => {
         <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
           <Carousel
             autoPlay
-            interval={2500}
+            interval={3000}
             infiniteLoop
             transitionTime={600}
             showThumbs={false}

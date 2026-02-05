@@ -7,23 +7,6 @@ import videos from "../../data/videos.json";
 const Page = () => {
   const primary = "#364bc5";
 
-  // ✅ Put your 5/6 images inside: /public/about/
-  // Rename like these (example):
-  // /public/about/timeline-1.png
-  // /public/about/flowchart-1.png
-  // /public/about/plans-1.png
-  // /public/about/portals-1.png
-  // /public/about/roadmap-1.png
-  // /public/about/visa-roadmap-1.png
-  //   const images = [
-  //     { src: "/about/timeline-1.png", alt: "One year timeline" },
-  //     { src: "/about/flowchart-1.png", alt: "Higher study flowchart" },
-  //     { src: "/about/plans-1.png", alt: "Classified plans" },
-  //     { src: "/about/portals-1.png", alt: "Central portals" },
-  //     { src: "/about/roadmap-1.png", alt: "Higher study roadmap" },
-  //     { src: "/about/visa-roadmap-1.png", alt: "Visa application roadmap" },
-  //   ];
-
   return (
     <section className="min-h-screen bg-white py-10 sm:py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,7 +107,7 @@ const Page = () => {
                     ].map((t, i) => (
                       <li key={i} className="flex gap-3">
                         <span
-                          className="mt-1.5 h-2 w-2 rounded-full flex-shrink-0"
+                          className="mt-1.5 h-2 w-2 rounded-full shrink-0"
                           style={{ backgroundColor: primary }}
                         />
                         <span className="leading-relaxed">{t}</span>
