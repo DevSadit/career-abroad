@@ -1,28 +1,26 @@
 [
   {
-    "id": "cv-lor-linkedin",
-    "title": "A. CV, LOR & LinkedIn",
-    "know_more": "",
-    "price": 2500,
-    "fake_price": 4000,
+    "id": "university-application",
+    "title": "A. University Searching & Application",
+    "know_more": "https://youtu.be/R_Lf_CCHS2s",
+    "price": 3500,
+    "fake_price": 5000,
     "currency": "BDT",
-    "slug": "cv-lor-linkedin",
-    "goal": "Build a strong academic profile package that looks international-ready.",
-    "bestFor": "Final-year students, fresh graduates, early-stage applicants",
-
+    "slug": "university-application",
+    "goal": "Build a smart university list and apply correctly.",
     "classes": {
-      "total": 4,
-      "recorded": 1,
+      "total": 9,
+      "recorded": 6,
       "live": 3
     },
-    "includes": ["LIVE sessions", "Recordings", "Notes", "Templates", "Q&A"],
+    "includes": ["University shortlist sheet", "Slides & PDFs"],
     "topics": [
-      "Academic & Europass CV structure",
-      "Common CV mistakes",
-      "Tailoring CV for program/professor",
-      "LOR strategy",
-      "LinkedIn optimization",
-      "Final checklist & review guideline"
+      "Safe/Moderate/Ambitious listing",
+      "Program fit analysis",
+      "Application portals",
+      "Fee waiver planning",
+      "Deadline tracking",
+      "Final checklist"
     ]
   },
   {
@@ -50,81 +48,32 @@
     ]
   },
   {
-    "id": "emailing",
-    "title": "C. Emailing (Professor / Admission / Scholarship)",
-    "know_more": "",
-    "price": 2000,
-    "fake_price": 3500,
+    "id": "scholarships",
+    "title": "C. National & Regional Scholarships",
+    "know_more": "https://www.youtube.com/watch?v=i_Oyd65esJM",
+    "price": 5000,
+    "fake_price": 6500,
     "currency": "BDT",
-    "slug": "emailing",
-    "goal": "Send effective emails that actually get replies.",
+    "slug": "scholarships",
+    "goal": "Understand scholarship types and prepare a winning strategy.",
     "classes": {
-      "total": 3,
-      "recorded": 1,
-      "live": 2
-    },
-    "includes": ["Email templates", "Follow-up templates"],
-    "topics": [
-      "Whom to email",
-      "Subject lines that work",
-      "Email structure",
-      "Attachments naming",
-      "Follow-up strategy",
-      "Reply handling",
-      "Response tracking in Excel"
-    ]
-  },
-  {
-    "id": "university-application",
-    "title": "D. University Searching & Application",
-    "know_more": "https://youtu.be/R_Lf_CCHS2s",
-    "price": 3500,
-    "fake_price": 5000,
-    "currency": "BDT",
-    "slug": "university-application",
-    "goal": "Build a smart university list and apply correctly.",
-    "classes": {
-      "total": 9,
-      "recorded": 6,
-      "live": 3
-    },
-    "includes": ["University shortlist sheet", "Slides & PDFs"],
-    "topics": [
-      "Safe/Moderate/Ambitious listing",
-      "Program fit analysis",
-      "Application portals",
-      "Fee waiver planning",
-      "Deadline tracking",
-      "Final checklist"
-    ]
-  },
-  {
-    "id": "thesis-research",
-    "title": "E. Thesis, Research & Publication",
-    "know_more": "",
-    "price": 2000,
-    "fake_price": 4500,
-    "currency": "BDT",
-    "slug": "thesis-research",
-    "goal": "Make your thesis and research publication-ready.",
-    "classes": {
-      "total": 5,
+      "total": 7,
       "recorded": 2,
-      "live": 3
+      "live": 5
     },
-    "includes": ["Literature review template", "Journal screening checklist"],
+    "includes": ["Scholarship tracker", "Winning SOP samples", "SOP Map"],
     "topics": [
-      "Problem selection",
-      "Literature review workflow",
-      "Writing & citation",
-      "Research ethics",
-      "Conference vs journal strategy",
-      "Submission roadmap"
+      "Scholarship categories",
+      "Eligibility mapping",
+      "Document preparation",
+      "Winning patterns",
+      "Timeline roadmap",
+      "Interview & communication"
     ]
   },
   {
     "id": "visa",
-    "title": "F. Visa Application & Documentation",
+    "title": "D. Visa Application & Documentation",
     "know_more": "",
     "price": 10000,
     "fake_price": 14000,
@@ -152,55 +101,8 @@
     ]
   },
   {
-    "id": "personal-website",
-    "title": "G. Personal Website",
-    "know_more": "",
-    "price": 1000,
-    "fake_price": 3000,
-    "currency": "BDT",
-    "slug": "personal-website",
-    "goal": "Create a simple professional website that upgrades your profile.",
-    "classes": {
-      "total": 2,
-      "recorded": 1,
-      "live": 1
-    },
-    "includes": ["Help in web building", "Structured Web"],
-    "topics": [
-      "Website structure",
-      "Free hosting tools",
-      "What to show committees",
-      "SEO basics",
-      "Final checklist"
-    ]
-  },
-  {
-    "id": "scholarships",
-    "title": "H. National & Regional Scholarships",
-    "know_more": "https://www.youtube.com/watch?v=i_Oyd65esJM",
-    "price": 5000,
-    "fake_price": 6500,
-    "currency": "BDT",
-    "slug": "scholarships",
-    "goal": "Understand scholarship types and prepare a winning strategy.",
-    "classes": {
-      "total": 7,
-      "recorded": 2,
-      "live": 5
-    },
-    "includes": ["Scholarship tracker", "Winning SOP samples", "SOP Map"],
-    "topics": [
-      "Scholarship categories",
-      "Eligibility mapping",
-      "Document preparation",
-      "Winning patterns",
-      "Timeline roadmap",
-      "Interview & communication"
-    ]
-  },
-  {
     "id": "advanced-robotics-embedded",
-    "title": "I. Advanced Robotics & Embedded System",
+    "title": "E. Advanced Robotics & Embedded System",
     "know_more": "https://youtu.be/zSW2Ic_DnOo?si=U-VKVJM3S5FBTy2d",
     "price": 10000,
     "fake_price": 15000,
@@ -223,6 +125,104 @@
       "IoT: Wi-Fi, BLE, LoRa, GSM/LTE, MQTT",
       "Robotics workflow: hardware–software integration and ROS/ROS2",
       "Debugging: timing issues, serial debugging, power/wiring safety"
+    ]
+  },
+  {
+    "id": "cv-lor-linkedin",
+    "title": "F. CV, LOR & LinkedIn",
+    "know_more": "",
+    "price": 2500,
+    "fake_price": 4000,
+    "currency": "BDT",
+    "slug": "cv-lor-linkedin",
+    "goal": "Build a strong academic profile package that looks international-ready.",
+    "bestFor": "Final-year students, fresh graduates, early-stage applicants",
+
+    "classes": {
+      "total": 4,
+      "recorded": 1,
+      "live": 3
+    },
+    "includes": ["LIVE sessions", "Recordings", "Notes", "Templates", "Q&A"],
+    "topics": [
+      "Academic & Europass CV structure",
+      "Common CV mistakes",
+      "Tailoring CV for program/professor",
+      "LOR strategy",
+      "LinkedIn optimization",
+      "Final checklist & review guideline"
+    ]
+  },
+  {
+    "id": "emailing",
+    "title": "G. Emailing (Professor / Admission / Scholarship)",
+    "know_more": "",
+    "price": 2000,
+    "fake_price": 3500,
+    "currency": "BDT",
+    "slug": "emailing",
+    "goal": "Send effective emails that actually get replies.",
+    "classes": {
+      "total": 3,
+      "recorded": 1,
+      "live": 2
+    },
+    "includes": ["Email templates", "Follow-up templates"],
+    "topics": [
+      "Whom to email",
+      "Subject lines that work",
+      "Email structure",
+      "Attachments naming",
+      "Follow-up strategy",
+      "Reply handling",
+      "Response tracking in Excel"
+    ]
+  },
+  {
+    "id": "thesis-research",
+    "title": "H. Thesis, Research & Publication",
+    "know_more": "",
+    "price": 2000,
+    "fake_price": 4500,
+    "currency": "BDT",
+    "slug": "thesis-research",
+    "goal": "Make your thesis and research publication-ready.",
+    "classes": {
+      "total": 5,
+      "recorded": 2,
+      "live": 3
+    },
+    "includes": ["Literature review template", "Journal screening checklist"],
+    "topics": [
+      "Problem selection",
+      "Literature review workflow",
+      "Writing & citation",
+      "Research ethics",
+      "Conference vs journal strategy",
+      "Submission roadmap"
+    ]
+  },
+  {
+    "id": "personal-website",
+    "title": "I. Personal Website",
+    "know_more": "",
+    "price": 1000,
+    "fake_price": 3000,
+    "currency": "BDT",
+    "slug": "personal-website",
+    "goal": "Create a simple professional website that upgrades your profile.",
+    "classes": {
+      "total": 2,
+      "recorded": 1,
+      "live": 1
+    },
+    "includes": ["Help in web building", "Structured Web"],
+    "topics": [
+      "Website structure",
+      "Free hosting tools",
+      "What to show committees",
+      "SEO basics",
+      "Final checklist"
     ]
   }
 ]
