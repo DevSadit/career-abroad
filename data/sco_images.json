@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Austria Scholarship",
+    "image": "/scolarships/Austria.png",
+    "alt": "Austria Scholarship"
+  },
+  {
+    "id": 2,
+    "name": "DAAD Scholarship",
+    "image": "/scolarships/DAAD.png",
+    "alt": "DAAD Scholarship"
+  },
+  {
+    "id": 3,
+    "name": "Eiffel Scholarship",
+    "image": "/scolarships/Eiffel.png",
+    "alt": "Eiffel Scholarship"
+  },
+  {
+    "id": 4,
+    "name": "Erusmus Scholarship",
+    "image": "/scolarships/Erusmus.png",
+    "alt": "Erusmus Scholarship"
+  },
+  {
+    "id": 5,
+    "name": "Finnish Scholarship",
+    "image": "/scolarships/Finnish.png",
+    "alt": "Finnish Scholarship"
+  },
+  {
+    "id": 6,
+    "name": "INP Scholarship",
+    "image": "/scolarships/INP.png",
+    "alt": "INP Scholarship"
+  },
+  {
+    "id": 7,
+    "name": "Ireland Scholarship",
+    "image": "/scolarships/Ireland.png",
+    "alt": "Ireland Scholarship"
+  },
+  {
+    "id": 8,
+    "name": "IYT Scholarship",
+    "image": "/scolarships/IYT.png",
+    "alt": "IYT Scholarship"
+  },
+  {
+    "id": 9,
+    "name": "Lazio Scholarship",
+    "image": "/scolarships/Lazio.png",
+    "alt": "Lazio Scholarship"
+  },
+  {
+    "id": 10,
+    "name": "ELille Scholarship",
+    "image": "/scolarships/Lille.png",
+    "alt": "Lille Scholarship"
+  },
+  {
+    "id": 11,
+    "name": "Lyon Scholarship",
+    "image": "/scolarships/Lyon.png",
+    "alt": "Lyon Scholarship"
+  },
+  {
+    "id": 12,
+    "name": "MAECI Scholarship",
+    "image": "/scolarships/MAECI.png",
+    "alt": "MAECI Scholarship"
+  },
+  {
+    "id": 13,
+    "name": "Mastermind Scholarship",
+    "image": "/scolarships/Mastermind.png",
+    "alt": "Mastermind Scholarship"
+  },
+  {
+    "id": 14,
+    "name": "NAWA Scholarship",
+    "image": "/scolarships/NAWA.png",
+    "alt": "NAWA Scholarship"
+  },
+  {
+    "id": 15,
+    "name": "NL Scholarship",
+    "image": "/scolarships/NL.png",
+    "alt": "NL Scholarship"
+  },
+  {
+    "id": 16,
+    "name": "ParisSacly Scholarship",
+    "image": "/scolarships/ParisSacly.png",
+    "alt": "ParisSacly Scholarship"
+  },
+  {
+    "id": 17,
+    "name": "Romania Scholarship",
+    "image": "/scolarships/Romania.png",
+    "alt": "Romania Scholarship"
+  },
+  {
+    "id": 18,
+    "name": "SciencesPo Scholarship",
+    "image": "/scolarships/SciencesPo.png",
+    "alt": "SciencesPo Scholarship"
+  },
+  {
+    "id": 19,
+    "name": "SI Scholarship",
+    "image": "/scolarships/SI.png",
+    "alt": "SI Scholarship"
+  },
+  {
+    "id": 20,
+    "name": "Stipendium Scholarship",
+    "image": "/scolarships/Stipendium.png",
+    "alt": "Stipendium Scholarship"
+  },
+  {
+    "id": 21,
+    "name": "Swiss Scholarship",
+    "image": "/scolarships/Swiss.png",
+    "alt": "Swiss Scholarship"
+  },
+  {
+    "id": 22,
+    "name": "UGA Scholarship",
+    "image": "/scolarships/UGA.png",
+    "alt": "UGA Scholarship"
+  }
+]
