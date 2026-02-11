@@ -15,7 +15,7 @@ const Scholarship = () => {
 
         {/* Scholarship Grid */}
         <div className="mt-12 md:mt-16">
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
             {sco_images.map((scholarship, index) => (
               <div
                 key={scholarship.id}
