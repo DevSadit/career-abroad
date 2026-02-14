@@ -18,16 +18,22 @@
     "flagPath": "/flags/be.svg"
   },
   {
+    "name": "Estonia",
+    "href": "/faq/estonia",
+    "code": "ee",
+    "flagPath": "/flags/ee.svg"
+  },
+  {
+    "name": "Hungary",
+    "href": "/faq/hungary",
+    "code": "hu",
+    "flagPath": "/flags/hu.svg"
+  },
+  {
     "name": "Germany",
     "href": "#",
     "code": "de",
     "flagPath": "/flags/de.svg"
-  },
-  {
-    "name": "Estonia",
-    "href": "#",
-    "code": "ee",
-    "flagPath": "/flags/ee.svg"
   },
   {
     "name": "Spain",
@@ -35,12 +41,7 @@
     "code": "es",
     "flagPath": "/flags/es.svg"
   },
-  {
-    "name": "Hungary",
-    "href": "#",
-    "code": "hu",
-    "flagPath": "/flags/hu.svg"
-  },
+
   {
     "name": "Netherlands",
     "href": "#",

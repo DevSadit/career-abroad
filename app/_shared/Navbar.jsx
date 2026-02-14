@@ -90,6 +90,8 @@ const Navbar = () => {
         { name: "France", href: "/faq/france" },
         { name: "Italy", href: "/faq/italy" },
         { name: "Belgium", href: "/faq/belgium" },
+        { name: "Hungary", href: "/faq/hungary" },
+        { name: "Estonia", href: "/faq/estonia" },
       ],
     },
   ];

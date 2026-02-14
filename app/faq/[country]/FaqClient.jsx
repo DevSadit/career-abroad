@@ -15,7 +15,7 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
     return faqData.filter(
       (faq) =>
         faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }, [faqData, searchTerm]);
 
