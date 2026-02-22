@@ -39,6 +39,14 @@
   },
   {
     "id": "5",
+    "name": "Rahul Das",
+    "image": "/mentors/Rahul.jpeg",
+    "currentStatus": "Masters in CSE",
+    "education": ["Bsc in University of Pannonia, Hungary"],
+    "book_a_session": ""
+  },
+  {
+    "id": "6",
     "name": "Uzzal Basu",
     "image": "/mentors/Uzzal_Mentor5.png",
     "currentStatus": "Dev. Engineer (USA)",
