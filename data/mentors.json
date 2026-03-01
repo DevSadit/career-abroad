@@ -25,16 +25,16 @@
     "id": "3",
     "name": "Rakib Al Hasan",
     "image": "/mentors/Rakib_Mentor3.png",
-    "currentStatus": "PhD (Machine Vision, France)",
-    "education": ["MSc (Machine Vision, France)", "BSc in (CSE)"],
+    "currentStatus": "",
+    "education": ["University Paris-East Creteil, France", "BSc in (CSE)"],
     "book_a_session": ""
   },
   {
     "id": "4",
     "name": "Imran Uddin",
     "image": "/mentors/Imran_Mentor4.png",
-    "currentStatus": "MSc (Power & Smart Grid, France)",
-    "education": ["BSc in (EEE)"],
+    "currentStatus": "",
+    "education": ["Grenoble INP, France", "BSc in (EEE)"],
     "book_a_session": "https://cal.com/md-imran-uddin/mentoring-session"
   },
   {
@@ -42,7 +42,7 @@
     "name": "Rahul Das",
     "image": "/mentors/Rahul.jpeg",
     "currentStatus": "Masters in CSE",
-    "education": ["Bsc in University of Pannonia, Hungary"],
+    "education": ["University of Pannonia, Hungary", "BSc in (CSE)"],
     "book_a_session": ""
   },
   {
@@ -50,7 +50,7 @@
     "name": "Uzzal Basu",
     "image": "/mentors/Uzzal_Mentor5.png",
     "currentStatus": "Dev. Engineer (USA)",
-    "education": ["MSc (Robotics, USA)", "BSc in (EEE)"],
+    "education": ["Western Carolina University", "BSc in (EEE)"],
     "book_a_session": ""
   }
 ]

@@ -34,11 +34,13 @@ const MentorCard = ({ mentor }) => {
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#364bc5] transition-colors duration-300 mb-2">
                 {mentor.name}
               </h3>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-linear-to-r from-[#364bc5]/10 to-indigo-100 border border-[#364bc5]/20">
-                <span className="text-sm md:text-base text-gray-700 font-medium italic">
-                  {mentor.currentStatus}
-                </span>
-              </div>
+              {mentor.currentStatus && (
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-linear-to-r from-[#364bc5]/10 to-indigo-100 border border-[#364bc5]/20">
+                  <span className="text-sm md:text-base text-gray-700 font-medium italic">
+                    {mentor.currentStatus}
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Experience */}
