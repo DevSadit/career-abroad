@@ -209,7 +209,12 @@ export default function AIMentorWidget() {
   const inputRef = useRef(null);
   const audioContextRef = useRef(null);
   const lastChimeAtRef = useRef(0);
+  const lastReplyAtRef = useRef(0);
   const leadCaptureTrackedRef = useRef(false);
+  const soundEnabledRef = useRef(soundEnabled);
+  const isOpenRef = useRef(isOpen);
+  const lastAssistantMessageIdRef = useRef(INITIAL_MESSAGE.id);
+  const replySoundReadyRef = useRef(false);
   const activeCountry = conversationCountry ?? pageCountry;
   const countryLabel = formatCountryLabel(activeCountry);
   const quickStartCountryLabel = formatCountryLabel(QUICK_START_COUNTRY);
@@ -258,6 +263,14 @@ export default function AIMentorWidget() {
       // Ignore storage access failures and keep the widget functional.
     }
   }, [soundEnabled]);
+
+  useEffect(() => {
+    soundEnabledRef.current = soundEnabled;
+  }, [soundEnabled]);
+
+  useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
 
   useEffect(() => {
     try {
@@ -330,6 +343,22 @@ export default function AIMentorWidget() {
   }, [isOpen, messages, isLoading]);
 
   useEffect(() => {
+    if (!hasRestoredSession) return;
+    if (replySoundReadyRef.current) return;
+
+    const lastAssistantMessage = [...messages]
+      .reverse()
+      .find(
+        (message) =>
+          message.role === "assistant" && message.id !== INITIAL_MESSAGE.id,
+      );
+
+    lastAssistantMessageIdRef.current =
+      lastAssistantMessage?.id ?? INITIAL_MESSAGE.id;
+    replySoundReadyRef.current = true;
+  }, [hasRestoredSession, messages]);
+
+  useEffect(() => {
     if (!showLeadCapture) {
       leadCaptureTrackedRef.current = false;
       return;
@@ -364,67 +393,98 @@ export default function AIMentorWidget() {
     }
   }, [activeCountry, fallbackStreak, messages, showLeadCapture, trackMentorbotEvent]);
 
-  const playAttentionChime = useCallback(async ({ force = false } = {}) => {
+  const playMentorChime = useCallback(
+    async ({ force = false, mode = "attention" } = {}) => {
     const context = audioContextRef.current;
 
     if (!context || document.visibilityState !== "visible") return false;
-    if (!force && (!soundEnabled || isOpen)) return false;
+      if (!force && !soundEnabledRef.current) return false;
+      if (mode === "attention" && !force && isOpenRef.current) return false;
 
     const nowMs = Date.now();
 
-    if (!force && nowMs - lastChimeAtRef.current < 10000) {
-      return false;
-    }
-
-    try {
-      if (context.state === "suspended") {
-        await context.resume();
+      if (mode === "attention" && !force && nowMs - lastChimeAtRef.current < 12000) {
+        return false;
       }
 
-      const now = context.currentTime;
-      const masterGain = context.createGain();
-      masterGain.connect(context.destination);
-      masterGain.gain.setValueAtTime(0.0001, now);
-      masterGain.gain.exponentialRampToValueAtTime(0.075, now + 0.03);
-      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+      if (mode === "reply" && !force && nowMs - lastReplyAtRef.current < 1200) {
+        return false;
+      }
 
-      [
-        { frequency: 740, start: 0, duration: 0.16, type: "triangle" },
-        { frequency: 988, start: 0.13, duration: 0.22, type: "triangle" },
-        { frequency: 1245, start: 0.3, duration: 0.18, type: "sine" },
-      ].forEach((tone) => {
-        const oscillator = context.createOscillator();
-        const toneGain = context.createGain();
-        oscillator.type = tone.type;
-        oscillator.frequency.setValueAtTime(tone.frequency, now + tone.start);
-        toneGain.gain.setValueAtTime(0.0001, now + tone.start);
-        toneGain.gain.exponentialRampToValueAtTime(0.8, now + tone.start + 0.03);
-        toneGain.gain.exponentialRampToValueAtTime(
-          0.0001,
-          now + tone.start + tone.duration,
-        );
-        oscillator.connect(toneGain);
-        toneGain.connect(masterGain);
-        oscillator.start(now + tone.start);
-        oscillator.stop(now + tone.start + tone.duration);
-      });
+      try {
+        if (context.state === "suspended") {
+          await context.resume();
+        }
 
-      lastChimeAtRef.current = nowMs;
-      return true;
-    } catch {
-      return false;
-    }
-  }, [isOpen, soundEnabled]);
+        const now = context.currentTime;
+        const masterGain = context.createGain();
+        const tones =
+          mode === "reply"
+            ? [
+                { frequency: 988, start: 0, duration: 0.14, type: "triangle" },
+                { frequency: 1318, start: 0.12, duration: 0.18, type: "sine" },
+              ]
+            : [
+                { frequency: 740, start: 0, duration: 0.18, type: "triangle" },
+                { frequency: 988, start: 0.14, duration: 0.24, type: "triangle" },
+                { frequency: 1245, start: 0.34, duration: 0.24, type: "sine" },
+              ];
+        const endTime =
+          mode === "reply"
+            ? now + 0.42
+            : now + 0.95;
+        const peakGain = mode === "reply" ? 0.06 : 0.09;
+
+        masterGain.connect(context.destination);
+        masterGain.gain.setValueAtTime(0.0001, now);
+        masterGain.gain.exponentialRampToValueAtTime(peakGain, now + 0.03);
+        masterGain.gain.exponentialRampToValueAtTime(0.0001, endTime);
+
+        tones.forEach((tone) => {
+          const oscillator = context.createOscillator();
+          const toneGain = context.createGain();
+          oscillator.type = tone.type;
+          oscillator.frequency.setValueAtTime(tone.frequency, now + tone.start);
+          toneGain.gain.setValueAtTime(0.0001, now + tone.start);
+          toneGain.gain.exponentialRampToValueAtTime(
+            0.92,
+            now + tone.start + 0.03,
+          );
+          toneGain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            now + tone.start + tone.duration,
+          );
+          oscillator.connect(toneGain);
+          toneGain.connect(masterGain);
+          oscillator.start(now + tone.start);
+          oscillator.stop(now + tone.start + tone.duration);
+        });
+
+        if (mode === "reply") {
+          lastReplyAtRef.current = nowMs;
+        } else {
+          lastChimeAtRef.current = nowMs;
+        }
+
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
 
     if (!AudioContextCtor) return undefined;
-    if (soundArmed) return undefined;
 
     const unlockSound = async () => {
       try {
-        if (!audioContextRef.current) {
+        if (
+          !audioContextRef.current ||
+          audioContextRef.current.state === "closed"
+        ) {
           audioContextRef.current = new AudioContextCtor();
         }
 
@@ -433,8 +493,11 @@ export default function AIMentorWidget() {
         }
 
         setSoundArmed(true);
-        if (soundEnabled && !isOpen) {
-          await playAttentionChime({ force: true });
+        if (soundEnabledRef.current) {
+          await playMentorChime({
+            force: true,
+            mode: isOpenRef.current ? "reply" : "attention",
+          });
         }
         window.removeEventListener("pointerdown", unlockSound);
         window.removeEventListener("keydown", unlockSound);
@@ -452,26 +515,46 @@ export default function AIMentorWidget() {
 
       if (audioContextRef.current && audioContextRef.current.state !== "closed") {
         audioContextRef.current.close();
+        audioContextRef.current = null;
       }
     };
-  }, [isOpen, playAttentionChime, soundArmed, soundEnabled]);
+  }, [playMentorChime]);
 
   useEffect(() => {
     if (!soundArmed || !soundEnabled || isOpen) return undefined;
 
     const timeoutId = window.setTimeout(() => {
-      playAttentionChime();
-    }, 5000);
+      playMentorChime({ mode: "attention" });
+    }, 4500);
 
     const intervalId = window.setInterval(() => {
-      playAttentionChime();
-    }, 18000);
+      playMentorChime({ mode: "attention" });
+    }, 16000);
 
     return () => {
       window.clearTimeout(timeoutId);
       window.clearInterval(intervalId);
     };
-  }, [isOpen, playAttentionChime, soundArmed, soundEnabled]);
+  }, [isOpen, playMentorChime, soundArmed, soundEnabled]);
+
+  useEffect(() => {
+    const lastAssistantMessage = [...messages]
+      .reverse()
+      .find(
+        (message) =>
+          message.role === "assistant" && message.id !== INITIAL_MESSAGE.id,
+      );
+
+    if (!replySoundReadyRef.current) return;
+    if (!lastAssistantMessage) return;
+    if (lastAssistantMessage.id === lastAssistantMessageIdRef.current) return;
+
+    lastAssistantMessageIdRef.current = lastAssistantMessage.id;
+
+    if (!soundArmed || !soundEnabled) return;
+
+    playMentorChime({ force: true, mode: "reply" });
+  }, [messages, playMentorChime, soundArmed, soundEnabled]);
 
   const sendMessage = async (
     nextQuestion = input,
@@ -655,20 +738,17 @@ export default function AIMentorWidget() {
     <>
       {!isOpen ? (
         <div className="fixed bottom-5 right-4 z-[70]">
-          <div className="pointer-events-none absolute -top-12 right-0 rounded-full border border-[#364bc5]/15 bg-white/95 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#364bc5] shadow-lg backdrop-blur">
-            MentorBOT
-          </div>
           <div className="pointer-events-none absolute inset-0 rounded-full bg-[#364bc5]/20 animate-ping" />
           <div className="pointer-events-none absolute -inset-2 rounded-full border border-[#364bc5]/20" />
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="relative flex h-20 w-20 flex-col items-center justify-center rounded-full bg-linear-to-br from-[#1f2b80] via-[#364bc5] to-[#5b71e5] text-white shadow-[0_18px_50px_rgba(54,75,197,0.42)] transition-transform duration-300 hover:-translate-y-1"
+            className="relative flex h-20 w-20 flex-col items-center justify-center gap-1 rounded-full bg-linear-to-br from-[#1f2b80] via-[#364bc5] to-[#5b71e5] px-2 text-white shadow-[0_18px_50px_rgba(54,75,197,0.42)] transition-transform duration-300 hover:-translate-y-1"
             aria-label="Open MentorBOT"
           >
-            <Bot className="mb-1 h-7 w-7" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.32em]">
-              BOT
+            <Bot className="h-6 w-6" />
+            <span className="text-center text-[9px] font-semibold leading-none tracking-[0.12em]">
+              MentorBOT
             </span>
             <span className="absolute -right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#364bc5] shadow-md">
               <Sparkles className="h-3 w-3" />
@@ -679,24 +759,24 @@ export default function AIMentorWidget() {
 
       {isOpen ? (
         <section className="fixed bottom-4 right-4 z-[70] flex h-[min(78vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.24)]">
-          <div className="bg-linear-to-r from-[#1f2b80] via-[#364bc5] to-[#5267de] px-4 pb-3 pt-3 text-white">
-            <div className="flex items-start justify-between gap-3">
+          <div className="bg-linear-to-r from-[#1f2b80] via-[#364bc5] to-[#5267de] px-4 pb-2 pt-2 text-white">
+            <div className="flex items-start justify-between gap-2.5">
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/12">
-                    <MessageCircle className="h-5 w-5" />
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/12">
+                    <MessageCircle className="h-[18px] w-[18px]" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-2xl font-semibold leading-none">
+                    <h3 className="text-[1.7rem] font-semibold leading-none">
                       MentorBOT
                     </h3>
-                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                    <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
                       Context: {countryLabel}
                     </p>
                   </div>
                 </div>
-                <p className="mt-2 text-sm text-white/85">
-                  Answers are limited to our FAQ content.
+                <p className="mt-1 text-[12px] leading-5 text-white/85">
+                  Answers are limited to our FAQ.
                 </p>
               </div>
 
@@ -707,11 +787,19 @@ export default function AIMentorWidget() {
                     const nextEnabled = !soundEnabled;
                     setSoundEnabled(nextEnabled);
 
-                    if (nextEnabled && soundArmed) {
-                      await playAttentionChime({ force: true });
+                    if (
+                      nextEnabled &&
+                      (soundArmed ||
+                        (audioContextRef.current &&
+                          audioContextRef.current.state !== "closed"))
+                    ) {
+                      await playMentorChime({
+                        force: true,
+                        mode: isOpen ? "reply" : "attention",
+                      });
                     }
                   }}
-                  className="rounded-full bg-white/12 p-2 text-white transition-colors hover:bg-white/20"
+                  className="rounded-full bg-white/12 p-1.5 text-white transition-colors hover:bg-white/20"
                   aria-label={soundEnabled ? "Mute MentorBOT sound" : "Unmute MentorBOT sound"}
                   title={soundEnabled ? "Sound on" : "Sound off"}
                 >
@@ -724,7 +812,7 @@ export default function AIMentorWidget() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-full bg-white/12 p-2 text-white transition-colors hover:bg-white/20"
+                  className="rounded-full bg-white/12 p-1.5 text-white transition-colors hover:bg-white/20"
                   aria-label="Close MentorBOT"
                 >
                   <X className="h-5 w-5" />
@@ -767,16 +855,16 @@ export default function AIMentorWidget() {
             ref={messagesRef}
             className="flex-1 space-y-3 overflow-y-auto bg-slate-50 px-4 py-4"
           >
-            <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-[22px] border border-slate-200 bg-white px-3 py-2.5 shadow-sm">
               <div className="flex items-center justify-between gap-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Quick Start
                 </p>
-                <span className="rounded-full bg-[#364bc5]/8 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
+                <span className="rounded-full bg-[#364bc5]/8 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
                   {quickStartCountryLabel}
                 </span>
               </div>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-2 flex flex-wrap gap-1.5">
                 {promptSuggestions.map((prompt) => (
                   <button
                     key={prompt}
@@ -788,7 +876,7 @@ export default function AIMentorWidget() {
                         source: "quick_start",
                       })
                     }
-                    className="rounded-full border border-[#364bc5]/18 bg-[#364bc5]/6 px-3 py-2 text-left text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/12 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-full border border-[#364bc5]/18 bg-[#364bc5]/6 px-2.5 py-1 text-left text-[10px] font-semibold leading-[1.35] text-[#364bc5] transition-colors hover:bg-[#364bc5]/12 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {prompt}
                   </button>
