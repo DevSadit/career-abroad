@@ -75,16 +75,25 @@ function formatCountryLabel(country) {
 
 export default function AIMentorWidget() {
   const pathname = usePathname();
+  const pageCountry = getCountryFromPathname(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [soundArmed, setSoundArmed] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
+  const [conversationCountry, setConversationCountry] = useState(pageCountry);
   const messagesRef = useRef(null);
   const audioContextRef = useRef(null);
-  const country = getCountryFromPathname(pathname);
-  const countryLabel = formatCountryLabel(country);
-  const promptSuggestions = PROMPT_SUGGESTIONS[country] ?? PROMPT_SUGGESTIONS.all;
+  const activeCountry = conversationCountry ?? pageCountry;
+  const countryLabel = formatCountryLabel(activeCountry);
+  const promptSuggestions =
+    PROMPT_SUGGESTIONS[activeCountry] ?? PROMPT_SUGGESTIONS.all;
+
+  useEffect(() => {
+    if (pageCountry !== "all") {
+      setConversationCountry(pageCountry);
+    }
+  }, [pageCountry]);
 
   useEffect(() => {
     if (!messagesRef.current) return;
@@ -183,6 +192,16 @@ export default function AIMentorWidget() {
 
     if (!question || isLoading) return;
 
+    const history = messages
+      .filter((message) => message.id !== INITIAL_MESSAGE.id)
+      .slice(-6)
+      .map((message) => ({
+        role: message.role,
+        text: message.text,
+        sourceCountry: message.sourceCountry ?? null,
+        sourceQuestion: message.sourceQuestion ?? null,
+      }));
+
     const userMessage = {
       id: `user-${Date.now()}`,
       role: "user",
@@ -201,11 +220,16 @@ export default function AIMentorWidget() {
         },
         body: JSON.stringify({
           message: question,
-          country,
+          country: activeCountry,
+          history,
         }),
       });
 
       const data = await response.json();
+
+      if (data.activeCountry) {
+        setConversationCountry(data.activeCountry);
+      }
 
       setMessages((current) => [
         ...current,

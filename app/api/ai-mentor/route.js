@@ -5,6 +5,7 @@ export async function POST(request) {
     const body = await request.json();
     const message = body?.message?.trim();
     const country = body?.country ?? "all";
+    const history = Array.isArray(body?.history) ? body.history.slice(-6) : [];
 
     if (!message) {
       return Response.json(
@@ -13,7 +14,7 @@ export async function POST(request) {
       );
     }
 
-    const result = findFaqAnswer(message, country);
+    const result = findFaqAnswer(message, { country, history });
 
     return Response.json(result);
   } catch {
