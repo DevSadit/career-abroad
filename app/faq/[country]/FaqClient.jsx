@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Search, HelpCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -10,6 +10,34 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const toggleFAQ = (id) => setOpenId(openId === id ? null : id);
+
+  useEffect(() => {
+    const syncFaqFromHash = () => {
+      const hash = window.location.hash;
+
+      if (!hash.startsWith("#faq-")) return;
+
+      const targetId = hash.replace("#faq-", "");
+      const matchedFaq = faqData.find((faq) => String(faq.id) === targetId);
+
+      if (!matchedFaq) return;
+
+      setOpenId(matchedFaq.id);
+
+      window.requestAnimationFrame(() => {
+        const element = document.getElementById(`faq-${matchedFaq.id}`);
+
+        element?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    };
+
+    syncFaqFromHash();
+    window.addEventListener("hashchange", syncFaqFromHash);
+
+    return () => {
+      window.removeEventListener("hashchange", syncFaqFromHash);
+    };
+  }, [faqData]);
 
   const filteredFAQs = useMemo(() => {
     return faqData.filter(
@@ -63,7 +91,8 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
             filteredFAQs.map((faq) => (
               <div
                 key={faq.id}
-                className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                id={`faq-${faq.id}`}
+                className="group scroll-mt-28 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
               >
                 <button
                   onClick={() => toggleFAQ(faq.id)}

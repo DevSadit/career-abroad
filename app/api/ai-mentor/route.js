@@ -21,7 +21,7 @@ export async function POST(request) {
       {
         found: false,
         reply:
-          "AI Mentor is temporarily unavailable. Please try again in a moment.",
+          "MentorBOT is temporarily unavailable. Please try again in a moment.",
         suggestions: [],
       },
       { status: 500 },

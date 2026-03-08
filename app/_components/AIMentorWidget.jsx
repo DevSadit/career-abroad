@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
@@ -58,7 +59,22 @@ function containsBangla(text) {
   return /[\u0980-\u09FF]/.test(text ?? "");
 }
 
+function getCountryFromPathname(pathname) {
+  if (!pathname?.startsWith("/faq/")) return "all";
+
+  const country = pathname.split("/")[2]?.toLowerCase();
+
+  return PROMPT_SUGGESTIONS[country] ? country : "all";
+}
+
+function formatCountryLabel(country) {
+  if (country === "all") return "All countries";
+
+  return country.charAt(0).toUpperCase() + country.slice(1);
+}
+
 export default function AIMentorWidget() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -66,7 +82,8 @@ export default function AIMentorWidget() {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const messagesRef = useRef(null);
   const audioContextRef = useRef(null);
-  const country = "all";
+  const country = getCountryFromPathname(pathname);
+  const countryLabel = formatCountryLabel(country);
   const promptSuggestions = PROMPT_SUGGESTIONS[country] ?? PROMPT_SUGGESTIONS.all;
 
   useEffect(() => {
@@ -200,6 +217,8 @@ export default function AIMentorWidget() {
             "I could not get an answer right now. Please try again.",
           sourceCountry: data.country ?? null,
           sourceQuestion: data.matchedQuestion ?? null,
+          sourceHref: data.sourceHref ?? null,
+          sourceLabel: data.sourceLabel ?? null,
           fallback: !data.found,
           suggestions: data.suggestions ?? [],
         },
@@ -260,6 +279,9 @@ export default function AIMentorWidget() {
                 <p className="mt-1 text-sm text-white/85">
                   Answers are limited to our FAQ content.
                 </p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                  Context: {countryLabel}
+                </p>
               </div>
 
               <button
@@ -308,9 +330,14 @@ export default function AIMentorWidget() {
             className="flex-1 space-y-3 overflow-y-auto bg-slate-50 px-4 py-4"
           >
             <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Quick Start
-              </p>
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Quick Start
+                </p>
+                <span className="rounded-full bg-[#364bc5]/8 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
+                  {countryLabel}
+                </span>
+              </div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {promptSuggestions.map((prompt) => (
                   <button
@@ -387,18 +414,51 @@ export default function AIMentorWidget() {
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
                                   {suggestion.country}
                                 </p>
-                                <p
-                                  lang={suggestionIsBangla ? "bn" : undefined}
-                                  className={`text-sm text-slate-700 ${
-                                    suggestionIsBangla ? "font-bn" : ""
-                                  }`}
-                                >
-                                  {suggestion.question}
-                                </p>
+                                {suggestion.href ? (
+                                  <Link
+                                    href={suggestion.href}
+                                    onClick={() => setIsOpen(false)}
+                                    lang={suggestionIsBangla ? "bn" : undefined}
+                                    className={`inline-flex text-sm text-slate-700 hover:text-[#364bc5] ${
+                                      suggestionIsBangla ? "font-bn" : ""
+                                    }`}
+                                  >
+                                    {suggestion.question}
+                                  </Link>
+                                ) : (
+                                  <p
+                                    lang={suggestionIsBangla ? "bn" : undefined}
+                                    className={`text-sm text-slate-700 ${
+                                      suggestionIsBangla ? "font-bn" : ""
+                                    }`}
+                                  >
+                                    {suggestion.question}
+                                  </p>
+                                )}
                               </div>
                             );
                           })}
                         </div>
+                      </div>
+                    ) : null}
+
+                    {isAssistant && message.sourceHref ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        <Link
+                          href={message.sourceHref}
+                          onClick={() => setIsOpen(false)}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-200"
+                        >
+                          {message.sourceLabel ?? "FAQ source"}
+                        </Link>
+                        <Link
+                          href={message.sourceHref}
+                          onClick={() => setIsOpen(false)}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14"
+                        >
+                          Open full FAQ
+                          <ArrowUpRight className="h-3.5 w-3.5" />
+                        </Link>
                       </div>
                     ) : null}
 
