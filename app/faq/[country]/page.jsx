@@ -1,29 +1,14 @@
 import { notFound } from "next/navigation";
 import FaqClient from "./FaqClient";
-
-import franceFaq from "../../../data/france_faq.json";
-import italyFaq from "../../../data/italy_faq.json";
-import belgiumFaq from "../../../data/belgium_faq.json";
-import hungaryFaq from "../../../data/hungary_faq.json";
-import estoniaFaq from "../../../data/estonia_faq.json";
-
-const FAQ_REGISTRY = {
-  italy: { name: "Italy", flag: "/flags/it.svg", data: italyFaq },
-  france: { name: "France", flag: "/flags/fr.svg", data: franceFaq },
-  belgium: { name: "Belgium", flag: "/flags/be.svg", data: belgiumFaq },
-  hungary: { name: "Hungary", flag: "/flags/hu.svg", data: hungaryFaq },
-  estonia: { name: "Estonia", flag: "/flags/ee.svg", data: estoniaFaq },
-};
+import { FAQ_COUNTRY_KEYS, getFaqConfig } from "@/lib/faqRegistry";
 
 export function generateStaticParams() {
-  return Object.keys(FAQ_REGISTRY).map((country) => ({ country }));
+  return FAQ_COUNTRY_KEYS.map((country) => ({ country }));
 }
 
 export default async function Page({ params }) {
-  const { country } = await params; // ✅ IMPORTANT FIX
-
-  const key = country?.toLowerCase();
-  const config = FAQ_REGISTRY[key];
+  const { country } = await params;
+  const config = getFaqConfig(country);
 
   if (!config) notFound();
 
