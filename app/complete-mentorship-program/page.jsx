@@ -83,6 +83,7 @@ const Page = () => {
   ];
 
   const registrationUrl = "https://forms.gle/KS6eF5vBJGSeB9sv8";
+  const talkToUsUrl = "https://wa.me/34613593236";
 
   return (
     <section className="min-h-screen py-12 md:py-16 lg:py-20 bg-white">
@@ -239,20 +240,21 @@ const Page = () => {
                         href={registrationUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full"
+                        className="w-full rounded-2xl px-5 py-3.5 text-center text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                        style={{ backgroundColor: primary }}
                       >
-                        <button
-                          className="w-full rounded-2xl px-5 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0"
-                          style={{ backgroundColor: primary }}
-                        >
-                          Enroll Now{" "}
-                          <ArrowRight className="inline-block ml-2 h-4 w-4" />
-                        </button>
+                        Enroll Now{" "}
+                        <ArrowRight className="inline-block ml-2 h-4 w-4" />
                       </a>
 
-                      <button className="w-full rounded-2xl border border-gray-300 bg-white px-5 py-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50">
+                      <a
+                        href={talkToUsUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full rounded-2xl border border-gray-300 bg-white px-5 py-3.5 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50"
+                      >
                         Talk to us
-                      </button>
+                      </a>
                     </div>
 
                     <p className="mt-4 text-xs text-gray-500 leading-relaxed">
@@ -623,15 +625,11 @@ const Page = () => {
                   href={registrationUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 block"
+                  className="mt-6 block w-full rounded-2xl px-5 py-3.5 text-center text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                  style={{ backgroundColor: primary }}
                 >
-                  <button
-                    className="w-full rounded-2xl px-5 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0"
-                    style={{ backgroundColor: primary }}
-                  >
                     🔗 Registration Link{" "}
                     <ArrowRight className="inline-block ml-2 h-4 w-4" />
-                  </button>
                 </a>
               </div>
             </div>
