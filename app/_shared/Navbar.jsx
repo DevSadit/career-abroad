@@ -1,48 +1,76 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Course Contents", href: "/course-content" },
+  {
+    name: "Faq",
+    href: "faq",
+    dropdown: [
+      { name: "France", href: "/faq/france" },
+      { name: "Italy", href: "/faq/italy" },
+      { name: "Belgium", href: "/faq/belgium" },
+      { name: "Hungary", href: "/faq/hungary" },
+      { name: "Estonia", href: "/faq/estonia" },
+    ],
+  },
+];
+
+const contactUrl = "https://wa.me/34613593236";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState(null); // ✅ added
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+  const [openDesktopDropdown, setOpenDesktopDropdown] = useState(null);
 
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
+  const lastScrollYRef = useRef(0);
+  const scrollFrameRef = useRef(null);
 
-  // Handle navbar visibility on scroll
   useEffect(() => {
     const controlNavbar = () => {
-      if (typeof window !== "undefined") {
-        const currentScrollY = window.scrollY;
+      if (scrollFrameRef.current !== null) return;
 
-        if (currentScrollY > lastScrollY) {
+      scrollFrameRef.current = window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollYRef.current;
+
+        if (currentScrollY <= 24 || menuOpen) {
+          setVisible(true);
+        } else if (delta > 10 && currentScrollY > 80) {
           setVisible(false);
-        } else {
+        } else if (delta < -10) {
           setVisible(true);
         }
 
-        setLastScrollY(currentScrollY);
-      }
+        lastScrollYRef.current = currentScrollY;
+        scrollFrameRef.current = null;
+      });
     };
 
-    window.addEventListener("scroll", controlNavbar);
+    lastScrollYRef.current = window.scrollY;
+    window.addEventListener("scroll", controlNavbar, { passive: true });
 
     return () => {
+      if (scrollFrameRef.current !== null) {
+        window.cancelAnimationFrame(scrollFrameRef.current);
+      }
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, [lastScrollY]);
+  }, [menuOpen]);
 
-  // Close menu when screen size changes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setMenuOpen(false);
-        setOpenMobileDropdown(null); // ✅ added
+        setOpenMobileDropdown(null);
       }
     };
 
@@ -50,7 +78,6 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle click outside to close menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -61,7 +88,7 @@ const Navbar = () => {
         !buttonRef.current.contains(event.target)
       ) {
         setMenuOpen(false);
-        setOpenMobileDropdown(null); // ✅ added
+        setOpenMobileDropdown(null);
       }
     };
 
@@ -71,30 +98,14 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
-  // Handle toggle menu
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    if (menuOpen) setOpenMobileDropdown(null); // ✅ added (reset when closing)
+    setMenuOpen((current) => {
+      if (current) {
+        setOpenMobileDropdown(null);
+      }
+      return !current;
+    });
   };
-
-  // Navigation links (✅ dropdown is data-driven, not hardcoded JSX)
-  const navLinks = [
-    { name: "Home", href: "/" },
-
-    { name: "About Us", href: "/about-us" },
-    { name: "Course Contents", href: "/course-content" },
-    {
-      name: "Faq",
-      href: "faq",
-      dropdown: [
-        { name: "France", href: "/faq/france" },
-        { name: "Italy", href: "/faq/italy" },
-        { name: "Belgium", href: "/faq/belgium" },
-        { name: "Hungary", href: "/faq/hungary" },
-        { name: "Estonia", href: "/faq/estonia" },
-      ],
-    },
-  ];
 
   return (
     <nav
@@ -103,8 +114,7 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <Link href={"/"}>
+        <Link href="/">
           <Image
             src="/unnamed.png"
             width={100}
@@ -113,17 +123,16 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Mobile Contact Button - Left of Hamburger */}
         <div className="flex items-center md:hidden">
           <Link
             target="_blank"
-            href="https://wa.me/34613593236"
+            rel="noreferrer"
+            href={contactUrl}
             className="mr-3 bg-[#364bc5] px-3 py-1.5 rounded text-sm text-white transition-transform duration-300 hover:shadow-md"
           >
             Contact Us!
           </Link>
 
-          {/* Hamburger button - only visible on mobile */}
           <button
             ref={buttonRef}
             type="button"
@@ -132,7 +141,6 @@ const Navbar = () => {
             aria-expanded={menuOpen ? "true" : "false"}
           >
             <span className="sr-only">Open main menu</span>
-            {/* Hamburger icon - show when menu is closed */}
             <svg
               className={`${menuOpen ? "hidden" : "block"} h-6 w-6`}
               xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +156,6 @@ const Navbar = () => {
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-            {/* X icon - show when menu is open */}
             <svg
               className={`${menuOpen ? "block" : "hidden"} h-6 w-6`}
               xmlns="http://www.w3.org/2000/svg"
@@ -167,11 +174,11 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Desktop navigation - hidden on mobile */}
         <div className="hidden md:flex md:items-center md:space-x-8">
           {navLinks.map((link) => {
             const hasDropdown =
-              Array.isArray(link.dropdown) && link.dropdown.length;
+              Array.isArray(link.dropdown) && link.dropdown.length > 0;
+            const isDesktopOpen = openDesktopDropdown === link.name;
 
             if (!hasDropdown) {
               return (
@@ -185,20 +192,46 @@ const Navbar = () => {
               );
             }
 
-            // ✅ Desktop hover dropdown (no hardcoded "Faq" JSX)
             return (
-              <div key={link.name} className="relative group">
-                <button className="text-black relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+              <div
+                key={link.name}
+                className="relative"
+                onMouseEnter={() => setOpenDesktopDropdown(link.name)}
+                onMouseLeave={() => setOpenDesktopDropdown(null)}
+                onFocusCapture={() => setOpenDesktopDropdown(link.name)}
+                onBlurCapture={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) {
+                    setOpenDesktopDropdown(null);
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  aria-expanded={isDesktopOpen}
+                  className="text-black relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                  onClick={() =>
+                    setOpenDesktopDropdown((current) =>
+                      current === link.name ? null : link.name,
+                    )
+                  }
+                >
                   {link.name}
                 </button>
 
-                <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div
+                  className={`absolute left-0 top-full pt-3 transition-all duration-200 ${
+                    isDesktopOpen
+                      ? "visible translate-y-0 opacity-100"
+                      : "invisible -translate-y-1 opacity-0 pointer-events-none"
+                  }`}
+                >
                   <div className="min-w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-2">
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className="block rounded-lg px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors"
+                        onClick={() => setOpenDesktopDropdown(null)}
                       >
                         {item.name}
                       </Link>
@@ -209,10 +242,10 @@ const Navbar = () => {
             );
           })}
 
-          {/* contact us button  */}
           <Link
             target="_blank"
-            href="https://wa.me/34613593236"
+            rel="noreferrer"
+            href={contactUrl}
             className="bg-[#364bc5] px-4 py-2 rounded text-xl text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             Contact Us!
@@ -220,7 +253,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile navigation - with enhanced beautiful transition */}
       <div
         ref={menuRef}
         className={`
@@ -236,7 +268,7 @@ const Navbar = () => {
         <div className="px-2 py-4 space-y-3 flex flex-col items-center">
           {navLinks.map((link, index) => {
             const hasDropdown =
-              Array.isArray(link.dropdown) && link.dropdown.length;
+              Array.isArray(link.dropdown) && link.dropdown.length > 0;
             const isOpen = openMobileDropdown === link.name;
 
             if (!hasDropdown) {
@@ -247,7 +279,7 @@ const Navbar = () => {
                   className={`
                     block px-5 py-2.5 text-base font-medium text-gray-900 hover:text-black
                     hover:bg-[#f9004d]/20 rounded-md transition-all duration-300
-                    ${menuOpen ? `animate-fadeIn` : ""}
+                    ${menuOpen ? "animate-fadeIn" : ""}
                   `}
                   style={{
                     animationDelay: `${index * 100}ms`,
@@ -267,7 +299,6 @@ const Navbar = () => {
               );
             }
 
-            // ✅ Mobile click dropdown (no hardcoded "Faq" JSX)
             return (
               <div
                 key={link.name}
@@ -278,7 +309,7 @@ const Navbar = () => {
                   className={`
                     block px-5 py-2.5 text-base font-medium text-gray-900 hover:text-black
                     hover:bg-[#f9004d]/20 rounded-md transition-all duration-300 w-fit
-                    ${menuOpen ? `animate-fadeIn` : ""}
+                    ${menuOpen ? "animate-fadeIn" : ""}
                   `}
                   style={{
                     animationDelay: `${index * 100}ms`,
@@ -289,8 +320,8 @@ const Navbar = () => {
                     }ms, opacity 400ms ease ${index * 50}ms`,
                   }}
                   onClick={() =>
-                    setOpenMobileDropdown((prev) =>
-                      prev === link.name ? null : link.name,
+                    setOpenMobileDropdown((current) =>
+                      current === link.name ? null : link.name,
                     )
                   }
                 >

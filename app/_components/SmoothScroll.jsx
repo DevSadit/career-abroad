@@ -21,9 +21,11 @@ export default function SmoothScroll({ children }) {
 
     window.lenis = lenis;
 
-    gsap.ticker.add((time) => {
+    const raf = (time) => {
       lenis.raf(time * 1000);
-    });
+    };
+
+    gsap.ticker.add(raf);
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -35,7 +37,7 @@ export default function SmoothScroll({ children }) {
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
+      gsap.ticker.remove(raf);
       resizeObserver.disconnect();
       window.lenis = undefined;
     };

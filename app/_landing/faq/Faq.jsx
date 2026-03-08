@@ -40,7 +40,7 @@ const Faq = () => {
 
               <div className="relative flex flex-col items-center justify-center space-y-4">
                 {/* Flag Container */}
-                <div className="relative w-24 h-24 rounded-full bg-linear-to-brr from-[#364bc5]/10 to-[#364bc5]/5 p-1 group-hover:scale-110 transition-transform duration-300">
+                <div className="relative w-24 h-24 rounded-full bg-linear-to-br from-[#364bc5]/10 to-[#364bc5]/5 p-1 group-hover:scale-110 transition-transform duration-300">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-lg group-hover:shadow-[#364bc5]/20 transition-shadow duration-300">
                     {country.flagPath && (
                       <Image

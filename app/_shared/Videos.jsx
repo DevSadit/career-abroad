@@ -53,6 +53,8 @@ const Videos = ({ videos }) => {
                   className="w-full h-full"
                   src={v.url}
                   title={v.title}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
@@ -60,15 +62,15 @@ const Videos = ({ videos }) => {
             </div>
 
             <div className="px-4 pb-5">
-              <button
-                className="w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white"
+              <a
+                href={v.url.replace("/embed/", "/watch?v=")}
+                target="_blank"
+                rel="noreferrer"
+                className="block w-full rounded-2xl px-4 py-3 text-center text-sm font-semibold text-white"
                 style={{ backgroundColor: primary }}
-                onClick={() =>
-                  window.open(v.url.replace("/embed/", "/watch?v="), "_blank")
-                }
               >
                 Open on YouTube
-              </button>
+              </a>
             </div>
           </div>
         ))}

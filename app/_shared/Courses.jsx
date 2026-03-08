@@ -55,6 +55,8 @@ const Courses = ({ courses }) => {
                   className="w-full h-full"
                   src={c.url}
                   title={c.title}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />

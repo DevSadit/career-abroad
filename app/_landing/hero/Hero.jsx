@@ -34,7 +34,7 @@ const Hero = () => {
                   height={700}
                   alt="Students studying abroad"
                   className="w-full rounded-xl h-auto"
-                  quality={100}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
               </div>
