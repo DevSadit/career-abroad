@@ -67,6 +67,7 @@ const Courses = ({ courses }) => {
               <Link
                 className="block w-full text-center rounded-2xl px-4 py-3 text-sm font-semibold text-white"
                 target="_blank"
+                rel="noreferrer"
                 href={c.course_link}
                 style={{ backgroundColor: primary }}
               >

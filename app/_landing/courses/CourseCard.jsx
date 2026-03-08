@@ -147,6 +147,7 @@ export default function CourseCard({ course }) {
             <div className="w-full">
               <Link
                 target="_blank"
+                rel="noreferrer"
                 href={course.know_more}
                 className="group/btn flex items-center justify-center gap-2 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white bg-[#364bc5] hover:bg-[#2d3da8] transition-all duration-200 shadow-md hover:shadow-lg"
               >
@@ -162,6 +163,7 @@ export default function CourseCard({ course }) {
           <div className="w-full">
             <Link
               target="_blank"
+              rel="noreferrer"
               href={`https://forms.gle/WQybuADYXdPmXrqn7`}
               className="group/btn flex items-center justify-center gap-2 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white bg-[#364bc5] hover:bg-[#2d3da8] transition-all duration-200 shadow-md hover:shadow-lg"
             >
