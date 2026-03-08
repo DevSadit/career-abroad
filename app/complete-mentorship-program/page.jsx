@@ -64,16 +64,15 @@ const Page = () => {
   ];
 
   const eligibilityBn = [
-    "মাস্টার্স আবেদনকারীর ন্যূনতম CGPA 3.00",
+    "মাস্টার্স আবেদনকারীর ন্যূনতম CGPA 2.80",
     "ব্যাচেলর আবেদনকারীর ন্যূনতম GPA 4.5 (SSC & HSC)",
     "Applicant নিজ দায়িত্বে Dual currency ব্যাংক কার্ড দিয়ে (University application fee, accommodation fee) পেমেন্ট করবে",
-    "সর্বোচ্চ ৩টি Scholarship-এর জন্য প্রস্তুতি, গাইডলাইন ও এপ্রোচ করা হবে",
     "Applicant নিজেই সব কিছু করবেন; মেন্টর শুধু গাইড করবেন",
     "কোন ধরনের funding/solvency সাপোর্ট দেওয়া হবে না; তবে ফাইনান্সিয়াল ডকুমেন্ট সঠিকভাবে প্রেজেন্ট করার গাইডলাইন থাকবে",
   ];
 
   const feeBn = [
-    "মাত্র €150 (≈ ২০,০০০ টাকা)",
+    "মাত্র €150 (≈ ২১,০০০ টাকা)", 
     "দুই কিস্তিতে পরিশোধ করা যাবে",
     "এনরোলমেন্টের পর কুইট করলে নির্দিষ্ট পরিমাণ ক্যান্সেলেশন ফি প্রযোজ্য",
   ];
@@ -275,7 +274,10 @@ const Page = () => {
         </div>
 
         {/* ✅ New: Bangla Intro (same UI language — card, border, rounded, subtle accent) */}
-        <div className="mt-8 rounded-3xl border border-gray-200 bg-white">
+        <div
+          lang="bn"
+          className="font-bn mt-8 rounded-3xl border border-gray-200 bg-white"
+        >
           <div className="p-6 sm:p-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
               <div className="max-w-3xl">
@@ -346,7 +348,7 @@ const Page = () => {
                       <p className="mt-1 text-xl font-semibold text-gray-900">
                         €150{" "}
                         <span className="text-sm font-medium text-gray-500">
-                          (≈ ২০,০০০ টাকা)
+                          (≈ ২১,০০০ টাকা)
                         </span>
                       </p>
                       <p className="mt-1 text-xs text-gray-500">
@@ -476,7 +478,10 @@ const Page = () => {
               <div className="p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-gray-500">
+                    <p
+                      lang="bn"
+                      className="font-bn text-xs uppercase tracking-wider text-gray-500"
+                    >
                       প্রোগ্রামের কাঠামো
                     </p>
                     <h3 className="mt-2 text-2xl font-semibold text-gray-900">
@@ -507,7 +512,10 @@ const Page = () => {
                           className="h-5 w-5 mt-0.5"
                           style={{ color: primary }}
                         />
-                        <p className="text-sm text-gray-800 leading-relaxed">
+                        <p
+                          lang="bn"
+                          className="font-bn text-sm text-gray-800 leading-relaxed"
+                        >
                           {t}
                         </p>
                       </div>
@@ -521,7 +529,10 @@ const Page = () => {
                       className="h-5 w-5 mt-0.5"
                       style={{ color: primary }}
                     />
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p
+                      lang="bn"
+                      className="font-bn text-sm text-gray-600 leading-relaxed"
+                    >
                       প্রতিটি অংশগ্রহণকারীর জন্য প্রোফাইল অনুযায়ী Plan A/B/C
                       তৈরি করা হবে—যাতে Safe, Moderate, Ambitious—সব ট্র্যাকেই
                       আপনার ক্লিয়ার রোডম্যাপ থাকে।
@@ -531,7 +542,7 @@ const Page = () => {
               </div>
 
               <div className="px-6 sm:px-8 py-5 border-t border-gray-200">
-                <p className="text-sm text-gray-600">
+                <p lang="bn" className="font-bn text-sm text-gray-600">
                   <span className="font-semibold text-gray-900">Note:</span>{" "}
                   সেশনগুলো সপ্তাহের ছুটির দিনে Zoom / Google Meet-এ হবে।
                 </p>
@@ -543,7 +554,10 @@ const Page = () => {
           <div className="lg:col-span-5">
             <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
               <div className="p-6 sm:p-8">
-                <p className="text-xs uppercase tracking-wider text-gray-500">
+                <p
+                  lang="bn"
+                  className="font-bn text-xs uppercase tracking-wider text-gray-500"
+                >
                   যোগ্যতা ও শর্তাবলী
                 </p>
                 <h3 className="mt-2 text-xl font-semibold text-gray-900">
@@ -561,7 +575,10 @@ const Page = () => {
                           className="h-5 w-5 mt-0.5"
                           style={{ color: primary }}
                         />
-                        <p className="text-sm text-gray-800 leading-relaxed">
+                        <p
+                          lang="bn"
+                          className="font-bn text-sm text-gray-800 leading-relaxed"
+                        >
                           {t}
                         </p>
                       </div>
@@ -576,7 +593,10 @@ const Page = () => {
                       className="h-5 w-5"
                       style={{ color: primary }}
                     />
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p
+                      lang="bn"
+                      className="font-bn text-sm font-semibold text-gray-900"
+                    >
                       প্রোগ্রাম ফি
                     </p>
                   </div>
@@ -587,7 +607,10 @@ const Page = () => {
                           className="h-5 w-5 mt-0.5"
                           style={{ color: primary }}
                         />
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <p
+                          lang="bn"
+                          className="font-bn text-sm text-gray-700 leading-relaxed"
+                        >
                           {t}
                         </p>
                       </div>
@@ -610,24 +633,16 @@ const Page = () => {
                     <ArrowRight className="inline-block ml-2 h-4 w-4" />
                   </button>
                 </a>
-
-                <p className="mt-3 text-xs text-gray-500">
-                  Applicant নিজেই সব কিছু করবেন; মেন্টর কেবল গাইড করবেন
-                  (agency-free approach)।
-                </p>
-              </div>
-
-              <div className="px-6 sm:px-8 py-4 border-t border-gray-200 bg-gray-50">
-                <p className="text-xs text-gray-500">
-                  Transparent rules • Practical guidance • Reusable system
-                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* ✅ New: Why this mentorship */}
-        <div className="mt-8 rounded-3xl border border-gray-200 bg-white">
+        <div
+          lang="bn"
+          className="font-bn mt-8 rounded-3xl border border-gray-200 bg-white"
+        >
           <div className="p-6 sm:p-8">
             <div className="flex items-start  gap-3">
               <div>

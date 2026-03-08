@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -8,6 +9,42 @@ import {
   Youtube,
   Search,
 } from "lucide-react";
+
+function renderTopicContent(topic) {
+  if (typeof topic === "string") {
+    return <span className="line-clamp-1">{topic}</span>;
+  }
+
+  if (topic?.type === "flags" && Array.isArray(topic.countries)) {
+    const label = topic.countries.map((country) => country.name).join(", ");
+
+    return (
+      <span
+        className="flex flex-wrap items-center gap-1.5"
+        aria-label={label}
+        title={label}
+      >
+        {topic.countries.map((country) => (
+          <span
+            key={country.code}
+            className="inline-flex rounded-[3px] border border-gray-200 bg-white p-0.5"
+            title={country.name}
+          >
+            <Image
+              src={`/flags/${country.code}.svg`}
+              alt={country.name}
+              width={14}
+              height={10}
+              className="h-3 w-[18px]"
+            />
+          </span>
+        ))}
+      </span>
+    );
+  }
+
+  return null;
+}
 
 export default function CourseCard({ course }) {
   return (
@@ -75,13 +112,13 @@ export default function CourseCard({ course }) {
               course.topics.slice(0, 4).map((topic, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-2 text-md text-gray-700"
+                  className="flex items-start gap-2 text-md text-gray-700"
                 >
                   <CheckCircle2
                     size={12}
                     className="text-[#364bc5] mt-0.5 shrink-0"
                   />
-                  <span className="line-clamp-1">{topic}</span>
+                  {renderTopicContent(topic)}
                 </li>
               ))}
           </ul>

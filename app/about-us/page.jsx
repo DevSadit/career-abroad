@@ -32,7 +32,10 @@ const Page = () => {
               About Us
             </h1>
 
-            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
+            <p
+              lang="bn"
+              className="font-bn mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl"
+            >
               আমাদের যাত্রা
             </p>
 
@@ -40,7 +43,10 @@ const Page = () => {
               {/* Left: main story */}
               <div className="lg:col-span-8">
                 <div className="rounded-2xl border border-gray-200 p-5 sm:p-6">
-                  <div className="space-y-4 text-[15px] sm:text-base leading-relaxed text-gray-800">
+                  <div
+                    lang="bn"
+                    className="font-bn space-y-4 text-[15px] sm:text-base leading-relaxed text-gray-800"
+                  >
                     <p>
                       আমাদের যাত্রা খুব দীর্ঘ নয়, কিন্তু উদ্দেশ্যটি স্পষ্ট,
                       বাংলাদেশি শিক্ষার্থীদের ইউরোপে উচ্চশিক্ষা অর্জনের পথে সঠিক
@@ -91,7 +97,10 @@ const Page = () => {
 
               {/* Right: key points card */}
               <div className="lg:col-span-4">
-                <div className="rounded-2xl border border-gray-200 p-5 sm:p-6 bg-gray-50">
+                <div
+                  lang="bn"
+                  className="font-bn rounded-2xl border border-gray-200 p-5 sm:p-6 bg-gray-50"
+                >
                   <p className="text-xs uppercase tracking-wider text-gray-500">
                     এখানে আপনি হাতে-কলমে শিখবেন
                   </p>
@@ -141,11 +150,14 @@ const Page = () => {
 
             {/* Continued text */}
             <div className="mt-6 rounded-2xl border border-gray-200 p-5 sm:p-6">
-              <div className="space-y-4 text-[15px] sm:text-base leading-relaxed text-gray-800">
+              <div
+                lang="bn"
+                className="font-bn space-y-4 text-[15px] sm:text-base leading-relaxed text-gray-800"
+              >
                 <p>
                   এহসান সানি তার সাথে থাকা কিছু সফল বর্তমান/প্রাক্তন আন্তর্জাতিক
                   শিক্ষার্থীদের নিয়ে গঠন করেন Career Abroad Mentors Panel।
-                  ইতোমধ্যে আমরা বিভিন্ন ফ্রি সেশন, ওয়েবিনার আয়োজন করেছি এবং ৬০০+
+                  ইতোমধ্যে আমরা বিভিন্ন ফ্রি সেশন, ওয়েবিনার আয়োজন করেছি এবং ১০০০+
                   সদস্যের একটি কমিউনিটির মাধ্যমে নিয়মিত গাইডলাইন দিয়ে যাচ্ছি। এই
                   প্ল্যাটফর্মটি তৈরির পূর্বে এহসান সানি এবং শাফকাত ইসলাম টুম্পা
                   ব্যক্তিগতভাবে বেশ কজন Higher Study Aspirant দের গাইড করে

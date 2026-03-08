@@ -81,7 +81,8 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
                     </div>
 
                     <h3
-                      className={`text-lg font-semibold transition-colors duration-300 ${
+                      lang="bn"
+                      className={`font-bn text-lg font-semibold transition-colors duration-300 ${
                         openId === faq.id
                           ? "text-[#364bc5]"
                           : "text-gray-800 group-hover:text-[#364bc5]"
@@ -115,7 +116,10 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
                 >
                   <div className="px-6 pb-6 pl-[76px]">
                     <div className="pt-2 border-t border-gray-100">
-                      <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                      <p
+                        lang="bn"
+                        className="font-bn text-gray-600 leading-relaxed whitespace-pre-line"
+                      >
                         {faq.answer}
                       </p>
                     </div>

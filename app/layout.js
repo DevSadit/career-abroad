@@ -1,6 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Noto_Serif_Bengali,
+  Parkinsans,
+} from "next/font/google";
 import "./globals.css";
-import { Parkinsans } from "next/font/google";
 import Navbar from "./_shared/Navbar";
 import Footer from "./_shared/Footer";
 import ClientComponents from "./_components/ClientComponents";
@@ -27,11 +31,17 @@ const parkinsans = Parkinsans({
   variable: "--font-parkinsans", // optional CSS variable
 });
 
+const notoSerifBengali = Noto_Serif_Bengali({
+  subsets: ["bengali", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bn",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${parkinsans.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${parkinsans.variable} ${parkinsans.className} ${notoSerifBengali.variable} antialiased`}
       >
         <Navbar />
         <main>

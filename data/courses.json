@@ -3,24 +3,33 @@
     "id": "university-application",
     "title": "A. University Searching & Application",
     "know_more": "https://youtu.be/R_Lf_CCHS2s",
-    "price": 4000,
-    "fake_price": 5000,
+    "price": 5000,
+    "fake_price": 6000,
     "currency": "BDT",
     "slug": "university-application",
     "goal": "Build a smart university list and apply correctly.",
     "classes": {
-      "total": 10,
-      "recorded": 8,
-      "live": 2
+      "total": 15,
+      "recorded": 12,
+      "live": 3
     },
     "includes": ["University List", "Slides & PDFs"],
     "topics": [
       "Safe/Moderate/Ambitious listing",
       "Program fit analysis",
       "Application Procedures",
-      "Deadline tracking",
-      "Final checklist",
-      "France-Italy-Belgium-Estonia-Hungary-Spain"
+      {
+        "type": "flags",
+        "countries": [
+          { "code": "fr", "name": "France" },
+          { "code": "it", "name": "Italy" },
+          { "code": "be", "name": "Belgium" },
+          { "code": "ee", "name": "Estonia" },
+          { "code": "hu", "name": "Hungary" },
+          { "code": "es", "name": "Spain" }
+        ]
+      },
+      "Final checklist"
     ]
   },
   {
