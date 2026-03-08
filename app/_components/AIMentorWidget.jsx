@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
   Bot,
   CalendarDays,
   LoaderCircle,
+  Mail,
   MessageCircle,
   Send,
   Sparkles,
+  Volume2,
+  VolumeX,
   X,
 } from "lucide-react";
 
@@ -21,6 +24,21 @@ const INITIAL_MESSAGE = {
 };
 
 const BOOKING_LINK = "https://cal.com/ahsansuny2026/40min";
+const WHATSAPP_LINK = "https://wa.me/34613593236";
+const CONTACT_EMAIL = "mailto:mentors.career.abroad26@gmail.com";
+const QUICK_START_COUNTRY = "france";
+const STORAGE_KEY = "mentorbot-session-v1";
+const SOUND_PREF_KEY = "mentorbot-sound-enabled-v1";
+const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 7;
+const MAX_PERSISTED_MESSAGES = 20;
+const FALLBACK_STREAK_THRESHOLD = 2;
+const COUNTRY_OPTIONS = [
+  "france",
+  "italy",
+  "belgium",
+  "hungary",
+  "estonia",
+];
 
 const PROMPT_SUGGESTIONS = {
   all: [
@@ -73,6 +91,102 @@ function formatCountryLabel(country) {
   return country.charAt(0).toUpperCase() + country.slice(1);
 }
 
+function normalizeScopeCountry(country, fallback = "all") {
+  if (!country) return fallback;
+
+  const normalized = country.toLowerCase();
+
+  if (normalized === "all") return "all";
+
+  return PROMPT_SUGGESTIONS[normalized] ? normalized : fallback;
+}
+
+function normalizeWidgetCountry(country) {
+  if (!country) return QUICK_START_COUNTRY;
+
+  const normalized = country.toLowerCase();
+
+  return PROMPT_SUGGESTIONS[normalized] ? normalized : QUICK_START_COUNTRY;
+}
+
+function getFaqHref(country) {
+  const normalizedCountry = country && country !== "all" ? country : QUICK_START_COUNTRY;
+
+  return `/faq/${normalizedCountry}`;
+}
+
+function getFallbackStreak(messages) {
+  const assistantMessages = messages.filter(
+    (message) =>
+      message.role === "assistant" && message.id !== INITIAL_MESSAGE.id,
+  );
+
+  let streak = 0;
+
+  for (let index = assistantMessages.length - 1; index >= 0; index -= 1) {
+    if (!assistantMessages[index].fallback) break;
+
+    streak += 1;
+  }
+
+  return streak;
+}
+
+function detectAnalyticsTopic(text) {
+  const normalized = (text ?? "").toLowerCase();
+
+  if (/visa|embassy|vfs|permit|rejection|visachance/.test(normalized)) {
+    return "visa";
+  }
+
+  if (/scholarship|funding|waiver|stipend|eiffel|dsu|maeci/.test(normalized)) {
+    return "scholarship";
+  }
+
+  if (/document|documents|paper|papers|bank|financial|statement|checklist/.test(normalized)) {
+    return "documents";
+  }
+
+  if (/sop|motivation|lor|cv|linkedin|resume|portfolio/.test(normalized)) {
+    return "profile";
+  }
+
+  if (/apply|application|admission|deadline|intake|portal|pre enrol/.test(normalized)) {
+    return "application";
+  }
+
+  if (/tuition|fee|cost|living/.test(normalized)) {
+    return "cost";
+  }
+
+  return "general";
+}
+
+function getMessageShortcutCountry(message, fallbackCountry) {
+  return normalizeWidgetCountry(
+    message.sourceCountry ?? message.activeCountry ?? fallbackCountry,
+  );
+}
+
+function buildLeadBody({ name, contact, question, country }) {
+  return [
+    "MentorBOT lead",
+    `Name: ${name}`,
+    `Contact: ${contact}`,
+    `Preferred country: ${formatCountryLabel(country)}`,
+    `Question: ${question}`,
+  ].join("\n");
+}
+
+function buildLeadEmailHref({ name, contact, question, country }) {
+  const subject = encodeURIComponent("MentorBOT lead");
+  const body = encodeURIComponent(
+    buildLeadBody({ name, contact, question, country }),
+  );
+
+  return `${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
 export default function AIMentorWidget() {
   const pathname = usePathname();
   const pageCountry = getCountryFromPathname(pathname);
@@ -80,20 +194,134 @@ export default function AIMentorWidget() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [soundArmed, setSoundArmed] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [conversationCountry, setConversationCountry] = useState(pageCountry);
+  const [hasRestoredSession, setHasRestoredSession] = useState(false);
+  const [leadForm, setLeadForm] = useState({
+    name: "",
+    contact: "",
+    question: "",
+    country: QUICK_START_COUNTRY,
+  });
+  const [leadFormError, setLeadFormError] = useState("");
   const messagesRef = useRef(null);
+  const inputRef = useRef(null);
   const audioContextRef = useRef(null);
+  const lastChimeAtRef = useRef(0);
+  const leadCaptureTrackedRef = useRef(false);
   const activeCountry = conversationCountry ?? pageCountry;
   const countryLabel = formatCountryLabel(activeCountry);
+  const quickStartCountryLabel = formatCountryLabel(QUICK_START_COUNTRY);
   const promptSuggestions =
-    PROMPT_SUGGESTIONS[activeCountry] ?? PROMPT_SUGGESTIONS.all;
+    PROMPT_SUGGESTIONS[QUICK_START_COUNTRY] ?? PROMPT_SUGGESTIONS.all;
+  const fallbackStreak = getFallbackStreak(messages);
+  const showLeadCapture = fallbackStreak >= FALLBACK_STREAK_THRESHOLD;
+
+  const trackMentorbotEvent = useCallback((eventName, params = {}) => {
+    if (typeof window === "undefined") return;
+
+    const payload = {
+      event_category: "mentorbot",
+      ...params,
+    };
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, payload);
+      return;
+    }
+
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: eventName,
+        ...payload,
+      });
+    }
+  }, []);
 
   useEffect(() => {
+    try {
+      const storedSoundPreference = window.localStorage.getItem(SOUND_PREF_KEY);
+
+      if (storedSoundPreference !== null) {
+        setSoundEnabled(storedSoundPreference === "true");
+      }
+    } catch {
+      // Ignore storage access failures and use the default sound setting.
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(SOUND_PREF_KEY, String(soundEnabled));
+    } catch {
+      // Ignore storage access failures and keep the widget functional.
+    }
+  }, [soundEnabled]);
+
+  useEffect(() => {
+    try {
+      const savedSession = window.localStorage.getItem(STORAGE_KEY);
+
+      if (!savedSession) {
+        setHasRestoredSession(true);
+        return;
+      }
+
+      const parsedSession = JSON.parse(savedSession);
+      const isExpired =
+        !parsedSession?.savedAt ||
+        Date.now() - parsedSession.savedAt > SESSION_TTL_MS;
+
+      if (isExpired) {
+        window.localStorage.removeItem(STORAGE_KEY);
+        setHasRestoredSession(true);
+        return;
+      }
+
+      if (Array.isArray(parsedSession.messages) && parsedSession.messages.length) {
+        setMessages(parsedSession.messages);
+      }
+
+      if (typeof parsedSession.conversationCountry === "string") {
+        setConversationCountry(parsedSession.conversationCountry);
+      }
+    } catch {
+      window.localStorage.removeItem(STORAGE_KEY);
+    } finally {
+      setHasRestoredSession(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hasRestoredSession) return;
+
     if (pageCountry !== "all") {
       setConversationCountry(pageCountry);
     }
-  }, [pageCountry]);
+  }, [hasRestoredSession, pageCountry]);
+
+  useEffect(() => {
+    if (!hasRestoredSession) return;
+
+    try {
+      if (messages.length <= 1) {
+        window.localStorage.removeItem(STORAGE_KEY);
+        return;
+      }
+
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          savedAt: Date.now(),
+          conversationCountry: activeCountry,
+          messages: messages.slice(-MAX_PERSISTED_MESSAGES),
+        }),
+      );
+    } catch {
+      // Ignore storage quota/private mode failures.
+    }
+  }, [activeCountry, hasRestoredSession, messages]);
 
   useEffect(() => {
     if (!messagesRef.current) return;
@@ -102,9 +330,97 @@ export default function AIMentorWidget() {
   }, [isOpen, messages, isLoading]);
 
   useEffect(() => {
+    if (!showLeadCapture) {
+      leadCaptureTrackedRef.current = false;
+      return;
+    }
+
+    const lastUserMessage =
+      [...messages].reverse().find((message) => message.role === "user")?.text ??
+      "";
+    const preferredCountry =
+      normalizeScopeCountry(activeCountry) === "all"
+        ? QUICK_START_COUNTRY
+        : normalizeWidgetCountry(activeCountry);
+
+    setLeadForm((current) => {
+      const hasStartedForm =
+        current.name.trim() || current.contact.trim() || current.question.trim();
+
+      return {
+        ...current,
+        country: hasStartedForm ? current.country : preferredCountry,
+        question: current.question || lastUserMessage,
+      };
+    });
+    setLeadFormError("");
+
+    if (!leadCaptureTrackedRef.current) {
+      trackMentorbotEvent("mentorbot_lead_capture_shown", {
+        country: preferredCountry,
+        fallback_streak: fallbackStreak,
+      });
+      leadCaptureTrackedRef.current = true;
+    }
+  }, [activeCountry, fallbackStreak, messages, showLeadCapture, trackMentorbotEvent]);
+
+  const playAttentionChime = useCallback(async ({ force = false } = {}) => {
+    const context = audioContextRef.current;
+
+    if (!context || document.visibilityState !== "visible") return false;
+    if (!force && (!soundEnabled || isOpen)) return false;
+
+    const nowMs = Date.now();
+
+    if (!force && nowMs - lastChimeAtRef.current < 10000) {
+      return false;
+    }
+
+    try {
+      if (context.state === "suspended") {
+        await context.resume();
+      }
+
+      const now = context.currentTime;
+      const masterGain = context.createGain();
+      masterGain.connect(context.destination);
+      masterGain.gain.setValueAtTime(0.0001, now);
+      masterGain.gain.exponentialRampToValueAtTime(0.075, now + 0.03);
+      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+
+      [
+        { frequency: 740, start: 0, duration: 0.16, type: "triangle" },
+        { frequency: 988, start: 0.13, duration: 0.22, type: "triangle" },
+        { frequency: 1245, start: 0.3, duration: 0.18, type: "sine" },
+      ].forEach((tone) => {
+        const oscillator = context.createOscillator();
+        const toneGain = context.createGain();
+        oscillator.type = tone.type;
+        oscillator.frequency.setValueAtTime(tone.frequency, now + tone.start);
+        toneGain.gain.setValueAtTime(0.0001, now + tone.start);
+        toneGain.gain.exponentialRampToValueAtTime(0.8, now + tone.start + 0.03);
+        toneGain.gain.exponentialRampToValueAtTime(
+          0.0001,
+          now + tone.start + tone.duration,
+        );
+        oscillator.connect(toneGain);
+        toneGain.connect(masterGain);
+        oscillator.start(now + tone.start);
+        oscillator.stop(now + tone.start + tone.duration);
+      });
+
+      lastChimeAtRef.current = nowMs;
+      return true;
+    } catch {
+      return false;
+    }
+  }, [isOpen, soundEnabled]);
+
+  useEffect(() => {
     const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
 
     if (!AudioContextCtor) return undefined;
+    if (soundArmed) return undefined;
 
     const unlockSound = async () => {
       try {
@@ -117,6 +433,9 @@ export default function AIMentorWidget() {
         }
 
         setSoundArmed(true);
+        if (soundEnabled && !isOpen) {
+          await playAttentionChime({ force: true });
+        }
         window.removeEventListener("pointerdown", unlockSound);
         window.removeEventListener("keydown", unlockSound);
       } catch {
@@ -135,62 +454,39 @@ export default function AIMentorWidget() {
         audioContextRef.current.close();
       }
     };
-  }, []);
+  }, [isOpen, playAttentionChime, soundArmed, soundEnabled]);
 
   useEffect(() => {
-    if (!soundArmed || isOpen) return undefined;
-
-    const playAttentionChime = async () => {
-      const context = audioContextRef.current;
-
-      if (!context || document.visibilityState !== "visible") return;
-
-      try {
-        if (context.state === "suspended") {
-          await context.resume();
-        }
-
-        const now = context.currentTime;
-        const gain = context.createGain();
-        gain.connect(context.destination);
-        gain.gain.setValueAtTime(0.0001, now);
-        gain.gain.exponentialRampToValueAtTime(0.03, now + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.55);
-
-        [
-          { frequency: 587, start: 0, duration: 0.18 },
-          { frequency: 784, start: 0.16, duration: 0.24 },
-        ].forEach((tone) => {
-          const oscillator = context.createOscillator();
-          oscillator.type = "sine";
-          oscillator.frequency.setValueAtTime(tone.frequency, now + tone.start);
-          oscillator.connect(gain);
-          oscillator.start(now + tone.start);
-          oscillator.stop(now + tone.start + tone.duration);
-        });
-      } catch {
-        // Ignore intermittent audio playback failures.
-      }
-    };
+    if (!soundArmed || !soundEnabled || isOpen) return undefined;
 
     const timeoutId = window.setTimeout(() => {
       playAttentionChime();
-    }, 12000);
+    }, 5000);
 
     const intervalId = window.setInterval(() => {
       playAttentionChime();
-    }, 22000);
+    }, 18000);
 
     return () => {
       window.clearTimeout(timeoutId);
       window.clearInterval(intervalId);
     };
-  }, [isOpen, soundArmed]);
+  }, [isOpen, playAttentionChime, soundArmed, soundEnabled]);
 
-  const sendMessage = async (nextQuestion = input) => {
+  const sendMessage = async (
+    nextQuestion = input,
+    options = { country: activeCountry, source: "manual" },
+  ) => {
     const question = nextQuestion.trim();
 
     if (!question || isLoading) return;
+
+    const searchCountry = normalizeScopeCountry(
+      options.country ?? activeCountry,
+      "all",
+    );
+    const source = options.source ?? "manual";
+    const analyticsTopic = detectAnalyticsTopic(question);
 
     const history = messages
       .filter((message) => message.id !== INITIAL_MESSAGE.id)
@@ -208,6 +504,11 @@ export default function AIMentorWidget() {
       text: question,
     };
 
+    trackMentorbotEvent("mentorbot_question_asked", {
+      country: searchCountry,
+      source,
+      topic: analyticsTopic,
+    });
     setMessages((current) => [...current, userMessage]);
     setInput("");
     setIsLoading(true);
@@ -220,12 +521,25 @@ export default function AIMentorWidget() {
         },
         body: JSON.stringify({
           message: question,
-          country: activeCountry,
+          country: searchCountry,
           history,
         }),
       });
 
       const data = await response.json();
+
+      trackMentorbotEvent(
+        data.found ? "mentorbot_answer_found" : "mentorbot_answer_failed",
+        {
+          country: data.activeCountry ?? searchCountry,
+          matched_country:
+            normalizeScopeCountry(data.country, "all") === "all"
+              ? undefined
+              : normalizeScopeCountry(data.country, "all"),
+          source,
+          topic: analyticsTopic,
+        },
+      );
 
       if (data.activeCountry) {
         setConversationCountry(data.activeCountry);
@@ -239,6 +553,7 @@ export default function AIMentorWidget() {
           text:
             data.reply ??
             "I could not get an answer right now. Please try again.",
+          activeCountry: data.activeCountry ?? searchCountry,
           sourceCountry: data.country ?? null,
           sourceQuestion: data.matchedQuestion ?? null,
           sourceHref: data.sourceHref ?? null,
@@ -248,6 +563,12 @@ export default function AIMentorWidget() {
         },
       ]);
     } catch {
+      trackMentorbotEvent("mentorbot_answer_failed", {
+        country: searchCountry,
+        source,
+        topic: analyticsTopic,
+        error_type: "network",
+      });
       setMessages((current) => [
         ...current,
         {
@@ -255,6 +576,7 @@ export default function AIMentorWidget() {
           role: "assistant",
           text:
             "I could not reach the FAQ service right now. Please try again in a moment.",
+          activeCountry: activeCountry,
           fallback: true,
           suggestions: [],
         },
@@ -262,6 +584,71 @@ export default function AIMentorWidget() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleReplyShortcut = async (message, shortcutType) => {
+    const shortcutCountry = getMessageShortcutCountry(message, activeCountry);
+    const shortcutCountryLabel = formatCountryLabel(shortcutCountry);
+    const shortcutQuestions = {
+      follow_up: message.sourceQuestion
+        ? `Can you explain more about "${message.sourceQuestion}" for ${shortcutCountryLabel}?`
+        : `Can you explain this more for ${shortcutCountryLabel}?`,
+      visa: `What should I know about visa for ${shortcutCountryLabel}?`,
+      scholarship: `What scholarships are available in ${shortcutCountryLabel}?`,
+    };
+    const nextQuestion = shortcutQuestions[shortcutType];
+
+    if (!nextQuestion) return;
+
+    trackMentorbotEvent("mentorbot_reply_shortcut_clicked", {
+      country: shortcutCountry,
+      shortcut: shortcutType,
+      topic: detectAnalyticsTopic(nextQuestion),
+    });
+
+    if (shortcutType === "follow_up") {
+      setInput(nextQuestion);
+      requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+      return;
+    }
+
+    await sendMessage(nextQuestion, {
+      country: shortcutCountry,
+      source: "reply_shortcut",
+    });
+  };
+
+  const handleLeadSubmit = () => {
+    const normalizedCountry = normalizeWidgetCountry(leadForm.country);
+    const trimmedName = leadForm.name.trim();
+    const trimmedContact = leadForm.contact.trim();
+    const trimmedQuestion = leadForm.question.trim();
+
+    if (!trimmedName || !trimmedContact || !trimmedQuestion) {
+      setLeadFormError("Please add your name, contact, and question.");
+      return;
+    }
+
+    const leadPayload = {
+      name: trimmedName,
+      contact: trimmedContact,
+      question: trimmedQuestion,
+      country: normalizedCountry,
+    };
+
+    setLeadFormError("");
+    trackMentorbotEvent("mentorbot_lead_submitted", {
+      country: normalizedCountry,
+      topic: detectAnalyticsTopic(trimmedQuestion),
+      fallback_streak: fallbackStreak,
+    });
+    window.open(
+      `${WHATSAPP_LINK}?text=${encodeURIComponent(buildLeadBody(leadPayload))}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   };
 
   return (
@@ -292,30 +679,57 @@ export default function AIMentorWidget() {
 
       {isOpen ? (
         <section className="fixed bottom-4 right-4 z-[70] flex h-[min(78vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.24)]">
-          <div className="bg-linear-to-r from-[#1f2b80] via-[#364bc5] to-[#5267de] px-5 pb-4 pt-5 text-white">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
-                  <MessageCircle className="h-4 w-4" />
-                  MentorBOT
+          <div className="bg-linear-to-r from-[#1f2b80] via-[#364bc5] to-[#5267de] px-4 pb-3 pt-3 text-white">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/12">
+                    <MessageCircle className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-2xl font-semibold leading-none">
+                      MentorBOT
+                    </h3>
+                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                      Context: {countryLabel}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold">MentorBOT</h3>
-                <p className="mt-1 text-sm text-white/85">
+                <p className="mt-2 text-sm text-white/85">
                   Answers are limited to our FAQ content.
-                </p>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                  Context: {countryLabel}
                 </p>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="rounded-full bg-white/12 p-2 text-white transition-colors hover:bg-white/20"
-                aria-label="Close MentorBOT"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const nextEnabled = !soundEnabled;
+                    setSoundEnabled(nextEnabled);
+
+                    if (nextEnabled && soundArmed) {
+                      await playAttentionChime({ force: true });
+                    }
+                  }}
+                  className="rounded-full bg-white/12 p-2 text-white transition-colors hover:bg-white/20"
+                  aria-label={soundEnabled ? "Mute MentorBOT sound" : "Unmute MentorBOT sound"}
+                  title={soundEnabled ? "Sound on" : "Sound off"}
+                >
+                  {soundEnabled ? (
+                    <Volume2 className="h-5 w-5" />
+                  ) : (
+                    <VolumeX className="h-5 w-5" />
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-full bg-white/12 p-2 text-white transition-colors hover:bg-white/20"
+                  aria-label="Close MentorBOT"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -359,7 +773,7 @@ export default function AIMentorWidget() {
                   Quick Start
                 </p>
                 <span className="rounded-full bg-[#364bc5]/8 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
-                  {countryLabel}
+                  {quickStartCountryLabel}
                 </span>
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -368,7 +782,12 @@ export default function AIMentorWidget() {
                     key={prompt}
                     type="button"
                     disabled={isLoading}
-                    onClick={() => sendMessage(prompt)}
+                    onClick={() =>
+                      sendMessage(prompt, {
+                        country: QUICK_START_COUNTRY,
+                        source: "quick_start",
+                      })
+                    }
                     className="rounded-full border border-[#364bc5]/18 bg-[#364bc5]/6 px-3 py-2 text-left text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/12 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {prompt}
@@ -381,6 +800,14 @@ export default function AIMentorWidget() {
               const isAssistant = message.role === "assistant";
               const answerIsBangla = containsBangla(message.text);
               const questionIsBangla = containsBangla(message.sourceQuestion);
+              const fallbackFaqHref = getFaqHref(message.activeCountry);
+              const fallbackCountryLabel = formatCountryLabel(
+                message.activeCountry ?? QUICK_START_COUNTRY,
+              );
+              const showReplyShortcuts =
+                isAssistant &&
+                message.id !== INITIAL_MESSAGE.id &&
+                !message.fallback;
 
               return (
                 <div
@@ -486,13 +913,79 @@ export default function AIMentorWidget() {
                       </div>
                     ) : null}
 
+                    {showReplyShortcuts ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        <button
+                          type="button"
+                          disabled={isLoading}
+                          onClick={() =>
+                            handleReplyShortcut(message, "follow_up")
+                          }
+                          className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          Ask follow-up
+                        </button>
+                        <button
+                          type="button"
+                          disabled={isLoading}
+                          onClick={() => handleReplyShortcut(message, "visa")}
+                          className="rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          Visa help
+                        </button>
+                        <button
+                          type="button"
+                          disabled={isLoading}
+                          onClick={() =>
+                            handleReplyShortcut(message, "scholarship")
+                          }
+                          className="rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          Scholarship help
+                        </button>
+                      </div>
+                    ) : null}
+
                     {isAssistant && message.fallback ? (
-                      <Link
-                        href="mailto:mentors.career.abroad26@gmail.com"
-                        className="mt-3 inline-flex text-sm font-semibold text-[#364bc5] hover:text-[#1f2b80]"
-                      >
-                        Contact Us
-                      </Link>
+                      <div className="mt-3 rounded-2xl border border-[#364bc5]/12 bg-[#364bc5]/5 p-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
+                          Best Next Step
+                        </p>
+                        <div className="mt-3 grid grid-cols-2 gap-2">
+                          <Link
+                            href={WHATSAPP_LINK}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#364bc5] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
+                          >
+                            <MessageCircle className="h-4 w-4" />
+                            WhatsApp
+                          </Link>
+                          <Link
+                            href={BOOKING_LINK}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[#364bc5] ring-1 ring-[#364bc5]/20 transition-colors hover:bg-[#364bc5]/6"
+                          >
+                            <CalendarDays className="h-4 w-4" />
+                            Book 1:1
+                          </Link>
+                          <Link
+                            href={fallbackFaqHref}
+                            onClick={() => setIsOpen(false)}
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors hover:bg-slate-50"
+                          >
+                            {fallbackCountryLabel} FAQ
+                          </Link>
+                          <Link
+                            href={CONTACT_EMAIL}
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors hover:bg-slate-50"
+                          >
+                            <Mail className="h-4 w-4" />
+                            Email
+                          </Link>
+                        </div>
+                      </div>
                     ) : null}
 
                     {isAssistant ? (
@@ -519,6 +1012,129 @@ export default function AIMentorWidget() {
                 </div>
               </div>
             ) : null}
+
+            {showLeadCapture ? (
+              <div className="rounded-3xl border border-[#364bc5]/12 bg-white p-4 shadow-sm">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#364bc5]">
+                      Need a personal answer?
+                    </p>
+                    <h4 className="mt-1 text-sm font-semibold text-slate-900">
+                      Leave your question for Ahsan
+                    </h4>
+                    <p className="mt-1 text-sm text-slate-600">
+                      After repeated misses, you can send your exact question
+                      directly.
+                    </p>
+                  </div>
+                  <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-[#364bc5]" />
+                </div>
+
+                <div className="mt-3 grid gap-2">
+                  <input
+                    type="text"
+                    value={leadForm.name}
+                    onChange={(event) =>
+                      {
+                        setLeadFormError("");
+                        setLeadForm((current) => ({
+                          ...current,
+                          name: event.target.value,
+                        }));
+                      }
+                    }
+                    placeholder="Your name"
+                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
+                  />
+                  <input
+                    type="text"
+                    value={leadForm.contact}
+                    onChange={(event) =>
+                      {
+                        setLeadFormError("");
+                        setLeadForm((current) => ({
+                          ...current,
+                          contact: event.target.value,
+                        }));
+                      }
+                    }
+                    placeholder="WhatsApp number or email"
+                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
+                  />
+                  <select
+                    value={leadForm.country}
+                    onChange={(event) =>
+                      {
+                        setLeadFormError("");
+                        setLeadForm((current) => ({
+                          ...current,
+                          country: normalizeWidgetCountry(event.target.value),
+                        }));
+                      }
+                    }
+                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors focus:border-[#364bc5]"
+                  >
+                    {COUNTRY_OPTIONS.map((country) => (
+                      <option key={country} value={country}>
+                        {formatCountryLabel(country)}
+                      </option>
+                    ))}
+                  </select>
+                  <textarea
+                    rows={3}
+                    value={leadForm.question}
+                    onChange={(event) =>
+                      {
+                        setLeadFormError("");
+                        setLeadForm((current) => ({
+                          ...current,
+                          question: event.target.value,
+                        }));
+                      }
+                    }
+                    placeholder="Write your exact question"
+                    className="resize-none rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
+                  />
+
+                  {leadFormError ? (
+                    <p className="text-xs font-medium text-rose-600">
+                      {leadFormError}
+                    </p>
+                  ) : null}
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={handleLeadSubmit}
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#364bc5] px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      Send via WhatsApp
+                    </button>
+                    <Link
+                      href={buildLeadEmailHref({
+                        name: leadForm.name.trim() || "Unknown",
+                        contact: leadForm.contact.trim() || "Not provided",
+                        question: leadForm.question.trim() || "No question provided",
+                        country: normalizeWidgetCountry(leadForm.country),
+                      })}
+                      onClick={() =>
+                        trackMentorbotEvent("mentorbot_lead_email_clicked", {
+                          country: normalizeWidgetCountry(leadForm.country),
+                          topic: detectAnalyticsTopic(leadForm.question),
+                          fallback_streak: fallbackStreak,
+                        })
+                      }
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-200"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Email us
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
 
           <form
@@ -533,6 +1149,7 @@ export default function AIMentorWidget() {
             </label>
             <div className="flex items-end gap-3">
               <input
+                ref={inputRef}
                 id="mentorbot-input"
                 type="text"
                 value={input}
