@@ -743,13 +743,18 @@ export default function AIMentorWidget() {
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="relative flex h-20 w-20 flex-col items-center justify-center gap-1 rounded-full bg-linear-to-br from-[#1f2b80] via-[#364bc5] to-[#5b71e5] px-2 text-white shadow-[0_18px_50px_rgba(54,75,197,0.42)] transition-transform duration-300 hover:-translate-y-1"
+            className="relative h-20 w-20 rounded-full bg-linear-to-br from-[#1f2b80] via-[#364bc5] to-[#5b71e5] text-white shadow-[0_18px_50px_rgba(54,75,197,0.42)] transition-transform duration-300 hover:-translate-y-1"
             aria-label="Open MentorBOT"
           >
-            <Bot className="h-6 w-6" />
-            <span className="text-center text-[9px] font-semibold leading-none tracking-[0.12em]">
-              MentorBOT
-            </span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center leading-none">
+              <Bot className="mb-1 h-5 w-5" />
+              <span className="text-[10px] font-semibold tracking-[0.12em]">
+                Mentor
+              </span>
+              <span className="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em]">
+                BOT
+              </span>
+            </div>
             <span className="absolute -right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#364bc5] shadow-md">
               <Sparkles className="h-3 w-3" />
             </span>
