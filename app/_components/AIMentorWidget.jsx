@@ -20,25 +20,18 @@ import {
 const INITIAL_MESSAGE = {
   id: "welcome",
   role: "assistant",
-  text: "Hi, I am MentorBOT. I can answer basic questions using our France, Italy, Belgium, Hungary, and Estonia FAQs.",
+  text: "Hey! I'm MentorBOT — your study-abroad guide. Ask me anything about applying to France, Italy, Belgium, Hungary, or Estonia. I'll do my best to help!",
 };
 
 const BOOKING_LINK = "https://cal.com/ahsansuny2026/40min";
 const WHATSAPP_LINK = "https://wa.me/34613593236";
 const CONTACT_EMAIL = "mailto:mentors.career.abroad26@gmail.com";
+const COURSES_LINK = "https://www.ahsansuny.com/course-content";
 const QUICK_START_COUNTRY = "france";
 const STORAGE_KEY = "mentorbot-session-v1";
 const SOUND_PREF_KEY = "mentorbot-sound-enabled-v1";
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 const MAX_PERSISTED_MESSAGES = 20;
-const FALLBACK_STREAK_THRESHOLD = 2;
-const COUNTRY_OPTIONS = [
-  "france",
-  "italy",
-  "belgium",
-  "hungary",
-  "estonia",
-];
 
 const PROMPT_SUGGESTIONS = {
   all: [
@@ -115,23 +108,6 @@ function getFaqHref(country) {
   return `/faq/${normalizedCountry}`;
 }
 
-function getFallbackStreak(messages) {
-  const assistantMessages = messages.filter(
-    (message) =>
-      message.role === "assistant" && message.id !== INITIAL_MESSAGE.id,
-  );
-
-  let streak = 0;
-
-  for (let index = assistantMessages.length - 1; index >= 0; index -= 1) {
-    if (!assistantMessages[index].fallback) break;
-
-    streak += 1;
-  }
-
-  return streak;
-}
-
 function detectAnalyticsTopic(text) {
   const normalized = (text ?? "").toLowerCase();
 
@@ -168,25 +144,6 @@ function getMessageShortcutCountry(message, fallbackCountry) {
   );
 }
 
-function buildLeadBody({ name, contact, question, country }) {
-  return [
-    "MentorBOT lead",
-    `Name: ${name}`,
-    `Contact: ${contact}`,
-    `Preferred country: ${formatCountryLabel(country)}`,
-    `Question: ${question}`,
-  ].join("\n");
-}
-
-function buildLeadEmailHref({ name, contact, question, country }) {
-  const subject = encodeURIComponent("MentorBOT lead");
-  const body = encodeURIComponent(
-    buildLeadBody({ name, contact, question, country }),
-  );
-
-  return `${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-}
-
 export default function AIMentorWidget() {
   const pathname = usePathname();
   const pageCountry = getCountryFromPathname(pathname);
@@ -198,19 +155,11 @@ export default function AIMentorWidget() {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [conversationCountry, setConversationCountry] = useState(pageCountry);
   const [hasRestoredSession, setHasRestoredSession] = useState(false);
-  const [leadForm, setLeadForm] = useState({
-    name: "",
-    contact: "",
-    question: "",
-    country: QUICK_START_COUNTRY,
-  });
-  const [leadFormError, setLeadFormError] = useState("");
   const messagesRef = useRef(null);
   const inputRef = useRef(null);
   const audioContextRef = useRef(null);
   const lastChimeAtRef = useRef(0);
   const lastReplyAtRef = useRef(0);
-  const leadCaptureTrackedRef = useRef(false);
   const soundEnabledRef = useRef(soundEnabled);
   const isOpenRef = useRef(isOpen);
   const lastAssistantMessageIdRef = useRef(INITIAL_MESSAGE.id);
@@ -220,8 +169,6 @@ export default function AIMentorWidget() {
   const quickStartCountryLabel = formatCountryLabel(QUICK_START_COUNTRY);
   const promptSuggestions =
     PROMPT_SUGGESTIONS[QUICK_START_COUNTRY] ?? PROMPT_SUGGESTIONS.all;
-  const fallbackStreak = getFallbackStreak(messages);
-  const showLeadCapture = fallbackStreak >= FALLBACK_STREAK_THRESHOLD;
 
   const trackMentorbotEvent = useCallback((eventName, params = {}) => {
     if (typeof window === "undefined") return;
@@ -357,41 +304,6 @@ export default function AIMentorWidget() {
       lastAssistantMessage?.id ?? INITIAL_MESSAGE.id;
     replySoundReadyRef.current = true;
   }, [hasRestoredSession, messages]);
-
-  useEffect(() => {
-    if (!showLeadCapture) {
-      leadCaptureTrackedRef.current = false;
-      return;
-    }
-
-    const lastUserMessage =
-      [...messages].reverse().find((message) => message.role === "user")?.text ??
-      "";
-    const preferredCountry =
-      normalizeScopeCountry(activeCountry) === "all"
-        ? QUICK_START_COUNTRY
-        : normalizeWidgetCountry(activeCountry);
-
-    setLeadForm((current) => {
-      const hasStartedForm =
-        current.name.trim() || current.contact.trim() || current.question.trim();
-
-      return {
-        ...current,
-        country: hasStartedForm ? current.country : preferredCountry,
-        question: current.question || lastUserMessage,
-      };
-    });
-    setLeadFormError("");
-
-    if (!leadCaptureTrackedRef.current) {
-      trackMentorbotEvent("mentorbot_lead_capture_shown", {
-        country: preferredCountry,
-        fallback_streak: fallbackStreak,
-      });
-      leadCaptureTrackedRef.current = true;
-    }
-  }, [activeCountry, fallbackStreak, messages, showLeadCapture, trackMentorbotEvent]);
 
   const playMentorChime = useCallback(
     async ({ force = false, mode = "attention" } = {}) => {
@@ -635,7 +547,7 @@ export default function AIMentorWidget() {
           role: "assistant",
           text:
             data.reply ??
-            "I could not get an answer right now. Please try again.",
+            "I didn't get a response. Please try again.",
           activeCountry: data.activeCountry ?? searchCountry,
           sourceCountry: data.country ?? null,
           sourceQuestion: data.matchedQuestion ?? null,
@@ -658,7 +570,7 @@ export default function AIMentorWidget() {
           id: `assistant-${Date.now()}`,
           role: "assistant",
           text:
-            "I could not reach the FAQ service right now. Please try again in a moment.",
+            "Couldn't reach the server right now. Check your connection and try again.",
           activeCountry: activeCountry,
           fallback: true,
           suggestions: [],
@@ -703,37 +615,6 @@ export default function AIMentorWidget() {
     });
   };
 
-  const handleLeadSubmit = () => {
-    const normalizedCountry = normalizeWidgetCountry(leadForm.country);
-    const trimmedName = leadForm.name.trim();
-    const trimmedContact = leadForm.contact.trim();
-    const trimmedQuestion = leadForm.question.trim();
-
-    if (!trimmedName || !trimmedContact || !trimmedQuestion) {
-      setLeadFormError("Please add your name, contact, and question.");
-      return;
-    }
-
-    const leadPayload = {
-      name: trimmedName,
-      contact: trimmedContact,
-      question: trimmedQuestion,
-      country: normalizedCountry,
-    };
-
-    setLeadFormError("");
-    trackMentorbotEvent("mentorbot_lead_submitted", {
-      country: normalizedCountry,
-      topic: detectAnalyticsTopic(trimmedQuestion),
-      fallback_streak: fallbackStreak,
-    });
-    window.open(
-      `${WHATSAPP_LINK}?text=${encodeURIComponent(buildLeadBody(leadPayload))}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
-  };
-
   return (
     <>
       {!isOpen ? (
@@ -763,7 +644,7 @@ export default function AIMentorWidget() {
       ) : null}
 
       {isOpen ? (
-        <section className="fixed bottom-4 right-4 z-[70] flex h-[min(78vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.24)]">
+        <section className="fixed bottom-4 right-4 z-[70] flex h-[min(78vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-[26px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.2)]">
           <div className="bg-linear-to-r from-[#1f2b80] via-[#364bc5] to-[#5267de] px-4 pb-2 pt-2 text-white">
             <div className="flex items-start justify-between gap-2.5">
               <div className="min-w-0 flex-1">
@@ -826,46 +707,39 @@ export default function AIMentorWidget() {
             </div>
           </div>
 
-          <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
-            <div className="rounded-2xl border border-[#364bc5]/12 bg-white px-3 py-2.5 shadow-sm">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#364bc5]">
-                    Paid 1:1 Session
-                  </p>
-                  <h4 className="mt-0.5 text-sm font-semibold text-slate-900">
-                    Book with Ahsan
-                  </h4>
-                  <p className="mt-0.5 text-sm text-slate-600">
-                    Fee: 720/-
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CalendarDays className="h-5 w-5 shrink-0 text-[#364bc5]" />
-                  <Link
-                    href={BOOKING_LINK}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#364bc5] px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
-                  >
-                    Book 1:1
-                    <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                </div>
+          <div className="border-b border-slate-200 bg-white px-4 py-2.5">
+            <div className="flex items-center gap-3 rounded-2xl bg-slate-50 px-3 py-2 ring-1 ring-slate-200">
+              <CalendarDays className="h-4.5 w-4.5 shrink-0 text-[#364bc5]" />
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  1:1 Session with Ahsan
+                </p>
+                <p className="truncate text-sm font-semibold text-slate-900">
+                  Fee: 720/-
+                </p>
               </div>
+              <Link
+                href={BOOKING_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#364bc5] px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
+              >
+                Book
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
 
           <div
             ref={messagesRef}
-            className="flex-1 space-y-3 overflow-y-auto bg-slate-50 px-4 py-4"
+            className="flex-1 space-y-2.5 overflow-y-auto bg-[#f7f8fc] px-4 py-3"
           >
-            <div className="rounded-[22px] border border-slate-200 bg-white px-3 py-2.5 shadow-sm">
+            <div className="px-0.5 py-1">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Quick Start
                 </p>
-                <span className="rounded-full bg-[#364bc5]/8 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#364bc5]">
+                <span className="rounded-full bg-white px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#364bc5] ring-1 ring-slate-200">
                   {quickStartCountryLabel}
                 </span>
               </div>
@@ -881,7 +755,7 @@ export default function AIMentorWidget() {
                         source: "quick_start",
                       })
                     }
-                    className="rounded-full border border-[#364bc5]/18 bg-[#364bc5]/6 px-2.5 py-1 text-left text-[10px] font-semibold leading-[1.35] text-[#364bc5] transition-colors hover:bg-[#364bc5]/12 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-full bg-white px-3 py-1.5 text-left text-[10px] font-semibold leading-[1.35] text-[#364bc5] ring-1 ring-slate-200 transition-colors hover:bg-[#364bc5]/5 hover:ring-[#364bc5]/25 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {prompt}
                   </button>
@@ -892,15 +766,10 @@ export default function AIMentorWidget() {
             {messages.map((message) => {
               const isAssistant = message.role === "assistant";
               const answerIsBangla = containsBangla(message.text);
-              const questionIsBangla = containsBangla(message.sourceQuestion);
               const fallbackFaqHref = getFaqHref(message.activeCountry);
               const fallbackCountryLabel = formatCountryLabel(
                 message.activeCountry ?? QUICK_START_COUNTRY,
               );
-              const showReplyShortcuts =
-                isAssistant &&
-                message.id !== INITIAL_MESSAGE.id &&
-                !message.fallback;
 
               return (
                 <div
@@ -910,27 +779,16 @@ export default function AIMentorWidget() {
                   }`}
                 >
                   <div
-                    className={`max-w-[88%] rounded-3xl px-4 py-3 shadow-sm ${
+                    className={`max-w-[88%] rounded-[22px] px-3.5 py-3 ${
                       isAssistant
                         ? "rounded-bl-md border border-slate-200 bg-white text-slate-700"
                         : "rounded-br-md bg-[#364bc5] text-white"
                     }`}
                   >
                     {isAssistant && message.sourceCountry ? (
-                      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-600">
+                      <div className="mb-1.5 inline-flex items-center gap-2 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                         <span>{message.sourceCountry}</span>
                       </div>
-                    ) : null}
-
-                    {isAssistant && message.sourceQuestion ? (
-                      <p
-                        lang={questionIsBangla ? "bn" : undefined}
-                        className={`mb-2 text-sm font-semibold text-slate-900 ${
-                          questionIsBangla ? "font-bn" : ""
-                        }`}
-                      >
-                        {message.sourceQuestion}
-                      </p>
                     ) : null}
 
                     <p
@@ -944,7 +802,7 @@ export default function AIMentorWidget() {
 
                     {isAssistant && message.suggestions?.length ? (
                       <div className="mt-3 rounded-2xl bg-slate-50 p-3">
-                        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                           Suggested FAQ topics
                         </p>
                         <div className="space-y-2">
@@ -986,56 +844,43 @@ export default function AIMentorWidget() {
                       </div>
                     ) : null}
 
-                    {isAssistant && message.sourceHref ? (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        <Link
-                          href={message.sourceHref}
-                          onClick={() => setIsOpen(false)}
-                          className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-200"
-                        >
-                          {message.sourceLabel ?? "FAQ source"}
-                        </Link>
-                        <Link
-                          href={message.sourceHref}
-                          onClick={() => setIsOpen(false)}
-                          className="inline-flex items-center gap-1.5 rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14"
-                        >
-                          Open full FAQ
-                          <ArrowUpRight className="h-3.5 w-3.5" />
-                        </Link>
-                      </div>
-                    ) : null}
-
-                    {showReplyShortcuts ? (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        <button
-                          type="button"
-                          disabled={isLoading}
-                          onClick={() =>
-                            handleReplyShortcut(message, "follow_up")
-                          }
-                          className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
-                        >
-                          Ask follow-up
-                        </button>
+                    {isAssistant && message.id !== INITIAL_MESSAGE.id && !message.fallback ? (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {message.sourceHref ? (
+                          <Link
+                            href={message.sourceHref}
+                            onClick={() => setIsOpen(false)}
+                            className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 transition-colors hover:bg-slate-200"
+                          >
+                            {message.sourceLabel ?? "FAQ source"}
+                            <ArrowUpRight className="h-3 w-3" />
+                          </Link>
+                        ) : null}
                         <button
                           type="button"
                           disabled={isLoading}
                           onClick={() => handleReplyShortcut(message, "visa")}
-                          className="rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
+                          className="rounded-full bg-[#364bc5]/8 px-2 py-0.5 text-[10px] font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
                         >
-                          Visa help
+                          Visa
                         </button>
                         <button
                           type="button"
                           disabled={isLoading}
-                          onClick={() =>
-                            handleReplyShortcut(message, "scholarship")
-                          }
-                          className="rounded-full bg-[#364bc5]/8 px-3 py-1.5 text-xs font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
+                          onClick={() => handleReplyShortcut(message, "scholarship")}
+                          className="rounded-full bg-[#364bc5]/8 px-2 py-0.5 text-[10px] font-semibold text-[#364bc5] transition-colors hover:bg-[#364bc5]/14 disabled:cursor-not-allowed disabled:opacity-60"
                         >
-                          Scholarship help
+                          Scholarship
                         </button>
+                        <Link
+                          href={COURSES_LINK}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 transition-colors hover:bg-slate-200"
+                        >
+                          Our Courses
+                          <ArrowUpRight className="h-3 w-3" />
+                        </Link>
                       </div>
                     ) : null}
 
@@ -1080,18 +925,6 @@ export default function AIMentorWidget() {
                         </div>
                       </div>
                     ) : null}
-
-                    {isAssistant ? (
-                      <Link
-                        href={BOOKING_LINK}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#364bc5] hover:text-[#1f2b80]"
-                      >
-                        Book 1:1 with Ahsan (720/-)
-                        <ArrowUpRight className="h-4 w-4" />
-                      </Link>
-                    ) : null}
                   </div>
                 </div>
               );
@@ -1099,135 +932,13 @@ export default function AIMentorWidget() {
 
             {isLoading ? (
               <div className="flex justify-start">
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-sm text-slate-600">
                   <LoaderCircle className="h-4 w-4 animate-spin" />
-                  MentorBOT is searching...
+                  MentorBOT is thinking...
                 </div>
               </div>
             ) : null}
 
-            {showLeadCapture ? (
-              <div className="rounded-3xl border border-[#364bc5]/12 bg-white p-4 shadow-sm">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#364bc5]">
-                      Need a personal answer?
-                    </p>
-                    <h4 className="mt-1 text-sm font-semibold text-slate-900">
-                      Leave your question for Ahsan
-                    </h4>
-                    <p className="mt-1 text-sm text-slate-600">
-                      After repeated misses, you can send your exact question
-                      directly.
-                    </p>
-                  </div>
-                  <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-[#364bc5]" />
-                </div>
-
-                <div className="mt-3 grid gap-2">
-                  <input
-                    type="text"
-                    value={leadForm.name}
-                    onChange={(event) =>
-                      {
-                        setLeadFormError("");
-                        setLeadForm((current) => ({
-                          ...current,
-                          name: event.target.value,
-                        }));
-                      }
-                    }
-                    placeholder="Your name"
-                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
-                  />
-                  <input
-                    type="text"
-                    value={leadForm.contact}
-                    onChange={(event) =>
-                      {
-                        setLeadFormError("");
-                        setLeadForm((current) => ({
-                          ...current,
-                          contact: event.target.value,
-                        }));
-                      }
-                    }
-                    placeholder="WhatsApp number or email"
-                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
-                  />
-                  <select
-                    value={leadForm.country}
-                    onChange={(event) =>
-                      {
-                        setLeadFormError("");
-                        setLeadForm((current) => ({
-                          ...current,
-                          country: normalizeWidgetCountry(event.target.value),
-                        }));
-                      }
-                    }
-                    className="rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors focus:border-[#364bc5]"
-                  >
-                    {COUNTRY_OPTIONS.map((country) => (
-                      <option key={country} value={country}>
-                        {formatCountryLabel(country)}
-                      </option>
-                    ))}
-                  </select>
-                  <textarea
-                    rows={3}
-                    value={leadForm.question}
-                    onChange={(event) =>
-                      {
-                        setLeadFormError("");
-                        setLeadForm((current) => ({
-                          ...current,
-                          question: event.target.value,
-                        }));
-                      }
-                    }
-                    placeholder="Write your exact question"
-                    className="resize-none rounded-2xl border border-slate-200 px-3 py-2.5 text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#364bc5]"
-                  />
-
-                  {leadFormError ? (
-                    <p className="text-xs font-medium text-rose-600">
-                      {leadFormError}
-                    </p>
-                  ) : null}
-
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    <button
-                      type="button"
-                      onClick={handleLeadSubmit}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#364bc5] px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
-                    >
-                      <MessageCircle className="h-4 w-4" />
-                      Send via WhatsApp
-                    </button>
-                    <Link
-                      href={buildLeadEmailHref({
-                        name: leadForm.name.trim() || "Unknown",
-                        contact: leadForm.contact.trim() || "Not provided",
-                        question: leadForm.question.trim() || "No question provided",
-                        country: normalizeWidgetCountry(leadForm.country),
-                      })}
-                      onClick={() =>
-                        trackMentorbotEvent("mentorbot_lead_email_clicked", {
-                          country: normalizeWidgetCountry(leadForm.country),
-                          topic: detectAnalyticsTopic(leadForm.question),
-                          fallback_streak: fallbackStreak,
-                        })
-                      }
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-200"
-                    >
-                      <Mail className="h-4 w-4" />
-                      Email us
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ) : null}
           </div>
 
           <form

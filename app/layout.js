@@ -29,6 +29,7 @@ const parkinsans = Parkinsans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"], // regular and bold
   variable: "--font-parkinsans", // optional CSS variable
+  adjustFontFallback: false,
 });
 
 const notoSerifBengali = Noto_Serif_Bengali({
