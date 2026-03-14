@@ -1,15 +1,12 @@
 import React from "react";
 import {
   FaFacebook,
-  FaTwitter,
   FaYoutube,
-  FaInstagram,
   FaLinkedin,
   FaTelegram,
   FaWhatsapp,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { HiUserGroup } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -61,9 +58,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-2">
-          {/* Logo and Tagline Section */}
+      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 pb-2 md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.9fr)_minmax(0,1.45fr)_minmax(0,1fr)] lg:gap-x-8 lg:gap-y-8">
           <div className="space-y-1">
             <Image
               src="/unnamed.png"
@@ -71,27 +67,26 @@ const Footer = () => {
               height={200}
               alt="Career Abroad logo"
             />
-            <p className="text-base italic leading-relaxed text-gray-600">
-              Where global education journey starts
+            <p className="whitespace-nowrap text-sm italic leading-relaxed text-gray-600 sm:text-base">
+              Turning Dreams into Reality
             </p>
           </div>
 
-          {/* Helpful Links Section */}
           <div>
             <h3
-              className="text-lg font-semibold mb-4"
+              className="mb-4 text-lg font-semibold"
               style={{ color: primaryColor }}
             >
               HELPFUL LINKS
             </h3>
             <ul className="space-y-3">
-              {helpfulLinks.map((link, index) => (
-                <li key={index}>
+              {helpfulLinks.map((link) => (
+                <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-2"
+                    className="flex items-center space-x-2 text-gray-600 transition-colors duration-200 hover:text-gray-900"
                   >
-                    <span style={{ color: primaryColor }}>›</span>
+                    <span style={{ color: primaryColor }}>&rsaquo;</span>
                     <span>{link.name}</span>
                   </a>
                 </li>
@@ -99,22 +94,21 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Get in Touch Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">
+            <h3 className="mb-4 text-lg font-semibold text-gray-800">
               GET IN TOUCH
             </h3>
             <ul className="space-y-3">
-              {contactInfo.map((contact, index) => (
-                <li key={index} className="flex items-start space-x-2">
+              {contactInfo.map((contact) => (
+                <li key={contact.text} className="flex items-start space-x-2">
                   <contact.icon
-                    className="w-5 h-5 mt-0.5"
+                    className="mt-0.5 h-5 w-5"
                     style={{ color: primaryColor }}
                   />
                   {contact.href ? (
                     <a
                       href={contact.href}
-                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200 break-all"
+                      className="text-gray-600 transition-colors duration-200 hover:text-gray-900 lg:whitespace-nowrap"
                     >
                       {contact.text}
                     </a>
@@ -124,23 +118,47 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+
+            <Link
+              href="https://language.ahsansuny.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-5 inline-flex max-w-full rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-2.5 transition-colors duration-200 hover:border-emerald-200 hover:bg-emerald-50"
+            >
+              <div className="flex items-center gap-2.5">
+                <Image
+                  src="/Language_Coach_logo.png"
+                  width={56}
+                  height={56}
+                  alt="Language Coach logo"
+                  className="h-14 w-14 shrink-0 rounded-full object-cover"
+                />
+                <div className="min-w-0">
+                  <p className="text-lg font-semibold leading-tight text-slate-900 transition-colors duration-200 group-hover:text-emerald-900">
+                    Language Coach
+                  </p>
+                  <p className="mt-0.5 text-sm leading-snug text-emerald-800">
+                    Our Language Learning Platform
+                  </p>
+                </div>
+              </div>
+            </Link>
           </div>
 
-          {/* Connect with Us Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">
+            <h3 className="mb-4 text-lg font-semibold text-gray-800">
               CONNECT WITH US
             </h3>
             <ul className="space-y-3">
-              {socialLinks.map((social, index) => (
-                <li key={index}>
+              {socialLinks.map((social) => (
+                <li key={social.name}>
                   <Link
                     target="_blank"
                     href={social.href}
-                    className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 transition-colors duration-200 group"
+                    className="group flex items-center space-x-3 text-gray-600 transition-colors duration-200 hover:text-gray-900"
                   >
                     <social.icon
-                      className="w-5 h-5 group-hover:scale-110 transition-transform duration-200"
+                      className="h-5 w-5 transition-transform duration-200 group-hover:scale-110"
                       style={{ color: primaryColor }}
                     />
                     <span>{social.name}</span>
@@ -151,9 +169,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className=" pt-2 border-t border-gray-200">
-          <p className="text-center text-gray-600 text-sm">Copyright © 2026</p>
+        <div className="border-t border-gray-200 pt-2">
+          <p className="text-center text-sm text-gray-600">
+            Copyright &copy; 2026
+          </p>
         </div>
       </div>
     </footer>
