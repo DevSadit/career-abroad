@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   CheckCircle2,
   ArrowRight,
@@ -216,6 +217,23 @@ const Page = () => {
                       <CreditCard className="inline h-3.5 w-3.5 mr-1" />
                       দুই কিস্তিতে পরিশোধ করা যাবে
                     </p>
+
+                    <div className="mt-3 group relative flex items-center gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 hover:bg-amber-100 hover:border-amber-300 hover:shadow-md transition-all duration-300 overflow-hidden cursor-default">
+                      {/* Shimmer sweep on hover */}
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-in-out pointer-events-none" />
+
+                      <Image
+                        src="/Cashback.png"
+                        alt="50% Cashback"
+                        width={54}
+                        height={54}
+                        className="shrink-0 group-hover:scale-110 transition-transform duration-300"
+                      />
+
+                      <p className="text-sm font-semibold text-amber-800 leading-snug">
+                        For Fully Funded Scholarship Winners
+                      </p>
+                    </div>
 
                     <div className="mt-5 space-y-3">
                       {[
