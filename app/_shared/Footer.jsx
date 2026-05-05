@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 pb-2 md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.9fr)_minmax(0,1.45fr)_minmax(0,1fr)] lg:gap-x-8 lg:gap-y-8">
           <div className="space-y-1">
             <Image
-              src="/unnamed.png"
+              src="/Website_Logo.png"
               width={200}
               height={200}
               alt="Career Abroad logo"
