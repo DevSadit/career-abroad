@@ -24,7 +24,7 @@ export const metadata = {
   title: "Career Abroad Mentor",
   description: "Your Global Journey Partner",
   icons: {
-    icon: "/faviconnew.ico",
+    icon: "/favicon.ico",
   },
 };
 
