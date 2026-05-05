@@ -23,6 +23,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Career Abroad Mentor",
   description: "Your Global Journey Partner",
+  icons: {
+    icon: "/faviconnew.ico",
+  },
 };
 
 const parkinsans = Parkinsans({
