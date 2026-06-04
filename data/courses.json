@@ -84,26 +84,20 @@
     "id": "visa",
     "title": "D. Visa Application & Documentation",
     "know_more": "",
-    "price": 10000,
-    "fake_price": 12000,
+    "price": 20000,
+    "fake_price": 25000,
     "currency": "BDT",
     "slug": "visa",
     "goal": "Prepare visa documents correctly and avoid refusal triggers.",
-    "classes": {
-      "total": 6,
-      "recorded": 2,
-      "live": 4,
-      "mock": 2
-    },
     "includes": [
       "Visa docs checklist",
-      "Cover Letter Sample",
-      "Only Guidelines through Online session"
+      "Successful Documents Sample",
+      "Guidelines through Online session"
     ],
     "topics": [
-      "Country-wise visa requirements",
-      "Financial document presentation Strategy",
-      "Interview preparation",
+      "Solvency document prep. Strategy",
+      "Affidavit draft, Interview prep.",
+      "Accomodation, Insuarance, PCC Info",
       {
         "type": "flags",
         "countries": [
