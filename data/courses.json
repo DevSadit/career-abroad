@@ -90,23 +90,31 @@
     "slug": "visa",
     "goal": "Prepare visa documents correctly and avoid refusal triggers.",
     "classes": {
-      "total": 10,
-      "recorded": 3,
-      "live": 5,
+      "total": 6,
+      "recorded": 2,
+      "live": 4,
       "mock": 2
     },
     "includes": [
-      "Document checklist",
-      "Mock interview",
-      "Successful document samples"
+      "Visa docs checklist",
+      "Cover Letter Sample",
+      "Only Guidelines through Online session"
     ],
     "topics": [
       "Country-wise visa requirements",
-      "Financial document presentation",
-      "Sponsor & solvency",
+      "Financial document presentation Strategy",
       "Interview preparation",
-      "Visa SOP",
-      "Accomodation & Insurance"
+      {
+        "type": "flags",
+        "countries": [
+          { "code": "fr", "name": "France" },
+          { "code": "it", "name": "Italy" },
+          { "code": "be", "name": "Belgium" },
+          { "code": "ee", "name": "Estonia" },
+          { "code": "hu", "name": "Hungary" },
+          { "code": "es", "name": "Spain" }
+        ]
+      }
     ]
   },
   {
