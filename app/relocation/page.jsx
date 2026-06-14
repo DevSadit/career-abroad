@@ -159,8 +159,9 @@ export default function RelocationPage() {
                 </div>
 
                 <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900">
-                  Student Relocation to Europe{" "}
-                  <span style={{ color: primary }}>| Full Study-Abroad Service</span>
+                  Student Relocation to Europe
+                  <br />
+                  <span style={{ color: primary }}>Full Study-Abroad Service</span>
                 </h1>
 
                 <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
