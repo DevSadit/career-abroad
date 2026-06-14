@@ -15,10 +15,45 @@ const services = [
 ];
 
 const trustedRoutes = [
-  "UK → Spain",
-  "China → France",
-  "Hungary → France",
-  "KSA → France",
+  { flag: "🇬🇧🇪🇸", label: "UK → Spain" },
+  { flag: "🇨🇳🇫🇷", label: "China → France" },
+  { flag: "🇭🇺🇫🇷", label: "Hungary → France" },
+  { flag: "🇸🇦🇫🇷", label: "KSA → France" },
+];
+
+const steps = [
+  "Choosing universities",
+  "Writing a convincing SOP",
+  "Submitting applications",
+  "Getting your degree recognised",
+  "Accepting the offer and enrolling",
+  "Preparing financial documents",
+  "Booking a visa appointment — sometimes in a third country",
+  "Arranging accommodation, insurance and a flight",
+  "Preparing for the visa interview itself",
+];
+
+const whoWeHelp = [
+  {
+    title: "Students",
+    desc: "Bachelor's and Master's candidates moving abroad for a new degree.",
+  },
+  {
+    title: "Researchers",
+    desc: "Relocating to join a programme, institution or lab in Europe.",
+  },
+  {
+    title: "Interns",
+    desc: "Moving for study-linked or academic internships.",
+  },
+  {
+    title: "PhD Candidates",
+    desc: "Managing the longer, more document-heavy relocation journey.",
+  },
+  {
+    title: "Families",
+    desc: "Spouses and children relocating alongside a student or researcher, so you move and settle together.",
+  },
 ];
 
 export const metadata = {
@@ -30,7 +65,7 @@ export const metadata = {
 export default function RelocationPage() {
   return (
     <section className="min-h-screen bg-white py-10 sm:py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         {/* HERO */}
         <div className="rounded-3xl bg-white overflow-hidden">
@@ -66,18 +101,19 @@ export default function RelocationPage() {
                 href="https://wa.me/34613593236"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold text-white"
+                className="inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold text-white w-fit"
                 style={{ backgroundColor: primary }}
               >
                 Request a Quote →
               </Link>
             </div>
 
-            {/* Trusted routes pills */}
-            <div className="mt-6 flex flex-wrap gap-2">
+            {/* Trusted routes pills with flags */}
+            <div className="mt-6 flex flex-wrap gap-2 items-center">
+              <span className="text-xs text-gray-400 uppercase tracking-wider mr-1">Already done:</span>
               {trustedRoutes.map((route) => (
                 <span
-                  key={route}
+                  key={route.label}
                   className="rounded-full border px-3 py-1 text-xs font-medium"
                   style={{
                     borderColor: `${primary}33`,
@@ -85,7 +121,7 @@ export default function RelocationPage() {
                     backgroundColor: `${primary}08`,
                   }}
                 >
-                  {route}
+                  {route.flag} {route.label}
                 </span>
               ))}
               <span className="rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-500">
@@ -97,8 +133,68 @@ export default function RelocationPage() {
           <div className="h-1.5 mt-10" style={{ backgroundColor: primary }} />
         </div>
 
+        {/* THE COMPLEXITY SECTION */}
+        <div className="rounded-2xl border border-gray-200 p-5 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+            Why it's hard
+          </p>
+          <p className="text-[15px] sm:text-base leading-relaxed text-gray-700 max-w-3xl">
+            Moving to another country to study is not one task — it's dozens of
+            them, in the right order, often on tight deadlines, in a language
+            you may not speak, while you're still living somewhere else.
+          </p>
+
+          <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {steps.map((step, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span
+                  className="shrink-0 mt-1 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center text-white"
+                  style={{ backgroundColor: primary }}
+                >
+                  {i + 1}
+                </span>
+                <span className="text-sm text-gray-700 leading-relaxed">{step}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Highlight callout */}
+          <div
+            className="mt-6 rounded-2xl p-5"
+            style={{ backgroundColor: `${primary}0a`, borderLeft: `4px solid ${primary}` }}
+          >
+            <p className="text-base sm:text-lg font-semibold text-gray-900">
+              Our relocation service takes that entire process off your shoulders.
+            </p>
+            <p className="mt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed">
+              This is different from our self-study courses, where you learn each
+              step yourself. Here, we do it <em>with</em> you and <em>for</em>{" "}
+              you — a fully managed, done-for-you relocation, built around your
+              profile and your destination.
+            </p>
+          </div>
+
+          {/* Study only note */}
+          <div
+            className="mt-4 rounded-2xl border p-4 flex items-start gap-3"
+            style={{ borderColor: `${primary}22`, backgroundColor: `${primary}06` }}
+          >
+            <span className="text-lg">📌</span>
+            <div>
+              <p className="text-sm font-semibold" style={{ color: primary }}>
+                Study purpose only.
+              </p>
+              <p className="mt-0.5 text-sm text-gray-700 leading-relaxed">
+                We work exclusively on study-visa relocations. We do not handle
+                work, job or employment-based relocation — and that focus is
+                exactly why we do this so well.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* ABOUT THE SERVICE + WHAT WE COVER */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
           {/* About */}
           <div className="lg:col-span-7">
@@ -116,21 +212,6 @@ export default function RelocationPage() {
                 Trusted by students relocating UK → Spain, China → France,
                 Hungary → France, KSA → France, and more.
               </p>
-              <div
-                className="mt-6 rounded-2xl border p-4"
-                style={{
-                  borderColor: `${primary}22`,
-                  backgroundColor: `${primary}08`,
-                }}
-              >
-                <p className="text-sm font-semibold" style={{ color: primary }}>
-                  Study-visa relocation only
-                </p>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
-                  We specialise exclusively in study-visa relocation — no work
-                  or job relocation services.
-                </p>
-              </div>
             </div>
           </div>
 
@@ -159,8 +240,35 @@ export default function RelocationPage() {
           </div>
         </div>
 
+        {/* WHO WE HELP */}
+        <div>
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Who We Help</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {whoWeHelp.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-2xl border border-gray-200 p-5 bg-white"
+              >
+                <p className="font-semibold text-gray-900">{group.title}</p>
+                <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">{group.desc}</p>
+              </div>
+            ))}
+            {/* Trailing note */}
+            <div
+              className="rounded-2xl border p-5 sm:col-span-2 lg:col-span-1"
+              style={{ borderColor: `${primary}22`, backgroundColor: `${primary}06` }}
+            >
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Whether you're applying from your home country or already living
+                abroad and relocating <em>within</em> Europe, we build the plan
+                around your exact situation.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* GET A QUOTE CTA */}
-        <div className="mt-8">
+        <div>
           <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6 sm:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
