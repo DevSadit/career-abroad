@@ -133,7 +133,7 @@ const complexitySteps = [
 const contactEmail = "mailto:mentors.career.abroad26@gmail.com";
 
 export const metadata = {
-  title: "Student Relocation to Europe | Full Study-Abroad Service",
+  title: "Students Relocation Guidance for Europe | Career Abroad Mentor",
   description:
     "A fully managed, done-for-you study relocation service — from university application to arrival. Study-visa only.",
 };
@@ -159,9 +159,7 @@ export default function RelocationPage() {
                 </div>
 
                 <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900">
-                  Student Relocation to Europe
-                  <br />
-                  <span style={{ color: primary }}>Full Study-Abroad Service</span>
+                  Students Relocation Guidance for Europe
                 </h1>
 
                 <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
