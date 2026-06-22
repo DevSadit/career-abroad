@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "question": "স্পেনে কোন intake আছে?",
-    "answer": "স্পেনে মূলত September/October intake সবচেয়ে কমন। কিছু ইউনিভার্সিটিতে/প্রোগ্রামে January/February intake থাকতে পারে, তবে কম।"
+    "question": "স্পেনে কয়টি intake আছে?",
+    "answer": "স্পেনে মূলত September/October intake সবচেয়ে কমন। কিছু ইউনিভার্সিটিতে/প্রোগ্রামে January/February intake থাকতে পারে, তবে পাবলিক ইউনিভার্সীটিতে তা কম।"
   },
   {
     "id": 2,
-    "question": "স্পেনে ভার্সিটি অ্যাপ্লাই কখন থেকে শুরু হয়? পোর্টাল কখন খুলে?",
+    "question": "স্পেনে ভার্সিটি গুলোতে এপলিকেশন কখন থেকে শুরু হয়? পোর্টাল কখন খুলে?",
     "answer": "ইউনিভার্সিটি/প্রোগ্রামভেদে আলাদা। সাধারণভাবে January–June এর মধ্যে অনেক প্রোগ্রামের আবেদন/অ্যাডমিশন চলে (Fall intake-এর জন্য)। কিছু প্রাইভেট/বিজনেস স্কুল আরও আগে শুরু করে। ইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
   },
   {
     "id": 3,
-    "question": "স্পেনে আবেদন কোথায় করতে হয়?",
-    "answer": "প্রত্যেকটা ইউনিভার্সিটির নিজ নিজ পোর্টালে আবেদন সম্পন্ন করতে হয়। এক্ষেত্রে ২৫-৪০ ইউরোর মতো ইউনিভার্সিটি ভেদে আবেদন ফি থাকে। ইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
+    "question": "স্পেনে আবেদন কোথায় করতে হয়? কোন কমন পোর্টাল আছে কি? ",
+    "answer": "কোন কমন পোর্টাল নেই। প্রত্যেকটা ইউনিভার্সিটির নিজ নিজ পোর্টালে আবেদন সম্পন্ন করতে হয়। এক্ষেত্রে ২৫-৪০ ইউরোর মতো ইউনিভার্সিটি ভেদে আবেদন ফি থাকে। ইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
   },
   {
     "id": 4,
-    "question": "কতগুলো বিশ্ববিদ্যালয়ে apply করা উচিত?",
+    "question": "কতগুলো বিশ্ববিদ্যালয়ে বা প্রোগ্রামে apply করা উচিত?",
     "answer": "Safe strategy:\n• ২টা ambitious\n• ২–৩টা realistic\n• ১টা safe\n\nএবং প্রতিটা প্রোগ্রাম যেন আপনার ব্যাকগ্রাউন্ডের সাথে strongly aligned হয়। ইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
   },
   {
     "id": 5,
     "question": "স্পেনে English taught Masters পাওয়া যায়?",
-    "answer": "হ্যাঁ — বিশেষ করে Business, Data/AI, কিছু Engineering/International programs-এ। তবে Spanish-taught প্রোগ্রাম বেশি, তাই আগে থেকে প্রোগ্রামের ভাষা নিশ্চিত করুন।"
+    "answer": "হ্যাঁ — বিশেষ করে STEM, Business, Data/AI, কিছু Engineering/International programs-এ। তবে Spanish-taught প্রোগ্রাম বেশি, তাই আগে থেকে আপনার প্রোগ্রাম English Taught কিনা নিশ্চিত করুন।"
   },
   {
     "id": 6,
     "question": "IELTS/TOEFL কত লাগে?",
-    "answer": "English-taught প্রোগ্রামে সাধারণত:\n• IELTS 6.0–6.5\n• TOEFL iBT 80–90+\n\n(প্রোগ্রাম পেজে যা লেখা আছে সেটাই ফাইনাল)।"
+    "answer": "English-taught প্রোগ্রামে সাধারণত:\n• IELTS 6.0–6.5\n• TOEFL iBT 80–90+\n\n(প্রোগ্রাম পেজে যা লেখা আছে সেটাই অনুসরণ করুন)।"
   },
   {
     "id": 7,
     "question": "MOI দিয়ে কি apply করা যাবে?",
-    "answer": "কিছু প্রোগ্রাম MOI নিতে পারে, কিন্তু সব না। Scholarship/visa strength হিসেবে IELTS/TOEFL থাকলে অ্যাপ্লিকেশন ফাইল শক্তিশালী হয়।"
+    "answer": "কিছু প্রোগ্রাম MOI নিতে পারে, কিন্তু সব না। Scholarship/visa strength হিসেবে IELTS/TOEFL থাকলে অ্যাপ্লিকেশন ফাইল Strong হয়।"
   },
   {
     "id": 8,
@@ -41,8 +41,8 @@
   },
   {
     "id": 9,
-    "question": "CGPA কেমন লাগে? 3.15–3.40 হলে কি Masters সম্ভব?",
-    "answer": "সম্ভব। Spain-এ admission অনেক সময় holistic হয়। CGPA কম হলে compensate করুন:\n• Strong SOP/Motivation\n• Relevant projects/portfolio/GitHub\n• Research/publication (STEM হলে plus)\n• Work/Internship (থাকলে)"
+    "question": "CGPA কেমন লাগে? 3.00–3.40 হলে কি Masters সম্ভব?",
+    "answer": "সম্ভব। Spain-এ admission অনেক সময় holistic হয়। আপনার CGPA 3.00 এর নিচে থাকলে পাবলিক ইউনিভার্সিটি থেকে অফার লেটার পাওয়া একটু কঠিন, যদিনা আপনার রিলিভেন্ট জব বা রিসার্স এক্সপেরিয়েন্স থাকে। CGPA কম হলে compensate করুন:\n• Strong SOP/Motivation\n• Relevant projects/portfolio/GitHub\n• Research/publication (STEM হলে plus)\n• Work/Internship (থাকলে) সম্ভাবনা বেশি।"
   },
   {
     "id": 10,
@@ -56,13 +56,13 @@
   },
   {
     "id": 12,
-    "question": "স্পেনে Masters/Bachelor apply করতে কে কে ডকুমেন্ট লাগে?",
+    "question": "স্পেনে Masters/Bachelor apply করতে কি কি ডকুমেন্ট লাগে?",
     "answer": "কমন ডকুমেন্টস:\n• Passport\n• Academic transcripts + certificate\n• CV (Masters-এ জরুরি)\n• SOP/Motivation Letter\n• IELTS/TOEFL (English taught হলে) / Spanish proof (Spanish taught হলে)\n• LOR (কিছু প্রোগ্রামে)\n• Portfolio (Architecture/Design/Media)\n• Work/Internship/Research proof (থাকলে)\n• Spanish Equivalence Transcript (Only for Masters Application)\n• Masters Access Letter\n• Foreign Degree Homologación (Only for Bachelor Admission)\n\nইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
   },
   {
     "id": 13,
     "question": "Document translation লাগে?",
-    "answer": "অনেক ক্ষেত্রে লাগে — কারণ অনেক অফিস Spanish/English ডকুমেন্ট চায়। যদি আপনার কাগজ বাংলা হয়, certified translation লাগতে পারে।"
+    "answer": "অনেক ক্ষেত্রে লাগে — কারণ অনেক অফিস Spanish/English ডকুমেন্ট চায়। যদি আপনার ডকুমেন্ট বাংলা হয়, certified translation লাগতে পারে।"
   },
   {
     "id": 14,
@@ -71,7 +71,7 @@
   },
   {
     "id": 15,
-    "question": "Spain-এ tuition fee কেমন?",
+    "question": "Spain-এ ইউনিভার্সিটি গুলোতে tuition fee কেমন?",
     "answer": "• Public university: তুলনামূলক কম/মাঝারি (program/region অনুযায়ী) — ২০০০ থেকে শুরু করে ৫০০০ ইউরো পর্যন্ত\n• Private university/business school: বেশি — ৬০০০ থেকে ১০০০০ ইউরো পর্যন্ত হতে পারে"
   },
   {
@@ -136,8 +136,8 @@
   },
   {
     "id": 28,
-    "question": "কাজ করে কি tuition + living আজ্ঞানো যাবে?",
-    "answer": "বাস্তবে:\n• part-time দিয়ে living cost-এর কিছু অংশ আজ্ঞানো সম্ভব\n• কিন্তু পুরো tuition + পুরো living শুধু part-time দিয়ে কভার করা বেশিরভাগ ক্ষেত্রে risky\n\nতাই প্রথম বছরের backup fund রাখা জরুরি।"
+    "question": "কাজ করে কি tuition + living খরচ কি তোলা যাবে?",
+    "answer": "বহু এজেন্সি বা প্রতিষ্ঠান এই মিথ্যা ধারণা ছড়িয়ে দেয় যে part-time কাজ করে tuition + living খরচ তোলা সম্ভব। বাস্তবতা ভিন্ন, পার্ট টাইম কাজ পাওয়া-টাই সময় সাপেক্ষ, তার উপর আপনি পার্ট টাইম করে সর্বোচ্চ লিভিং কস্ট তুলতে পারবেন, কিন্তু হাই টিউশন ফি তোলা সম্ভব নয়। আর তাই ন্যূনতম ১ বছরের টিউশন ফি ও ৬ মাসের লিভিং কস্ট নিয়ে আসা উচিত।"
   },
   {
     "id": 29,
@@ -157,11 +157,11 @@
   {
     "id": 32,
     "question": "Graduation শেষে job search stay option আছে?",
-    "answer": "কিছু দেশে graduation-এর পর job search option থাকে — Spain-এও বিভিন্ন route থাকতে পারে, তবে নিয়ম আপডেট হয়। আপনি যে বছর যাবেন, সে বছরের official immigration rule follow করবেন।"
+    "answer": "Spain-এ পড়াশোনা শেষে ১ বছরের জব সার্চিং ভিসা দেয়া হয়, তবে নিয়ম আপডেট হয়। আপনি যে বছর যাবেন, সে বছরের official immigration rule follow করবেন।"
   },
   {
     "id": 33,
-    "question": "PR/Citizenship কেমন?",
+    "question": "PR/Citizenship রুট কেমন?",
     "answer": "PR সাধারণত পাঁচ বছর legal residence + income + integration + Tax Return শর্ত পূরণ করে সম্ভব। PR এর জন্য স্টুডেন্ট ঘণ্টার হাফ কাউন্ট হয়। তবে ফুল ফান্ডেড PhD এর ক্ষেত্রে যেহেতু স্যালারাইড পজিশন, এর তাই ফুল কাউন্ট হয়।"
   },
   {
