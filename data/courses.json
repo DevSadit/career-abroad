@@ -113,7 +113,8 @@
   },
   {
     "id": "advanced-robotics-embedded",
-    "title": "E. Advanced Robotics & Embedded System",
+    "title": "Advanced Robotics & Embedded System",
+    "hidden": true,
     "know_more": "https://youtu.be/zSW2Ic_DnOo?si=U-VKVJM3S5FBTy2d",
     "price": 8000,
     "fake_price": 10000,
@@ -140,7 +141,7 @@
   },
   {
     "id": "cv-lor-linkedin",
-    "title": "F. CV, LOR & LinkedIn",
+    "title": "E. CV, LOR & LinkedIn",
     "know_more": "",
     "price": 2500,
     "fake_price": 4000,
@@ -148,7 +149,6 @@
     "slug": "cv-lor-linkedin",
     "goal": "Build a strong academic profile package that looks international-ready.",
     "bestFor": "Final-year students, fresh graduates, early-stage applicants",
-
     "classes": {
       "total": 4,
       "recorded": 1,
@@ -166,7 +166,7 @@
   },
   {
     "id": "emailing",
-    "title": "G. Emailing (Professor / Admission / Scholarship)",
+    "title": "F. Emailing (Professor / Admission / Scholarship)",
     "know_more": "",
     "price": 2000,
     "fake_price": 3500,
@@ -191,7 +191,8 @@
   },
   {
     "id": "thesis-research",
-    "title": "H. Thesis, Research & Publication",
+    "title": "Thesis, Research & Publication",
+    "hidden": true,
     "know_more": "",
     "price": 2000,
     "fake_price": 4500,
@@ -215,7 +216,8 @@
   },
   {
     "id": "personal-website",
-    "title": "I. Personal Website",
+    "title": "Personal Website",
+    "hidden": true,
     "know_more": "",
     "price": 1000,
     "fake_price": 3000,
