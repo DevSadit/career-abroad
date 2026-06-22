@@ -19,6 +19,7 @@ const navLinks = [
       { name: "Belgium", href: "/faq/belgium" },
       { name: "Hungary", href: "/faq/hungary" },
       { name: "Estonia", href: "/faq/estonia" },
+      { name: "Spain", href: "/faq/spain" },
     ],
   },
 ];
