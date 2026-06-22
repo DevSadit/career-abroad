@@ -41,7 +41,7 @@
   },
   {
     "id": 9,
-    "question": "CGPA কেমন লাগে? 3.00–3.40 হলে কি Masters সম্ভব?",
+    "question": "CGPA কেমন লাগে? 3.00–3.30 হলে কি Masters সম্ভব?",
     "answer": "সম্ভব। Spain-এ admission অনেক সময় holistic হয়। আপনার CGPA 3.00 এর নিচে থাকলে পাবলিক ইউনিভার্সিটি থেকে অফার লেটার পাওয়া একটু কঠিন, যদিনা আপনার রিলিভেন্ট জব বা রিসার্স এক্সপেরিয়েন্স থাকে। CGPA কম হলে compensate করুন:\n• Strong SOP/Motivation\n• Relevant projects/portfolio/GitHub\n• Research/publication (STEM হলে plus)\n• Work/Internship (থাকলে) সম্ভাবনা বেশি।"
   },
   {
@@ -57,7 +57,7 @@
   {
     "id": 12,
     "question": "স্পেনে Masters/Bachelor apply করতে কি কি ডকুমেন্ট লাগে?",
-    "answer": "কমন ডকুমেন্টস:\n• Passport\n• Academic transcripts + certificate\n• CV (Masters-এ জরুরি)\n• SOP/Motivation Letter\n• IELTS/TOEFL (English taught হলে) / Spanish proof (Spanish taught হলে)\n• LOR (কিছু প্রোগ্রামে)\n• Portfolio (Architecture/Design/Media)\n• Work/Internship/Research proof (থাকলে)\n• Spanish Equivalence Transcript (Only for Masters Application)\n• Masters Access Letter\n• Foreign Degree Homologación (Only for Bachelor Admission)\n\nইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
+    "answer": "কমন ডকুমেন্টস:\n• Passport\n• Academic transcripts + certificate\n• CV (Europass Format)\n• SOP/Motivation Letter\n• IELTS/TOEFL (English taught হলে) / Spanish proof (Spanish taught হলে)\n• LOR (কিছু প্রোগ্রামে)\n• Portfolio (Architecture/Design/Media)\n• Work/Internship/Research proof (থাকলে)\n• Spanish Equivalence Transcript (Only for Masters Application)\n• Masters Access Letter\n• Foreign Degree Homologación (Only for Bachelor Admission)\n\nইউনিভার্সিটি আবেদন প্রক্রিয়া সম্পর্কে বিস্তারিত জানতে আমাদের University Searching & Application কোর্সটি করতে পারেন।"
   },
   {
     "id": 13,
@@ -66,8 +66,8 @@
   },
   {
     "id": 14,
-    "question": "Previous education verification, evaluation বা Equivalence ব্যাপারে কিছু কি লাগে?",
-    "answer": "আপনার সার্টিফিকেট ও ট্রান্সক্রিপ্টের legalization/apostille কপি আবশ্যক। বাংলাদেশ যেহেতু বর্তমানে Hague Apostille Convention এ সাইন করেছে এবং তাই সরাসরি থেকে apostille করা সার্টিফিকেট ট্রান্সক্রিপ্ট গ্রহণ করা হয়।\n\nব্যাচেলর আবেদনের ক্ষেত্রে HSC/Diploma বা সমমানের ডিগ্রির সার্টিফিকেট ট্রান্সক্রিপ্ট স্পেনের এডুকেশন মিনিস্ট্রি হতে Homologación করতে হয় যার ফি পেতে পারে ৫০ ইউরো।\n\nমাস্টার্স আবেদনের ক্ষেত্রে স্প্যানিশ এডুকেশন মিনিস্ট্রির ওয়েবসাইট হতে আপনার ব্যাচেলর এর ট্রান্সক্রিপ্ট Equivalence করলেই চলে। Homologación এর প্রয়োজন পায় না।\n\nEquivalence ও Homologación নিয়ে বিস্তারিত জানতে আমাদের YouTube চ্যানেলে স্পেন নিয়ে প্লেলিস্টটি দেখতে পারেন।"
+    "question": "Previous education verification, evaluation বা Equivalence  কিছু কি লাগে?",
+    "answer": "আপনার সার্টিফিকেট ও ট্রান্সক্রিপ্টের legalization/apostille কপি আবশ্যক। বাংলাদেশ যেহেতু বর্তমানে Hague Apostille Convention এ সাইন করেছে এবং তাই সরাসরি থেকে apostille করা সার্টিফিকেট ট্রান্সক্রিপ্ট গ্রহণ করা হয়।\n\nব্যাচেলর আবেদনের ক্ষেত্রে HSC/Diploma বা সমমানের ডিগ্রির সার্টিফিকেট ট্রান্সক্রিপ্ট স্পেনের এডুকেশন মিনিস্ট্রি হতে Homologación করতে হয় যার ফি হতে পারে ৫০ ইউরো।\n\nমাস্টার্স আবেদনের ক্ষেত্রে স্প্যানিশ এডুকেশন মিনিস্ট্রির ওয়েবসাইট হতে আপনার ব্যাচেলর এর ট্রান্সক্রিপ্ট Equivalence করলেই চলে। Homologación এর প্রয়োজন পড়েনা।\n\nEquivalence ও Homologación নিয়ে বিস্তারিত জানতে আমাদের YouTube চ্যানেলে স্পেন নিয়ে প্লেলিস্টটি দেখতে পারেন।"
   },
   {
     "id": 15,
@@ -127,7 +127,7 @@
   {
     "id": 26,
     "question": "বাংলাদেশ থেকে স্পেন স্টুডেন্ট ভিসার অ্যাপয়েন্টমেন্ট পাওয়া যাচ্ছে না — এটা কি সত্যি? অ্যাপয়েন্টমেন্ট সংকট হলে কী করবো?",
-    "answer": "এপ্রিল থেকে জুন মাস হলো রাশ আর্ম সেপ্টেম্বর ইনটেকের জন্য। আর তাই স্লট পাওয়া যা একটু কষ্টকর। নিয়ম হলো BLS এর নাম্বারে সরাসরি ফোন নিয়ে স্লট নেওয়া। অফার লেটার আসার পরই স্লট নেওয়া উচিত, কেননা তারা শুধুমাত্র অফার লেটার আসলেই স্লট দিয়ে থাকে। অ্যাপয়েন্টমেন্ট পাওয়ার জন্য ধৈর্য্য ধরে নিয়মিত তাদের নির্ধারিত সময়ে কল দিতে হয়। কিছু কিছু প্রতিষ্ঠান, দালাল ও এজেন্সি অ্যাপয়েন্টমেন্ট পাইয়ে দেওয়ার নাম করে স্টুডেন্টদের কাছ থেকে বড় অংকের টাকা হাতিয়ে নেয়। তাদের থেকে দূরে থাকা উচিত, কেননা রাশ আর্ম ও অ্যাম্বাসির নির্দেশে BLS এ স্লটের পরিমাণ বাড়ায়।"
+    "answer": "এপ্রিল থেকে জুন মাস হলো Rush Hour সেপ্টেম্বর ইনটেকের জন্য। আর তাই স্লট পাওয়া যা একটু কষ্টকর। নিয়ম হলো BLS এর নাম্বারে সরাসরি ফোন নিয়ে স্লট নেওয়া। অফার লেটার আসার পরই স্লট নেওয়া উচিত, কেননা তারা শুধুমাত্র অফার লেটার আসলেই স্লট দিয়ে থাকে। অ্যাপয়েন্টমেন্ট পাওয়ার জন্য ধৈর্য্য ধরে নিয়মিত তাদের নির্ধারিত সময়ে কল দিতে হয়। কিছু কিছু প্রতিষ্ঠান, দালাল ও এজেন্সি অ্যাপয়েন্টমেন্ট পাইয়ে দেওয়ার নাম করে স্টুডেন্টদের কাছ থেকে বড় অংকের টাকা হাতিয়ে নেয়। তাদের থেকে দূরে থাকা উচিত, কেননা Rush Hour এ অ্যাম্বাসির নির্দেশে BLS এ স্লটের পরিমাণ বাড়ায়।"
   },
   {
     "id": 27,
