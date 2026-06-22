@@ -1,5 +1,22 @@
 import React from "react";
 
+function toEmbedUrl(url) {
+  if (url.includes("/embed/")) return url;
+  const short = url.match(/youtu\.be\/([^?&]+)/);
+  if (short) return `https://www.youtube.com/embed/${short[1]}`;
+  const watch = url.match(/[?&]v=([^?&]+)/);
+  if (watch) return `https://www.youtube.com/embed/${watch[1]}`;
+  return url;
+}
+
+function toWatchUrl(url) {
+  const embed = url.match(/\/embed\/([^?&]+)/);
+  if (embed) return `https://www.youtube.com/watch?v=${embed[1]}`;
+  const short = url.match(/youtu\.be\/([^?&]+)/);
+  if (short) return `https://www.youtube.com/watch?v=${short[1]}`;
+  return url;
+}
+
 const Videos = ({ videos }) => {
   const primary = "#364bc5";
   return (
@@ -51,7 +68,7 @@ const Videos = ({ videos }) => {
               <div className="aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
                 <iframe
                   className="w-full h-full"
-                  src={v.url}
+                  src={toEmbedUrl(v.url)}
                   title={v.title}
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -63,7 +80,7 @@ const Videos = ({ videos }) => {
 
             <div className="px-4 pb-5">
               <a
-                href={v.url.replace("/embed/", "/watch?v=")}
+                href={toWatchUrl(v.url)}
                 target="_blank"
                 rel="noreferrer"
                 className="block w-full rounded-2xl px-4 py-3 text-center text-sm font-semibold text-white"
