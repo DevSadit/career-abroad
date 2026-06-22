@@ -171,8 +171,7 @@ const Page = () => {
                   </div>
                   <div className="rounded-2xl border border-gray-200 p-4">
                     <p className="text-xs uppercase tracking-wider text-gray-500">Not included</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">E. Advanced Robotics & Embedded System</p>
-                    <p className="text-sm font-semibold text-gray-900">H. Thesis, Research & Publication</p>
+                    <p className="mt-1 text-sm font-semibold text-gray-900">Personal Website</p>
                   </div>
                 </div>
 
