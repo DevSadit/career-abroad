@@ -333,7 +333,7 @@ const Navbar = () => {
 
                 <div
                   className={`w-full max-w-xs overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-60 opacity-100 mt-2" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-80 opacity-100 mt-2" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-2">
