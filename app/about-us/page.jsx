@@ -203,7 +203,7 @@ const Page = () => {
                 Explore Mentorship
               </Link>
               <Link
-                href={"https://wa.me/34613593236"}
+                href={"mailto:mentors.career.abroad26@gmail.com"}
                 className="w-full md:w-auto rounded-2xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50"
               >
                 Contact Us

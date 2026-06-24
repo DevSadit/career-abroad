@@ -132,7 +132,7 @@ const Page = () => {
   ];
 
   const registrationUrl = "https://forms.gle/KS6eF5vBJGSeB9sv8";
-  const talkToUsUrl = "https://wa.me/34613593236";
+  const talkToUsUrl = "mailto:mentors.career.abroad26@gmail.com";
 
   return (
     <section className="min-h-screen py-12 md:py-16 lg:py-20 bg-white">
@@ -492,7 +492,7 @@ const Page = () => {
           <p className="text-sm text-gray-500">
             Still have questions?{" "}
             <a href={talkToUsUrl} className="font-medium underline" style={{ color: primary }}>
-              Message us on WhatsApp
+              Email Us
             </a>
           </p>
         </div>
