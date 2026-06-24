@@ -14,7 +14,7 @@ const CoursesSection = () => {
 
         {/* card section */}
         <div className=" my-4 gap-5 grid grid-cols-1 md:grid-cols-3 ">
-          {courses.map((course) => (
+          {courses.filter((c) => !c.hidden).map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}
         </div>

@@ -84,34 +84,37 @@
     "id": "visa",
     "title": "D. Visa Application & Documentation",
     "know_more": "",
-    "price": 10000,
-    "fake_price": 12000,
+    "price": 20000,
+    "fake_price": 25000,
     "currency": "BDT",
     "slug": "visa",
     "goal": "Prepare visa documents correctly and avoid refusal triggers.",
-    "classes": {
-      "total": 10,
-      "recorded": 3,
-      "live": 5,
-      "mock": 2
-    },
     "includes": [
-      "Document checklist",
-      "Mock interview",
-      "Successful document samples"
+      "Visa docs checklist",
+      "Successful Documents Sample",
+      "Guidelines through Online session"
     ],
     "topics": [
-      "Country-wise visa requirements",
-      "Financial document presentation",
-      "Sponsor & solvency",
-      "Interview preparation",
-      "Visa SOP",
-      "Accomodation & Insurance"
+      "Solvency document prep. Strategy",
+      "Affidavit draft, Interview prep.",
+      "Accomodation, Insuarance, PCC Info",
+      {
+        "type": "flags",
+        "countries": [
+          { "code": "fr", "name": "France" },
+          { "code": "it", "name": "Italy" },
+          { "code": "be", "name": "Belgium" },
+          { "code": "ee", "name": "Estonia" },
+          { "code": "hu", "name": "Hungary" },
+          { "code": "es", "name": "Spain" }
+        ]
+      }
     ]
   },
   {
     "id": "advanced-robotics-embedded",
-    "title": "E. Advanced Robotics & Embedded System",
+    "title": "Advanced Robotics & Embedded System",
+    "hidden": true,
     "know_more": "https://youtu.be/zSW2Ic_DnOo?si=U-VKVJM3S5FBTy2d",
     "price": 8000,
     "fake_price": 10000,
@@ -138,7 +141,7 @@
   },
   {
     "id": "cv-lor-linkedin",
-    "title": "F. CV, LOR & LinkedIn",
+    "title": "E. CV, LOR & LinkedIn",
     "know_more": "",
     "price": 2500,
     "fake_price": 4000,
@@ -146,7 +149,6 @@
     "slug": "cv-lor-linkedin",
     "goal": "Build a strong academic profile package that looks international-ready.",
     "bestFor": "Final-year students, fresh graduates, early-stage applicants",
-
     "classes": {
       "total": 4,
       "recorded": 1,
@@ -164,7 +166,7 @@
   },
   {
     "id": "emailing",
-    "title": "G. Emailing (Professor / Admission / Scholarship)",
+    "title": "F. Emailing (Professor / Admission / Scholarship)",
     "know_more": "",
     "price": 2000,
     "fake_price": 3500,
@@ -189,7 +191,8 @@
   },
   {
     "id": "thesis-research",
-    "title": "H. Thesis, Research & Publication",
+    "title": "Thesis, Research & Publication",
+    "hidden": true,
     "know_more": "",
     "price": 2000,
     "fake_price": 4500,
@@ -213,7 +216,8 @@
   },
   {
     "id": "personal-website",
-    "title": "I. Personal Website",
+    "title": "Personal Website",
+    "hidden": true,
     "know_more": "",
     "price": 1000,
     "fake_price": 3000,

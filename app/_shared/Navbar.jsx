@@ -7,21 +7,24 @@ import Image from "next/image";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
+  { name: "Mentorship", href: "/complete-mentorship-program" },
   { name: "Course Contents", href: "/course-content" },
+  { name: "Relocation", href: "/relocation" },
   {
     name: "Faq",
     href: "faq",
     dropdown: [
       { name: "France", href: "/faq/france" },
+      { name: "Spain", href: "/faq/spain" },
       { name: "Italy", href: "/faq/italy" },
-      { name: "Belgium", href: "/faq/belgium" },
       { name: "Hungary", href: "/faq/hungary" },
+      { name: "Belgium", href: "/faq/belgium" },
       { name: "Estonia", href: "/faq/estonia" },
     ],
   },
 ];
 
-const contactUrl = "https://wa.me/34613593236";
+const contactUrl = "mailto:mentors.career.abroad26@gmail.com";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -219,13 +222,13 @@ const Navbar = () => {
                 </button>
 
                 <div
-                  className={`absolute left-0 top-full pt-3 transition-all duration-200 ${
+                  className={`absolute left-0 top-full transition-all duration-200 ${
                     isDesktopOpen
                       ? "visible translate-y-0 opacity-100"
                       : "invisible -translate-y-1 opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="min-w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-2">
+                  <div className="min-w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-2 mt-3">
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.name}
@@ -257,10 +260,10 @@ const Navbar = () => {
         ref={menuRef}
         className={`
           absolute left-0 right-0 top-full z-20 w-full bg-white border-b border-gray-900 md:hidden
-          transform transition-all duration-500 ease-in-out overflow-hidden backdrop-blur-sm
+          transform transition-all duration-500 ease-in-out overflow-y-auto backdrop-blur-sm
           ${
             menuOpen
-              ? "max-h-96 opacity-100 scale-y-100"
+              ? "max-h-[80vh] opacity-100 scale-y-100"
               : "max-h-0 opacity-0 scale-y-95"
           }
         `}
@@ -330,7 +333,7 @@ const Navbar = () => {
 
                 <div
                   className={`w-full max-w-xs overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-60 opacity-100 mt-2" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-80 opacity-100 mt-2" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-2">

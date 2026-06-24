@@ -20,11 +20,11 @@ import {
 const INITIAL_MESSAGE = {
   id: "welcome",
   role: "assistant",
-  text: "Hey! I'm MentorBOT — your study-abroad guide. Ask me anything about applying to France, Italy, Belgium, Hungary, or Estonia. I'll do my best to help!",
+  text: "Hey! I'm MentorBOT — your study-abroad guide. Ask me anything about applying to France, Italy, Belgium, Hungary, Estonia, or Spain. I'll do my best to help!",
 };
 
 const BOOKING_LINK = "https://cal.com/ahsansuny2026/40min";
-const WHATSAPP_LINK = "https://wa.me/34613593236";
+// WhatsApp personal number removed — contact via email only
 const CONTACT_EMAIL = "mailto:mentors.career.abroad26@gmail.com";
 const COURSES_LINK = "https://www.ahsansuny.com/course-content";
 const QUICK_START_COUNTRY = "france";
@@ -63,6 +63,11 @@ const PROMPT_SUGGESTIONS = {
     "Is Estonia good for affordable study?",
     "What should I know about Estonia application?",
     "How can I improve my Estonia visa profile?",
+  ],
+  spain: [
+    "When does Spain application usually open?",
+    "What documents are needed for Spain application?",
+    "How does Spain student visa work?",
   ],
 };
 
@@ -315,7 +320,7 @@ export default function AIMentorWidget() {
 
     const nowMs = Date.now();
 
-      if (mode === "attention" && !force && nowMs - lastChimeAtRef.current < 12000) {
+      if (mode === "attention" && !force && nowMs - lastChimeAtRef.current < 30000) {
         return false;
       }
 
@@ -437,11 +442,11 @@ export default function AIMentorWidget() {
 
     const timeoutId = window.setTimeout(() => {
       playMentorChime({ mode: "attention" });
-    }, 4500);
+    }, 30000);
 
     const intervalId = window.setInterval(() => {
       playMentorChime({ mode: "attention" });
-    }, 16000);
+    }, 30000);
 
     return () => {
       window.clearTimeout(timeoutId);
@@ -891,13 +896,11 @@ export default function AIMentorWidget() {
                         </p>
                         <div className="mt-3 grid grid-cols-2 gap-2">
                           <Link
-                            href={WHATSAPP_LINK}
-                            target="_blank"
-                            rel="noreferrer"
+                            href={CONTACT_EMAIL}
                             className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#364bc5] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#2d3fb1]"
                           >
-                            <MessageCircle className="h-4 w-4" />
-                            WhatsApp
+                            <Mail className="h-4 w-4" />
+                            Email Us
                           </Link>
                           <Link
                             href={BOOKING_LINK}
@@ -916,11 +919,13 @@ export default function AIMentorWidget() {
                             {fallbackCountryLabel} FAQ
                           </Link>
                           <Link
-                            href={CONTACT_EMAIL}
+                            href={COURSES_LINK}
+                            target="_blank"
+                            rel="noreferrer"
                             className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors hover:bg-slate-50"
                           >
-                            <Mail className="h-4 w-4" />
-                            Email
+                            <ArrowUpRight className="h-4 w-4" />
+                            Courses
                           </Link>
                         </div>
                       </div>

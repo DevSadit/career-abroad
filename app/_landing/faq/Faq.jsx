@@ -24,47 +24,29 @@ const Faq = () => {
         {/* head text */}
         <Title title={"Faq"} subtitle={" Based On Countries"} />
 
-        {/* Countries Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {countries.map((country, index) => (
+        {/* Countries Pill Row */}
+        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-2 mt-8">
+          {countries.filter(c => c.code !== "pl").map((country, index) => (
             <Link
               href={country.href}
               key={country.code}
-              className="group relative bg-linear-to-br from-white to-gray-50 rounded-2xl p-8 border-2 border-gray-100 hover:border-[#364bc5] transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-[#364bc5]/10 cursor-pointer transform hover:-translate-y-2"
-              style={{
-                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-              }}
+              className="group inline-flex items-center gap-2 px-3.5 py-2.5 rounded-full border border-gray-200 bg-white hover:border-[#364bc5] hover:bg-[#364bc5]/5 hover:shadow-md transition-all duration-200 shrink-0"
+              style={{ animation: `fadeInUp 0.4s ease-out ${index * 0.05}s both` }}
             >
-              {/* Decorative linear overlay on hover */}
-              <div className="absolute inset-0 bg-linear-to-br from-[#364bc5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-
-              <div className="relative flex flex-col items-center justify-center space-y-4">
-                {/* Flag Container */}
-                <div className="relative w-24 h-24 rounded-full bg-linear-to-br from-[#364bc5]/10 to-[#364bc5]/5 p-1 group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-lg group-hover:shadow-[#364bc5]/20 transition-shadow duration-300">
-                    {country.flagPath && (
-                      <Image
-                        src={country.flagPath}
-                        alt={`${country.name} flag`}
-                        width={64}
-                        height={64}
-                        className="object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
-                      />
-                    )}
-                  </div>
+              {country.flagPath && (
+                <div className="w-8 h-8 rounded-full overflow-hidden shrink-0 shadow-sm">
+                  <Image
+                    src={country.flagPath}
+                    alt={`${country.name} flag`}
+                    width={32}
+                    height={32}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
-
-                {/* Country Name */}
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#364bc5] transition-colors duration-300">
-                  {country.name}
-                </h3>
-
-                {/* Decorative Line */}
-                <div className="w-16 h-1 bg-linear-to-br from-transparent via-[#364bc5] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-[#364bc5]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-tr-2xl" />
+              )}
+              <span className="text-sm font-semibold text-gray-700 group-hover:text-[#364bc5] transition-colors duration-200 whitespace-nowrap">
+                {country.name}
+              </span>
             </Link>
           ))}
         </div>
