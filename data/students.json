@@ -58,5 +58,15 @@
     "name": "Syeda Jafri Shahrin",
     "affiliation": "Premier University, Chittagong",
     "image": "/students/4Jafri.jpg"
+  },
+  {
+    "id": 7,
+    "quote": "Student Visa 2025",
+    "program": "Masters in Data Science",
+    "university": "Télécom SudParis",
+    "country": "France",
+    "name": "Samrina Sarkar Sammi",
+    "affiliation": "Daffodil International University",
+    "image": "/students/Samrina_TelecomSUDParis.png"
   }
 ]
