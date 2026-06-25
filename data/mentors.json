@@ -8,6 +8,13 @@
       "MSc in Embedded Systems – France",
       "BSc in Electrical & Electronic Engineering"
     ],
+    "expertiseCountries": [
+      { "code": "fr", "name": "France" },
+      { "code": "es", "name": "Spain" },
+      { "code": "it", "name": "Italy" },
+      { "code": "ee", "name": "Estonia" },
+      { "code": "us", "name": "USA" }
+    ],
     "book_a_session": "https://cal.com/ahsansuny2026/40min"
   },
   {
@@ -19,6 +26,12 @@
       "MSc in Wireless IC – France",
       "BSc in Electrical & Electronic Engineering"
     ],
+    "expertiseCountries": [
+      { "code": "fr", "name": "France" },
+      { "code": "de", "name": "Germany" },
+      { "code": "be", "name": "Belgium" },
+      { "code": "no", "name": "Norway" }
+    ],
     "book_a_session": "https://cal.com/safkat-islam-bl56lx/single-consultation-session"
   },
   {
@@ -27,6 +40,10 @@
     "image": "/mentors/Faisal_Mentor6.png",
     "currentStatus": "MSc in Cybersecurity",
     "education": ["Johannes Kepler University Linz, Austria", "BSc in (CSE)"],
+    "expertiseCountries": [
+      { "code": "at", "name": "Austria" },
+      { "code": "de", "name": "Germany" }
+    ],
     "book_a_session": ""
   },
   {
@@ -35,6 +52,10 @@
     "image": "/mentors/Imran_Mentor4.png",
     "currentStatus": "MSc in Smart Grid",
     "education": ["Grenoble INP, France", "BSc in (EEE)"],
+    "expertiseCountries": [
+      { "code": "fr", "name": "France" },
+      { "code": "sa", "name": "KSA" }
+    ],
     "book_a_session": "https://cal.com/md-imran-uddin/mentoring-session"
   },
   {
@@ -43,6 +64,10 @@
     "image": "/mentors/Rahul.jpeg",
     "currentStatus": "Masters in CSE",
     "education": ["University of Pannonia, Hungary", "BSc in (CSE)"],
+    "expertiseCountries": [
+      { "code": "hu", "name": "Hungary" },
+      { "code": "it", "name": "Italy" }
+    ],
     "book_a_session": ""
   },
   {
@@ -51,6 +76,9 @@
     "image": "/mentors/Uzzal_Mentor5.png",
     "currentStatus": "Dev. Engineer (USA)",
     "education": ["Western Carolina University", "BSc in (EEE)"],
+    "expertiseCountries": [
+      { "code": "us", "name": "USA" }
+    ],
     "book_a_session": ""
   }
 ]
