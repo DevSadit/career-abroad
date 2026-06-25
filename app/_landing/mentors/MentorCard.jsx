@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+function countryFlag(code) {
+  return code
+    .toUpperCase()
+    .replace(/./g, (c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65));
+}
+
 const MentorCard = ({ mentor }) => {
   return (
     <div className="group bg-white rounded-2xl shadow-md hover:shadow-2xl hover:shadow-[#364bc5]/10 border border-gray-100 hover:border-[#364bc5]/30 transition-all duration-500 overflow-hidden transform hover:-translate-y-1">
@@ -58,6 +64,21 @@ const MentorCard = ({ mentor }) => {
                 ))}
               </div>
             </div>
+
+            {/* Expertise Countries */}
+            {mentor.expertiseCountries?.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {mentor.expertiseCountries.map((country) => (
+                  <span
+                    key={country.code}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600"
+                  >
+                    <span className="text-sm leading-none">{countryFlag(country.code)}</span>
+                    {country.name}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {/* ✅ Book a Session Button (Conditional) */}
             {mentor.book_a_session && (
