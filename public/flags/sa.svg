@@ -1,3 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
   <rect width="900" height="600" fill="#006C35"/>
+  <!-- Shahada (Arabic text) -->
+  <text x="450" y="255" text-anchor="middle" font-family="'Times New Roman', Georgia, serif"
+        font-size="105" fill="white" direction="rtl" unicode-bidi="embed">لا إله إلا الله</text>
+  <text x="450" y="365" text-anchor="middle" font-family="'Times New Roman', Georgia, serif"
+        font-size="105" fill="white" direction="rtl" unicode-bidi="embed">محمد رسول الله</text>
+  <!-- Sword blade pointing left -->
+  <path d="M210,435 L710,425 L710,450 L210,460 Z" fill="white"/>
+  <!-- Sword tip -->
+  <path d="M210,435 L155,447 L210,460 Z" fill="white"/>
+  <!-- Sword hilt/guard -->
+  <rect x="690" y="410" width="25" height="65" rx="4" fill="white"/>
+  <rect x="665" y="418" width="75" height="12" rx="3" fill="white"/>
+  <rect x="665" y="446" width="75" height="12" rx="3" fill="white"/>
 </svg>
