@@ -1,6 +1,6 @@
 {
   "title": "Application to Visa Process Steps for Belgium",
-  "infoLink": null,
+  "infoLink": "https://india.diplomatie.belgium.be/en/travel-belgium/visa-belgium/visa-belgium-if-you-live-bangladesh",
   "notice": "NEW (since 16 Nov 2025): Submit at the Belgian Visa Application Centre (VFS Global), Banani, Dhaka",
   "processSteps": [
     { "label": "Verification : Apostille", "color": "blue" },
