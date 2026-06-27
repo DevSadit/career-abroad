@@ -12,6 +12,7 @@
       ],
       "color": "green"
     },
+    { "label": "Show Fund : (700 euros/month × Year of Studies) + Rest Tuition Fees", "color": "orange" },
     { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
     { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
