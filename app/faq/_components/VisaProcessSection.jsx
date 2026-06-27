@@ -70,10 +70,11 @@ export default function VisaProcessSection({ data }) {
         </div>
       )}
 
-      {/* Column headers — single row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-100 border-b border-gray-100 bg-gray-50/60 px-5 py-2">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Process Steps</p>
-        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 md:pl-5">Cost Breakdown</p>
+      {/* Single centered label spanning both columns */}
+      <div className="border-b border-gray-100 bg-gray-50/60 px-5 py-2 text-center">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+          Process Steps &amp; Cost Breakdown
+        </p>
       </div>
 
       {/* Two-column layout */}
