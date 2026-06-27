@@ -49,7 +49,55 @@ function NoticeText({ text }) {
   );
 }
 
-// Belgium-style: right column = cost steps + single contact card
+// Reusable contact card — accent color driven by c.accent (hex string)
+function ContactCard({ c }) {
+  return (
+    <div
+      className="flex flex-col bg-white rounded-xl border border-gray-200 border-l-4 shadow-sm hover:shadow-md transition-all duration-200"
+      style={{ borderLeftColor: c.accent ?? "#364bc5" }}
+    >
+      {/* Header: name + logo */}
+      <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-2.5 border-b border-gray-100">
+        <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-500">
+          {c.name}
+        </p>
+        {c.logo && (
+          <div className="flex items-center justify-end h-8 w-24 shrink-0">
+            <Image
+              src={c.logo}
+              alt={c.name}
+              width={96}
+              height={32}
+              className="object-contain h-8 w-auto max-w-[96px]"
+            />
+          </div>
+        )}
+      </div>
+      {/* Details */}
+      <div className="px-4 py-3 flex flex-col gap-2">
+        <Link
+          href={`mailto:${c.email}`}
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:text-[#2d3fb1] hover:underline break-all transition-colors"
+        >
+          <Mail className="w-3.5 h-3.5 shrink-0" />
+          {c.email}
+        </Link>
+        <p className="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
+          <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400" />
+          {c.address}
+        </p>
+        {c.hours && (
+          <p className="flex items-center gap-2 text-sm text-gray-500">
+            <Clock className="w-3.5 h-3.5 shrink-0 text-gray-400" />
+            {c.hours}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Belgium: right = cost steps + single contact card
 function CostAndContactColumn({ costSteps, contact }) {
   return (
     <div className="p-5 flex flex-col gap-5">
@@ -59,94 +107,39 @@ function CostAndContactColumn({ costSteps, contact }) {
         ))}
       </div>
       {contact && (
-        <div className="flex flex-col bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#E31837] shadow-sm hover:shadow-md transition-all duration-200">
-          {/* Card header */}
-          <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-2.5 border-b border-gray-100">
-            <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-500">
-              Embassy / VAC Contact
-            </p>
-          </div>
-          {/* Contact details */}
-          <div className="px-4 py-3 flex flex-col gap-2">
-            <Link
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:text-[#2d3fb1] hover:underline break-all transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 shrink-0" />
-              {contact.email}
-            </Link>
-            <p className="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
-              <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400" />
-              {contact.address}
-            </p>
-            {contact.hours && (
-              <p className="flex items-center gap-2 text-sm text-gray-500">
-                <Clock className="w-3.5 h-3.5 shrink-0 text-gray-400" />
-                {contact.hours}
-              </p>
-            )}
-          </div>
-        </div>
+        <ContactCard c={{ ...contact, accent: contact.accent ?? "#E31837", name: contact.name ?? "Embassy / VAC Contact" }} />
       )}
     </div>
   );
 }
 
-// Brand accent colours for each contact card left border
-const CARD_ACCENTS = [
-  "border-l-[#003189]",  // Campus France – navy blue
-  "border-l-[#E31837]",  // VFS Global   – red
-  "border-l-[#002395]",  // French Embassy – tricolore blue
-];
-
+// France: right = multiple contact cards only (no cost steps)
 function MultiContactColumn({ contacts }) {
   return (
     <div className="p-5 flex flex-col gap-3 justify-between h-full">
       {contacts.map((c, i) => (
-        <div
-          key={i}
-          className={`group flex-1 flex flex-col bg-white rounded-xl border border-gray-200 border-l-4 ${CARD_ACCENTS[i] ?? "border-l-gray-400"} shadow-sm hover:shadow-md transition-all duration-200`}
-        >
-          {/* Card header: org name + logo */}
-          <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-2.5 border-b border-gray-100">
-            <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-500">
-              {c.name}
-            </p>
-            {c.logo && (
-              <div className="flex items-center justify-end h-8 w-24 shrink-0">
-                <Image
-                  src={c.logo}
-                  alt={c.name}
-                  width={96}
-                  height={32}
-                  className="object-contain h-8 w-auto max-w-[96px]"
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Contact details */}
-          <div className="px-4 py-3 flex flex-col gap-2">
-            <Link
-              href={`mailto:${c.email}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:text-[#2d3fb1] hover:underline break-all transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 shrink-0" />
-              {c.email}
-            </Link>
-            <p className="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
-              <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400" />
-              {c.address}
-            </p>
-            {c.hours && (
-              <p className="flex items-center gap-2 text-sm text-gray-500">
-                <Clock className="w-3.5 h-3.5 shrink-0 text-gray-400" />
-                {c.hours}
-              </p>
-            )}
-          </div>
+        <div key={i} className="flex-1">
+          <ContactCard c={c} />
         </div>
       ))}
+    </div>
+  );
+}
+
+// Spain: right = cost steps + multiple contact cards below
+function CostAndMultiContactColumn({ costSteps, contacts }) {
+  return (
+    <div className="p-5 flex flex-col gap-5">
+      <div>
+        {costSteps.map((step, i) => (
+          <Step key={i} step={step} showArrow={i < costSteps.length - 1} />
+        ))}
+      </div>
+      <div className="flex flex-col gap-3">
+        {contacts.map((c, i) => (
+          <ContactCard key={i} c={c} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -201,8 +194,10 @@ export default function VisaProcessSection({ data }) {
           ))}
         </div>
 
-        {/* Right — cost+contact (Belgium) OR multi-contact (France) */}
-        {hasMultipleContacts ? (
+        {/* Right — layout depends on data shape */}
+        {hasMultipleContacts && hasCostSteps ? (
+          <CostAndMultiContactColumn costSteps={data.costSteps} contacts={data.contacts} />
+        ) : hasMultipleContacts ? (
           <MultiContactColumn contacts={data.contacts} />
         ) : (
           <CostAndContactColumn costSteps={data.costSteps ?? []} contact={data.contact} />

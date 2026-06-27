@@ -1,0 +1,44 @@
+{
+  "title": "Application to Visa Process Steps for Spain",
+  "infoLink": "https://www.exteriores.gob.es/Embajadas/dhaka/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+  "notice": null,
+  "processSteps": [
+    { "label": "Homologation/Equivalence : 30-50 euros", "color": "gray" },
+    { "label": "University Application with Apostilled docs (25-50 euros/application)", "color": "yellow" },
+    {
+      "label": "Offer Letter : With program details and fees",
+      "bullets": [
+        "Tuition Fees 700–6000 euro (Varies program to program)",
+        "Initial Deposit for Seat Confirmation (A portion of Tuition Fees)"
+      ],
+      "color": "green"
+    },
+    { "label": "Police clearance certificate : From Ministry of Home Affairs, 1500 BDT", "color": "lightblue" },
+    { "label": "BLS International Appointment : +8801609208089 (Sun-Thu) – (14:00 – 15:30) hrs", "color": "yellow" },
+    { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
+    { "label": "Health Insurance : 300-350 euro/year", "color": "lightyellow" },
+    { "label": "Show Fund : (700 euros/month of 1 year) + Rest Tuition Fees", "color": "lightyellow" }
+  ],
+  "costSteps": [
+    { "label": "Health Checkup Certificate : 3000-7500 (BDT)", "color": "orange" },
+    { "label": "Legalization (Apostille) : (MOFA)", "color": "gray" },
+    { "label": "Translation in Spanish : Per page 200-300 BDT", "color": "lightyellow" },
+    { "label": "Visa Fee (D) : 90 euro   |   BLS Fee : 2500 BDT", "color": "blue" }
+  ],
+  "contacts": [
+    {
+      "name": "BLS International",
+      "logo": "/BLS.png",
+      "accent": "#1B3A6B",
+      "email": "info.dac@blshelpline.com",
+      "address": "Concord Niharika Tower, Plot-138, Road-4, Block-C, Banani, Dhaka–1213 (Bangladesh)"
+    },
+    {
+      "name": "Spanish Embassy",
+      "logo": "/SpanishEmbassy.png",
+      "accent": "#C60B1E",
+      "email": "emb.dhaka.vis@maec.es",
+      "address": "Navana Pristine Pavilion Building, 13th Floor, 128 Gulshan Avenue, Block # CEN(H)-2, Gulshan-2, 1212. Dhaka."
+    }
+  ]
+}
