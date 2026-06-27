@@ -1,4 +1,5 @@
 import { Mail, MapPin, Clock, ExternalLink, ArrowDown, CheckCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const COLOR_MAP = {
@@ -30,7 +31,7 @@ function Step({ step, showArrow }) {
         )}
       </div>
       {showArrow && (
-        <div className="flex justify-center py-1 text-gray-300">
+        <div className="flex justify-center py-1 text-gray-500">
           <ArrowDown className="w-4 h-4" />
         </div>
       )}
@@ -58,66 +59,92 @@ function CostAndContactColumn({ costSteps, contact }) {
         ))}
       </div>
       {contact && (
-        <div className="flex-1 rounded-xl border border-[#364bc5]/20 bg-gradient-to-br from-[#364bc5]/5 to-indigo-50 p-4 flex flex-col gap-3">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#364bc5]">
-            Embassy / VAC Contact
-          </p>
-          <Link
-            href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:underline break-all"
-          >
-            <Mail className="w-4 h-4 shrink-0" />
-            {contact.email}
-          </Link>
-          <p className="flex items-start gap-2 text-sm text-gray-600">
-            <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-gray-400" />
-            {contact.address}
-          </p>
-          <p className="flex items-center gap-2 text-sm text-gray-600">
-            <Clock className="w-4 h-4 shrink-0 text-gray-400" />
-            {contact.hours}
-          </p>
+        <div className="flex flex-col bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#E31837] shadow-sm hover:shadow-md transition-all duration-200">
+          {/* Card header */}
+          <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-2.5 border-b border-gray-100">
+            <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-500">
+              Embassy / VAC Contact
+            </p>
+          </div>
+          {/* Contact details */}
+          <div className="px-4 py-3 flex flex-col gap-2">
+            <Link
+              href={`mailto:${contact.email}`}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:text-[#2d3fb1] hover:underline break-all transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              {contact.email}
+            </Link>
+            <p className="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
+              <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400" />
+              {contact.address}
+            </p>
+            {contact.hours && (
+              <p className="flex items-center gap-2 text-sm text-gray-500">
+                <Clock className="w-3.5 h-3.5 shrink-0 text-gray-400" />
+                {contact.hours}
+              </p>
+            )}
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-// France-style: right column = multiple contact cards stacked
-const CONTACT_ACCENT = [
-  "border-green-200 bg-green-50/60",
-  "border-red-200 bg-red-50/60",
-  "border-blue-200 bg-blue-50/60",
+// Brand accent colours for each contact card left border
+const CARD_ACCENTS = [
+  "border-l-[#003189]",  // Campus France – navy blue
+  "border-l-[#E31837]",  // VFS Global   – red
+  "border-l-[#002395]",  // French Embassy – tricolore blue
 ];
 
 function MultiContactColumn({ contacts }) {
   return (
-    <div className="p-5 flex flex-col gap-4">
+    <div className="p-5 flex flex-col gap-3 justify-between h-full">
       {contacts.map((c, i) => (
         <div
           key={i}
-          className={`rounded-xl border p-4 flex flex-col gap-2 ${CONTACT_ACCENT[i] ?? "border-gray-200 bg-gray-50"}`}
+          className={`group flex-1 flex flex-col bg-white rounded-xl border border-gray-200 border-l-4 ${CARD_ACCENTS[i] ?? "border-l-gray-400"} shadow-sm hover:shadow-md transition-all duration-200`}
         >
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            {c.name}
-          </p>
-          <Link
-            href={`mailto:${c.email}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:underline break-all"
-          >
-            <Mail className="w-4 h-4 shrink-0" />
-            {c.email}
-          </Link>
-          <p className="flex items-start gap-2 text-sm text-gray-600">
-            <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-gray-400" />
-            {c.address}
-          </p>
-          {c.hours && (
-            <p className="flex items-center gap-2 text-sm text-gray-600">
-              <Clock className="w-4 h-4 shrink-0 text-gray-400" />
-              {c.hours}
+          {/* Card header: org name + logo */}
+          <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-2.5 border-b border-gray-100">
+            <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-500">
+              {c.name}
             </p>
-          )}
+            {c.logo && (
+              <div className="flex items-center justify-end h-8 w-24 shrink-0">
+                <Image
+                  src={c.logo}
+                  alt={c.name}
+                  width={96}
+                  height={32}
+                  className="object-contain h-8 w-auto max-w-[96px]"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Contact details */}
+          <div className="px-4 py-3 flex flex-col gap-2">
+            <Link
+              href={`mailto:${c.email}`}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#364bc5] hover:text-[#2d3fb1] hover:underline break-all transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              {c.email}
+            </Link>
+            <p className="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
+              <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400" />
+              {c.address}
+            </p>
+            {c.hours && (
+              <p className="flex items-center gap-2 text-sm text-gray-500">
+                <Clock className="w-3.5 h-3.5 shrink-0 text-gray-400" />
+                {c.hours}
+              </p>
+            )}
+          </div>
         </div>
       ))}
     </div>

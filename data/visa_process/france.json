@@ -1,6 +1,6 @@
 {
   "title": "Application to Visa Process Steps for France",
-  "infoLink": null,
+  "infoLink": "https://www.bangladesh.campusfrance.org/en/procedure",
   "notice": "NEW (since 20 August 2025): First Campus France then Submit documents at the (VFS Global), Dhaka",
   "processSteps": [
     { "label": "University Application (No fees in most Public Universities)", "color": "yellow" },
@@ -22,16 +22,19 @@
   "contacts": [
     {
       "name": "Campus France",
+      "logo": "/Campus France.png",
       "email": "bangladesh@campusfrance.org",
       "address": "Alliance Française de Dhaka, 26 Mirpur Road, Corner of Road 3, Dhanmondi, Dhaka 1205"
     },
     {
       "name": "VFS Global",
+      "logo": "/VFS.png",
       "email": "info.francebgl@vfshelpline.com",
       "address": "Rangs Z Square, Level 7, 118 Gulshan Avenue, Gulshan 2, Dhaka 1212"
     },
     {
       "name": "French Embassy",
+      "logo": "/FranceGouvfr.png",
       "email": "visas.dacca-amba@diplomatie.gouv.fr",
       "address": "Madani Avenue, Baridhara Diplomatic Enclave, Dhaka 1212"
     }
