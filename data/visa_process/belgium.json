@@ -20,6 +20,7 @@
   "costSteps": [
     { "label": "Health Checkup : 7,500/- (BDT)", "color": "orange" },
     { "label": "Contribution Fee : 251 euro (public uni)", "color": "gray" },
+    { "label": "Accommodation Booking : 1k–2k euro (or Hotel Booking)", "color": "lightblue" },
     { "label": "VFS Service Fee : 13,800 BDT", "color": "yellow" },
     { "label": "Visa Fee (D) : 250 euro", "color": "blue" }
   ],

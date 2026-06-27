@@ -8,6 +8,7 @@ const COLOR_MAP = {
   green:       { bg: "bg-[#70AD47]", text: "text-white" },
   lightyellow: { bg: "bg-[#FFF2CC] border border-yellow-200", text: "text-gray-800" },
   silver:      { bg: "bg-[#767171]", text: "text-white" },
+  lightblue:   { bg: "bg-[#2E9DB5]", text: "text-white" },
   orange:      { bg: "bg-[#F4B183]", text: "text-gray-900" },
 };
 
