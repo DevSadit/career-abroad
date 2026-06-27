@@ -16,8 +16,7 @@
     { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
     { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
-    { "label": "VFS Service Fee : 22 euro", "color": "yellow" },
-    { "label": "Visa Fee (D) : 99 euro", "color": "blue" }
+    { "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro", "color": "blue" }
   ],
   "costSteps": [],
   "contacts": [
