@@ -16,10 +16,10 @@
     { "label": "Police clearance certificate : From Ministry of Home Affairs, 1500 BDT", "color": "lightblue" },
     { "label": "BLS International Appointment : +8801609208089 (Sun-Thu) – (14:00 – 15:30) hrs", "color": "yellow" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
-    { "label": "Health Insurance : 300-350 euro/year", "color": "lightyellow" }
+    { "label": "Health Insurance : 300-350 euro/year", "color": "lightyellow" },
+    { "label": "Show Fund : (700 euros/month of 1 year) + Rest Tuition Fees", "color": "lightyellow" }
   ],
   "costSteps": [
-    { "label": "Show Fund : (700 euros/month of 1 year) + Rest Tuition Fees", "color": "lightyellow" },
     { "label": "Health Checkup Certificate : 3000-7500 (BDT)", "color": "orange" },
     { "label": "Legalization (Apostille) : (MOFA)", "color": "gray" },
     { "label": "Translation in Spanish : Per page 200-300 BDT", "color": "lightyellow" },
