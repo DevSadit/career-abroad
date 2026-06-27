@@ -1,0 +1,31 @@
+{
+  "title": "Application to Visa Process Steps for Belgium",
+  "infoLink": null,
+  "notice": "NEW (since 16 Nov 2025): Submit at the Belgian Visa Application Centre (VFS Global), Banani, Dhaka",
+  "processSteps": [
+    { "label": "Verification : Apostille", "color": "blue" },
+    { "label": "University Application (50–200 euro)", "color": "yellow" },
+    { "label": "Legalization : Tejgaon Belgium Consulate\nPer copy – 2940/-", "color": "gray" },
+    {
+      "label": "Offer Letter : With 2 invoices",
+      "bullets": [
+        "Block ~13–14k euro (12 × €1,062 / month)",
+        "Tuition 4–5k euro"
+      ],
+      "color": "green"
+    },
+    { "label": "Health Insurance : Swisscare 190–200 euro/year", "color": "lightyellow" },
+    { "label": "Police clearance certificate", "color": "silver" }
+  ],
+  "costSteps": [
+    { "label": "Health Checkup : 7,500/- (BDT)", "color": "orange" },
+    { "label": "Contribution Fee : 251 euro (public uni)", "color": "gray" },
+    { "label": "VFS Service Fee : 13,800 BDT", "color": "yellow" },
+    { "label": "Visa Fee (D) : 250 euro", "color": "blue" }
+  ],
+  "contact": {
+    "email": "newdelhi.visa@diplobel.fed.be",
+    "address": "VFS Global VAC: Borak Mehnur, 51/B (Level 7), Kemal Ataturk Ave, Banani, Dhaka-1213",
+    "hours": "Sun–Thu 9AM–5PM"
+  }
+}
