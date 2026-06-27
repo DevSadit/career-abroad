@@ -1,0 +1,39 @@
+{
+  "title": "Application to Visa Process Steps for France",
+  "infoLink": null,
+  "notice": "NEW (since 20 August 2025): First Campus France then Submit documents at the (VFS Global), Dhaka",
+  "processSteps": [
+    { "label": "University Application (No fees in most Public Universities)", "color": "yellow" },
+    {
+      "label": "Offer Letter : With program details and fees",
+      "bullets": [
+        "Tuition Fees 254–6000 euro (Varies program to program)",
+        "Initial Deposit for Seat Confirmation (A portion of Tuition Fees)"
+      ],
+      "color": "green"
+    },
+    { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
+    { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
+    { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
+    { "label": "VFS Service Fee : 22 euro", "color": "yellow" },
+    { "label": "Visa Fee (D) : 99 euro", "color": "blue" }
+  ],
+  "costSteps": [],
+  "contacts": [
+    {
+      "name": "Campus France",
+      "email": "bangladesh@campusfrance.org",
+      "address": "Alliance Française de Dhaka, 26 Mirpur Road, Corner of Road 3, Dhanmondi, Dhaka 1205"
+    },
+    {
+      "name": "VFS Global",
+      "email": "info.francebgl@vfshelpline.com",
+      "address": "Rangs Z Square, Level 7, 118 Gulshan Avenue, Gulshan 2, Dhaka 1212"
+    },
+    {
+      "name": "French Embassy",
+      "email": "visas.dacca-amba@diplomatie.gouv.fr",
+      "address": "Madani Avenue, Baridhara Diplomatic Enclave, Dhaka 1212"
+    }
+  ]
+}
