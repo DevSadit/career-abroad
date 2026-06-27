@@ -24,18 +24,21 @@
     {
       "name": "Campus France",
       "logo": "/Campus France.png",
+      "accent": "#003189",
       "email": "bangladesh@campusfrance.org",
       "address": "Alliance Française de Dhaka, 26 Mirpur Road, Corner of Road 3, Dhanmondi, Dhaka 1205"
     },
     {
       "name": "VFS Global",
       "logo": "/VFS.png",
+      "accent": "#E31837",
       "email": "info.francebgl@vfshelpline.com",
       "address": "Rangs Z Square, Level 7, 118 Gulshan Avenue, Gulshan 2, Dhaka 1212"
     },
     {
       "name": "French Embassy",
       "logo": "/FranceGouvfr.png",
+      "accent": "#002395",
       "email": "visas.dacca-amba@diplomatie.gouv.fr",
       "address": "Madani Avenue, Baridhara Diplomatic Enclave, Dhaka 1212"
     }
