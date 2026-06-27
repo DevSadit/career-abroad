@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import FaqClient from "./FaqClient";
 import { FAQ_COUNTRY_KEYS, getFaqConfig } from "@/lib/faqRegistry";
+import { getProcessData } from "@/lib/processRegistry";
 
 export function generateStaticParams() {
   return FAQ_COUNTRY_KEYS.map((country) => ({ country }));
@@ -17,6 +18,7 @@ export default async function Page({ params }) {
       countryName={config.name}
       flagSrc={config.flag}
       faqData={config.data}
+      processData={getProcessData(country)}
     />
   );
 }

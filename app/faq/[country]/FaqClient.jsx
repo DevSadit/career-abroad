@@ -4,8 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Search, HelpCircle } from "lucide-react";
 import Link from "next/link";
+import VisaProcessSection from "@/app/faq/_components/VisaProcessSection";
 
-export default function FaqClient({ countryName, flagSrc, faqData }) {
+export default function FaqClient({ countryName, flagSrc, faqData, processData }) {
   const [openId, setOpenId] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -71,6 +72,9 @@ export default function FaqClient({ countryName, flagSrc, faqData }) {
             <Image src="/title.svg" alt="title" width={200} height={100} />
           </div>
         </div>
+
+        {/* Visa process section (country-specific) */}
+        {processData && <VisaProcessSection data={processData} />}
 
         {/* Search bar (you had state but no input, so add it) */}
         <div className="max-w-3xl mx-auto mb-8">

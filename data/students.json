@@ -1,4 +1,14 @@
 [
+    {
+    "id": 7,
+    "quote": "Masters in Data Science, Fall 2026",
+    "program": "Masters in Data Science",
+    "university": "Télécom SudParis",
+    "country": "France",
+    "name": "Samrina Sarkar Sammi",
+    "affiliation": "Daffodil International University",
+    "image": "/students/Samrina_TelecomSUDParis.png"
+  },
   {
     "id": 1,
     "quote": "Graduate Scholarship Fall 2025",
@@ -58,15 +68,6 @@
     "name": "Syeda Jafri Shahrin",
     "affiliation": "Premier University, Chittagong",
     "image": "/students/4Jafri.jpg"
-  },
-  {
-    "id": 7,
-    "quote": "IDEX Scholarship Fall 2026",
-    "program": "Masters in Data Science",
-    "university": "Télécom SudParis",
-    "country": "France",
-    "name": "Samrina Sarkar Sammi",
-    "affiliation": "Daffodil International University",
-    "image": "/students/Samrina_TelecomSUDParis.png"
   }
+
 ]
