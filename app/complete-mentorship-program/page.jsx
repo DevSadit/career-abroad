@@ -487,6 +487,45 @@ const Page = () => {
 
         </div>
 
+        {/* ── Featured Video ── */}
+        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-wider text-gray-500">Watch</p>
+            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+              See what the mentorship looks like
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              A walkthrough of the program — what's covered, how sessions work, and what to expect.
+            </p>
+
+            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/mzRkN4Xe0SE"
+                title="Complete Mentorship Program Overview"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="mt-4">
+              <a
+                href="https://www.youtube.com/watch?v=mzRkN4Xe0SE"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white"
+                style={{ backgroundColor: primary }}
+              >
+                <Video className="h-4 w-4" />
+                Watch on YouTube
+              </a>
+            </div>
+          </div>
+          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
         {/* ── Footer note ── */}
         <div className="mt-10 text-center">
           <p className="text-sm text-gray-500">
