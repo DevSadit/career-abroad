@@ -12,13 +12,35 @@
       ],
       "color": "green"
     },
-    { "label": "Show Fund : (700 euros/month × Year of Studies) + Rest Tuition Fees", "color": "orange" },
+    { "label": "Show Fund : (878 euros/month × Year of Studies) + Rest Tuition Fees", "color": "orange" },
     { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
     { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
     { "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro", "color": "blue" }
   ],
   "costSteps": [],
+  "resources": [
+    {
+      "label": "Campus France Listed Universities",
+      "url": "https://drive.google.com/file/d/1LxkCkPXHdCagCFJa-zg1NcnWm0kAX2WX/view?usp=sharing",
+      "icon": "file"
+    },
+    {
+      "label": "Campus France Database",
+      "url": "https://taughtie.campusfrance.org/tiesearch/#/catalog?lang=en&siteroot=https:%2F%2Fwww.bangladesh.campusfrance.org%2F",
+      "icon": "database"
+    },
+    {
+      "label": "PhD Directory in France",
+      "url": "https://doctorat.campusfrance.org/phd/dschools/main?lang=en&siteroot=https%3A//www.bangladesh.campusfrance.org/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Scholarships in France",
+      "url": "https://campusbourses.campusfrance.org/#/catalog?lang=en&cid=123",
+      "icon": "award"
+    }
+  ],
   "contacts": [
     {
       "name": "Campus France",
