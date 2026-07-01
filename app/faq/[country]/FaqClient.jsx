@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Search, HelpCircle } from "lucide-react";
+import { ChevronDown, Search, HelpCircle, FileText, Database, GraduationCap, Award, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import VisaProcessSection from "@/app/faq/_components/VisaProcessSection";
 
@@ -174,6 +174,63 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
             </div>
           )}
         </div>
+
+        {/* More Resources */}
+        {processData?.resources?.length > 0 && (
+          <div className="max-w-6xl mx-auto mt-12">
+            <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+              <div className="px-6 sm:px-8 py-5 border-b border-gray-100 flex items-center gap-3"
+                style={{ backgroundColor: "#364bc508" }}>
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "#364bc518" }}>
+                  <ExternalLink className="w-4 h-4" style={{ color: "#364bc5" }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">France</p>
+                  <h3 className="text-base font-semibold text-gray-900">More Resources</h3>
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {processData.resources.map((r, i) => {
+                  const icons = {
+                    file: FileText,
+                    database: Database,
+                    graduation: GraduationCap,
+                    award: Award,
+                  };
+                  const Icon = icons[r.icon] ?? ExternalLink;
+                  const palette = ["#364bc5", "#7c3aed", "#0891b2", "#059669"];
+                  const color = palette[i % palette.length];
+
+                  return (
+                    <a
+                      key={i}
+                      href={r.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center gap-4 rounded-2xl border p-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ borderColor: `${color}22`, backgroundColor: `${color}06` }}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                        style={{ backgroundColor: `${color}18` }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color }} />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-800 flex-1 leading-snug group-hover:text-[#364bc5] transition-colors duration-200">
+                        {r.label}
+                      </span>
+                      <ExternalLink className="w-4 h-4 text-gray-300 group-hover:text-[#364bc5] transition-colors duration-200 shrink-0" />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div className="h-1" style={{ backgroundColor: "#364bc5" }} />
+            </div>
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="max-w-6xl mx-auto mt-16 text-center">
