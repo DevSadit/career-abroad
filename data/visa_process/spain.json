@@ -20,7 +20,7 @@
     { "label": "Show Fund : (700 euros/month of 1 year) + Rest Tuition Fees", "color": "lightyellow" }
   ],
   "costSteps": [
-    { "label": "Health Checkup Certificate : 3000-7500 (BDT)", "color": "orange" },
+    { "label": "Health Checkup Certificate : 8500 (BDT)", "color": "orange" },
     { "label": "Legalization (Apostille) : (MOFA)", "color": "gray" },
     { "label": "Translation in Spanish : Per page 700-1000 BDT", "color": "lightyellow" },
     { "label": "Visa Fee (D) : 90 euro   |   BLS Fee : 2500 BDT", "color": "blue" }
