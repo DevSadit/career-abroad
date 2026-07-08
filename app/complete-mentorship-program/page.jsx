@@ -258,7 +258,7 @@ const Page = () => {
                         rel="noreferrer"
                         className="w-full rounded-2xl border border-gray-300 bg-white px-5 py-3.5 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50"
                       >
-                        Talk to us
+                        Write Us
                       </a>
                     </div>
                   </div>
