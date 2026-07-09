@@ -1,0 +1,50 @@
+{
+  "title": "Application to Visa Process Steps for Italy",
+  "infoLink": "https://ambdhaka.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+  "notice": null,
+  "processSteps": [
+    { "label": "University Application with Apostilled docs (25–50 euros/application)", "color": "yellow" },
+    { "label": "Offer Letter : With program details", "color": "green" },
+    { "label": "Credential Recognition : CIMIA or DOV : 300 euros", "color": "gray" },
+    {
+      "label": "UNIVERSITALY Pre-enrollment (online)",
+      "bullets": [
+        "Mandatory for non-EU · FREE · shows tuition fees · validated by University"
+      ],
+      "color": "purple"
+    },
+    { "label": "VFS Appointment Booking", "color": "yellow" },
+    { "label": "Apostille (MoFA Bangladesh) + Italian translation : all certificates apostilled · English docs usually need no translation", "color": "gray" },
+    { "label": "Police clearance certificate", "color": "lightblue" }
+  ],
+  "costSteps": [
+    {
+      "label": "Financial Proof — Applicant + Sponsor",
+      "bullets": [
+        "12-month bank statements · Minimum €10,200/yr (≈ BDT 14–15 lakh)"
+      ],
+      "color": "lightyellow"
+    },
+    { "label": "Accommodation Proof : 500–1000 euros — reservation ≥ 30 days / rental contract / host declaration + ID", "color": "orange" },
+    { "label": "Travel / Health Insurance — €150 : medical + hospitalization + repatriation · covers whole stay", "color": "lightblue" },
+    { "label": "One way Air Ticket Booking : 700–1000 euros", "color": "yellow" },
+    { "label": "Visa File Submission in VFS : D-form + passport (2 blank pages) + 2 ICAO photo", "color": "gray" }
+  ],
+  "contacts": [
+    {
+      "name": "VFS Global — Italy",
+      "logo": "/VFS.png",
+      "accent": "#E31837",
+      "email": "info.itbd@vfshelpline.com",
+      "phone": "+880 9606777666",
+      "address": "Nafi Tower, 53 South Gulshan Ave, Gulshan-1, Dhaka · Dhaka / Chattogram / Sylhet"
+    },
+    {
+      "name": "Embassy of Italy",
+      "logo": "/italian-embassy-logo-png_seeklogo-391565.png",
+      "accent": "#009246",
+      "email": "ambasciata.dhaka@esteri.it",
+      "address": "Plot No 2/3, 79 Rd No 74, Gulshan 2, Dhaka 1212"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ const COLOR_MAP = {
   silver:      { bg: "bg-[#767171]", text: "text-white" },
   orange:      { bg: "bg-[#F4B183]", text: "text-gray-900" },
   lightblue:   { bg: "bg-[#2E9DB5]", text: "text-white" },
+  purple:      { bg: "bg-[#7030A0]", text: "text-white" },
 };
 
 function Step({ step, showArrow }) {
