@@ -15,16 +15,16 @@
     },
     { "label": "VFS Appointment Booking", "color": "yellow" },
     { "label": "Apostille (MoFA Bangladesh) + Italian translation : all certificates apostilled · English docs usually need no translation", "color": "gray" },
-    { "label": "Police clearance certificate", "color": "lightblue" }
-  ],
-  "costSteps": [
+    { "label": "Police clearance certificate", "color": "lightblue" },
     {
       "label": "Financial Proof — Applicant + Sponsor",
       "bullets": [
         "12-month bank statements · Minimum €10,200/yr (≈ BDT 14–15 lakh)"
       ],
       "color": "lightyellow"
-    },
+    }
+  ],
+  "costSteps": [
     { "label": "Accommodation Proof : 500–1000 euros — reservation ≥ 30 days / rental contract / host declaration + ID", "color": "orange" },
     { "label": "Travel / Health Insurance — €150 : medical + hospitalization + repatriation · covers whole stay", "color": "lightblue" },
     { "label": "One way Air Ticket Booking : 700–1000 euros", "color": "yellow" },
