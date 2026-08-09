@@ -186,13 +186,58 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
                   <ExternalLink className="w-4 h-4" style={{ color: "#364bc5" }} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">France</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{countryName}</p>
                   <h3 className="text-base font-semibold text-gray-900">More Resources</h3>
                 </div>
               </div>
 
               <div className="p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {processData.resources.map((r, i) => {
+                  if (r.icon === "youtube") {
+                    return (
+                      <a
+                        key={i}
+                        href={r.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group col-span-1 sm:col-span-2 flex items-center gap-4 rounded-2xl border border-red-100 bg-red-50 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 hover:border-red-300"
+                      >
+                        {/* Thumbnail */}
+                        <div className="relative shrink-0 w-36 sm:w-48 h-24 sm:h-28 overflow-hidden bg-gray-900">
+                          {r.thumbnail && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={r.thumbnail}
+                              alt={r.label}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          )}
+                          {/* Play overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors duration-200">
+                            <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+                              <svg className="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Text */}
+                        <div className="flex-1 min-w-0 py-4 pr-4">
+                          <div className="flex items-center gap-1.5 mb-1.5">
+                            <svg className="w-4 h-4 text-red-600 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            <p className="text-xs font-bold uppercase tracking-widest text-red-500">YouTube Playlist</p>
+                          </div>
+                          <p className="text-sm sm:text-base font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200 leading-snug">{r.label}</p>
+                          <p className="mt-1 text-xs text-gray-400 flex items-center gap-1">
+                            Watch all videos <ExternalLink className="w-3 h-3" />
+                          </p>
+                        </div>
+                      </a>
+                    );
+                  }
+
                   const icons = {
                     file: FileText,
                     database: Database,
