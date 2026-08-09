@@ -25,6 +25,13 @@
     { "label": "Translation in Spanish : Per page 700-1000 BDT", "color": "lightyellow" },
     { "label": "Visa Fee (D) : 90 euro   |   BLS Fee : 2500 BDT", "color": "blue" }
   ],
+  "resources": [
+    {
+      "label": "Spain Study Visa — Full Video Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLkMQGxQthE45ugBVl0tRLF6dQwsdanIMm",
+      "icon": "youtube"
+    }
+  ],
   "contacts": [
     {
       "name": "BLS International",

@@ -186,13 +186,36 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
                   <ExternalLink className="w-4 h-4" style={{ color: "#364bc5" }} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">France</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{countryName}</p>
                   <h3 className="text-base font-semibold text-gray-900">More Resources</h3>
                 </div>
               </div>
 
               <div className="p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {processData.resources.map((r, i) => {
+                  if (r.icon === "youtube") {
+                    return (
+                      <a
+                        key={i}
+                        href={r.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group col-span-1 sm:col-span-2 flex items-center gap-5 rounded-2xl border border-red-100 bg-red-50 p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 hover:border-red-300"
+                      >
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-red-600 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                          </svg>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-bold uppercase tracking-widest text-red-400 mb-0.5">YouTube Playlist</p>
+                          <p className="text-sm font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200 leading-snug">{r.label}</p>
+                        </div>
+                        <ExternalLink className="w-4 h-4 text-red-300 group-hover:text-red-500 transition-colors duration-200 shrink-0" />
+                      </a>
+                    );
+                  }
+
                   const icons = {
                     file: FileText,
                     database: Database,
