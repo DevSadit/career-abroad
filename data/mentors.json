@@ -72,12 +72,12 @@
   },
   {
     "id": "6",
-    "name": "Uzzal Basu",
-    "image": "/mentors/Uzzal_Mentor5.png",
-    "currentStatus": "Dev. Engineer (USA)",
-    "education": ["Western Carolina University", "BSc in (EEE)"],
+    "name": "Sufian Tanim",
+    "image": "/mentors/Sufian Tanim.png",
+    "currentStatus": "MSc in Civil Engineering",
+    "education": ["Politecnico di Torino, Italy", "BSc in Civil Engineering"],
     "expertiseCountries": [
-      { "code": "us", "name": "USA" }
+      { "code": "it", "name": "Italy" }
     ],
     "book_a_session": ""
   }
