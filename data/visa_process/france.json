@@ -21,6 +21,12 @@
   "costSteps": [],
   "resources": [
     {
+      "label": "Higher Study in France : Complete Guidelines",
+      "url": "https://www.youtube.com/playlist?list=PLkMQGxQthE46tl8crq0xBJw720OppQ9Yn",
+      "icon": "youtube",
+      "thumbnail": "https://i.ytimg.com/vi/85ioGF1Rkwk/hqdefault.jpg"
+    },
+    {
       "label": "Campus France Listed Universities",
       "url": "https://drive.google.com/file/d/1LxkCkPXHdCagCFJa-zg1NcnWm0kAX2WX/view?usp=sharing",
       "icon": "file"
