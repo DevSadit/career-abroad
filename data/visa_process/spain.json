@@ -31,6 +31,46 @@
       "url": "https://www.youtube.com/playlist?list=PLkMQGxQthE45ugBVl0tRLF6dQwsdanIMm",
       "icon": "youtube",
       "thumbnail": "https://i.ytimg.com/vi/Yo8euCWE8b4/hqdefault.jpg"
+    },
+    {
+      "label": "RUCT Database",
+      "url": "https://www.educacion.gob.es/ruct/consultaestudios.action?actual=estudios",
+      "icon": "database"
+    },
+    {
+      "label": "e-Apostille Bangladesh",
+      "url": "https://mofa-servicedirectory.stage.mygov.bd/",
+      "icon": "file"
+    },
+    {
+      "label": "Police Clearance Bangladesh (MOHA)",
+      "url": "https://scs.ssd.gov.bd/",
+      "icon": "file"
+    },
+    {
+      "label": "Homologation",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/catalogo/general/05/051270/ficha/051270.html",
+      "icon": "award"
+    },
+    {
+      "label": "Transcript Equivalence",
+      "url": "https://sede.educacion.gob.es/sede/login/inicio.jjsp?idConvocatoria=818",
+      "icon": "file"
+    },
+    {
+      "label": "Student Visa Requirements",
+      "url": "https://www.exteriores.gob.es/Embajadas/dhaka/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+      "icon": "graduation"
+    },
+    {
+      "label": "Researcher Visa Requirements",
+      "url": "https://www.exteriores.gob.es/Consulados/mumbai/en/ServiciosConsulares/Paginas/Consular/Visado-para-investigadores.aspx",
+      "icon": "graduation"
+    },
+    {
+      "label": "Spanish Sworn Translator Database",
+      "url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx",
+      "icon": "database"
     }
   ],
   "contacts": [
