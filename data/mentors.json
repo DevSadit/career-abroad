@@ -42,7 +42,9 @@
     "education": ["Johannes Kepler University Linz, Austria", "BSc in (CSE)"],
     "expertiseCountries": [
       { "code": "at", "name": "Austria" },
-      { "code": "de", "name": "Germany" }
+      { "code": "de", "name": "Germany" },
+      { "code": "fi", "name": "Finland" },
+      { "code": "dk", "name": "Denmark" }
     ],
     "book_a_session": ""
   },
