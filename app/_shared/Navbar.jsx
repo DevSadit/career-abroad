@@ -24,7 +24,7 @@ const navLinks = [
   },
 ];
 
-const contactUrl = "mailto:mentors.career.abroad26@gmail.com";
+const contactUrl = "https://wa.me/34743093378";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
