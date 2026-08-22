@@ -1,5 +1,15 @@
 [
   {
+    "id": 10,
+    "quote": "M.Sc. in Electrical Engineering, Fall 2026",
+    "program": "M.Sc. in Electrical Engineering",
+    "university": "University of Siegen",
+    "country": "Germany",
+    "name": "Sudipto Nandi Shanto",
+    "affiliation": "Khulna University of Engineering and Technology",
+    "image": "/students/Shanto.png"
+  },
+  {
     "id": 9,
     "quote": "Masters in Intercultural Management, Fall 2026",
     "program": "Masters in Intercultural Management",
