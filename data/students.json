@@ -1,5 +1,15 @@
 [
   {
+    "id": 9,
+    "quote": "Masters in Intercultural Management, Fall 2026",
+    "program": "Masters in Intercultural Management",
+    "university": "Université Bourgogne Europe",
+    "country": "France",
+    "name": "Aris Chakma",
+    "affiliation": "ASA University Bangladesh",
+    "image": "/students/ARIS.png"
+  },
+  {
     "id": 7,
     "quote": "Masters in Data Science, Fall 2026",
     "program": "Masters in Data Science",
