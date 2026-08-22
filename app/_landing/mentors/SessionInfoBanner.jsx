@@ -111,7 +111,7 @@ export default function SessionInfoBanner() {
               <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
               <p className="text-sm text-amber-800 leading-relaxed">
                 <strong>Pay within 24 hours</strong> of booking to avoid automatic cancellation.
-                After payment, send your receipt to confirm the session.
+                After payment, send your receipt to our WhatsApp or email.
               </p>
             </div>
             <div className="flex gap-3 shrink-0">
