@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import PriceDisplay from "./PriceDisplay";
 import StudyTimeline from "./StudyTimeline";
+import ReviewsCarousel from "./ReviewsCarousel";
 import {
   CheckCircle2,
   ArrowRight,
@@ -569,6 +570,9 @@ const Page = () => {
           </div>
           <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
         </div>
+
+        {/* ── Student Reviews ── */}
+        <ReviewsCarousel />
 
         {/* ── Contact Note ── */}
         <div lang="bn" className="font-bn mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8 sm:p-10 text-center">
