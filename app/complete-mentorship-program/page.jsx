@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import PriceDisplay from "./PriceDisplay";
 import StudyTimeline from "./StudyTimeline";
+import ReviewsCarousel from "./ReviewsCarousel";
 import {
   CheckCircle2,
   ArrowRight,
@@ -11,7 +12,6 @@ import {
   Users,
   FileText,
   Mail,
-  MessageCircle,
   ShieldCheck,
   GraduationCap,
   UserCheck,
@@ -572,80 +572,7 @@ const Page = () => {
         </div>
 
         {/* ── Student Reviews ── */}
-        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
-          <div className="p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-wider text-gray-500">Student Reviews</p>
-            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
-              What Our Students Say
-            </h2>
-            <p className="mt-1 text-sm text-gray-500">
-              Real feedback from mentorship program students — shared in our WhatsApp group after receiving their visas.
-            </p>
-
-            <div className="mt-7 grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {[
-                {
-                  name: "Samrina Sarkar Sammi",
-                  program: "Masters in Data Science",
-                  university: "Télécom SudParis, France",
-                  photo: "/students/Samrina_TelecomSUDParis.png",
-                  color: palette[0],
-                  text: "Alhamdulillah! 🇫🇷🎉 I am very happy to share that I have received my French student visa today. This journey was not easy, and I am truly grateful to all mentors especially Sunny vaiya and Tumpa apu, who supported and guided me throughout the application and visa process. A special thanks to my mentors for their continuous encouragement, valuable advice, and support. Your guidance helped me reach this milestone. To everyone planning to study abroad: don't hesitate to seek guidance from experienced mentors and seniors. Their advice can make a huge difference in your journey.",
-                },
-                {
-                  name: "Aris Chakma",
-                  program: "Masters in Intercultural Management",
-                  university: "Université Bourgogne Europe, France",
-                  photo: "/students/ARIS.png",
-                  color: palette[2],
-                  text: "I am super happy to share that I have received my French Student Visa for the Master in Intercultural Management (ICM) program at Université Bourgogne Europe! Special thanks to Sunny Bhai and Tumpa Apu. They both helped me with their clear guidance for university selection to complete documentation process. Whenever I was stucked and confused, my go to solution was to knock them and get immediate suggestions! Even though I spent more than few months researching on my own, I had some confusion specially with the documentation process. That when I knocked sunny bhai and knew that he's the one who can give me clear guidance regarding everything. I'm truly grateful and once again thanks a tooon! 🥹",
-                },
-              ].map((r, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col rounded-2xl border p-6"
-                  style={{ borderColor: `${r.color}33`, borderTop: `3px solid ${r.color}` }}
-                >
-                  {/* Quote mark + text */}
-                  <div
-                    className="text-5xl font-serif leading-none mb-3 select-none"
-                    style={{ color: `${r.color}40` }}
-                  >
-                    ❝
-                  </div>
-                  <p className="text-sm text-gray-700 leading-relaxed flex-1">{r.text}</p>
-
-                  {/* Divider + attribution */}
-                  <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="shrink-0 w-11 h-11 rounded-full overflow-hidden ring-2"
-                        style={{ ringColor: `${r.color}33` }}
-                      >
-                        <Image
-                          src={r.photo}
-                          alt={r.name}
-                          width={44}
-                          height={44}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">{r.name}</p>
-                        <p className="text-xs text-gray-500">{r.program}</p>
-                        <p className="text-xs text-gray-400">{r.university}</p>
-                      </div>
-                    </div>
-                    <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: "#25D366" }}>
-                      <MessageCircle className="h-3 w-3" /> WhatsApp
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
-        </div>
+        <ReviewsCarousel />
 
         {/* ── Contact Note ── */}
         <div lang="bn" className="font-bn mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8 sm:p-10 text-center">
