@@ -76,6 +76,51 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
         {/* Visa process section (country-specific) */}
         {processData && <VisaProcessSection data={processData} />}
 
+        {/* Quick Reference cards (translators + health insurance) */}
+        {(processData?.authorizedTranslators?.length > 0 || processData?.healthInsurance?.length > 0) && (
+          <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Authorized Translators */}
+            {processData?.authorizedTranslators?.length > 0 && (
+              <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                <div className="px-6 pt-6 pb-2 border-b border-gray-100">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Spanish Embassy Dhaka Listed</p>
+                  <h3 className="mt-1 text-base font-semibold text-gray-900">Authorized Translators in Dhaka</h3>
+                  <p className="mt-0.5 text-xs text-gray-500">Approved for Spanish sworn translations</p>
+                </div>
+                <ul className="px-6 py-4 space-y-2">
+                  {processData.authorizedTranslators.map((t, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-gray-700">
+                      <span className="shrink-0 w-5 h-5 rounded-full bg-[#364bc5] text-white text-[10px] font-bold flex items-center justify-center">{i + 1}</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Health Insurance Options */}
+            {processData?.healthInsurance?.length > 0 && (
+              <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                <div className="px-6 pt-6 pb-2 border-b border-gray-100">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Popular Options</p>
+                  <h3 className="mt-1 text-base font-semibold text-gray-900">Student Health Insurance</h3>
+                  <p className="mt-0.5 text-xs text-gray-500">Approximate 1-year costs for Spain student visa</p>
+                </div>
+                <ul className="px-6 py-4 space-y-2">
+                  {processData.healthInsurance.map((ins, i) => (
+                    <li key={i} className="flex items-center justify-between gap-3 text-sm">
+                      <span className="text-gray-700">{ins.name}</span>
+                      <span className="shrink-0 font-semibold text-[#364bc5] bg-[#364bc5]/8 px-2.5 py-0.5 rounded-full text-xs">{ins.cost}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
+        )}
+
         {/* Search bar (you had state but no input, so add it) */}
         <div className="max-w-3xl mx-auto mb-8">
           <div className="relative">

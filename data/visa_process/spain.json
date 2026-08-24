@@ -25,6 +25,21 @@
     { "label": "Translation in Spanish : Per page 700-1000 BDT", "color": "lightyellow" },
     { "label": "Visa Fee (D) : 90 euro   |   BLS Fee : 2500 BDT", "color": "blue" }
   ],
+  "authorizedTranslators": [
+    "Dhaka Translation",
+    "THB Ltd.",
+    "ESBCC SPAIN Bangladesh Chamber of Commerce",
+    "National Translation Centre",
+    "Entiendo Professional Language Centre",
+    "CHEERIOS Translation and Documentation"
+  ],
+  "healthInsurance": [
+    { "name": "Adeslas (SegurCaja)", "cost": "€450–650/year" },
+    { "name": "Sanitas (Estudiantes plan)", "cost": "€500–700/year" },
+    { "name": "DKV", "cost": "€400–600/year" },
+    { "name": "Asisa", "cost": "€400–550/year" },
+    { "name": "Swisscare", "cost": "€380–400/year" }
+  ],
   "resources": [
     {
       "label": "Higher Study in Spain : Complete Guidelines",
