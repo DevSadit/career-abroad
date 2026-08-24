@@ -30,16 +30,16 @@
     "flagPath": "/flags/hu.svg"
   },
   {
+    "name": "Spain",
+    "href": "/faq/spain",
+    "code": "es",
+    "flagPath": "/flags/es.svg"
+  },
+  {
     "name": "Germany",
     "href": "#",
     "code": "de",
     "flagPath": "/flags/de.svg"
-  },
-  {
-    "name": "Spain",
-    "href": "#",
-    "code": "es",
-    "flagPath": "/flags/es.svg"
   },
 
   {

@@ -16,7 +16,7 @@
     { "label": "Police clearance certificate : From Ministry of Home Affairs, 1500 BDT", "color": "lightblue" },
     { "label": "BLS International Appointment : +8801609208089 (Sun-Thu) – (14:00 – 15:30) hrs", "color": "yellow" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
-    { "label": "Health Insurance : 300-350 euro/year", "color": "lightyellow" },
+    { "label": "Health Insurance : 380-600 euros/year", "color": "lightyellow" },
     { "label": "Show Fund : (700 euros/month of 1 year) + Rest Tuition Fees", "color": "lightyellow" }
   ],
   "costSteps": [
@@ -24,6 +24,21 @@
     { "label": "Legalization (Apostille) : (MOFA)", "color": "gray" },
     { "label": "Translation in Spanish : Per page 700-1000 BDT", "color": "lightyellow" },
     { "label": "Visa Fee (D) : 90 euro   |   BLS Fee : 2500 BDT", "color": "blue" }
+  ],
+  "authorizedTranslators": [
+    "Dhaka Translation",
+    "THB Ltd.",
+    "ESBCC SPAIN Bangladesh Chamber of Commerce",
+    "National Translation Centre",
+    "Entiendo Professional Language Centre",
+    "CHEERIOS Translation and Documentation"
+  ],
+  "healthInsurance": [
+    { "name": "Adeslas (SegurCaja)", "cost": "€450–650/year" },
+    { "name": "Sanitas (Estudiantes plan)", "cost": "€500–700/year" },
+    { "name": "DKV", "cost": "€400–600/year" },
+    { "name": "Asisa", "cost": "€400–550/year" },
+    { "name": "Swisscare", "cost": "€380–400/year" }
   ],
   "resources": [
     {
