@@ -78,7 +78,7 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
 
         {/* Quick Reference cards (translators + health insurance) */}
         {(processData?.authorizedTranslators?.length > 0 || processData?.healthInsurance?.length > 0) && (
-          <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-6xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Authorized Translators */}
             {processData?.authorizedTranslators?.length > 0 && (
@@ -86,7 +86,6 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
                 <div className="px-6 pt-6 pb-2 border-b border-gray-100">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Spanish Embassy Dhaka Listed</p>
                   <h3 className="mt-1 text-base font-semibold text-gray-900">Authorized Translators in Dhaka</h3>
-                  <p className="mt-0.5 text-xs text-gray-500">Approved for Spanish sworn translations</p>
                 </div>
                 <ul className="px-6 py-4 space-y-2">
                   {processData.authorizedTranslators.map((t, i) => (
@@ -105,7 +104,6 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
                 <div className="px-6 pt-6 pb-2 border-b border-gray-100">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Popular Options</p>
                   <h3 className="mt-1 text-base font-semibold text-gray-900">Student Health Insurance</h3>
-                  <p className="mt-0.5 text-xs text-gray-500">Approximate 1-year costs for Spain student visa</p>
                 </div>
                 <ul className="px-6 py-4 space-y-2">
                   {processData.healthInsurance.map((ins, i) => (
@@ -122,7 +120,7 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
         )}
 
         {/* Search bar (you had state but no input, so add it) */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mt-6 mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
