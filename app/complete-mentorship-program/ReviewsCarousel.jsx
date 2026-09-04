@@ -4,7 +4,7 @@ import Image from "next/image";
 import reviews from "../../data/reviews.json";
 
 const PRIMARY = "#364bc5";
-const INTERVAL = 6000;
+const INTERVAL = 15000;
 
 function useVisibleCount() {
   const [count, setCount] = useState(2);
@@ -146,7 +146,7 @@ export default function ReviewsCarousel() {
                         className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-white"
                         style={{ backgroundColor: "#25D366" }}
                       >
-                        {WA_SVG} WhatsApp
+                        {WA_SVG}
                       </span>
                     </div>
                   </div>
