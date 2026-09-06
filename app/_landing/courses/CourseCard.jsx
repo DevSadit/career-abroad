@@ -124,6 +124,13 @@ export default function CourseCard({ course }) {
           </ul>
         </div>
 
+        {/* Course eligibility note */}
+        {course.note && (
+          <p className="mb-3 text-xs text-[#364bc5] bg-[#364bc5]/8 border border-[#364bc5]/20 rounded-lg px-3 py-2 leading-relaxed">
+            ℹ️ {course.note}
+          </p>
+        )}
+
         <div className="mb-5 flex flex-wrap gap-1.5 min-h-8">
           {course.includes &&
             course.includes.slice(0, 3).map((item, index) => (
