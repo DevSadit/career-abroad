@@ -22,9 +22,30 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Career Abroad Mentor",
-  description: "Your Global Journey Partner",
+  description: "Your Global Journey Partner — Guidance for studying in Europe from Bangladesh.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Career Abroad Mentor",
+    description: "Your Global Journey Partner — Guidance for studying in Europe from Bangladesh.",
+    url: "https://ahsansuny.com",
+    siteName: "Career Abroad Mentor",
+    images: [
+      {
+        url: "https://ahsansuny.com/unnamed.png",
+        width: 800,
+        height: 800,
+        alt: "Career Abroad Mentor",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Career Abroad Mentor",
+    description: "Your Global Journey Partner — Guidance for studying in Europe from Bangladesh.",
+    images: ["https://ahsansuny.com/unnamed.png"],
   },
 };
 
