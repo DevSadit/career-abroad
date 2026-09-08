@@ -10,8 +10,7 @@
     {
       "label": "Offer / Admission Letter",
       "bullets": [
-        "Many Norwegian public universities are tuition-free for all students",
-        "Some universities/programs charge 63,000–340,000 NOK/year (8,19,000–44,20,000 BDT)"
+        "Non-EU/EEA students: tuition fees apply — 63,000–340,000 NOK/year (8,19,000–44,20,000 BDT) depending on university and program"
       ],
       "color": "green"
     },
@@ -73,21 +72,6 @@
       "label": "Søknadsweb — Common Application Portal",
       "url": "https://www.soknadsweb.no/",
       "icon": "database"
-    },
-    {
-      "label": "BLS — Norway Visa Dhaka",
-      "url": "https://www.vfsglobal.com/en/individuals/index.html",
-      "icon": "file"
-    },
-    {
-      "label": "SiO Student Housing (Oslo)",
-      "url": "https://www.sio.no/en/housing",
-      "icon": "file"
-    },
-    {
-      "label": "Sammen Student Housing (Bergen)",
-      "url": "https://www.sammen.no/en/housing",
-      "icon": "file"
     },
     {
       "label": "Norwegian Scholarships (Diku/Quota)",
