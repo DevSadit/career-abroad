@@ -36,6 +36,18 @@
     "flagPath": "/flags/es.svg"
   },
   {
+    "name": "Austria",
+    "href": "/faq/austria",
+    "code": "at",
+    "flagPath": "/flags/at.svg"
+  },
+  {
+    "name": "Norway",
+    "href": "/faq/norway",
+    "code": "no",
+    "flagPath": "/flags/no.svg"
+  },
+  {
     "name": "Germany",
     "href": "#",
     "code": "de",
