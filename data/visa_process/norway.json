@@ -1,0 +1,98 @@
+{
+  "title": "Application to Study Permit Process Steps for Norway",
+  "infoLink": "https://www.udi.no/en/want-to-apply/studies/",
+  "notice": "1 NOK ≈ 13 BDT (Academic Year 2026/2027). Block money is NOT a fee — it is your own living money deposited to the university account and refunded upon arrival.",
+  "processSteps": [
+    {
+      "label": "University Application : via søknadsweb.no or individual university portal",
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "Non-EU/EEA students: tuition fees apply — 63,000–340,000 NOK/year (8,19,000–44,20,000 BDT) depending on university and program"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Student Housing Deposit (SiO / Sammen) : 5,000–10,000 NOK (65,000–1,30,000 BDT)",
+      "bullets": [
+        "Fully refundable when you move out",
+        "Apply for housing early — spots fill quickly"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Block Money Deposit to University Account : 170,368 NOK (~22,15,000 BDT) for 2026–27",
+      "bullets": [
+        "Required by UDI as proof of living funds for one academic year",
+        "Amount increases slightly each year — check UDI website for current figure",
+        "Refunded to your bank account after you arrive in Norway"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "UDI Study Permit Application (online) : 5,400 NOK (70,200 BDT)",
+      "color": "lightblue"
+    },
+    {
+      "label": "BLS Dhaka Biometrics Appointment : ~€22 (3,000–4,000 BDT)",
+      "color": "blue"
+    }
+  ],
+  "costSteps": [
+    { "label": "UDI Study Permit Fee : 5,400 NOK (70,200 BDT) — paid online", "color": "blue" },
+    { "label": "BLS Dhaka Service Fee : ~€22 (~3,000–4,000 BDT) — biometrics", "color": "lightyellow" },
+    { "label": "Block Money : 170,368 NOK (22,15,000 BDT) — refunded after arrival", "color": "orange" },
+    { "label": "Student Housing Deposit : 5,000–10,000 NOK — refundable on moving out", "color": "gray" },
+    { "label": "Air Ticket to Norway : ~80,000–100,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Norwegian Embassy Dhaka",
+      "url": "https://www.norway.no/en/bangladesh/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Study in Norway — Official Guide",
+      "url": "https://studyinnorway.no/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Student Residence Permit Info",
+      "url": "https://www.norway.no/en/bangladesh/services-info/visitors-visa-res-permit/res-permit/#processing-time",
+      "icon": "file"
+    },
+    {
+      "label": "UDI — Apply for Study Permit",
+      "url": "https://www.udi.no/en/want-to-apply/studies/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Søknadsweb — Common Application Portal",
+      "url": "https://www.soknadsweb.no/",
+      "icon": "database"
+    },
+    {
+      "label": "Norwegian Scholarships (Diku/Quota)",
+      "url": "https://diku.no/en/programmes/quota-scheme/",
+      "icon": "award"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Royal Norwegian Embassy Dhaka",
+      "logo": "/flags/no.svg",
+      "accent": "#EF2B2D",
+      "email": "emb.dhaka@mfa.no",
+      "address": "House 9, Road 111, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "BLS International — Norway Visa",
+      "logo": "/BLS.png",
+      "accent": "#003087",
+      "email": "norway.dhaka@blshelpline.com",
+      "address": "BLS International, Dhaka (check website for current address and appointment slots)"
+    }
+  ]
+}
