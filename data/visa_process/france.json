@@ -1,6 +1,6 @@
 {
   "title": "Application to Visa Process Steps for France",
-  "infoLink": null,
+  "infoLink": "https://www.bangladesh.campusfrance.org/en/procedure",
   "notice": "NEW (since 20 August 2025): First Campus France then Submit documents at the (VFS Global), Dhaka",
   "processSteps": [
     { "label": "University Application (No fees in most Public Universities)", "color": "yellow" },
@@ -12,26 +12,60 @@
       ],
       "color": "green"
     },
+    { "label": "Show Fund : (878 euros/month × Year of Studies) + Rest Tuition Fees", "color": "orange" },
     { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
     { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
     { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
-    { "label": "VFS Service Fee : 22 euro", "color": "yellow" },
-    { "label": "Visa Fee (D) : 99 euro", "color": "blue" }
+    { "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro", "color": "blue" }
   ],
   "costSteps": [],
+  "resources": [
+    {
+      "label": "Higher Study in France : Complete Guidelines",
+      "url": "https://www.youtube.com/playlist?list=PLkMQGxQthE46tl8crq0xBJw720OppQ9Yn",
+      "icon": "youtube",
+      "thumbnail": "https://i.ytimg.com/vi/85ioGF1Rkwk/hqdefault.jpg"
+    },
+    {
+      "label": "Campus France Listed Universities",
+      "url": "https://drive.google.com/file/d/1LxkCkPXHdCagCFJa-zg1NcnWm0kAX2WX/view?usp=sharing",
+      "icon": "file"
+    },
+    {
+      "label": "Campus France Database",
+      "url": "https://taughtie.campusfrance.org/tiesearch/#/catalog?lang=en&siteroot=https:%2F%2Fwww.bangladesh.campusfrance.org%2F",
+      "icon": "database"
+    },
+    {
+      "label": "PhD Directory in France",
+      "url": "https://doctorat.campusfrance.org/phd/dschools/main?lang=en&siteroot=https%3A//www.bangladesh.campusfrance.org/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Scholarships in France",
+      "url": "https://campusbourses.campusfrance.org/#/catalog?lang=en&cid=123",
+      "icon": "award"
+    }
+  ],
   "contacts": [
     {
       "name": "Campus France",
+      "logo": "/Campus France.png",
+      "accent": "#003189",
       "email": "bangladesh@campusfrance.org",
       "address": "Alliance Française de Dhaka, 26 Mirpur Road, Corner of Road 3, Dhanmondi, Dhaka 1205"
     },
     {
       "name": "VFS Global",
+      "logo": "/VFS.png",
+      "accent": "#E31837",
       "email": "info.francebgl@vfshelpline.com",
       "address": "Rangs Z Square, Level 7, 118 Gulshan Avenue, Gulshan 2, Dhaka 1212"
     },
     {
       "name": "French Embassy",
+      "logo": "/FranceGouvfr.png",
+      "accent": "#002395",
       "email": "visas.dacca-amba@diplomatie.gouv.fr",
       "address": "Madani Avenue, Baridhara Diplomatic Enclave, Dhaka 1212"
     }

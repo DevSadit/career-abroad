@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Search, HelpCircle } from "lucide-react";
+import { ChevronDown, Search, HelpCircle, FileText, Database, GraduationCap, Award, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import VisaProcessSection from "@/app/faq/_components/VisaProcessSection";
 
@@ -76,8 +76,51 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
         {/* Visa process section (country-specific) */}
         {processData && <VisaProcessSection data={processData} />}
 
+        {/* Quick Reference cards (translators + health insurance) */}
+        {(processData?.authorizedTranslators?.length > 0 || processData?.healthInsurance?.length > 0) && (
+          <div className="max-w-6xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Authorized Translators */}
+            {processData?.authorizedTranslators?.length > 0 && (
+              <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                <div className="px-6 pt-6 pb-2 border-b border-gray-100">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Spanish Embassy Dhaka Listed</p>
+                  <h3 className="mt-1 text-base font-semibold text-gray-900">Authorized Translators in Dhaka</h3>
+                </div>
+                <ul className="px-6 py-4 space-y-2">
+                  {processData.authorizedTranslators.map((t, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-gray-700">
+                      <span className="shrink-0 w-5 h-5 rounded-full bg-[#364bc5] text-white text-[10px] font-bold flex items-center justify-center">{i + 1}</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Health Insurance Options */}
+            {processData?.healthInsurance?.length > 0 && (
+              <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                <div className="px-6 pt-6 pb-2 border-b border-gray-100">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Popular Options</p>
+                  <h3 className="mt-1 text-base font-semibold text-gray-900">Student Health Insurance</h3>
+                </div>
+                <ul className="px-6 py-4 space-y-2">
+                  {processData.healthInsurance.map((ins, i) => (
+                    <li key={i} className="flex items-center justify-between gap-3 text-sm">
+                      <span className="text-gray-700">{ins.name}</span>
+                      <span className="shrink-0 font-semibold text-[#364bc5] bg-[#364bc5]/8 px-2.5 py-0.5 rounded-full text-xs">{ins.cost}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
+        )}
+
         {/* Search bar (you had state but no input, so add it) */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mt-6 mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
@@ -174,6 +217,108 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
             </div>
           )}
         </div>
+
+        {/* More Resources */}
+        {processData?.resources?.length > 0 && (
+          <div className="max-w-6xl mx-auto mt-12">
+            <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+              <div className="px-6 sm:px-8 py-5 border-b border-gray-100 flex items-center gap-3"
+                style={{ backgroundColor: "#364bc508" }}>
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "#364bc518" }}>
+                  <ExternalLink className="w-4 h-4" style={{ color: "#364bc5" }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{countryName}</p>
+                  <h3 className="text-base font-semibold text-gray-900">More Resources</h3>
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {processData.resources.map((r, i) => {
+                  if (r.icon === "youtube") {
+                    return (
+                      <a
+                        key={i}
+                        href={r.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group col-span-1 sm:col-span-2 flex items-center gap-4 rounded-2xl border border-red-100 bg-red-50 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 hover:border-red-300"
+                      >
+                        {/* Thumbnail */}
+                        <div className="relative shrink-0 w-36 sm:w-48 h-24 sm:h-28 overflow-hidden bg-gray-900">
+                          {r.thumbnail && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={r.thumbnail}
+                              alt={r.label}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          )}
+                          {/* Play overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors duration-200">
+                            <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+                              <svg className="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Text */}
+                        <div className="flex-1 min-w-0 py-4 pr-4">
+                          <div className="flex items-center gap-1.5 mb-1.5">
+                            <svg className="w-4 h-4 text-red-600 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            <p className="text-xs font-bold uppercase tracking-widest text-red-500">YouTube Playlist</p>
+                          </div>
+                          <p className="text-sm sm:text-base font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200 leading-snug">{r.label}</p>
+                          <p className="mt-1 text-xs text-gray-400 flex items-center gap-1">
+                            Watch all videos <ExternalLink className="w-3 h-3" />
+                          </p>
+                        </div>
+                      </a>
+                    );
+                  }
+
+                  const icons = {
+                    file: FileText,
+                    database: Database,
+                    graduation: GraduationCap,
+                    award: Award,
+                  };
+                  const Icon = icons[r.icon] ?? ExternalLink;
+                  const palette = ["#364bc5", "#7c3aed", "#0891b2", "#059669"];
+                  const color = palette[i % palette.length];
+
+                  return (
+                    <a
+                      key={i}
+                      href={r.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center gap-4 rounded-2xl border p-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ borderColor: `${color}22`, backgroundColor: `${color}06` }}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                        style={{ backgroundColor: `${color}18` }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color }} />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-800 flex-1 leading-snug group-hover:text-[#364bc5] transition-colors duration-200">
+                        {r.label}
+                      </span>
+                      <ExternalLink className="w-4 h-4 text-gray-300 group-hover:text-[#364bc5] transition-colors duration-200 shrink-0" />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div className="h-1" style={{ backgroundColor: "#364bc5" }} />
+            </div>
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="max-w-6xl mx-auto mt-16 text-center">

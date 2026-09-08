@@ -1,5 +1,35 @@
 [
-    {
+  {
+    "id": 11,
+    "quote": "Master in European Livestock, Fall 2026",
+    "program": "Master in European Livestock",
+    "university": "Université Clermont Auvergne",
+    "country": "France",
+    "name": "Shahriar Islam",
+    "affiliation": "Chattogram Veterinary and Animal Sciences University",
+    "image": "/students/Shahriar.png"
+  },
+  {
+    "id": 10,
+    "quote": "M.Sc. in Electrical Engineering, Fall 2026",
+    "program": "M.Sc. in Electrical Engineering",
+    "university": "University of Siegen",
+    "country": "Germany",
+    "name": "Sudipto Nandi Shanto",
+    "affiliation": "Khulna University of Engineering and Technology",
+    "image": "/students/Shanto.png"
+  },
+  {
+    "id": 9,
+    "quote": "Masters in Intercultural Management, Fall 2026",
+    "program": "Masters in Intercultural Management",
+    "university": "Université Bourgogne Europe",
+    "country": "France",
+    "name": "Aris Chakma",
+    "affiliation": "ASA University Bangladesh",
+    "image": "/students/ARIS.png"
+  },
+  {
     "id": 7,
     "quote": "Masters in Data Science, Fall 2026",
     "program": "Masters in Data Science",
@@ -23,8 +53,8 @@
     "id": 2,
     "quote": "Erusmus Mundus Scholar 2025",
     "program": "Erasmus Mundus Scholar 2025",
-    "university": "Centrale Nantes",
-    "country": "France",
+    "university": "BarcelonaTech",
+    "country": "Spain",
     "name": "Aminul Islam Rifat",
     "affiliation": "Green University",
     "image": "/students/1Rifat.png"

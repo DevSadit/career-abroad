@@ -1,0 +1,102 @@
+{
+  "title": "Application to Visa Process Steps for Austria",
+  "infoLink": "https://www.bmeia.gv.at/en/travel-stay/entry-and-residence-in-austria/visa/",
+  "notice": "Austria visa appointments must be attended at the Austrian Embassy in New Delhi, India. Plan for India travel well in advance.",
+  "processSteps": [
+    {
+      "label": "Certificate Legalization (Apostille via MOFA) : 60,000 BDT",
+      "bullets": [
+        "If you hold an A1 German certificate or IELTS 6.5+, legalization cost reduces to ~50,000 BDT",
+        "Apostille must be done BEFORE submitting university application"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "University Application : Free for most public universities; private 25–100 EUR/application",
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "Public universities in Austria charge no tuition for most programs (reciprocity countries)",
+        "Non-EU students may pay ~€726–1,500/semester continuation fee"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Accommodation Booking : ~100,000 BDT",
+      "bullets": [
+        "University student hostels (OeAD Housing) recommended — book early",
+        "Private rental: €400–700/month in Vienna, less in other cities"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Health Insurance : ~15,000 BDT/year",
+      "color": "lightyellow"
+    },
+    {
+      "label": "Show Fund (Bank Statement) : Min 25 Lac BDT for 6 months",
+      "bullets": [
+        "Austrian authorities require proof of sufficient funds to cover living costs",
+        "Bank statement must be recent (within 3 months)"
+      ],
+      "color": "lightyellow"
+    },
+    {
+      "label": "Austrian Embassy Appointment (New Delhi, India) : Book well in advance",
+      "color": "lightblue"
+    }
+  ],
+  "costSteps": [
+    { "label": "Police Clearance Certificate (MOHA) : 500 BDT", "color": "orange" },
+    { "label": "PCC Legalization Fee (Apostille) : ~10,000 BDT", "color": "gray" },
+    { "label": "DHL/FEDEX Courier for Apostille : D=3,250 BDT  |  F=2,650 BDT  (~10,000 BDT total)", "color": "lightyellow" },
+    { "label": "Austrian Embassy Visa Fee : ~17,000 BDT", "color": "blue" },
+    { "label": "Indian Visa Fee : 850 BDT", "color": "lightyellow" },
+    { "label": "India Travel Cost : ~50,000 BDT (Depend)", "color": "orange" },
+    { "label": "Visa Stamping Fee : ~22,000 BDT", "color": "gray" },
+    { "label": "Air Ticket to Austria : ~100,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Austrian Embassy Dhaka — Visa Info",
+      "url": "https://www.bmeia.gv.at/en/austrian-embassy/dhaka/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Austria Study Visa — Official Guide",
+      "url": "https://www.bmeia.gv.at/en/travel-stay/entry-and-residence-in-austria/visa/",
+      "icon": "graduation"
+    },
+    {
+      "label": "OeAD — Austrian Scholarships",
+      "url": "https://oead.at/en/to-austria/grants-scholarships/",
+      "icon": "award"
+    },
+    {
+      "label": "OeAD Student Housing",
+      "url": "https://housing.oead.at/en/",
+      "icon": "file"
+    },
+    {
+      "label": "e-Apostille Bangladesh (MOFA)",
+      "url": "https://mofa-servicedirectory.stage.mygov.bd/",
+      "icon": "file"
+    },
+    {
+      "label": "Police Clearance Bangladesh (MOHA)",
+      "url": "https://scs.ssd.gov.bd/",
+      "icon": "file"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Austrian Embassy Dhaka",
+      "logo": "/flags/at.svg",
+      "accent": "#ED2939",
+      "email": "dhaka-ob@bmeia.gv.at",
+      "address": "House 4, Road 12, Baridhara, Dhaka 1212, Bangladesh"
+    }
+  ]
+}

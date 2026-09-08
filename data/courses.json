@@ -109,7 +109,8 @@
           { "code": "es", "name": "Spain" }
         ]
       }
-    ]
+    ],
+    "note": "Best suited for students who already hold an offer letter from one of the countries above."
   },
   {
     "id": "advanced-robotics-embedded",

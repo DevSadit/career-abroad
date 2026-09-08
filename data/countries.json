@@ -30,16 +30,28 @@
     "flagPath": "/flags/hu.svg"
   },
   {
+    "name": "Spain",
+    "href": "/faq/spain",
+    "code": "es",
+    "flagPath": "/flags/es.svg"
+  },
+  {
+    "name": "Austria",
+    "href": "/faq/austria",
+    "code": "at",
+    "flagPath": "/flags/at.svg"
+  },
+  {
+    "name": "Norway",
+    "href": "/faq/norway",
+    "code": "no",
+    "flagPath": "/flags/no.svg"
+  },
+  {
     "name": "Germany",
     "href": "#",
     "code": "de",
     "flagPath": "/flags/de.svg"
-  },
-  {
-    "name": "Spain",
-    "href": "#",
-    "code": "es",
-    "flagPath": "/flags/es.svg"
   },
 
   {

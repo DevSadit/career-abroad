@@ -3,6 +3,7 @@ import React from "react";
 import mentors from "../../../data/mentors.json";
 import MentorCard from "./MentorCard";
 import Title from "@/app/_shared/Title";
+import SessionInfoBanner from "./SessionInfoBanner";
 
 const Mentors = () => {
   return (
@@ -17,6 +18,9 @@ const Mentors = () => {
             <MentorCard key={index} mentor={mentor} />
           ))}
         </div>
+
+        <SessionInfoBanner />
+
       </div>
     </section>
   );

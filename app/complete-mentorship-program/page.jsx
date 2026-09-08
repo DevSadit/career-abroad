@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import PriceDisplay from "./PriceDisplay";
+import StudyTimeline from "./StudyTimeline";
+import ReviewsCarousel from "./ReviewsCarousel";
 import {
   CheckCircle2,
   ArrowRight,
@@ -45,7 +48,7 @@ const Page = () => {
   const highlightsBn = [
     "সেলফ-মোটিভেটেড শিক্ষার্থীদের জন্য Higher Study Mentorship Program",
     "USA ও Europe-এর ৬ জন অভিজ্ঞ মেন্টর—রিসার্চ/কাজ/হায়ার স্টাডির পাশাপাশি গাইড করবেন",
-    "এজেন্সি-ডিপেন্ডেন্ট না হয়ে নিজ হাতে অ্যাপ্লাই করার জন্য পুরো সিস্টেম তৈরি করে দেওয়া হবে",
+    "এজেন্সি ডিপেন্ডেন্ট না হয়ে ১ বছরব্যাপী মেন্টরিং ও গাইডেন্স এর মাধ্যমে উচ্চশিক্ষা, স্কলারশিপ ও ভিসা ডকুমেন্টেশন প্রস্তুতি",
   ];
 
   const eligibilityBn = [
@@ -163,18 +166,6 @@ const Page = () => {
                   across 30 sessions covering one full application cycle.
                 </p>
 
-                {/* Includes / Not included */}
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-gray-200 p-4">
-                    <p className="text-xs uppercase tracking-wider text-gray-500">Includes</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">All courses A to F</p>
-                  </div>
-                  <div className="rounded-2xl border border-gray-200 p-4">
-                    <p className="text-xs uppercase tracking-wider text-gray-500">Not included</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">Personal Website</p>
-                  </div>
-                </div>
-
                 {/* Meta stats */}
                 <div className="mt-7 grid grid-cols-2 lg:grid-cols-4 gap-3">
                   {meta.map((m, idx) => {
@@ -199,23 +190,41 @@ const Page = () => {
 
               {/* Right: pricing card */}
               <div className="w-full lg:w-105">
-                <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                <div className="relative rounded-3xl border border-gray-200 bg-white overflow-hidden">
+                  {/* Corner ribbon */}
+                  <div
+                    className="absolute text-center font-bold text-white whitespace-nowrap shadow-md"
+                    style={{
+                      top: "24px",
+                      right: "-40px",
+                      width: "170px",
+                      transform: "rotate(45deg)",
+                      backgroundColor: primary,
+                      fontSize: "11px",
+                      letterSpacing: "0.06em",
+                      padding: "6px 0",
+                    }}
+                  >
+                    1 Year Access
+                  </div>
                   <div className="p-6 sm:p-7">
                     <p className="text-sm text-gray-600">Program fee</p>
-                    <div className="mt-2 flex items-end justify-between gap-4">
-                      <p className="text-4xl font-semibold tracking-tight text-gray-900">€150</p>
-                      <div
-                        className="rounded-2xl px-3 py-1.5 text-xs font-semibold border"
+                    <div className="mt-2">
+                      <PriceDisplay amountEur={150} />
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span
+                        className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold border"
                         style={{ borderColor: `${primary}22`, color: primary, backgroundColor: `${primary}08` }}
                       >
                         30 classes (10 recorded + 20 live)
-                      </div>
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs text-gray-500 border border-gray-200 bg-gray-50">
+                        <CreditCard className="h-3 w-3" />
+                        দুই কিস্তিতে পরিশোধ করা যাবে
+                      </span>
                     </div>
-
-                    <p className="mt-1.5 text-xs text-gray-500">
-                      <CreditCard className="inline h-3.5 w-3.5 mr-1" />
-                      দুই কিস্তিতে পরিশোধ করা যাবে
-                    </p>
 
                     <div className="mt-3 group relative flex items-center gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 hover:bg-amber-100 hover:border-amber-300 hover:shadow-md transition-all duration-300 overflow-hidden cursor-default">
                       {/* Shimmer sweep on hover */}
@@ -234,26 +243,6 @@ const Page = () => {
                       </p>
                     </div>
 
-                    <div className="mt-5 space-y-3">
-                      {[
-                        { icon: FileText, color: "#059669", bg: "#ecfdf5", title: "Structured roadmap", desc: "Clear steps, deadlines, and execution workflow." },
-                        { icon: Mail, color: "#7c3aed", bg: "#f5f3ff", title: "Emailing + application system", desc: "Templates, follow-ups, and packaging method." },
-                        { icon: ShieldCheck, color: "#0369a1", bg: "#eff6ff", title: "Visa readiness", desc: "Checklist + refusal-risk reduction guidance." },
-                      ].map(({ icon: Icon, color, bg, title, desc }) => (
-                        <div
-                          key={title}
-                          className="flex items-start gap-3 rounded-2xl border p-4"
-                          style={{ borderColor: `${color}33`, borderLeft: `3px solid ${color}`, backgroundColor: bg }}
-                        >
-                          <Icon className="h-5 w-5 mt-0.5 shrink-0" style={{ color }} />
-                          <div>
-                            <p className="text-sm font-semibold text-gray-900">{title}</p>
-                            <p className="text-sm text-gray-600">{desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
                     <div className="mt-6 flex flex-col sm:flex-row gap-3">
                       <a
                         href={registrationUrl}
@@ -270,7 +259,7 @@ const Page = () => {
                         rel="noreferrer"
                         className="w-full rounded-2xl border border-gray-300 bg-white px-5 py-3.5 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50"
                       >
-                        Talk to us
+                        Write Us
                       </a>
                     </div>
                   </div>
@@ -340,9 +329,16 @@ const Page = () => {
           <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
         </div>
 
+        {/* ── Study Timeline ── */}
+        <StudyTimeline />
+
         {/* ── Bengali Intro ── */}
         <div lang="bn" className="font-bn mt-8 rounded-3xl border border-gray-200 bg-white">
           <div className="p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+
+            {/* Left column */}
+            <div className="flex-1 min-w-0">
             <div
               className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium border"
               style={{ borderColor: `${primary}22`, color: primary, backgroundColor: `${primary}08` }}
@@ -355,10 +351,8 @@ const Page = () => {
               নিজের হাতে অ্যাপ্লাই করুন — মেন্টররা থাকবেন পাশে গাইড হিসেবে
             </h2>
 
-            <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl">
-              উচ্চশিক্ষার স্বপ্নে একজন মেন্টরের ভূমিকা অনস্বীকার্য। অনেক সেলফ-মোটিভেটেড শিক্ষার্থী
-              সঠিক দিকনির্দেশনার অভাবে নিজের পটেনশিয়ালিটি অনুযায়ী সিদ্ধান্ত নিতে পারেন না। এই
-              মেন্টরশিপ প্রোগ্রাম সেই বাধা ভাঙতে তৈরি — এজেন্সি-নির্ভরতা ছাড়াই।
+            <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
+উচ্চশিক্ষার স্বপ্নে একজন মেন্টরের ভূমিকা অনস্বীকার্য। বাংলাদেশে অনেক ছাত্রছাত্রী আছে যারা সেলফ-মোটিভেটেড, কিন্তু সঠিক দিকনির্দেশনার অভাবে নিজের পটেনশিয়ালিটি ও ক্যালিবার অনুযায়ী স্বিদ্ধান্ত নিতে পারেনা। অন্যদিকে, অধিকাংশ এজেন্সি শুরুতেই কিংবা ভিসা পরবর্তী বড় অঙ্কের টাকা দাবি করে —যেটা অনেক সময়েই একজন শিক্ষার্থীর জন্য বোঝা হয়ে যায়। আমাদের এই মেন্টরশিপ প্রোগ্রাম সেই বাধা ভাঙতে তৈরি। আমরা ন্যূনতম ফি-তে একটি Higher Study Mentorship Program শুরু করেছি, যেখানে যুক্ত হয়েছেন USA ও Europe-এর ৬ জন অভিজ্ঞ মেন্টর —যাঁরা নিজেদের গবেষণা, কাজ ও উচ্চশিক্ষার পাশাপাশি স্টুডেন্টদের গাইড করে থাকেন। এই প্রোগ্রামটি তাদের জন্য, যারা সত্যিই নিজের ভবিষ্যৎ নিজের হাতে গড়তে চান — সেলফ-মোটিভেটেড, কনফিডেন্ট, এবং রিসার্চ মাইন্ডেড। এখানে আপনি নিজের ড্রিম কান্ট্রিতে অ্যাপ্লাই করবেন নিজের হাতে, আর মেন্টররা থাকবেন পাশে গাইড হিসেবে।
             </p>
 
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -378,6 +372,57 @@ const Page = () => {
                 );
               })}
             </div>
+            </div>{/* end left column */}
+
+            {/* Right column: stats + differentiators */}
+            <div className="lg:w-[300px] xl:w-[330px] shrink-0 flex flex-col gap-4">
+
+              {/* Program stats */}
+              <div
+                className="rounded-2xl border p-5"
+                style={{ borderColor: `${primary}22`, backgroundColor: `${primary}06` }}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: primary }}>
+                  প্রোগ্রাম পরিসংখ্যান
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { val: "৬ জন", label: "অভিজ্ঞ মেন্টর", idx: 0 },
+                    { val: "৩০টি", label: "মোট সেশন", idx: 1 },
+                    { val: "১ বছর", label: "পূর্ণ অ্যাক্সেস", idx: 2 },
+                    { val: "€১৫০", label: "সম্পূর্ণ ফি", idx: 3 },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-xl p-3 bg-white border border-gray-100 shadow-sm">
+                      <p className="text-lg font-black" style={{ color: palette[s.idx] }}>{s.val}</p>
+                      <p className="text-[11px] text-gray-500 mt-0.5 leading-snug">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Why this program */}
+              <div className="rounded-2xl border border-gray-200 bg-white p-5 flex-1">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">
+                  কেন এই প্রোগ্রাম?
+                </p>
+                <ul className="space-y-2.5">
+                  {[
+                    "এজেন্সি ছাড়া নিজে অ্যাপ্লাই করতে পারবেন",
+                    "USA ও Europe-এর মেন্টর থেকে সরাসরি গাইডেন্স",
+                    "স্কলারশিপ থেকে ভিসা — সম্পূর্ণ গাইডেন্স",
+                    "দুই কিস্তিতে পরিশোধের সুবিধা",
+                    "Fully-Fund Scholarship পেলে ৫০% রিফান্ড",
+                  ].map((t, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 leading-snug">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" style={{ color: palette[i % palette.length] }} />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>{/* end right column */}
+            </div>{/* end flex row */}
           </div>
         </div>
 
@@ -487,14 +532,91 @@ const Page = () => {
 
         </div>
 
-        {/* ── Footer note ── */}
-        <div className="mt-10 text-center">
-          <p className="text-sm text-gray-500">
-            Still have questions?{" "}
-            <a href={talkToUsUrl} className="font-medium underline" style={{ color: primary }}>
-              Email Us
-            </a>
+        {/* ── Featured Video ── */}
+        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-wider text-gray-500">Watch</p>
+            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+              See what the mentorship looks like
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              A walkthrough of the program — what's covered, how sessions work, and what to expect.
+            </p>
+
+            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/mzRkN4Xe0SE"
+                title="Complete Mentorship Program Overview"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="mt-4">
+              <a
+                href="https://www.youtube.com/watch?v=mzRkN4Xe0SE"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white"
+                style={{ backgroundColor: primary }}
+              >
+                <Video className="h-4 w-4" />
+                Watch on YouTube
+              </a>
+            </div>
+          </div>
+          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
+        {/* ── Student Reviews ── */}
+        <ReviewsCarousel />
+
+        {/* ── Contact Note ── */}
+        <div lang="bn" className="font-bn mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8 sm:p-10 text-center">
+          <p className="text-xl sm:text-2xl font-semibold text-gray-800 leading-relaxed max-w-3xl mx-auto">
+            মেন্টরশিপ প্রোগ্রাম নিয়ে রিভিউ নিতে আমাদের Whatsapp গ্রুপ গুলোতে প্রশ্ন করুন, ইমেইল করুন, কিংবা নির্দিষ্ট নাম্বারে মেসেজ করুন।{" "}
+            <span className="text-amber-700 font-bold">অনুগ্রহ করে মেন্টরদের ব্যক্তিগত নাম্বারে নক দেবেন না।</span>
           </p>
+
+          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+            <a
+              href="https://chat.whatsapp.com/Lcbi3XgUSko1HEoBpgoKor?mode=ems_copy_t"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ backgroundColor: "#25D366" }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Group Link
+            </a>
+
+            <a
+              href={talkToUsUrl}
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-sm border transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              style={{ color: primary, borderColor: `${primary}44`, backgroundColor: `${primary}08` }}
+            >
+              <Mail className="h-4 w-4" />
+              ইমেইল করুন
+            </a>
+
+            <a
+              href="https://wa.me/34743093378"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ backgroundColor: "#128C7E" }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Allocated Number
+            </a>
+          </div>
         </div>
 
       </div>

@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Ahsan Suny",
     "image": "/mentors/Suny_Mentor1.png",
-    "currentStatus": "PhD Researcher (AI & Robotics)",
+    "currentStatus": "PhD Researcher,Spain (AI & Robotics)",
     "education": [
       "MSc in Embedded Systems – France",
       "BSc in Electrical & Electronic Engineering"
@@ -42,9 +42,11 @@
     "education": ["Johannes Kepler University Linz, Austria", "BSc in (CSE)"],
     "expertiseCountries": [
       { "code": "at", "name": "Austria" },
-      { "code": "de", "name": "Germany" }
+      { "code": "de", "name": "Germany" },
+      { "code": "fi", "name": "Finland" },
+      { "code": "dk", "name": "Denmark" }
     ],
-    "book_a_session": ""
+    "book_a_session": "https://cal.com/mohammad-faisal-ijmhzp/40min"
   },
   {
     "id": "4",
@@ -72,13 +74,13 @@
   },
   {
     "id": "6",
-    "name": "Uzzal Basu",
-    "image": "/mentors/Uzzal_Mentor5.png",
-    "currentStatus": "Dev. Engineer (USA)",
-    "education": ["Western Carolina University", "BSc in (EEE)"],
+    "name": "Sufian Tanim",
+    "image": "/mentors/Sufian_Tanim6.png",
+    "currentStatus": "MSc in Civil Engineering",
+    "education": ["Politecnico di Torino, Italy", "BSc in Civil Engineering"],
     "expertiseCountries": [
-      { "code": "us", "name": "USA" }
+      { "code": "it", "name": "Italy" }
     ],
-    "book_a_session": ""
+    "book_a_session": "https://cal.com/md-abu-sufian-tanim/40-min-meeting"
   }
 ]
