@@ -4,7 +4,7 @@ import Image from "next/image";
 import reviews from "../../data/reviews.json";
 
 const PRIMARY = "#364bc5";
-const INTERVAL = 15000;
+const INTERVAL = 28000;
 
 function useVisibleCount() {
   const [count, setCount] = useState(1);
