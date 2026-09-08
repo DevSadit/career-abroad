@@ -36,13 +36,13 @@
       "color": "lightblue"
     },
     {
-      "label": "BLS Dhaka Biometrics Appointment : ~€22 (3,000–4,000 BDT)",
+      "label": "VFS Global Dhaka Biometrics Appointment : ~€22 (3,000–4,000 BDT)",
       "color": "blue"
     }
   ],
   "costSteps": [
     { "label": "UDI Study Permit Fee : 5,400 NOK (70,200 BDT) — paid online", "color": "blue" },
-    { "label": "BLS Dhaka Service Fee : ~€22 (~3,000–4,000 BDT) — biometrics", "color": "lightyellow" },
+    { "label": "VFS Global Dhaka Service Fee : ~€22 (~3,000–4,000 BDT) — biometrics", "color": "lightyellow" },
     { "label": "Block Money : 170,368 NOK (22,15,000 BDT) — refunded after arrival", "color": "orange" },
     { "label": "Student Housing Deposit : 5,000–10,000 NOK — refundable on moving out", "color": "gray" },
     { "label": "Air Ticket to Norway : ~80,000–100,000 BDT", "color": "blue" }
@@ -88,11 +88,11 @@
       "address": "House 9, Road 111, Gulshan-2, Dhaka 1212, Bangladesh"
     },
     {
-      "name": "BLS International — Norway Visa",
-      "logo": "/BLS.png",
+      "name": "VFS Global — Norway Visa",
+      "logo": "/VFS.png",
       "accent": "#003087",
-      "email": "norway.dhaka@blshelpline.com",
-      "address": "BLS International, Dhaka (check website for current address and appointment slots)"
+      "email": "norway.dhaka@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check website for current address and appointment slots)"
     }
   ]
 }

@@ -22,7 +22,7 @@
   {
     "id": 5,
     "question": "UDI Study Permit কীভাবে আবেদন করতে হয়?",
-    "answer": "UDI Study Permit-এর জন্য:\n\n1. udi.no-তে অনলাইনে আবেদন করুন\n2. Permit fee: 5,400 NOK (70,200 BDT) অনলাইনে পরিশোধ করুন\n3. Admission letter, block money proof, passport copy, photo সহ ডকুমেন্ট আপলোড করুন\n4. BLS Dhaka অফিসে biometrics দিন — appointment নিতে হবে (~€22/~3,000–4,000 BDT)\n5. Processing time: সাধারণত 4–12 সপ্তাহ (আগে আবেদন করুন)\n\nঅ্যাডমিশন letter পাওয়ার পরপরই apply করুন।"
+    "answer": "UDI Study Permit-এর জন্য:\n\n1. udi.no-তে অনলাইনে আবেদন করুন\n2. Permit fee: 5,400 NOK (70,200 BDT) অনলাইনে পরিশোধ করুন\n3. Admission letter, block money proof, passport copy, photo সহ ডকুমেন্ট আপলোড করুন\n4. VFS Global Dhaka অফিসে biometrics দিন — appointment নিতে হবে (~€22/~3,000–4,000 BDT)\n5. Processing time: সাধারণত 4–12 সপ্তাহ (আগে আবেদন করুন)\n\nঅ্যাডমিশন letter পাওয়ার পরপরই apply করুন।"
   },
   {
     "id": 6,
@@ -56,8 +56,8 @@
   },
   {
     "id": 12,
-    "question": "BLS Dhaka-তে কী করতে হয়?",
-    "answer": "UDI online application-এর পর biometrics (আঙুলের ছাপ + ছবি) দিতে BLS Dhaka-তে সশরীরে উপস্থিত হতে হবে।\n\n• Fee: ~€22 (~3,000–4,000 BDT)\n• Appointment আগে থেকেই BLS ওয়েবসাইটে বুক করতে হয়\n• Original passport, UDI confirmation letter, এবং ছবি সাথে নিন\n• Biometrics দেওয়ার পর UDI processing শুরু হয়"
+    "question": "VFS Global Dhaka-তে কী করতে হয়?",
+    "answer": "UDI online application-এর পর biometrics (আঙুলের ছাপ + ছবি) দিতে VFS Global Dhaka-তে সশরীরে উপস্থিত হতে হবে।\n\n• Fee: ~€22 (~3,000–4,000 BDT)\n• Appointment আগে থেকেই VFS ওয়েবসাইটে বুক করতে হয়\n• Original passport, UDI confirmation letter, এবং ছবি সাথে নিন\n• Biometrics দেওয়ার পর UDI processing শুরু হয়"
   },
   {
     "id": 13,
@@ -72,7 +72,7 @@
   {
     "id": 15,
     "question": "ভিসা (Study Permit) আবেদনের জন্য কি কি ডকুমেন্টস লাগে?",
-    "answer": "নরওয়ে Study Permit (UDI)-এর জন্য সাধারণত লাগে:\n\n• Admission Letter (Norwegian university থেকে)\n• Valid Passport (কমপক্ষে ১ বছরের মেয়াদ থাকতে হবে)\n• Block Money Confirmation (University account-এ জমার proof)\n• Accommodation Proof (student housing confirmation বা rental agreement)\n• Passport-size Photo\n• UDI Application Payment Receipt (5,400 NOK)\n• BLS Dhaka Biometrics Appointment Confirmation\n\nসব ডকুমেন্ট English-এ বা certified translation সহ জমা দিতে হবে।"
+    "answer": "নরওয়ে Study Permit (UDI)-এর জন্য সাধারণত লাগে:\n\n• Admission Letter (Norwegian university থেকে)\n• Valid Passport (কমপক্ষে ১ বছরের মেয়াদ থাকতে হবে)\n• Block Money Confirmation (University account-এ জমার proof)\n• Accommodation Proof (student housing confirmation বা rental agreement)\n• Passport-size Photo\n• UDI Application Payment Receipt (5,400 NOK)\n• VFS Global Dhaka Biometrics Appointment Confirmation\n\nসব ডকুমেন্ট English-এ বা certified translation সহ জমা দিতে হবে।"
   },
   {
     "id": 16,
