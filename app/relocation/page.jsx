@@ -139,7 +139,7 @@ const relocationReviews = [
     name: "Anushree Matabber",
     program: "Masters in Biocontrol Solutions for Plant Health",
     university: "Université Côte d'Azur, Nice — France",
-    route: "🇧🇩 Bangladesh → 🇭🇺 Hungary → 🇫🇷 France",
+    route: "🇧🇩 → 🇭🇺 → 🇫🇷",
     date: "September 2026",
     photo: "/students/anushree.png",
     text: "I received my French student visa for my second Master's in Biocontrol Solutions for Plant Health at Université Côte d'Azur, Nice. After completing my Bachelor's in Bangladesh and my first Master's in Horticulture Engineering in Hungary, I was uncertain about my next step in Europe. I found Ahsan Sunny Bhai's France playlist on YouTube, booked a 1:1 session, and later enrolled in the complete relocation guidance for France & Spain.\n\nOne thing I realised throughout this journey: there are many opportunities, practical strategies, and important details that are simply not discoverable through Google, YouTube, or even AI tools alone. An experienced mentor who truly understands the process can identify the right opportunities and guide you according to your individual situation.",
@@ -438,47 +438,42 @@ export default function RelocationPage() {
                   key={i}
                   className="flex flex-col rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                 >
-                  {/* ── Gradient header: identity ── */}
+                  {/* ── Compact gradient header ── */}
                   <div
-                    className="relative px-5 py-5 flex items-center gap-4"
+                    className="relative px-4 py-4 flex items-center gap-3"
                     style={{ background: `linear-gradient(135deg, #364bc5 0%, #5b6fd8 100%)` }}
                   >
-                    {/* Decorative large plane watermark */}
                     <Plane
-                      className="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 w-16 h-16 text-white pointer-events-none"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 w-14 h-14 text-white pointer-events-none"
                       aria-hidden="true"
                     />
-
-                    {/* Photo */}
-                    <div className="shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-md">
-                      <Image src={r.photo} alt={r.name} width={56} height={56} className="w-full h-full object-cover" />
+                    <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden ring-2 ring-white/40 shadow-md">
+                      <Image src={r.photo} alt={r.name} width={48} height={48} className="w-full h-full object-cover" />
                     </div>
-
-                    {/* Name + program + route + date */}
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-white leading-tight">{r.name}</p>
-                      <p className="text-xs text-white/75 mt-0.5 leading-snug line-clamp-2">{r.program}</p>
-                      <p className="text-xs text-white/60 mt-0.5 leading-snug truncate">{r.university}</p>
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
-                        <span className="inline-flex items-center rounded-full bg-white/15 px-2.5 py-0.5 text-xs text-white font-medium">
-                          {r.route}
-                        </span>
-                        <span className="text-xs text-white/50">{r.date}</span>
-                      </div>
+                      <p className="text-xs text-white/70 mt-0.5 leading-snug line-clamp-1">{r.program}</p>
+                      <p className="text-xs text-white/55 leading-snug truncate">{r.university}</p>
+                      <span className="mt-1.5 inline-block rounded-full bg-white/15 px-2.5 py-0.5 text-xs text-white font-medium tracking-wide">
+                        {r.route}
+                      </span>
                     </div>
                   </div>
 
-                  {/* ── White body: quote ── */}
-                  <div className="flex flex-col grow bg-white px-5 py-5">
+                  {/* ── White body: date + quote ── */}
+                  <div className="flex flex-col grow bg-white px-4 pt-4 pb-5">
+                    <span className="self-start text-xs text-gray-400 bg-gray-50 border border-gray-100 px-2.5 py-0.5 rounded-full mb-3">
+                      {r.date}
+                    </span>
                     <span
-                      className="text-4xl font-serif leading-none select-none mb-3"
-                      style={{ color: `${primary}30` }}
+                      className="text-3xl font-serif leading-none select-none mb-2"
+                      style={{ color: `${primary}28` }}
                     >
                       ❝
                     </span>
-                    <div className="grow">
+                    <div>
                       {r.text.split("\n\n").map((para, pi) => (
-                        <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-3" : ""}`}>
+                        <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-2.5" : ""}`}>
                           {para}
                         </p>
                       ))}
