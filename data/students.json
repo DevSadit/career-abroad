@@ -1,5 +1,15 @@
 [
   {
+    "id": 12,
+    "quote": "Masters in Biocontrol Solutions for Plant Health, Fall 2026",
+    "program": "Masters in Biocontrol Solutions for Plant Health",
+    "university": "Université Côte d'Azur",
+    "country": "France",
+    "name": "Anushree Matabber",
+    "affiliation": "Hungarian University of Agriculture and Life Sciences",
+    "image": "/students/anushree.png"
+  },
+  {
     "id": 11,
     "quote": "Master in European Livestock, Fall 2026",
     "program": "Master in European Livestock",
