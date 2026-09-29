@@ -135,7 +135,7 @@ const contactEmail = "mailto:mentors.career.abroad26@gmail.com";
 
 const relocationReviews = [
   {
-    name: "Anushree",
+    name: "Anushree Matabber",
     program: "Masters in Biocontrol Solutions for Plant Health",
     university: "Université Côte d'Azur, Nice — France",
     route: "🇧🇩 Bangladesh → 🇭🇺 Hungary → 🇫🇷 France",
