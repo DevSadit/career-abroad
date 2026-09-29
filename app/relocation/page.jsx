@@ -454,23 +454,25 @@ export default function RelocationPage() {
                       <p className="text-sm font-semibold text-white leading-tight">{r.name}</p>
                       <p className="text-xs text-white/70 mt-0.5 leading-snug line-clamp-1">{r.program}</p>
                       <p className="text-xs text-white/55 leading-snug truncate">{r.university}</p>
-                      <div className="mt-1.5 flex items-center justify-between gap-2">
+                      <div className="mt-1.5">
                         <span className="inline-block rounded-full bg-white/15 px-2.5 py-0.5 text-xs text-white font-medium tracking-wide">
                           {r.route}
                         </span>
-                        <span className="shrink-0 text-xs text-white/55">{r.date}</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* ── White body: date + quote ── */}
+                  {/* ── White body ── */}
                   <div className="flex flex-col grow bg-white px-4 pt-4 pb-5">
-                    <span
-                      className="text-3xl font-serif leading-none select-none mb-2"
-                      style={{ color: `${primary}28` }}
-                    >
-                      ❝
-                    </span>
+                    <div className="flex items-center justify-between mb-2">
+                      <span
+                        className="text-3xl font-serif leading-none select-none"
+                        style={{ color: `${primary}28` }}
+                      >
+                        ❝
+                      </span>
+                      <span className="rounded-full border border-gray-200 px-2.5 py-0.5 text-xs text-gray-500 font-medium">{r.date}</span>
+                    </div>
                     <div>
                       {r.text.split("\n\n").map((para, pi) => (
                         <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-2.5" : ""}`}>
