@@ -436,53 +436,53 @@ export default function RelocationPage() {
               {relocationReviews.map((r, i) => (
                 <div
                   key={i}
-                  className="flex flex-col rounded-2xl border bg-white p-5 sm:p-6"
-                  style={{ borderColor: `${primary}22`, borderTop: `3px solid ${primary}` }}
+                  className="flex flex-col rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                 >
-                  {/* Route + date row */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <span
-                      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-                      style={{ borderColor: `${primary}33`, color: primary, backgroundColor: `${primary}08` }}
-                    >
-                      {r.route}
-                    </span>
-                    <span className="text-xs text-gray-400 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-full shrink-0">
-                      {r.date}
-                    </span>
-                  </div>
+                  {/* ── Gradient header: identity ── */}
+                  <div
+                    className="relative px-5 py-5 flex items-center gap-4"
+                    style={{ background: `linear-gradient(135deg, #364bc5 0%, #5b6fd8 100%)` }}
+                  >
+                    {/* Decorative large plane watermark */}
+                    <Plane
+                      className="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 w-16 h-16 text-white pointer-events-none"
+                      aria-hidden="true"
+                    />
 
-                  {/* Quote mark */}
-                  <span className="text-5xl font-serif leading-none select-none mb-2" style={{ color: `${primary}25` }}>❝</span>
+                    {/* Photo */}
+                    <div className="shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-md">
+                      <Image src={r.photo} alt={r.name} width={56} height={56} className="w-full h-full object-cover" />
+                    </div>
 
-                  {/* Review text */}
-                  <div className="grow">
-                    {r.text.split("\n\n").map((para, pi) => (
-                      <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-3" : ""}`}>
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Attribution */}
-                  <div className="mt-5 pt-4 border-t border-gray-100 flex flex-wrap items-center gap-3">
-                    <div className="flex items-center gap-3 flex-1 min-w-0">
-                      <div className="shrink-0 w-11 h-11 rounded-full overflow-hidden ring-2 ring-gray-100">
-                        <Image src={r.photo} alt={r.name} width={44} height={44} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-gray-900 truncate">{r.name}</p>
-                        <p className="text-xs text-gray-500 truncate">{r.program}</p>
-                        <p className="text-xs text-gray-400 truncate">{r.university}</p>
+                    {/* Name + program + route + date */}
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold text-white leading-tight">{r.name}</p>
+                      <p className="text-xs text-white/75 mt-0.5 leading-snug line-clamp-2">{r.program}</p>
+                      <p className="text-xs text-white/60 mt-0.5 leading-snug truncate">{r.university}</p>
+                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center rounded-full bg-white/15 px-2.5 py-0.5 text-xs text-white font-medium">
+                          {r.route}
+                        </span>
+                        <span className="text-xs text-white/50">{r.date}</span>
                       </div>
                     </div>
+                  </div>
+
+                  {/* ── White body: quote ── */}
+                  <div className="flex flex-col grow bg-white px-5 py-5">
                     <span
-                      className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-white shadow-sm"
-                      style={{ backgroundColor: primary }}
-                      title="Relocation Guidance"
+                      className="text-4xl font-serif leading-none select-none mb-3"
+                      style={{ color: `${primary}30` }}
                     >
-                      <Plane className="w-4 h-4" />
+                      ❝
                     </span>
+                    <div className="grow">
+                      {r.text.split("\n\n").map((para, pi) => (
+                        <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-3" : ""}`}>
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
