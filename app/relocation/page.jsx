@@ -10,6 +10,7 @@ import {
   Globe,
   Home,
   BookOpen,
+  Plane,
 } from "lucide-react";
 
 const primary = "#364bc5";
@@ -141,7 +142,6 @@ const relocationReviews = [
     route: "🇧🇩 Bangladesh → 🇭🇺 Hungary → 🇫🇷 France",
     date: "September 2026",
     photo: "/students/anushree.png",
-    badge: "Relocation Guidance Package",
     text: "I received my French student visa for my second Master's in Biocontrol Solutions for Plant Health at Université Côte d'Azur, Nice. After completing my Bachelor's in Bangladesh and my first Master's in Horticulture Engineering in Hungary, I was uncertain about my next step in Europe. I found Ahsan Sunny Bhai's France playlist on YouTube, booked a 1:1 session, and later enrolled in the complete relocation guidance for France & Spain.\n\nOne thing I realised throughout this journey: there are many opportunities, practical strategies, and important details that are simply not discoverable through Google, YouTube, or even AI tools alone. An experienced mentor who truly understands the process can identify the right opportunities and guide you according to your individual situation.",
   },
 ];
@@ -477,10 +477,11 @@ export default function RelocationPage() {
                       </div>
                     </div>
                     <span
-                      className="shrink-0 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium border"
-                      style={{ borderColor: `${primary}33`, color: primary, backgroundColor: `${primary}08` }}
+                      className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-white shadow-sm"
+                      style={{ backgroundColor: primary }}
+                      title="Relocation Guidance"
                     >
-                      {r.badge}
+                      <Plane className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
