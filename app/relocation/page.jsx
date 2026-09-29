@@ -10,6 +10,7 @@ import {
   Globe,
   Home,
   BookOpen,
+  Plane,
 } from "lucide-react";
 
 const primary = "#364bc5";
@@ -141,7 +142,6 @@ const relocationReviews = [
     route: "🇧🇩 Bangladesh → 🇭🇺 Hungary → 🇫🇷 France",
     date: "September 2026",
     photo: "/students/anushree.png",
-    badge: "Relocation Guidance Package",
     text: "I received my French student visa for my second Master's in Biocontrol Solutions for Plant Health at Université Côte d'Azur, Nice. After completing my Bachelor's in Bangladesh and my first Master's in Horticulture Engineering in Hungary, I was uncertain about my next step in Europe. I found Ahsan Sunny Bhai's France playlist on YouTube, booked a 1:1 session, and later enrolled in the complete relocation guidance for France & Spain.\n\nOne thing I realised throughout this journey: there are many opportunities, practical strategies, and important details that are simply not discoverable through Google, YouTube, or even AI tools alone. An experienced mentor who truly understands the process can identify the right opportunities and guide you according to your individual situation.",
   },
 ];
@@ -436,52 +436,48 @@ export default function RelocationPage() {
               {relocationReviews.map((r, i) => (
                 <div
                   key={i}
-                  className="flex flex-col rounded-2xl border bg-white p-5 sm:p-6"
-                  style={{ borderColor: `${primary}22`, borderTop: `3px solid ${primary}` }}
+                  className="flex flex-col rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                 >
-                  {/* Route + date row */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <span
-                      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-                      style={{ borderColor: `${primary}33`, color: primary, backgroundColor: `${primary}08` }}
-                    >
-                      {r.route}
-                    </span>
-                    <span className="text-xs text-gray-400 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-full shrink-0">
-                      {r.date}
-                    </span>
-                  </div>
-
-                  {/* Quote mark */}
-                  <span className="text-5xl font-serif leading-none select-none mb-2" style={{ color: `${primary}25` }}>❝</span>
-
-                  {/* Review text */}
-                  <div className="grow">
-                    {r.text.split("\n\n").map((para, pi) => (
-                      <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-3" : ""}`}>
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Attribution */}
-                  <div className="mt-5 pt-4 border-t border-gray-100 flex flex-wrap items-center gap-3">
-                    <div className="flex items-center gap-3 flex-1 min-w-0">
-                      <div className="shrink-0 w-11 h-11 rounded-full overflow-hidden ring-2 ring-gray-100">
-                        <Image src={r.photo} alt={r.name} width={44} height={44} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-gray-900 truncate">{r.name}</p>
-                        <p className="text-xs text-gray-500 truncate">{r.program}</p>
-                        <p className="text-xs text-gray-400 truncate">{r.university}</p>
+                  {/* ── Compact gradient header ── */}
+                  <div
+                    className="relative px-4 py-4 flex items-center gap-3"
+                    style={{ background: `linear-gradient(135deg, #364bc5 0%, #5b6fd8 100%)` }}
+                  >
+                    <Plane
+                      className="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 w-14 h-14 text-white pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden ring-2 ring-white/40 shadow-md">
+                      <Image src={r.photo} alt={r.name} width={48} height={48} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold text-white leading-tight">{r.name}</p>
+                      <p className="text-xs text-white/70 mt-0.5 leading-snug line-clamp-1">{r.program}</p>
+                      <p className="text-xs text-white/55 leading-snug truncate">{r.university}</p>
+                      <div className="mt-1.5 flex items-center justify-between gap-2">
+                        <span className="inline-block rounded-full bg-white/15 px-2.5 py-0.5 text-xs text-white font-medium tracking-wide">
+                          {r.route}
+                        </span>
+                        <span className="shrink-0 text-xs text-white/55">{r.date}</span>
                       </div>
                     </div>
+                  </div>
+
+                  {/* ── White body: date + quote ── */}
+                  <div className="flex flex-col grow bg-white px-4 pt-4 pb-5">
                     <span
-                      className="shrink-0 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium border"
-                      style={{ borderColor: `${primary}33`, color: primary, backgroundColor: `${primary}08` }}
+                      className="text-3xl font-serif leading-none select-none mb-2"
+                      style={{ color: `${primary}28` }}
                     >
-                      {r.badge}
+                      ❝
                     </span>
+                    <div>
+                      {r.text.split("\n\n").map((para, pi) => (
+                        <p key={pi} className={`text-sm text-gray-700 leading-relaxed ${pi > 0 ? "mt-2.5" : ""}`}>
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
