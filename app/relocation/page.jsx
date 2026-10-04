@@ -136,6 +136,15 @@ const contactEmail = "mailto:mentors.career.abroad26@gmail.com";
 
 const relocationReviews = [
   {
+    name: "Rakib Imtiaj Ahmed",
+    program: "Masters in Innovative Engineering",
+    university: "Universitat Politècnica de Catalunya (UPC), Barcelona — Spain",
+    route: "🇧🇩 Bangladesh → 🇬🇧 UK → 🇪🇸 Spain",
+    date: "September 2026",
+    photo: "/students/rakib.png",
+    text: "After completing my first Master's at the University of South Wales, my Post-Study Work visa in the UK was due to end in January 2027, and I wanted to continue my studies in Europe. Spain was my top choice for a second Master's. Luckily, my friend Shahidul suggested I consult Ahsan Bhai, and that turned out to be the right decision.\n\nI received expert guidance at every step: securing admission to an affordable public university, obtaining my ACRO certificate and Bangladesh police clearance, FCDO apostille, affidavit, financial documents, and medical certificate. Each of these has its own requirements, and having someone who knew exactly what was needed saved me a lot of time and worry. I started my classes in September, and I highly recommend his relocation service to anyone planning to move to Spain, especially from the UK.",
+  },
+  {
     name: "Md Shahidul Islam",
     program: "Masters in Electrical Engineering",
     university: "Universitat Politècnica de Catalunya (UPC), Barcelona — Spain",

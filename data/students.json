@@ -1,5 +1,15 @@
 [
   {
+    "id": 14,
+    "quote": "Masters in Innovative Engineering, Fall 2026",
+    "program": "Masters in Innovative Engineering",
+    "university": "Universitat Politècnica de Catalunya (UPC)",
+    "country": "Spain",
+    "name": "Rakib Imtiaj Ahmed",
+    "affiliation": "University of South Wales",
+    "image": "/students/rakib.png"
+  },
+  {
     "id": 13,
     "quote": "Masters in Electrical Engineering, Fall 2026",
     "program": "Masters in Electrical Engineering",
