@@ -136,6 +136,24 @@ const contactEmail = "mailto:mentors.career.abroad26@gmail.com";
 
 const relocationReviews = [
   {
+    name: "Rakib Imtiaj Ahmed",
+    program: "Masters in Innovative Engineering",
+    university: "Universitat Politècnica de Catalunya (UPC), Barcelona — Spain",
+    route: "🇧🇩 Bangladesh → 🇬🇧 UK → 🇪🇸 Spain",
+    date: "September 2026",
+    photo: "/students/rakib.png",
+    text: "After completing my first Master's at the University of South Wales, my Post-Study Work visa in the UK was due to end in January 2027, and I wanted to continue my studies in Europe. Spain was my top choice for a second Master's. Luckily, my friend Shahidul suggested I consult Ahsan Bhai, and that turned out to be the right decision.\n\nI received expert guidance at every step: securing admission to an affordable public university, obtaining my ACRO certificate and Bangladesh police clearance, FCDO apostille, affidavit, financial documents, and medical certificate. Each of these has its own requirements, and having someone who knew exactly what was needed saved me a lot of time and worry. I started my classes in September, and I highly recommend his relocation service to anyone planning to move to Spain, especially from the UK.",
+  },
+  {
+    name: "Md Shahidul Islam",
+    program: "Masters in Electrical Engineering",
+    university: "Universitat Politècnica de Catalunya (UPC), Barcelona — Spain",
+    route: "🇧🇩 Bangladesh → 🇬🇧 UK → 🇪🇸 Spain",
+    date: "October 2026",
+    photo: "/students/shahidul.png",
+    text: "I received my Spanish student visa for my Master's in Electrical Engineering at Universitat Politècnica de Catalunya (UPC), Barcelona. Shortly after, my spouse's and our newborn child's dependent visas were also granted by the Spanish Consulate in Manchester, UK. I had already completed my first Master's in Renewable Energy in the UK, and with my Post-Study Work visa (PSW) ending in September, I needed a clear and reliable plan for my next step. I consulted Ahsan Sunny Bhai and enrolled in his complete relocation guidance for Spain.\n\nRelocating to Spain, especially with family, involves a lot of documentation, and a single mistake can cause serious delays. With expert guidance at every step, the whole process felt manageable and stress-free. I strongly recommend his service to anyone planning to move to Spain.",
+  },
+  {
     name: "Anushree Matabber",
     program: "Masters in Biocontrol Solutions for Plant Health",
     university: "Université Côte d'Azur, Nice — France",
