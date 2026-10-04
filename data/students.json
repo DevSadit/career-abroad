@@ -1,5 +1,15 @@
 [
   {
+    "id": 13,
+    "quote": "Masters in Electrical Engineering, Fall 2026",
+    "program": "Masters in Electrical Engineering",
+    "university": "Universitat Politècnica de Catalunya (UPC)",
+    "country": "Spain",
+    "name": "Md Shahidul Islam",
+    "affiliation": "University of the West of England",
+    "image": "/students/shahidul.png"
+  },
+  {
     "id": 12,
     "quote": "Masters in Biocontrol Solutions for Plant Health, Fall 2026",
     "program": "Masters in Biocontrol Solutions for Plant Health",
