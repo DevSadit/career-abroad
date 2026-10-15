@@ -24,6 +24,14 @@
     { "label": "VFS Service Fee : 13,800 BDT", "color": "yellow" },
     { "label": "Visa Fee (D) : 250 euro", "color": "blue" }
   ],
+  "resources": [
+    {
+      "label": "Belgium Student Visa Full Guide — Ahsan Sunny",
+      "url": "https://youtu.be/GTkmXtIEMMQ",
+      "icon": "youtube",
+      "thumbnail": "https://img.youtube.com/vi/GTkmXtIEMMQ/hqdefault.jpg"
+    }
+  ],
   "contact": {
     "email": "newdelhi.visa@diplobel.fed.be",
     "address": "VFS Global VAC: Borak Mehnur, 51/B (Level 7), Kemal Ataturk Ave, Banani, Dhaka-1213",
