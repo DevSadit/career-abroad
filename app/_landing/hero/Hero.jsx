@@ -5,9 +5,9 @@ import { FaArrowRight, FaCheck } from "react-icons/fa";
 
 const Hero = () => {
   const features = [
-    { text: "Best Mentor & Programs" },
+    { text: "Best Mentors Guidance" },
     { text: "Trusted by Students" },
-    { text: "Online Mentorship" },
+    { text: "Realistic Informations" },
     { text: "Live One on One Classes" },
   ];
   return (
@@ -49,7 +49,7 @@ const Hero = () => {
           <div className="flex-1 space-y-6 text-center lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               <span className="text-[#364bc5] bg-clip-text">Career Abroad</span>{" "}
-              Mentorship
+              Mentors
             </h1>
             {/* Underline decoration */}
             <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full mx-auto md:mx-0"></div>
