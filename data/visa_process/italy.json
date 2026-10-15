@@ -30,6 +30,14 @@
     { "label": "One way Air Ticket Booking : 700–1000 euros", "color": "yellow" },
     { "label": "Visa File Submission in VFS : D-form + passport (2 blank pages) + 2 ICAO photo", "color": "gray" }
   ],
+  "resources": [
+    {
+      "label": "Italy Student Visa Full Guide — Ahsan Sunny",
+      "url": "https://youtu.be/LrPHTwNVHC0",
+      "icon": "youtube",
+      "thumbnail": "https://img.youtube.com/vi/LrPHTwNVHC0/hqdefault.jpg"
+    }
+  ],
   "contacts": [
     {
       "name": "VFS Global — Italy",
