@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { FolderOpen } from "lucide-react";
 
 const Courses = ({ courses }) => {
   const primary = "#364bc5";
@@ -49,21 +50,41 @@ const Courses = ({ courses }) => {
               </p>
             </div>
 
-            <div className="px-4 pb-4">
-              <div className="aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
-                <iframe
-                  className="w-full h-full"
-                  src={c.url}
-                  title={c.title}
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+            {c.type === "resource" ? (
+              <div className="px-4 pb-4">
+                <div className="aspect-video rounded-2xl border border-dashed flex flex-col items-center justify-center gap-3"
+                  style={{ borderColor: `${primary}44`, backgroundColor: `${primary}06` }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                    style={{ backgroundColor: `${primary}15` }}>
+                    <FolderOpen className="w-7 h-7" style={{ color: primary }} />
+                  </div>
+                  <div className="text-center px-4">
+                    <p className="text-sm font-semibold text-gray-800">Student Resource Drive</p>
+                    <p className="text-xs text-gray-500 mt-1">{c.description}</p>
+                  </div>
+                  <span className="text-xs font-medium rounded-full px-3 py-1"
+                    style={{ backgroundColor: `${primary}15`, color: primary }}>
+                    Access with enrolled student email
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="px-4 pb-4">
+                <div className="aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
+                  <iframe
+                    className="w-full h-full"
+                    src={c.url}
+                    title={c.title}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            )}
 
-            <div className="px-4 pb-5 ">
+            <div className="px-4 pb-5">
               <Link
                 className="block w-full text-center rounded-2xl px-4 py-3 text-sm font-semibold text-white"
                 target="_blank"
@@ -71,7 +92,7 @@ const Courses = ({ courses }) => {
                 href={c.course_link}
                 style={{ backgroundColor: primary }}
               >
-                Course Login
+                {c.type === "resource" ? "Open Resource Drive" : "Course Login"}
               </Link>
             </div>
           </div>
