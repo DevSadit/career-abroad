@@ -11,7 +11,12 @@ import {
   Home,
   BookOpen,
   Plane,
+  Euro,
+  Tag,
+  RefreshCcw,
+  Users,
 } from "lucide-react";
+import PriceDisplay from "../complete-mentorship-program/PriceDisplay";
 
 const primary = "#364bc5";
 const palette = ["#364bc5", "#7c3aed", "#0891b2", "#059669", "#d97706", "#0369a1"];
@@ -134,6 +139,83 @@ const complexitySteps = [
 
 const contactEmail = "mailto:mentors.career.abroad26@gmail.com";
 
+const packageTiers = [
+  {
+    id: "standard",
+    name: "Standard Package",
+    tagline: "Most Popular",
+    amountEur: 800,
+    countries: [
+      { flag: "🇩🇪", name: "Germany" },
+      { flag: "🇫🇷", name: "France" },
+      { flag: "🇪🇸", name: "Spain" },
+      { flag: "🇧🇪", name: "Belgium" },
+      { flag: "🇪🇪", name: "Estonia" },
+      { flag: "🇱🇻", name: "Latvia" },
+      { flag: "🇱🇹", name: "Lithuania" },
+    ],
+    color: "#364bc5",
+    gradient: "linear-gradient(135deg, #364bc5 0%, #5b6fd8 100%)",
+  },
+  {
+    id: "nordic",
+    name: "Nordic Package",
+    tagline: "⭐ Premium",
+    amountEur: 1000,
+    countries: [
+      { flag: "🇳🇴", name: "Norway" },
+      { flag: "🇸🇪", name: "Sweden" },
+      { flag: "🇩🇰", name: "Denmark" },
+      { flag: "🇫🇮", name: "Finland" },
+    ],
+    color: "#0369a1",
+    gradient: "linear-gradient(135deg, #0369a1 0%, #0284c7 100%)",
+  },
+  {
+    id: "customized",
+    name: "Customized Package",
+    tagline: "Flexible",
+    amountEur: null,
+    description: "5 applications across 2 or more countries — tailored to your profile and goals.",
+    countries: [],
+    color: "#7c3aed",
+    gradient: "linear-gradient(135deg, #7c3aed 0%, #9461f5 100%)",
+  },
+];
+
+const packageInclusions = [
+  { icon: CheckCircle2, title: "Profile Assessment",           desc: "Evaluation of your academic background, goals and destination fit." },
+  { icon: GraduationCap, title: "University Selection",        desc: "Up to 5 universities shortlisted and matched to your profile." },
+  { icon: FileText,      title: "SOP, CV & Letters",           desc: "Statement of Purpose, CV, Motivation Letter and Cover Letter." },
+  { icon: BookOpen,      title: "Application Portal Handling", desc: "Portal submission, form filling and deadline tracking." },
+  { icon: Mail,          title: "University Follow-up",        desc: "Follow-up emails with universities sent on your behalf." },
+  { icon: BadgeCheck,    title: "Scholarship Guidance",        desc: "National and regional scholarship eligibility mapping." },
+  { icon: ShieldCheck,   title: "Visa Appointment Support",    desc: "Apostille, financial documents and bank statement requirements." },
+  { icon: CheckCircle2,  title: "Mock Visa Interview",         desc: "Preparation for the visa interview with Q&A practice." },
+  { icon: Home,          title: "Accommodation Guidance",      desc: "Finding and booking accommodation near your university." },
+  { icon: ShieldCheck,   title: "Health Insurance Guidance",   desc: "Suitable health insurance options for your destination country." },
+  { icon: Plane,         title: "Flight Ticket Planning",      desc: "Travel timeline planning and flight booking guidance." },
+];
+
+const feeStructure = [
+  {
+    label: "Admission Consultation Fee",
+    amount: 300,
+    color: "#364bc5",
+    note: "Paid in 2 installments",
+    refundable: false,
+    refundNote: "Non-refundable — covers services already rendered",
+  },
+  {
+    label: "Visa Consultation Fee",
+    amount: 500,
+    color: "#059669",
+    note: "Paid after admission is secured",
+    refundable: true,
+    refundNote: "Refundable if visa denied by consulate",
+  },
+];
+
 const relocationReviews = [
   {
     name: "Rakib Imtiaj Ahmed",
@@ -165,9 +247,9 @@ const relocationReviews = [
 ];
 
 export const metadata = {
-  title: "Students Relocation Guidance for Europe | Career Abroad Mentor",
+  title: "Relocation Packages & Pricing for Europe | Career Abroad Mentor",
   description:
-    "A fully managed, done-for-you study relocation service — from university application to arrival. Study-visa only.",
+    "Fully managed student relocation service — from €800. Standard, Nordic and Customised packages covering Germany, France, Spain, Belgium, Nordics and more.",
 };
 
 export default function RelocationPage() {
@@ -245,6 +327,18 @@ export default function RelocationPage() {
                       Share your origin and destination — we'll guide you from there.
                     </p>
 
+                    {/* Pricing teaser */}
+                    <div
+                      className="mt-3 flex items-center gap-2.5 rounded-2xl border p-3"
+                      style={{ borderColor: `${primary}33`, backgroundColor: `${primary}06` }}
+                    >
+                      <Tag className="h-4 w-4 shrink-0" style={{ color: primary }} />
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-base font-bold" style={{ color: primary }}>From €800</span>
+                        <span className="text-xs text-gray-500">· Standard Package</span>
+                      </div>
+                    </div>
+
                     <div className="mt-5 space-y-3">
                       {[
                         { icon: ShieldCheck, color: "#059669", bg: "#ecfdf5", title: "Full visa support", desc: "Appointment, documents, and mock interview." },
@@ -273,6 +367,13 @@ export default function RelocationPage() {
                       >
                         <Mail className="h-4 w-4" />
                         Request a Quote by Email
+                      </a>
+                      <a
+                        href="#packages"
+                        className="mt-2 flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-3 text-sm font-semibold border transition-colors hover:bg-gray-50"
+                        style={{ borderColor: `${primary}44`, color: primary }}
+                      >
+                        View packages &amp; pricing ↓
                       </a>
                     </div>
                     <p className="mt-3 text-xs text-center text-gray-400">
@@ -334,6 +435,198 @@ export default function RelocationPage() {
                 This is different from our self-study courses, where you learn each step yourself.
                 Here, we do it <em>with</em> you and <em>for</em> you — a fully managed,
                 done-for-you relocation, built around your profile and your destination.
+              </p>
+            </div>
+          </div>
+          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
+        {/* ── Our Packages ── */}
+        <div id="packages" className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-wider text-gray-500">Our packages</p>
+            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+              Choose Your Destination —{" "}
+              <span style={{ color: primary }}>We Handle the Rest</span>
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Fully managed relocation from application to arrival. All packages include the same 11-service coverage.
+            </p>
+
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {packageTiers.map((tier) => (
+                <div
+                  key={tier.id}
+                  className="rounded-2xl overflow-hidden border"
+                  style={{ borderColor: `${tier.color}33` }}
+                >
+                  {/* Gradient header */}
+                  <div className="px-5 pt-5 pb-4" style={{ background: tier.gradient }}>
+                    <span className="inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold text-white">
+                      {tier.tagline}
+                    </span>
+                    <h3 className="mt-2 text-lg font-semibold text-white">{tier.name}</h3>
+                    {tier.countries.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {tier.countries.map((c) => (
+                          <span
+                            key={c.name}
+                            className="rounded-full bg-white/15 px-2.5 py-0.5 text-xs font-medium text-white"
+                          >
+                            {c.flag} {c.name}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {tier.id === "customized" && (
+                      <p className="mt-2 text-sm text-white/80 leading-relaxed">{tier.description}</p>
+                    )}
+                  </div>
+
+                  {/* White body */}
+                  <div className="p-5 bg-white">
+                    {tier.amountEur !== null ? (
+                      <PriceDisplay amountEur={tier.amountEur} />
+                    ) : (
+                      <div>
+                        <span className="text-2xl font-semibold text-gray-900">Contact for pricing</span>
+                        <p className="mt-1 text-xs text-gray-400">Tailored to your countries and needs</p>
+                      </div>
+                    )}
+
+                    {tier.amountEur !== null && (
+                      <p className="mt-2 text-xs text-gray-400">+75% of total fee for spouse / dependent</p>
+                    )}
+
+                    <div className="mt-4">
+                      <a
+                        href={contactEmail}
+                        className="flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                        style={{ backgroundColor: tier.color }}
+                      >
+                        <Mail className="h-4 w-4" />
+                        {tier.id === "customized" ? "Get a Custom Quote" : "Apply for This Package"}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
+        {/* ── What's Included ── */}
+        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-wider text-gray-500">Included in every package</p>
+            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+              11 Services —{" "}
+              <span style={{ color: primary }}>All Covered</span>
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Every package tier includes the complete service list below — no hidden extras.
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {packageInclusions.map((item, i) => {
+                const c = palette[i % palette.length];
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className="rounded-2xl border p-4"
+                    style={{ borderColor: `${c}33`, borderLeft: `3px solid ${c}`, backgroundColor: `${c}08` }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <Icon className="h-5 w-5 mt-0.5 shrink-0" style={{ color: c }} />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+                        <p className="mt-0.5 text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
+        {/* ── Fee Structure & Refund Policy ── */}
+        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
+          <div className="p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-wider text-gray-500">Fee structure</p>
+            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+              Transparent Pricing —{" "}
+              <span style={{ color: primary }}>Two-Part Fee Structure</span>
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              The total fee is split into two parts, paid at different stages of your relocation.
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {feeStructure.map((fee) => (
+                <div
+                  key={fee.label}
+                  className="rounded-2xl border p-5"
+                  style={{ borderColor: `${fee.color}33`, borderLeft: `3px solid ${fee.color}`, backgroundColor: `${fee.color}08` }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Euro className="h-5 w-5 shrink-0" style={{ color: fee.color }} />
+                    <p className="text-sm font-semibold text-gray-900">{fee.label}</p>
+                  </div>
+                  <p className="mt-3 text-3xl font-bold text-gray-900">€{fee.amount}</p>
+                  <p className="mt-1 text-xs text-gray-500">{fee.note}</p>
+                  <div className="mt-2 flex items-center gap-1.5">
+                    {fee.refundable ? (
+                      <>
+                        <RefreshCcw className="h-3.5 w-3.5 text-green-600" />
+                        <span className="text-xs font-medium text-green-700">{fee.refundNote}</span>
+                      </>
+                    ) : (
+                      <span className="text-xs text-gray-400">{fee.refundNote}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Total callout */}
+            <div
+              className="mt-4 rounded-2xl border p-4 flex items-center justify-between"
+              style={{ borderColor: `${primary}22`, backgroundColor: `${primary}06` }}
+            >
+              <span className="text-sm font-semibold text-gray-700">Standard Package total</span>
+              <span className="text-xl font-bold" style={{ color: primary }}>€800</span>
+            </div>
+
+            {/* Dependent add-on */}
+            <div
+              className="mt-4 rounded-2xl border p-4"
+              style={{ borderColor: "#d9770633", borderLeft: "3px solid #d97706", backgroundColor: "#d9770608" }}
+            >
+              <div className="flex items-start gap-3">
+                <Users className="h-5 w-5 mt-0.5 shrink-0 text-amber-600" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Spouse / Dependent Add-on</p>
+                  <p className="mt-0.5 text-sm text-gray-600">
+                    +75% of the total package fee per accompanying spouse or dependent.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Refund policy callout */}
+            <div
+              className="mt-4 rounded-2xl p-5 border"
+              style={{ borderColor: "#05966933", borderLeft: "4px solid #059669", backgroundColor: "#05966908" }}
+            >
+              <p className="text-sm font-semibold text-gray-900">Visa Fee Refund Policy</p>
+              <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                The €500 visa consultation fee is fully refundable if your visa application is denied by the consulate.
+                The €300 admission consultation fee is non-refundable — it covers the university selection, document
+                preparation and application work already completed on your behalf.
               </p>
             </div>
           </div>
