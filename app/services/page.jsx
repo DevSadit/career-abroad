@@ -205,6 +205,10 @@ const feeStructure = [
     amount: 300,
     color: "#364bc5",
     note: "Paid in 2 installments",
+    installments: [
+      { label: "File Opening", amount: 150 },
+      { label: "After Getting Offer Letter", amount: 150 },
+    ],
     refundable: false,
     refundNote: "Non-refundable — covers services already rendered",
   },
@@ -482,6 +486,23 @@ export default function ServicesPage() {
                   </div>
                   <p className="mt-3 text-3xl font-bold text-gray-900">€{fee.amount}</p>
                   <p className="mt-1 text-xs text-gray-500">{fee.note}</p>
+
+                  {/* Installment breakdown */}
+                  {fee.installments && (
+                    <div className="mt-3 space-y-1.5">
+                      {fee.installments.map((inst, ii) => (
+                        <div
+                          key={ii}
+                          className="flex items-center justify-between rounded-lg px-3 py-1.5"
+                          style={{ backgroundColor: `${fee.color}10` }}
+                        >
+                          <span className="text-xs text-gray-600">{inst.label}</span>
+                          <span className="text-xs font-bold" style={{ color: fee.color }}>€{inst.amount}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   <div className="mt-2 flex items-center gap-1.5">
                     {fee.refundable ? (
                       <>
