@@ -276,43 +276,9 @@ export default function ServicesPage() {
                   Complete Study Consultancy for Europe
                 </h1>
 
-                <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-                  Moving for your studies — from the UK, USA, China, Malaysia, or
-                  within Europe? We handle the whole journey for you, so you can
-                  focus on what matters: your studies.
+                <p lang="bn" className="font-bn mt-4 text-base text-gray-600 leading-relaxed">
+                  ক্যারিয়ার এব্রোড মেন্টরস কোনো প্রচলিত এজেন্সি নয়। আমরা ইউরোপে বর্তমানে অধ্যয়নরত মাস্টার্স ও পিএইচডি শিক্ষার্থীদের একটি দল, যারা উচ্চশিক্ষার জন্য বিদেশে যাওয়ার যাত্রাটি সহজ করতে শিক্ষার্থীদের পথ দেখাই। ভর্তি, ফান্ডিং, ভিসা ও রিলোকেশনের প্রতিটি ধাপ আমরা নিজেরা পার করেছি, তাই আমাদের পরামর্শ ও সিদ্ধান্ত আসে সরাসরি বাস্তব অভিজ্ঞতা থেকে, কোনো সেলস টার্গেট থেকে নয়। আমাদের কাজ হলো পুরো প্রক্রিয়াটিকে সহজ করা: আপনার একাডেমিক প্রোফাইলের সাথে মানানসই ইউনিভার্সিটি খুঁজে বের করা, আপনার পক্ষে আবেদন প্রস্তুত ও জমা দেওয়া, এবং গন্তব্যে পৌঁছানো পর্যন্ত ভিসা প্রসেসিংয়ের প্রতিটি ধাপে সহায়তা করা।
                 </p>
-
-                {/* Two info cards */}
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-gray-200 p-4">
-                    <p className="text-xs uppercase tracking-wider text-gray-500">Service type</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">Fully managed, done-for-you</p>
-                  </div>
-                  <div className="rounded-2xl border border-gray-200 p-4">
-                    <p className="text-xs uppercase tracking-wider text-gray-500">Scope</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">Study-visa consultancy only</p>
-                    <p className="text-xs text-gray-500 mt-0.5">No work or job relocation</p>
-                  </div>
-                </div>
-
-                {/* Already done routes */}
-                <div className="mt-6">
-                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">Already done</p>
-                  <div className="flex flex-wrap gap-2">
-                    {trustedRoutes.map((route) => (
-                      <span
-                        key={route.label}
-                        className="rounded-full border px-3 py-1 text-xs font-medium"
-                        style={{ borderColor: `${primary}33`, color: primary, backgroundColor: `${primary}08` }}
-                      >
-                        {route.flag} {route.label}
-                      </span>
-                    ))}
-                    <span className="rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-500">
-                      and more
-                    </span>
-                  </div>
-                </div>
               </div>
 
               {/* Right: Contact card */}
