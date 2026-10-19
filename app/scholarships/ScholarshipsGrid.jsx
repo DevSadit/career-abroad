@@ -69,7 +69,7 @@ export default function ScholarshipsGrid({ scholarships }) {
               <h3 className="text-xl font-bold text-gray-900 leading-snug mb-3">{s.name}</h3>
 
               {/* Fees with BDT */}
-              <div className="mb-3 flex flex-col gap-2">
+              <div className={`mb-3 gap-2 ${s.fees.length > 1 ? "grid grid-cols-2" : "flex flex-col"}`}>
                 {s.fees.map((f, fi) => (
                   <div
                     key={fi}
