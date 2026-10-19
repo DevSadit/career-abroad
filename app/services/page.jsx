@@ -287,7 +287,7 @@ export default function ServicesPage() {
                   style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
                 >
                   <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের <span className="font-semibold" style={{ color: primary }}>1:1 পেইড সেশন</span> বুক করুন
+                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের <a href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>1:1 পেইড সেশন</a> বুক করুন
                   </p>
                 </div>
               </div>

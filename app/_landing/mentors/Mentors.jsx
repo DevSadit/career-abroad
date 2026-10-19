@@ -7,7 +7,7 @@ import SessionInfoBanner from "./SessionInfoBanner";
 
 const Mentors = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 xl:py-12">
+    <section id="mentors" className="py-12 md:py-16 lg:py-20 xl:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head text */}
         <Title title={"Mentors"} subtitle={"Our Expert Mentors"} />
