@@ -1,5 +1,5 @@
-import { CheckCircle2, Calendar, ArrowRight, ExternalLink, Info, Tag, Users } from "lucide-react";
-import Link from "next/link";
+import { CheckCircle2, Calendar, ArrowRight, Info, Tag } from "lucide-react";
+import Image from "next/image";
 import Title from "@/app/_shared/Title";
 
 const primary = "#364bc5";
@@ -13,6 +13,7 @@ const scholarships = [
     name: "Erasmus Mundus",
     badge: "EU · Master's",
     flag: "🇪🇺",
+    logos: ["/scolarships/Erusmus.png"],
     fees: [{ label: null, amount: "€75", note: "per application · +€30 each additional" }],
     windows: [{ label: null, value: "October – January" }],
     includes: [
@@ -27,6 +28,7 @@ const scholarships = [
     name: "Swedish Institute Scholarship",
     badge: "Sweden · Master's",
     flag: "🇸🇪",
+    logos: ["/scolarships/SI.png"],
     fees: [{ label: null, amount: "€75", note: null }],
     windows: [
       { label: "University application", value: "October – January" },
@@ -43,6 +45,7 @@ const scholarships = [
     name: "French Scholarships",
     badge: "France · Master's & PhD",
     flag: "🇫🇷",
+    logos: ["/scolarships/Eiffel.png"],
     fees: [
       { label: "Eiffel", amount: "€75", note: null },
       { label: "IDEX", amount: "€60", note: null },
@@ -63,6 +66,7 @@ const scholarships = [
     name: "Stipendium Hungaricum",
     badge: "Hungary · Bachelor's, Master's & PhD",
     flag: "🇭🇺",
+    logos: ["/scolarships/Stipendium.png"],
     fees: [{ label: null, amount: "€65", note: null }],
     windows: [{ label: null, value: "November 2026 (for 2027/28)" }],
     includes: [
@@ -77,6 +81,7 @@ const scholarships = [
     name: "Italian Government Scholarships",
     badge: "Italy · MAECI & Invest Your Talent",
     flag: "🇮🇹",
+    logos: ["/scolarships/MAECI.png", "/scolarships/IYT.png"],
     fees: [
       { label: "MAECI", amount: "€60", note: null },
       { label: "IYT", amount: "€60", note: null },
@@ -97,6 +102,7 @@ const scholarships = [
     name: "Italy Regional Scholarships",
     badge: "Italy · Regional",
     flag: "🇮🇹",
+    logos: ["/scolarships/Lazio.png"],
     fees: [{ label: null, amount: "€65", note: null }],
     windows: [{ label: null, value: "Depends on region & study level" }],
     includes: [
@@ -111,6 +117,7 @@ const scholarships = [
     name: "Czech Government Scholarship",
     badge: "Czechia · Master's & PhD",
     flag: "🇨🇿",
+    logos: [],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [{ label: null, value: "August – September" }],
     includes: [
@@ -125,6 +132,7 @@ const scholarships = [
     name: "Romanian Government Scholarship",
     badge: "Romania · All levels",
     flag: "🇷🇴",
+    logos: ["/scolarships/Romania.png"],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [{ label: null, value: "February – March" }],
     includes: [
@@ -139,6 +147,7 @@ const scholarships = [
     name: "MEXT Scholarship",
     badge: "Japan · All levels",
     flag: "🇯🇵",
+    logos: [],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [{ label: null, value: "April – May" }],
     includes: [
@@ -153,6 +162,7 @@ const scholarships = [
     name: "Chinese Government Scholarship",
     badge: "China · Bachelor's, Master's & PhD",
     flag: "🇨🇳",
+    logos: [],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [{ label: null, value: "November – January" }],
     includes: [
@@ -167,6 +177,7 @@ const scholarships = [
     name: "Global Korea Scholarship",
     badge: "South Korea · Undergraduate, Master's & PhD",
     flag: "🇰🇷",
+    logos: [],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [
       { label: "Undergraduate (embassy)", value: "September" },
@@ -185,6 +196,7 @@ const scholarships = [
     name: "ICCR Scholarship",
     badge: "India · Undergraduate, Postgraduate & PhD",
     flag: "🇮🇳",
+    logos: [],
     fees: [{ label: null, amount: "€60", note: null }],
     windows: [{ label: null, value: "February – April" }],
     includes: [
@@ -230,11 +242,26 @@ export default function ScholarshipsPage() {
                 <div className="h-1.5 w-full" style={{ background: `linear-gradient(to right, ${color}, ${color}99)` }} />
 
                 <div className="p-5 flex flex-col grow">
-                  {/* Flag + badge */}
-                  <div className="flex items-start gap-2 mb-3">
-                    <span className="text-2xl leading-none mt-0.5">{s.flag}</span>
+                  {/* Logo(s) or flag fallback */}
+                  <div className="flex items-center justify-between mb-3 gap-2">
+                    <div className="flex items-center gap-2">
+                      {s.logos.length > 0 ? (
+                        s.logos.map((logo, li) => (
+                          <div key={li} className="h-10 w-auto flex items-center rounded-lg border border-gray-100 bg-white px-2 py-1 shadow-sm">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={logo}
+                              alt={s.name}
+                              className="h-8 w-auto object-contain"
+                            />
+                          </div>
+                        ))
+                      ) : (
+                        <span className="text-3xl leading-none">{s.flag}</span>
+                      )}
+                    </div>
                     <span
-                      className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                      className="text-xs font-semibold px-2.5 py-1 rounded-full shrink-0"
                       style={{ backgroundColor: `${color}14`, color }}
                     >
                       {s.badge}
