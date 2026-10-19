@@ -388,59 +388,6 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* ── Why It's Hard ── */}
-        <div className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
-          <div className="p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-wider text-gray-500">Why it's hard</p>
-            <h2 className="mt-2 text-2xl font-semibold text-gray-900">
-              It's not one task.{" "}
-              <span style={{ color: primary }}>It's dozens of them.</span>
-            </h2>
-            <p className="mt-1 text-sm text-gray-500">
-              In the right order, on tight deadlines, in a language you may not speak, while you're still living somewhere else.
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {complexitySteps.map((step, i) => {
-                const c = palette[i % palette.length];
-                return (
-                  <div
-                    key={i}
-                    className="rounded-2xl border p-4"
-                    style={{ borderColor: `${c}33`, borderLeft: `3px solid ${c}`, backgroundColor: `${c}08` }}
-                  >
-                    <div className="flex items-start gap-3">
-                      <span
-                        className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold"
-                        style={{ backgroundColor: c }}
-                      >
-                        {i + 1}
-                      </span>
-                      <p className="text-sm text-gray-800 leading-relaxed">{step}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Callout */}
-            <div
-              className="mt-6 rounded-2xl p-5 border"
-              style={{ borderColor: `${primary}33`, borderLeft: `4px solid ${primary}`, backgroundColor: `${primary}08` }}
-            >
-              <p className="text-base sm:text-lg font-semibold text-gray-900">
-                Our consultancy service takes that entire process off your shoulders.
-              </p>
-              <p className="mt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed">
-                This is different from our self-study courses, where you learn each step yourself.
-                Here, we do it <em>with</em> you and <em>for</em> you — a fully managed,
-                done-for-you consultancy, built around your profile and your destination.
-              </p>
-            </div>
-          </div>
-          <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
-        </div>
-
         {/* ── Our Packages ── */}
         <div id="packages" className="mt-8 rounded-3xl border border-gray-200 bg-white overflow-hidden">
           <div className="p-6 sm:p-8">
