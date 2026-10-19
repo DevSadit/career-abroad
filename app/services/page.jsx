@@ -247,12 +247,12 @@ const relocationReviews = [
 ];
 
 export const metadata = {
-  title: "Relocation Packages & Pricing for Europe | Career Abroad Mentor",
+  title: "Services & Packages for Europe Study | Career Abroad Mentor",
   description:
-    "Fully managed student relocation service — from €800. Standard, Nordic and Customised packages covering Germany, France, Spain, Belgium, Nordics and more.",
+    "Complete study consultancy from €800 — university application, SOP, visa guidance and settlement support. Standard, Nordic and Customised packages for Europe.",
 };
 
-export default function RelocationPage() {
+export default function ServicesPage() {
   return (
     <section className="min-h-screen py-12 md:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,11 +269,11 @@ export default function RelocationPage() {
                   style={{ borderColor: `${primary}22`, color: primary, backgroundColor: `${primary}08` }}
                 >
                   <Globe className="h-4 w-4" />
-                  Student Relocation Service
+                  Student Consultancy Services
                 </div>
 
                 <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900">
-                  Students Relocation Guidance for Europe
+                  Complete Study Consultancy for Europe
                 </h1>
 
                 <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -290,7 +290,7 @@ export default function RelocationPage() {
                   </div>
                   <div className="rounded-2xl border border-gray-200 p-4">
                     <p className="text-xs uppercase tracking-wider text-gray-500">Scope</p>
-                    <p className="mt-1 text-sm font-semibold text-gray-900">Study-visa relocation only</p>
+                    <p className="mt-1 text-sm font-semibold text-gray-900">Study-visa consultancy only</p>
                     <p className="text-xs text-gray-500 mt-0.5">No work or job relocation</p>
                   </div>
                 </div>
@@ -429,12 +429,12 @@ export default function RelocationPage() {
               style={{ borderColor: `${primary}33`, borderLeft: `4px solid ${primary}`, backgroundColor: `${primary}08` }}
             >
               <p className="text-base sm:text-lg font-semibold text-gray-900">
-                Our relocation service takes that entire process off your shoulders.
+                Our consultancy service takes that entire process off your shoulders.
               </p>
               <p className="mt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed">
                 This is different from our self-study courses, where you learn each step yourself.
                 Here, we do it <em>with</em> you and <em>for</em> you — a fully managed,
-                done-for-you relocation, built around your profile and your destination.
+                done-for-you consultancy, built around your profile and your destination.
               </p>
             </div>
           </div>
@@ -450,7 +450,7 @@ export default function RelocationPage() {
               <span style={{ color: primary }}>We Handle the Rest</span>
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              Fully managed relocation from application to arrival. All packages include the same 11-service coverage.
+              Fully managed consultancy from application to arrival. All packages include the same 11-service coverage.
             </p>
 
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -562,7 +562,7 @@ export default function RelocationPage() {
               <span style={{ color: primary }}>Two-Part Fee Structure</span>
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              The total fee is split into two parts, paid at different stages of your relocation.
+              The total fee is split into two parts, paid at different stages of your journey.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -642,7 +642,7 @@ export default function RelocationPage() {
               <span style={{ color: primary }}>Arrival — We Cover It All</span>
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              Every stage of your relocation, managed end to end.
+              Every stage of your journey, managed end to end.
             </p>
 
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -722,7 +722,7 @@ export default function RelocationPage() {
                   📌 Study purpose only
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  We work exclusively on study-visa relocations. We do not handle work, job or
+                  We work exclusively on study-visa consultancy. We do not handle work, job or
                   employment-based relocation — and that focus is exactly why we do this so well.
                 </p>
               </div>
@@ -740,7 +740,7 @@ export default function RelocationPage() {
               <span style={{ color: primary }}>Real Results</span>
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              Shared by students who completed our relocation guidance package.
+              Shared by students who completed our consultancy package.
             </p>
 
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -803,7 +803,7 @@ export default function RelocationPage() {
         <div className="mt-8 rounded-3xl border border-gray-200 bg-gray-50 p-6 sm:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
           <div>
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
-              Ready to start your relocation?
+              Ready to start your study journey?
             </h3>
             <p className="mt-2 text-sm sm:text-base text-gray-600">
               Tell us where you're headed and where you're moving from — we'll guide you from there.
