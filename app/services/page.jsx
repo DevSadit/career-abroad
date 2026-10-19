@@ -305,26 +305,6 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <div className="mt-5 space-y-3">
-                      {[
-                        { icon: ShieldCheck, color: "#059669", bg: "#ecfdf5", title: "Full visa support", desc: "Appointment, documents, and mock interview." },
-                        { icon: FileText,    color: "#7c3aed", bg: "#f5f3ff", title: "Documents handled",  desc: "Notary, translation, financial preparation." },
-                        { icon: Home,        color: "#0369a1", bg: "#eff6ff", title: "Until you arrive",   desc: "Accommodation, insurance and travel guidance." },
-                      ].map(({ icon: Icon, color, bg, title, desc }) => (
-                        <div
-                          key={title}
-                          className="flex items-start gap-3 rounded-2xl border p-4"
-                          style={{ borderColor: `${color}33`, borderLeft: `3px solid ${color}`, backgroundColor: bg }}
-                        >
-                          <Icon className="h-5 w-5 mt-0.5 shrink-0" style={{ color }} />
-                          <div>
-                            <p className="text-sm font-semibold text-gray-900">{title}</p>
-                            <p className="text-sm text-gray-600">{desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
                     <div className="mt-6">
                       <a
                         href={contactEmail}
