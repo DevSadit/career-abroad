@@ -79,27 +79,34 @@ const Hero = () => {
 
             {/* btn */}
             <div className="pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-center">
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 gap-2.5 w-full md:w-auto">
                 <Link
                   href={"/complete-mentorship-program"}
-                  className="bg-[#364bc5] hover:bg-[#2a3ba0] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+                  className="bg-[#364bc5] hover:bg-[#2a3ba0] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-between gap-2"
                 >
-                  Mentorship Program
-                  <FaArrowRight className="w-3.5 h-3.5" />
+                  Mentorship
+                  <FaArrowRight className="w-3.5 h-3.5 shrink-0" />
+                </Link>
+                <Link
+                  href={"/course-content"}
+                  className="bg-[#364bc5] hover:bg-[#2a3ba0] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-between gap-2"
+                >
+                  Courses
+                  <FaArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
                 <Link
                   href={"/services"}
-                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2"
+                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center justify-between gap-2"
                 >
-                  Consultancy Services
-                  <FaArrowRight className="w-3.5 h-3.5" />
+                  Services
+                  <FaArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
                 <Link
                   href={"/scholarships"}
-                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2"
+                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center justify-between gap-2"
                 >
-                  Scholarship Guidance
-                  <FaArrowRight className="w-3.5 h-3.5" />
+                  Scholarships
+                  <FaArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
               </div>
 
