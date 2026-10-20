@@ -98,7 +98,7 @@ const Courses = ({ courses }) => {
               Course Contents & Students Login
             </h2>
             <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-2xl">
-              Explore our available courses introductory videos. Only enrolled
+              Explore our <a href="/#courses" className="font-semibold underline underline-offset-2 text-[#364bc5]">available courses</a> introductory videos. Only enrolled
               students can login by using their email address. Please enroll in
               your prospective program to get the access of our contents.
             </p>

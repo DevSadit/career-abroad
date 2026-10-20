@@ -7,7 +7,7 @@ import PremiumCard from "@/app/_shared/PremiumCard";
 import Title from "@/app/_shared/Title";
 const CoursesSection = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 xl:py-12 bg-white">
+    <section id="courses" className="py-12 md:py-16 lg:py-20 xl:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* head text */}
         <Title title={"Courses"} subtitle={"Our All Courses"} />
