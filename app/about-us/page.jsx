@@ -1,7 +1,24 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
+
+export const metadata = {
+  title: "About Us | Career Abroad Mentors",
+  description: "Learn about Career Abroad Mentors — founded by Ahsan Suny, a PhD researcher at ICIQ Spain, to guide Bangladeshi students through higher education in Europe.",
+  openGraph: {
+    title: "About Us | Career Abroad Mentors",
+    description: "Learn about Career Abroad Mentors — founded by Ahsan Suny, a PhD researcher at ICIQ Spain, to guide Bangladeshi students through higher education in Europe.",
+    url: "https://ahsansuny.com/about-us",
+    siteName: "Career Abroad Mentors",
+    images: [{ url: "https://ahsansuny.com/unnamed.png", width: 800, height: 800, alt: "Career Abroad Mentors" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About Us | Career Abroad Mentors",
+    description: "Learn about Career Abroad Mentors — founded by Ahsan Suny, a PhD researcher at ICIQ Spain.",
+  },
+};
 import Videos from "../_shared/Videos";
 import videos from "../../data/videos.json";
 const Page = () => {
@@ -168,6 +185,105 @@ const Page = () => {
 
           {/* Accent bottom line (clean, not flashy) */}
           <div className="h-1.5" style={{ backgroundColor: primary }} />
+        </div>
+
+        {/* FOUNDER */}
+        <div className="mt-10">
+          <div className="rounded-2xl border border-gray-200 overflow-hidden">
+            {/* Section header */}
+            <div className="px-5 sm:px-6 pt-5 pb-4 border-b border-gray-100">
+              <div
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium border"
+                style={{ borderColor: `${primary}22`, backgroundColor: `${primary}08`, color: primary }}
+              >
+                <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: primary }} />
+                About Our Founder
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+              {/* Photo */}
+              <div className="flex-shrink-0 flex flex-col items-center gap-3">
+                <div
+                  className="relative h-40 w-40 sm:h-48 sm:w-48 rounded-2xl overflow-hidden border-2 shadow-md"
+                  style={{ borderColor: `${primary}33` }}
+                >
+                  <Image
+                    src="/mentors/Suny_Mentor1.png"
+                    alt="Ahsan Suny"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+
+                {/* Social links */}
+                <div className="flex flex-wrap justify-center gap-2 w-48 sm:w-56">
+                  {[
+                    { label: "ICIQ Profile", href: "https://iciq.org/staff/ahsan-md-shahnauze/" },
+                    { label: "Research Lab", href: "https://sites.google.com/view/ahsanslab" },
+                    { label: "Google Scholar", href: "https://scholar.google.com/citations?user=_7HPSf4AAAAJ&hl=en&oi=ao" },
+                    { label: "LinkedIn", href: "https://www.linkedin.com/in/eeehsan94/" },
+                    { label: "YouTube", href: "https://www.youtube.com/@AhsanSuny" },
+                    { label: "Facebook", href: "https://www.facebook.com/AhsanSunyOfficial/" },
+                  ].map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border px-3 py-1 text-xs font-medium transition-colors hover:bg-[#364bc5] hover:text-white hover:border-[#364bc5]"
+                      style={{ borderColor: `${primary}44`, color: primary }}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bio */}
+              <div className="flex flex-col gap-3 text-[15px] sm:text-base leading-relaxed text-gray-700">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Ahsan Suny</h2>
+                  <p className="text-sm text-gray-500 mt-0.5">Founder, Career Abroad Mentors</p>
+                </div>
+
+                <p>
+                  Meet <span className="font-semibold text-gray-900">Ahsan Suny</span>, the driving force behind Career Abroad Mentors. He is currently pursuing a Spanish Government-funded PhD in <span className="font-semibold text-gray-900">Robotics & AI</span> at the <span className="font-semibold text-gray-900">Nanosystems, Bioengineering and Energy department of University Rovira i Virgili and ICIQ</span>, Spain — a journey shaped by multiple competitive scholarships, research grants, and industry experience across three countries.
+                </p>
+
+                <p>
+                  He completed his Master&apos;s in <span className="font-semibold text-gray-900">Embedded Systems at Grenoble INP (Grenoble Institute of Technology)</span>, France, fully funded by the <span className="font-semibold text-gray-900">Grenoble INP Excellence Scholarship</span>. During his studies, he also completed a paid internship at <span className="font-semibold text-gray-900">Schneider Electric</span>.
+                </p>
+
+                <p>
+                  He was subsequently awarded the <span className="font-semibold text-gray-900">Catalan Government Fund (AGAUR)</span> to work as a Research Software Engineer at ICIQ, where he led the development of software for an Intelligent Photoreactor. He then received a <span className="font-semibold text-gray-900">4-year doctoral fellowship from the Spanish Ministry of Education</span> to pursue research in <em>AI-driven Robotics for Catalyst Development</em>.
+                </p>
+
+                <p>
+                  Ahsan has delivered <span className="font-semibold text-gray-900">8+ successful projects</span> for startups, research institutes, and multinational companies across Bangladesh, France, and Spain. His peer-reviewed journal articles and conference papers are indexed on his{" "}
+                  <a href="https://scholar.google.com/citations?user=_7HPSf4AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-2" style={{ color: primary }}>Google Scholar</a>. He is committed to empowering the next generation of Bangladeshi students to achieve their own international academic and career milestones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 1:1 SESSION CALLOUT */}
+        <div
+          className="mt-6 rounded-2xl border-l-4 border border-gray-200 px-5 py-4"
+          style={{ borderLeftColor: primary, backgroundColor: `${primary}06` }}
+        >
+          <p lang="bn" className="font-bn text-sm sm:text-base text-gray-700 leading-relaxed">
+            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের{" "}
+            <a
+              href="/#mentors"
+              className="font-semibold underline underline-offset-2"
+              style={{ color: primary }}
+            >
+              1:1 পেইড সেশন
+            </a>{" "}
+            বুক করুন
+          </p>
         </div>
 
         {/* VIDEOS */}

@@ -1,5 +1,23 @@
 import React from "react";
 import Image from "next/image";
+
+export const metadata = {
+  title: "Complete Mentorship Program | Career Abroad Mentors",
+  description: "30-session live + recorded mentorship program — from profile building to visa. €150 for one full application cycle to European universities.",
+  openGraph: {
+    title: "Complete Mentorship Program | Career Abroad Mentors",
+    description: "30-session live + recorded mentorship program — from profile building to visa. €150 for one full application cycle to European universities.",
+    url: "https://ahsansuny.com/complete-mentorship-program",
+    siteName: "Career Abroad Mentors",
+    images: [{ url: "https://ahsansuny.com/unnamed.png", width: 800, height: 800, alt: "Career Abroad Mentors" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Complete Mentorship Program | Career Abroad Mentors",
+    description: "30-session live + recorded mentorship — €150 for one full European application cycle.",
+  },
+};
 import PriceDisplay from "./PriceDisplay";
 import StudyTimeline from "./StudyTimeline";
 import ReviewsCarousel from "./ReviewsCarousel";
@@ -185,6 +203,20 @@ const Page = () => {
                       </div>
                     );
                   })}
+                </div>
+
+                {/* 1:1 session callout */}
+                <div
+                  className="mt-5 rounded-2xl border p-4"
+                  style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+                >
+                  <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের{" "}
+                    <a href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                      1:1 পেইড সেশন
+                    </a>{" "}
+                    বুক করুন
+                  </p>
                 </div>
               </div>
 
@@ -617,6 +649,16 @@ const Page = () => {
               Allocated Number
             </a>
           </div>
+        </div>
+
+        {/* ── Disclaimer ── */}
+        <div
+          className="mt-8 rounded-2xl border p-5"
+          style={{ borderColor: "#d9770633", borderLeft: "4px solid #d97706", backgroundColor: "#d9770606" }}
+        >
+          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+            উল্লেখ্য: ক্যারিয়ার এব্রোড মেন্টরস কোনো রকম এডমিশন, স্কলারশিপ কিংবা ভিসার গ্যারান্টি দেয় না, তবে এপ্লিকেন্টর জন্য সর্বোচ্চ এফোর্ট দেওয়ার চেষ্টা করে।
+          </p>
         </div>
 
       </div>

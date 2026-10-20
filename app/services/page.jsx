@@ -253,9 +253,21 @@ const relocationReviews = [
 ];
 
 export const metadata = {
-  title: "Services & Packages for Europe Study | Career Abroad Mentor",
-  description:
-    "Complete study consultancy from €800 — university application, SOP, visa guidance and settlement support. Standard, Nordic and Customised packages for Europe.",
+  title: "Services & Packages for Europe Study | Career Abroad Mentors",
+  description: "Complete study consultancy from €800 — university application, SOP, visa guidance and settlement support. Standard, Nordic and Customised packages for Europe.",
+  openGraph: {
+    title: "Services & Packages for Europe Study | Career Abroad Mentors",
+    description: "Complete study consultancy from €800 — university application, SOP, visa guidance and settlement support. Standard, Nordic and Customised packages for Europe.",
+    url: "https://ahsansuny.com/services",
+    siteName: "Career Abroad Mentors",
+    images: [{ url: "https://ahsansuny.com/unnamed.png", width: 800, height: 800, alt: "Career Abroad Mentors" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Services & Packages for Europe Study | Career Abroad Mentors",
+    description: "Complete study consultancy from €800 — Standard, Nordic and Customised packages.",
+  },
 };
 
 export default function ServicesPage() {
@@ -722,6 +734,16 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
+        </div>
+
+        {/* ── Disclaimer ── */}
+        <div
+          className="mt-8 rounded-2xl border p-5"
+          style={{ borderColor: "#d9770633", borderLeft: "4px solid #d97706", backgroundColor: "#d9770606" }}
+        >
+          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+            উল্লেখ্য: ক্যারিয়ার এব্রোড মেন্টরস কোনো রকম এডমিশন, স্কলারশিপ কিংবা ভিসার গ্যারান্টি দেয় না, তবে এপ্লিকেন্টর জন্য সর্বোচ্চ এফোর্ট দেওয়ার চেষ্টা করে।
+          </p>
         </div>
 
         {/* ── Footer CTA ── */}

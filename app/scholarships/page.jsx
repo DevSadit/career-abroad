@@ -1,6 +1,19 @@
 import { Info, Tag } from "lucide-react";
 import Title from "@/app/_shared/Title";
 import ScholarshipsGrid from "./ScholarshipsGrid";
+import Videos from "@/app/_shared/Videos";
+
+const scholarshipVideos = [
+  { title: "Erasmus Mundus Scholarship",        url: "https://youtu.be/2Q9bulkFNRY" },
+  { title: "Swedish Institute Scholarship",     url: "https://youtu.be/9HFzH-Xje4s" },
+  { title: "IDEX Scholarship",                  url: "https://youtu.be/85fMGHa26nY" },
+  { title: "Stipendium Hungaricum Scholarship", url: "https://youtu.be/bwE9UJYruD4" },
+  { title: "Italy Government Scholarship",      url: "https://youtu.be/-7zwm7tY2q8" },
+  { title: "Italy Regional Scholarship",        url: "https://youtu.be/gCd2wwcQYg8" },
+  { title: "Czech Govt. Scholarship",           url: "https://youtu.be/LPr0UbWlQ4U" },
+  { title: "Romania Government Scholarship",    url: "https://youtu.be/Ye7hp2NNVdc" },
+  { title: "Japan MEXT Scholarship",            url: "https://youtu.be/29xJz16mbCA" },
+];
 
 const primary = "#364bc5";
 
@@ -48,7 +61,7 @@ const scholarships = [
       { label: "IDEX", amountEur: 60, note: null },
     ],
     windows: [
-      { label: "Eiffel", value: "November – January" },
+      { label: "Eiffel", value: "October – January" },
       { label: "IDEX", value: "Varies by university" },
     ],
     includes: [
@@ -205,9 +218,21 @@ const scholarships = [
 ];
 
 export const metadata = {
-  title: "Scholarship Packages | Career Abroad Mentor",
-  description:
-    "Scholarship application support packages for Erasmus Mundus, Swedish Institute, French, Hungarian, Italian, Czech, Romanian, MEXT, Chinese, Korean and Indian scholarships.",
+  title: "Scholarship Packages | Career Abroad Mentors",
+  description: "Scholarship application support packages for Erasmus Mundus, Swedish Institute, French, Hungarian, Italian, Czech, Romanian, MEXT, Chinese, Korean and Indian scholarships.",
+  openGraph: {
+    title: "Scholarship Packages | Career Abroad Mentors",
+    description: "Expert-guided support for Erasmus Mundus, SI, Eiffel, Stipendium Hungaricum, Italian Govt, MEXT, GKS and more.",
+    url: "https://ahsansuny.com/scholarships",
+    siteName: "Career Abroad Mentors",
+    images: [{ url: "https://ahsansuny.com/unnamed.png", width: 800, height: 800, alt: "Career Abroad Mentors" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Scholarship Packages | Career Abroad Mentors",
+    description: "Expert-guided support for Erasmus Mundus, SI, Eiffel, Stipendium Hungaricum and more.",
+  },
 };
 
 export default function ScholarshipsPage() {
@@ -280,6 +305,14 @@ export default function ScholarshipsPage() {
           </div>
 
         </div>
+
+        {/* ── Scholarship Videos ── */}
+        <Videos
+          videos={scholarshipVideos}
+          title="Watch our Scholarship Guidelines"
+          subtitle="Short, practical videos — step by step guidelines."
+        />
+
       </div>
     </section>
   );
