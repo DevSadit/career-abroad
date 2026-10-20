@@ -79,13 +79,27 @@ const Hero = () => {
 
             {/* btn */}
             <div className="pt-4 md:pt-6 flex flex-col md:flex-row justify-between items-center">
-              <div>
+              <div className="flex flex-wrap gap-3">
                 <Link
                   href={"/complete-mentorship-program"}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 md:px-7 py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 md:gap-3"
+                  className="bg-[#364bc5] hover:bg-[#2a3ba0] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
                 >
-                  Our Mentorship Program
-                  <FaArrowRight className="w-4 h-4" />
+                  Mentorship Program
+                  <FaArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href={"/services"}
+                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2"
+                >
+                  Consultancy Services
+                  <FaArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href={"/scholarships"}
+                  className="border-2 border-[#364bc5] text-[#364bc5] hover:bg-[#364bc5] hover:text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2"
+                >
+                  Scholarship Guidance
+                  <FaArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 

@@ -17,7 +17,11 @@ function toWatchUrl(url) {
   return url;
 }
 
-const Videos = ({ videos }) => {
+const Videos = ({
+  videos,
+  title = "Watch & understand the process",
+  subtitle = "Short, practical videos—mentorship overview, France visa guide, and Masters in France.",
+}) => {
   const primary = "#364bc5";
   return (
     <div className="mt-10 sm:mt-12">
@@ -27,11 +31,10 @@ const Videos = ({ videos }) => {
             Videos
           </p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-gray-900">
-            Watch & understand the process
+            {title}
           </h2>
           <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-2xl">
-            Short, practical videos—mentorship overview, France visa guide, and
-            Masters in France.
+            {subtitle}
           </p>
         </div>
 
@@ -60,7 +63,7 @@ const Videos = ({ videos }) => {
             <div className="p-4">
               <p className="text-sm font-semibold text-gray-900">{v.title}</p>
               <p className="mt-1 text-xs text-gray-500">
-                Career Abroad Mentorship
+                Career Abroad Mentors
               </p>
             </div>
 
