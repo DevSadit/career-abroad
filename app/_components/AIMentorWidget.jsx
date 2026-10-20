@@ -20,13 +20,13 @@ import {
 const INITIAL_MESSAGE = {
   id: "welcome",
   role: "assistant",
-  text: "Hey! I'm MentorBOT — your study-abroad guide. Ask me anything about applying to France, Italy, Belgium, Hungary, Estonia, or Spain. I'll do my best to help!",
+  text: "Hey! I'm MentorBOT — your study-abroad guide. Ask me anything about applying to France, Italy, Belgium, Hungary, Estonia, Spain, Austria, or Norway. I'll do my best to help!",
 };
 
 const BOOKING_LINK = "https://cal.com/ahsansuny2026/40min";
 // WhatsApp personal number removed — contact via email only
 const CONTACT_EMAIL = "mailto:mentors.career.abroad26@gmail.com";
-const COURSES_LINK = "https://www.ahsansuny.com/course-content";
+const COURSES_LINK = "/course-content";
 const QUICK_START_COUNTRY = "france";
 const STORAGE_KEY = "mentorbot-session-v1";
 const SOUND_PREF_KEY = "mentorbot-sound-enabled-v1";
@@ -68,6 +68,16 @@ const PROMPT_SUGGESTIONS = {
     "When does Spain application usually open?",
     "What documents are needed for Spain application?",
     "How does Spain student visa work?",
+  ],
+  austria: [
+    "How do I apply for masters in Austria?",
+    "What scholarships are available in Austria?",
+    "What documents are needed for Austria visa?",
+  ],
+  norway: [
+    "Is Norway free for international students?",
+    "What should I know about studying in Norway?",
+    "How does Norway student visa process work?",
   ],
 };
 
@@ -156,7 +166,7 @@ export default function AIMentorWidget() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [soundArmed, setSoundArmed] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [conversationCountry, setConversationCountry] = useState(pageCountry);
   const [hasRestoredSession, setHasRestoredSession] = useState(false);
@@ -202,6 +212,8 @@ export default function AIMentorWidget() {
 
       if (storedSoundPreference !== null) {
         setSoundEnabled(storedSoundPreference === "true");
+      } else {
+        setSoundEnabled(false);
       }
     } catch {
       // Ignore storage access failures and use the default sound setting.
