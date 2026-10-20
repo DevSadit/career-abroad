@@ -88,7 +88,7 @@ const Hero = () => {
                   <FaArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
                 <Link
-                  href={"/course-content"}
+                  href={"/#courses"}
                   className="bg-[#364bc5] hover:bg-[#2a3ba0] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-between gap-2"
                 >
                   Courses
