@@ -114,9 +114,9 @@ const Hero = () => {
               <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-5 md:pt-2">
                 <div className="text-center lg:text-left transform hover:scale-110 transition-all duration-300 hover:-translate-y-1">
                   <p className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#364bc5]">
-                    100+
+                    250+
                   </p>
-                  <p className="text-sm text-gray-600">Universities</p>
+                  <p className="text-sm text-gray-600">Consultations</p>
                 </div>
                 <div className="text-center lg:text-left transform hover:scale-110 transition-all duration-300 hover:-translate-y-1 delay-75">
                   <p className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#364bc5]">
@@ -126,9 +126,9 @@ const Hero = () => {
                 </div>
                 <div className="text-center lg:text-left transform hover:scale-110 transition-all duration-300 hover:-translate-y-1 delay-150">
                   <p className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#364bc5]">
-                    200+
+                    20+
                   </p>
-                  <p className="text-sm text-gray-600">Students</p>
+                  <p className="text-sm text-gray-600">Visa Success</p>
                 </div>
               </div>
             </div>
