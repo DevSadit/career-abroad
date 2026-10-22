@@ -55,10 +55,10 @@ const Hero = () => {
             <div className="w-20 md:w-28 h-1 bg-indigo-600 rounded-full mx-auto md:mx-0"></div>
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              LIVE guidance to help you win scholarships, funding, and admission
-              for graduate studies abroad. Connect directly with mentors who are
-              currently studying/working abroad and learn the complete process
-              through interactive LIVE classes + recordings.
+              LIVE guidance to help you win scholarships, funding, admission,
+              and visas for studying abroad. Connect directly with mentors who
+              are currently studying/working abroad and learn the complete
+              process through interactive 1:1 sessions + recordings.
             </p>
 
             {/* features */}
