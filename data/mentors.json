@@ -9,10 +9,7 @@
       "BSc in Electrical & Electronic Engineering"
     ],
     "expertiseCountries": [
-      { "code": "fr", "name": "France" },
-      { "code": "es", "name": "Spain" },
-      { "code": "it", "name": "Italy" },
-      { "code": "ee", "name": "Estonia" },
+      { "code": "eu", "name": "European Union" },
       { "code": "us", "name": "USA" }
     ],
     "book_a_session": "https://cal.com/ahsansuny2026/40min"

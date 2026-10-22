@@ -29,7 +29,7 @@ const CONTACT_EMAIL = "mailto:mentors.career.abroad26@gmail.com";
 const COURSES_LINK = "/course-content";
 const QUICK_START_COUNTRY = "france";
 const STORAGE_KEY = "mentorbot-session-v1";
-const SOUND_PREF_KEY = "mentorbot-sound-enabled-v1";
+const SOUND_PREF_KEY = "mentorbot-sound-enabled-v2";
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 const MAX_PERSISTED_MESSAGES = 20;
 
