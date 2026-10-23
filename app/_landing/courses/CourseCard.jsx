@@ -83,15 +83,17 @@ export default function CourseCard({ course }) {
               </span>
               <span className="text-gray-500">Classes</span>
             </div>
-            {course.classes.live && (
+            {course.classes.live > 0 && (
               <>
                 <span className="text-gray-300">•</span>
                 <span className="text-gray-600">
-                  {course.classes.live} Live
+                  {course.classes.recorded === 0
+                    ? "All Live 1:1"
+                    : `${course.classes.live} Live`}
                 </span>
               </>
             )}
-            {course.classes.recorded && (
+            {course.classes.recorded > 0 && (
               <>
                 <span className="text-gray-300">•</span>
                 <span className="text-gray-600">
