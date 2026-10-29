@@ -2,22 +2,33 @@
   {
     "title": "University Searching & Application Course",
     "url": "https://www.youtube.com/embed/R_Lf_CCHS2s?si=QzOnAbHlXEerMSZj",
-    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgAraOxp3v-wRqHGLj4-sk-oAZJH9BFmwFepP2jXkI-C9Hs"
+    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgAraOxp3v-wRqHGLj4-sk-oAZJH9BFmwFepP2jXkI-C9Hs",
+    "theme": "#059669"
   },
   {
     "title": "SOP Writing Mastercourse",
     "url": "https://www.youtube.com/embed/oBy4pNO3FKg?si=74adkdovDlcUWnSt",
-    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgB12sMyfF-LRL_lWrQ98XFsAXANLtW7Xduj5UXSHMcPvic"
+    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgB12sMyfF-LRL_lWrQ98XFsAXANLtW7Xduj5UXSHMcPvic",
+    "theme": "#7c3aed"
   },
   {
     "title": "Scholarship Preparation Course",
     "url": "https://www.youtube.com/embed/i_Oyd65esJM?si=2X_RIvXCuyYfRMaa",
-    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgCwgutR2bVjQIEdBCHnlh1NAfr3z8TDcooLcRD_TWIyEe0"
+    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgCwgutR2bVjQIEdBCHnlh1NAfr3z8TDcooLcRD_TWIyEe0",
+    "theme": "#d97706"
+  },
+  {
+    "title": "Visa Application & Documentation Course",
+    "type": "folder",
+    "description": "Successful visa documents, affidavit drafts, solvency guides, accommodation & insurance templates — for France, Spain, Belgium, Estonia and more.",
+    "course_link": "https://iciq-my.sharepoint.com/:f:/g/personal/mdahsan_iciq_es/IgAKFpUcCzjuR5Ilt5CJ-VERAZfVWspnZ6tCX72EO6iyc58",
+    "theme": "#dc2626"
   },
   {
     "title": "Higher Study Arsenal",
     "type": "resource",
     "description": "Exclusive student resource drive — templates, documents, and guides curated for enrolled students.",
-    "course_link": ""
+    "course_link": "",
+    "theme": "#364bc5"
   }
 ]

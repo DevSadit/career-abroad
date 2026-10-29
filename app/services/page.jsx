@@ -1,4 +1,5 @@
 import Image from "next/image";
+import RelatedServices from "@/app/_shared/RelatedServices";
 import {
   CheckCircle2,
   BadgeCheck,
@@ -776,6 +777,8 @@ export default function ServicesPage() {
             </a>
           </p>
         </div>
+
+        <RelatedServices exclude="/services" />
 
       </div>
     </section>

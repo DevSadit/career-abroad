@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Search, HelpCircle, FileText, Database, GraduationCap, Award, ExternalLink } from "lucide-react";
+import RelatedServices from "@/app/_shared/RelatedServices";
 import Link from "next/link";
 import VisaProcessSection from "@/app/faq/_components/VisaProcessSection";
 
@@ -319,6 +320,11 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
             </div>
           </div>
         )}
+
+        {/* Related Services */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RelatedServices title="All of Our Services" />
+        </div>
 
         {/* Bottom CTA */}
         <div className="max-w-6xl mx-auto mt-16 text-center">
