@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { GraduationCap, Award, Compass, BookOpen } from "lucide-react";
 
