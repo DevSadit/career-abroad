@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FolderOpen, X } from "lucide-react";
+import { FolderOpen, FileText, X } from "lucide-react";
 
 const Courses = ({ courses }) => {
   const primary = "#364bc5";
@@ -155,6 +155,24 @@ const Courses = ({ courses }) => {
                     </span>
                   </div>
                 </div>
+              ) : c.type === "folder" ? (
+                <div className="px-4 pb-4">
+                  <div
+                    className="aspect-video rounded-2xl border border-dashed flex flex-col items-center justify-center gap-3"
+                    style={{ borderColor: "#d9770644", backgroundColor: "#d9770606" }}
+                  >
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "#d9770615" }}>
+                      <FileText className="w-7 h-7" style={{ color: "#d97706" }} />
+                    </div>
+                    <div className="text-center px-4">
+                      <p className="text-sm font-semibold text-gray-800">Visa Document Folder</p>
+                      <p className="text-xs text-gray-500 mt-1">{c.description}</p>
+                    </div>
+                    <span className="text-xs font-medium rounded-full px-3 py-1" style={{ backgroundColor: "#d9770615", color: "#d97706" }}>
+                      Enrolled students only
+                    </span>
+                  </div>
+                </div>
               ) : (
                 <div className="px-4 pb-4">
                   <div className="aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
@@ -180,6 +198,16 @@ const Courses = ({ courses }) => {
                   >
                     Open Resource Drive
                   </button>
+                ) : c.type === "folder" ? (
+                  <Link
+                    className="block w-full text-center rounded-2xl px-4 py-3 text-sm font-semibold text-white transition"
+                    target="_blank"
+                    rel="noreferrer"
+                    href={c.course_link}
+                    style={{ backgroundColor: "#d97706" }}
+                  >
+                    Open Visa Folder
+                  </Link>
                 ) : (
                   <Link
                     className="block w-full text-center rounded-2xl px-4 py-3 text-sm font-semibold text-white"
