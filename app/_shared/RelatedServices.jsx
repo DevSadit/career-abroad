@@ -33,12 +33,12 @@ const ALL_SERVICES = [
   },
 ];
 
-export default function RelatedServices({ exclude }) {
+export default function RelatedServices({ exclude, title = "Our Other Services" }) {
   const services = ALL_SERVICES.filter((s) => s.href !== exclude);
   return (
     <div className="mt-14 mb-4">
       <p className="text-xs uppercase tracking-wider text-gray-500 font-medium mb-1">Explore More</p>
-      <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-5">Our Other Services</h3>
+      <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-5">{title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {services.map((s) => (
           <Link

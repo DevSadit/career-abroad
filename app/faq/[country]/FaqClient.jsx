@@ -323,7 +323,7 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
 
         {/* Related Services */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RelatedServices />
+          <RelatedServices title="All of Our Services" />
         </div>
 
         {/* Bottom CTA */}
