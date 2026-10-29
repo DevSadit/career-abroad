@@ -2,6 +2,7 @@ import { Info, Tag } from "lucide-react";
 import Title from "@/app/_shared/Title";
 import ScholarshipsGrid from "./ScholarshipsGrid";
 import Videos from "@/app/_shared/Videos";
+import RelatedServices from "@/app/_shared/RelatedServices";
 
 const scholarshipVideos = [
   { title: "Erasmus Mundus Scholarship",        url: "https://youtu.be/2Q9bulkFNRY" },
@@ -312,6 +313,8 @@ export default function ScholarshipsPage() {
           title="Watch our Scholarship Guidelines"
           subtitle="Short, practical videos — step by step guidelines."
         />
+
+        <RelatedServices exclude="/scholarships" />
 
       </div>
     </section>

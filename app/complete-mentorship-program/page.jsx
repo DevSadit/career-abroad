@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import RelatedServices from "@/app/_shared/RelatedServices";
 
 export const metadata = {
   title: "Complete Mentorship Program | Career Abroad Mentors",
@@ -660,6 +661,8 @@ const Page = () => {
             উল্লেখ্য: ক্যারিয়ার এব্রোড মেন্টরস কোনো রকম এডমিশন, স্কলারশিপ কিংবা ভিসার গ্যারান্টি দেয় না, তবে এপ্লিকেন্টর জন্য সর্বোচ্চ এফোর্ট দেওয়ার চেষ্টা করে।
           </p>
         </div>
+
+        <RelatedServices exclude="/complete-mentorship-program" />
 
       </div>
     </section>
