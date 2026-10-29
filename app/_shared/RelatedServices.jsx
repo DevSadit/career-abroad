@@ -25,9 +25,9 @@ const ALL_SERVICES = [
     color: "#059669",
   },
   {
-    href: "/course-content",
+    href: "/#courses",
     icon: BookOpen,
-    label: "Course Contents",
+    label: "Our All Courses",
     desc: "University, SOP, scholarship & visa courses",
     color: "#7c3aed",
   },
