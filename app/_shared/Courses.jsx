@@ -25,13 +25,6 @@ const relatedServices = [
     desc: "End-to-end application & visa support",
     color: "#059669",
   },
-  {
-    href: "/about-us",
-    icon: BookOpen,
-    label: "About Our Mentors",
-    desc: "Meet the PhD researchers guiding you",
-    color: "#7c3aed",
-  },
 ];
 
 const Courses = ({ courses }) => {
