@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import RelatedServices from "@/app/_shared/RelatedServices";
 import {
   CheckCircle2,
@@ -304,7 +305,7 @@ export default function ServicesPage() {
                   style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
                 >
                   <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের <a href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>1:1 পেইড সেশন</a> বুক করুন
+                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>1:1 পেইড সেশন</Link> বুক করুন
                   </p>
                 </div>
               </div>
@@ -315,10 +316,10 @@ export default function ServicesPage() {
                   <div className="p-6 sm:p-7">
                     <p className="text-sm text-gray-600">Get a Quote</p>
                     <p className="mt-2 text-2xl font-semibold tracking-tight text-gray-900">
-                      Tell us where you're headed
+                      Tell us where you&apos;re headed
                     </p>
                     <p className="mt-1.5 text-sm text-gray-500">
-                      Share your origin and destination — we'll guide you from there.
+                      Share your origin and destination — we&apos;ll guide you from there.
                     </p>
 
                     {/* Pricing teaser */}
@@ -754,7 +755,7 @@ export default function ServicesPage() {
               Ready to start your study journey?
             </h3>
             <p className="mt-2 text-sm sm:text-base text-gray-600">
-              Tell us where you're headed and where you're moving from — we'll guide you from there.
+              Tell us where you&apos;re headed and where you&apos;re moving from — we&apos;ll guide you from there.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
