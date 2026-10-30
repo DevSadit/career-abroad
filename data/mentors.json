@@ -79,5 +79,17 @@
       { "code": "it", "name": "Italy" }
     ],
     "book_a_session": "https://cal.com/md-abu-sufian-tanim/40-min-meeting"
+  },
+  {
+    "id": "7",
+    "name": "Nazim Uddin",
+    "image": "/mentors/Nazim.png",
+    "currentStatus": "MA in International Relations",
+    "education": ["University of Wroclaw, Poland", "BSc in International Relations"],
+    "expertiseCountries": [
+      { "code": "pl", "name": "Poland" },
+      { "code": "lt", "name": "Lithuania" }
+    ],
+    "book_a_session": ""
   }
 ]
