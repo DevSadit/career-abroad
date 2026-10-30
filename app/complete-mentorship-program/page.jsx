@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import RelatedServices from "@/app/_shared/RelatedServices";
 
 export const metadata = {
@@ -213,9 +214,9 @@ const Page = () => {
                 >
                   <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
                     কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের{" "}
-                    <a href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                    <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
                       1:1 পেইড সেশন
-                    </a>{" "}
+                    </Link>{" "}
                     বুক করুন
                   </p>
                 </div>
@@ -573,7 +574,7 @@ const Page = () => {
               See what the mentorship looks like
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              A walkthrough of the program — what's covered, how sessions work, and what to expect.
+              A walkthrough of the program — what&apos;s covered, how sessions work, and what to expect.
             </p>
 
             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">

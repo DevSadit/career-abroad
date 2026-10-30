@@ -36,8 +36,7 @@ const pct  = (col)    => `${((col - 1) / N) * 100}%`;
 const span = (s, e)   => `${((e - s + 1) / N) * 100}%`;
 
 export default function StudyTimeline() {
-  const [month, setMonth] = useState(null);
-  useEffect(() => { setMonth(new Date().getMonth() + 1); }, []);
+  const [month, setMonth] = useState(() => typeof window !== "undefined" ? new Date().getMonth() + 1 : null);
 
   const totalH = ROWS.length * ROW_H;
 

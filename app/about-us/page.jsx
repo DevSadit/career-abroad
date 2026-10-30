@@ -275,13 +275,13 @@ const Page = () => {
         >
           <p lang="bn" className="font-bn text-sm sm:text-base text-gray-700 leading-relaxed">
             কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের{" "}
-            <a
+            <Link
               href="/#mentors"
               className="font-semibold underline underline-offset-2"
               style={{ color: primary }}
             >
               1:1 পেইড সেশন
-            </a>{" "}
+            </Link>{" "}
             বুক করুন
           </p>
         </div>

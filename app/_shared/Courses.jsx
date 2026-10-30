@@ -99,7 +99,7 @@ const Courses = ({ courses }) => {
             <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-gray-900">Course Contents & Students Login</h2>
             <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-2xl">
               Explore our{" "}
-              <a href="/#courses" className="font-semibold underline underline-offset-2 text-[#364bc5]">available courses</a>
+              <Link href="/#courses" className="font-semibold underline underline-offset-2 text-[#364bc5]">available courses</Link>
               , course contents and resources for your application, scholarship and visa documentation. Only our enrolled students can access through their registered email.
             </p>
           </div>

@@ -85,6 +85,7 @@ export default function ReviewsCarousel() {
   }, [paused, goNext]);
 
   // Reset on resize
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setCurrent(0); }, [visibleCount]);
 
   const dotActive = ((current % total) + total) % total;

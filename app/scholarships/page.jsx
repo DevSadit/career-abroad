@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Info, Tag } from "lucide-react";
 import Title from "@/app/_shared/Title";
 import ScholarshipsGrid from "./ScholarshipsGrid";
@@ -264,13 +265,13 @@ export default function ScholarshipsPage() {
               <Info className="h-5 w-5 shrink-0 mt-0.5" style={{ color: primary }} />
               <p className="text-sm text-gray-700 leading-relaxed">
                 Most scholarships require a balanced profile and academic excellence. Some scholarships like Erasmus, Eiffel and Italian Government Scholarship require a high CGPA. Some scholarships are need-based or family income-based like Italy Regional Scholarships. Some scholarships are leadership and SDG goal-based like SI Scholarship. To check your eligibility, please book an appointment with our{" "}
-                <a
+                <Link
                   href="/#mentors"
                   className="font-semibold underline underline-offset-2"
                   style={{ color: primary }}
                 >
                   expert mentors
-                </a>{" "}
+                </Link>{" "}
                 for a paid 1:1 session.
               </p>
             </div>

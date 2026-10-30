@@ -121,6 +121,7 @@ export default function Achivements() {
 
   // Reset position on breakpoint change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrent(0);
   }, [visibleCount]);
 
