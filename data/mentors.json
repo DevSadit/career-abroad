@@ -83,9 +83,9 @@
   {
     "id": "7",
     "name": "Nazim Uddin",
-    "image": "/mentors/Nazim.png",
+    "image": "/mentors/NazimUddin2.png",
     "currentStatus": "MA in International Relations",
-    "education": ["University of Wroclaw, Poland", "BSc in International Relations"],
+    "education": ["University of Wroclaw, Poland", "BSS in Political Science"],
     "expertiseCountries": [
       { "code": "pl", "name": "Poland" },
       { "code": "lt", "name": "Lithuania" }
