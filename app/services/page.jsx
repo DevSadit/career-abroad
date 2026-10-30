@@ -157,6 +157,7 @@ const packageTiers = [
       { flag: "🇭🇺", name: "Hungary" },
       { flag: "🇪🇪", name: "Estonia" },
       { flag: "🇱🇹", name: "Lithuania" },
+      { flag: "🇵🇱", name: "Poland" },
     ],
     color: "#364bc5",
     gradient: "linear-gradient(135deg, #364bc5 0%, #5b6fd8 100%)",
