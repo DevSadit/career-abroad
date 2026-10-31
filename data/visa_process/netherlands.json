@@ -1,0 +1,129 @@
+{
+  "title": "Application to MVV/Residence Permit Process Steps for Netherlands",
+  "infoLink": "https://ind.nl/en/residence-permits/study",
+  "notice": "1 EUR ≈ 119 BDT (approximate). Unlike Germany, there is no fixed blocked account in the Netherlands. Instead, IND requires proof of sufficient funds (~11,000–14,000 EUR) in your bank account. Your university sponsors your residence permit (VVR) through IND — this is handled by the university's International Office.",
+  "processSteps": [
+    {
+      "label": "University Application : via Studielink.nl (Dutch programs) or university portal (English programs)",
+      "bullets": [
+        "Most English Master's programs: apply directly on university website",
+        "Common deadlines: 1 February (main) or 1 April (second round) for September intake",
+        "Documents: CV, Motivation Letter, 2 Reference Letters, IELTS/TOEFL, transcripts, Passport copy"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Admission Letter & Scholarship Application",
+      "bullets": [
+        "Confirm enrollment after receiving conditional/unconditional offer",
+        "Apply for Holland Scholarship, Orange Tulip Scholarship, or university-specific scholarships",
+        "Deadline for most scholarships: February–March (same as admission)"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "University Sponsors IND Residence Permit Application",
+      "bullets": [
+        "University's International Office submits your permit application to IND",
+        "IND processes it — university notifies you once approved (usually 4–8 weeks)",
+        "Prepare financial proof: ~11,000–14,000 EUR in bank account or scholarship confirmation"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "MVV (Entry Visa) Application at VFS Global Dhaka",
+      "bullets": [
+        "Book appointment at VFS Global Dhaka after IND approval",
+        "MVV fee: 192 EUR (~22,800 BDT)",
+        "VFS service fee: ~30 EUR (~3,600 BDT)",
+        "Submit: passport, photo, admission letter, financial proof, accommodation confirmation",
+        "Processing: 3–6 weeks after VFS appointment"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Arrange Housing & Health Insurance Before Departure",
+      "bullets": [
+        "Apply for university dorm as early as possible — housing is highly competitive",
+        "Arrange travel insurance for the flight and first weeks",
+        "Health insurance (Zorgverzekering) must be arranged within 4 months of arrival: ~120–160 EUR/month"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Arrive in Netherlands & IND Check-In",
+      "bullets": [
+        "Register at the Gemeente (municipality) to receive your BSN (Citizen Service Number)",
+        "Report to IND within 3 days of arrival — university helps coordinate this",
+        "Collect Residence Permit (VVR) card from IND"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Residence Permit (VVR) — issued after IND check-in",
+      "bullets": [
+        "VVR is issued for the duration of your studies",
+        "Allows part-time work: 16 hours/week during academic year; full-time in summer",
+        "Renewable as long as you remain enrolled and meet conditions"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "MVV Entry Visa Fee : 192 EUR (~22,800 BDT) — paid at Dutch Embassy via VFS", "color": "lightblue" },
+    { "label": "VFS Global Service Fee : ~30 EUR (~3,600 BDT) — visa submission", "color": "blue" },
+    { "label": "Financial Proof in Bank : ~11,000–14,000 EUR (~13–17 lac BDT) — your own living funds", "color": "orange" },
+    { "label": "Tuition Fee : 8,000–20,000 EUR/year — varies by university and program", "color": "red" },
+    { "label": "Health Insurance : ~120–160 EUR/month — Dutch Zorgverzekering required within 4 months", "color": "gray" },
+    { "label": "BSN Registration : free at Gemeente (City Hall)", "color": "green" },
+    { "label": "Air Ticket to Netherlands : ~70,000–90,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "IND — Residence Permit for Study",
+      "url": "https://ind.nl/en/residence-permits/study",
+      "icon": "file"
+    },
+    {
+      "label": "Study in Holland — Official Guide",
+      "url": "https://www.studyinholland.nl/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Holland Scholarship",
+      "url": "https://www.studyinholland.nl/scholarships/holland-scholarship",
+      "icon": "award"
+    },
+    {
+      "label": "Orange Tulip Scholarship",
+      "url": "https://www.orangetulipscholarship.nl/",
+      "icon": "award"
+    },
+    {
+      "label": "Nuffic — Netherlands Education Support Office",
+      "url": "https://www.nuffic.nl/en",
+      "icon": "graduation"
+    },
+    {
+      "label": "Studielink — Application Portal",
+      "url": "https://www.studielink.nl/",
+      "icon": "database"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Embassy of the Netherlands Dhaka",
+      "logo": "/flags/nl.svg",
+      "accent": "#AE1C28",
+      "email": "ams-vza@minbuza.nl",
+      "address": "Road 90, House 8, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Netherlands Visa",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com/Netherlands/Bangladesh for current address and appointments)"
+    }
+  ]
+}

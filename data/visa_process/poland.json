@@ -1,0 +1,125 @@
+{
+  "title": "Application to Study Permit Process Steps for Poland",
+  "infoLink": "https://www.gov.pl/web/mswia-en/residence-permit",
+  "notice": "1 EUR ≈ 120 BDT | 1 PLN ≈ 30 BDT (2026). Poland is a Schengen country — your National D Visa also allows travel across 27 Schengen countries.",
+  "processSteps": [
+    {
+      "label": "University Application : via university portal or study.gov.pl",
+      "bullets": [
+        "Most universities have their own portal (e.g. apply.uw.edu.pl, rekrutacja.agh.edu.pl)",
+        "Application window: January–June for October intake",
+        "Some programs have no application fee; others charge €20–50"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "English-taught programs: tuition €2,000–€8,000/year (2.4–9.6 Lac BDT) depending on university and program",
+        "Polish-taught programs at state universities may be free or very low cost"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Prepare Financial Proof : ~60,000 PLN (~18,00,000 BDT) in bank",
+      "bullets": [
+        "Shows ~5,000 PLN/month (~1,50,000 BDT) for one academic year",
+        "Bank statement must clearly show your name and balance",
+        "Sponsor's affidavit also accepted if funds belong to parents/guardian"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Book Student Housing / Dormitory",
+      "bullets": [
+        "University dormitory (akademik): 500–1,000 PLN/month (~15,000–30,000 BDT)",
+        "Apply immediately after receiving admission — spots fill fast",
+        "Housing confirmation required for visa application"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Polish Embassy Dhaka — National D Visa Application",
+      "bullets": [
+        "Book appointment online or by phone",
+        "Submit application form + all documents in person",
+        "Visa fee: €80 (~9,600 BDT) — paid at Embassy",
+        "Processing time: 3–8 weeks"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "VFS Global / Biometrics (if required)",
+      "bullets": [
+        "Polish Embassy Dhaka may direct applicants to VFS for biometrics",
+        "Check Embassy website for current biometrics procedure"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Arrive in Poland — Register for Temporary Residence Permit",
+      "bullets": [
+        "Within 30 days of arrival, register your address at local Voivodeship (Urząd Wojewódzki)",
+        "Apply for Karta Pobytu (Residence Card) if staying beyond 90 days",
+        "Obtain PESEL (personal ID number) for banking and work"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "Polish National D Visa Fee : €80 (~9,600 BDT) — paid at Embassy", "color": "blue" },
+    { "label": "VFS / Biometrics Service Fee (if applicable) : ~€20–30 (~2,400–3,600 BDT)", "color": "lightyellow" },
+    { "label": "Financial Proof in Bank : ~60,000 PLN (~18,00,000 BDT) — your own money, not a fee", "color": "orange" },
+    { "label": "University Application Fee : €0–50 depending on university (~0–6,000 BDT)", "color": "gray" },
+    { "label": "Dormitory Deposit / First Month Rent : 500–2,500 PLN (~15,000–75,000 BDT)", "color": "gray" },
+    { "label": "Air Ticket to Poland : ~60,000–80,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Study in Poland — Official Portal",
+      "url": "https://study.gov.pl/",
+      "icon": "graduation"
+    },
+    {
+      "label": "NAWA — Polish National Agency for Academic Exchange",
+      "url": "https://nawa.gov.pl/en",
+      "icon": "award"
+    },
+    {
+      "label": "Polish Government Scholarship (Banach Programme)",
+      "url": "https://nawa.gov.pl/en/scientists/banach-scholarship-programme",
+      "icon": "award"
+    },
+    {
+      "label": "Residence Permit Info (Gov.pl)",
+      "url": "https://www.gov.pl/web/mswia-en/residence-permit",
+      "icon": "file"
+    },
+    {
+      "label": "Polish Embassy Dhaka",
+      "url": "https://dhaka.msz.gov.pl/en/",
+      "icon": "graduation"
+    },
+    {
+      "label": "AGH Krakow International Admissions",
+      "url": "https://international.agh.edu.pl/",
+      "icon": "database"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Polish Embassy Dhaka",
+      "logo": "/flags/pl.svg",
+      "accent": "#DC143C",
+      "email": "info.dha@msz.gov.pl",
+      "address": "House 15, Road 88, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Poland Visa (Dhaka)",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check website for current address and appointment slots)"
+    }
+  ]
+}

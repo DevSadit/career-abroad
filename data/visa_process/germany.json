@@ -1,0 +1,130 @@
+{
+  "title": "Application to Student Visa Process Steps for Germany",
+  "infoLink": "https://www.study-in-germany.de/",
+  "notice": "1 EUR ≈ 119 BDT (approximate). Blocked Account (Sperrkonto) is NOT a fee — it is your own living money that can be withdrawn monthly (max 992 EUR/month) after arriving in Germany. APS Certificate is mandatory for Bangladeshi students before applying to any German university.",
+  "processSteps": [
+    {
+      "label": "APS Certificate : Academic evaluation for Bangladeshi students",
+      "bullets": [
+        "Apply at German Embassy Dhaka — required before university application",
+        "Fee: ~10,000–12,000 BDT | Processing time: ~6 weeks",
+        "Documents needed: SSC, HSC, Bachelor's certificates & transcripts, NID/Passport copy"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "University Application : via uni-assist.de or direct university portal",
+      "bullets": [
+        "uni-assist fee: ~75 EUR (first university) + 30 EUR each additional",
+        "Winter Semester deadline: usually January–July | Summer Semester: July–January",
+        "Prepare: CV, Motivation Letter, 2 Reference Letters, IELTS/TOEFL, transcripts"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Admission Letter & Blocked Account Setup",
+      "bullets": [
+        "Open Sperrkonto with Coracle, Expatrio, or Deutsche Bank",
+        "Deposit: 11,904 EUR/year (~14,18,000 BDT) — 2024 requirement",
+        "Receive Blocked Account Confirmation Letter for visa application"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Health Insurance Arrangement",
+      "bullets": [
+        "Public health insurance (TK, AOK, Barmer): ~110–130 EUR/month",
+        "Required for visa application and Residence Permit",
+        "Student rate valid up to age 30 or 14th semester"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Student Visa Application at VFS Global Dhaka / German Embassy",
+      "bullets": [
+        "Visa fee: 75 EUR (~9,000 BDT) — paid at embassy",
+        "Book VFS Global appointment in advance: vfsglobal.com/Germany/Bangladesh",
+        "VFS service fee: ~30–35 EUR (~4,000 BDT)",
+        "Processing time: 8–12 weeks — apply early"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Arrive in Germany & Register (Anmeldung)",
+      "bullets": [
+        "Register at Einwohnermeldeamt (City Hall) within 2 weeks of arrival",
+        "Receive Steuer-ID (Tax ID) and register with health insurance provider",
+        "Apply for Residence Permit at Ausländerbehörde (Immigration Office)"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Residence Permit (Aufenthaltserlaubnis) — conversion from entry visa",
+      "bullets": [
+        "Apply at local Ausländerbehörde with enrollment certificate, blocked account proof, insurance",
+        "Fee: ~100 EUR",
+        "Initially issued for 1–2 years; renewable for duration of studies"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "APS Certificate Fee : ~10,000–12,000 BDT — academic evaluation for BD students", "color": "yellow" },
+    { "label": "uni-assist Application Fee : ~75 EUR (first university) + 30 EUR each additional", "color": "green" },
+    { "label": "Blocked Account (Sperrkonto) : 11,904 EUR (~14,18,000 BDT) — refunded monthly after arrival", "color": "orange" },
+    { "label": "Student Visa Fee : 75 EUR (~9,000 BDT) — paid at German Embassy", "color": "lightblue" },
+    { "label": "VFS Global Service Fee : ~30–35 EUR (~4,000 BDT) — visa submission", "color": "blue" },
+    { "label": "Health Insurance : ~110–130 EUR/month — TK/AOK/Barmer (student rate)", "color": "gray" },
+    { "label": "Residence Permit Fee : ~100 EUR — paid at Ausländerbehörde after arrival", "color": "green" },
+    { "label": "Semester Contribution : 150–350 EUR/semester — includes transport pass in many states", "color": "gray" },
+    { "label": "Air Ticket to Germany : ~70,000–90,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Study in Germany — Official Guide",
+      "url": "https://www.study-in-germany.de/",
+      "icon": "graduation"
+    },
+    {
+      "label": "uni-assist — Central Application Portal",
+      "url": "https://www.uni-assist.de/",
+      "icon": "database"
+    },
+    {
+      "label": "APS Certificate (German Embassy Dhaka)",
+      "url": "https://dhaka.diplo.de/bd-en/service/aps",
+      "icon": "file"
+    },
+    {
+      "label": "DAAD Scholarships for Bangladesh",
+      "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+      "icon": "award"
+    },
+    {
+      "label": "Coracle — Blocked Account",
+      "url": "https://www.coracle.de/",
+      "icon": "database"
+    },
+    {
+      "label": "ANABIN — Degree Recognition Database",
+      "url": "https://anabin.kmk.org/",
+      "icon": "file"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "German Embassy Dhaka",
+      "logo": "/flags/de.svg",
+      "accent": "#000000",
+      "email": "dhaka@diplo.de",
+      "address": "House 10, Road 78, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Germany Visa",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com/Germany/Bangladesh for current address and appointments)"
+    }
+  ]
+}

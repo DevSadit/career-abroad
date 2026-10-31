@@ -49,21 +49,44 @@
   },
   {
     "name": "Germany",
-    "href": "#",
+    "href": "/faq/germany",
     "code": "de",
     "flagPath": "/flags/de.svg"
   },
-
   {
     "name": "Netherlands",
-    "href": "#",
+    "href": "/faq/netherlands",
     "code": "nl",
     "flagPath": "/flags/nl.svg"
   },
   {
     "name": "Poland",
-    "href": "#",
+    "href": "/faq/poland",
     "code": "pl",
     "flagPath": "/flags/pl.svg"
+  },
+  {
+    "name": "Lithuania",
+    "href": "/faq/lithuania",
+    "code": "lt",
+    "flagPath": "/flags/lt.svg"
+  },
+  {
+    "name": "Sweden",
+    "href": "/faq/sweden",
+    "code": "se",
+    "flagPath": "/flags/se.svg"
+  },
+  {
+    "name": "Denmark",
+    "href": "/faq/denmark",
+    "code": "dk",
+    "flagPath": "/flags/dk.svg"
+  },
+  {
+    "name": "Finland",
+    "href": "/faq/finland",
+    "code": "fi",
+    "flagPath": "/flags/fi.svg"
   }
 ]
