@@ -16,13 +16,20 @@ const navLinks = [
     href: "faq",
     dropdown: [
       { name: "France", href: "/faq/france" },
+      { name: "Germany", href: "/faq/germany" },
+      { name: "Netherlands", href: "/faq/netherlands" },
+      { name: "Belgium", href: "/faq/belgium" },
+      { name: "Austria", href: "/faq/austria" },
       { name: "Spain", href: "/faq/spain" },
       { name: "Italy", href: "/faq/italy" },
-      { name: "Hungary", href: "/faq/hungary" },
-      { name: "Belgium", href: "/faq/belgium" },
-      { name: "Estonia", href: "/faq/estonia" },
-      { name: "Austria", href: "/faq/austria" },
       { name: "Norway", href: "/faq/norway" },
+      { name: "Sweden", href: "/faq/sweden" },
+      { name: "Denmark", href: "/faq/denmark" },
+      { name: "Finland", href: "/faq/finland" },
+      { name: "Poland", href: "/faq/poland" },
+      { name: "Lithuania", href: "/faq/lithuania" },
+      { name: "Hungary", href: "/faq/hungary" },
+      { name: "Estonia", href: "/faq/estonia" },
     ],
   },
 ];
@@ -231,17 +238,19 @@ const Navbar = () => {
                       : "invisible -translate-y-1 opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="min-w-56 rounded-xl border border-gray-200 bg-white shadow-lg p-2 mt-3">
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors"
-                        onClick={() => setOpenDesktopDropdown(null)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <div className="rounded-xl border border-gray-200 bg-white shadow-lg p-2 mt-3 w-72">
+                    <div className="grid grid-cols-2 gap-0.5">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="block rounded-lg px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors"
+                          onClick={() => setOpenDesktopDropdown(null)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -336,7 +345,7 @@ const Navbar = () => {
 
                 <div
                   className={`w-full max-w-xs overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-80 opacity-100 mt-2" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-[32rem] opacity-100 mt-2" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-2">
