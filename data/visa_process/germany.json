@@ -1,17 +1,8 @@
 {
   "title": "Application to Student Visa Process Steps for Germany",
   "infoLink": "https://www.study-in-germany.de/",
-  "notice": "1 EUR ≈ 119 BDT (approximate). Blocked Account (Sperrkonto) is NOT a fee — it is your own living money that can be withdrawn monthly (max 992 EUR/month) after arriving in Germany. APS Certificate is mandatory for Bangladeshi students before applying to any German university.",
+  "notice": "1 EUR ≈ 119 BDT (approximate). Blocked Account (Sperrkonto) is NOT a fee — it is your own living money that can be withdrawn monthly (max 992 EUR/month) after arriving in Germany. APS Certificate is NOT required for Bangladeshi students (only required for India, China, Vietnam, Mongolia).",
   "processSteps": [
-    {
-      "label": "APS Certificate : Academic evaluation for Bangladeshi students",
-      "bullets": [
-        "Apply at German Embassy Dhaka — required before university application",
-        "Fee: ~10,000–12,000 BDT | Processing time: ~6 weeks",
-        "Documents needed: SSC, HSC, Bachelor's certificates & transcripts, NID/Passport copy"
-      ],
-      "color": "yellow"
-    },
     {
       "label": "University Application : via uni-assist.de or direct university portal",
       "bullets": [
@@ -40,12 +31,12 @@
       "color": "gray"
     },
     {
-      "label": "Student Visa Application at VFS Global Dhaka / German Embassy",
+      "label": "Student Visa Application — Master's via VFS, Bachelor's via Embassy",
       "bullets": [
-        "Visa fee: 75 EUR (~9,000 BDT) — paid at embassy",
-        "Book VFS Global appointment in advance: vfsglobal.com/Germany/Bangladesh",
-        "VFS service fee: ~30–35 EUR (~4,000 BDT)",
-        "Processing time: 8–12 weeks — apply early"
+        "Register first via the German Embassy Dhaka Consular Services Portal",
+        "Master's: Embassy emails you → book VFS Global Dhaka appointment → submit docs at VFS",
+        "Bachelor's: Embassy requests docs by email → Embassy assigns appointment → submit at Embassy",
+        "Visa fee: paid in BDT (EUR-based fixed amount) | Processing: ~4 weeks"
       ],
       "color": "lightblue"
     },
@@ -69,7 +60,6 @@
     }
   ],
   "costSteps": [
-    { "label": "APS Certificate Fee : ~10,000–12,000 BDT — academic evaluation for BD students", "color": "yellow" },
     { "label": "uni-assist Application Fee : ~75 EUR (first university) + 30 EUR each additional", "color": "green" },
     { "label": "Blocked Account (Sperrkonto) : 11,904 EUR (~14,18,000 BDT) — refunded monthly after arrival", "color": "orange" },
     { "label": "Student Visa Fee : 75 EUR (~9,000 BDT) — paid at German Embassy", "color": "lightblue" },
@@ -91,8 +81,8 @@
       "icon": "database"
     },
     {
-      "label": "APS Certificate (German Embassy Dhaka)",
-      "url": "https://dhaka.diplo.de/bd-en/service/aps",
+      "label": "German Embassy Dhaka — Student Visa Info",
+      "url": "https://dhaka.diplo.de/bd-en/service/2685884-2685884",
       "icon": "file"
     },
     {
