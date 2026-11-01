@@ -1,40 +1,35 @@
 {
   "title": "Application to Study Permit Process Steps for Lithuania",
   "infoLink": "https://www.migracija.lt/en/",
-  "notice": "1 EUR ≈ 120 BDT (2026). Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi.",
+  "notice": "Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi.",
   "processSteps": [
     {
       "label": "University Application : via admissions.lt or university portal",
       "bullets": [
         "admissions.lt covers most major Lithuanian universities",
-        "Application window: March–June for September intake",
-        "Many programs have no application fee; some charge €20–30"
+        "Application window: March–June for September intake"
       ],
       "color": "yellow"
     },
     {
       "label": "Offer / Admission Letter",
       "bullets": [
-        "English-taught programs: tuition €1,500–€6,000/year (1.8–7.2 Lac BDT)",
-        "Lithuanian Government Scholarship can waive tuition fees entirely",
-        "Confirm exact tuition fee before accepting the offer"
+        "Tuition: €1,500–€6,000/year | Lithuanian Government Scholarship can waive fees entirely"
       ],
       "color": "green"
     },
     {
-      "label": "Prepare Financial Proof : ~€4,800–€8,000 (~5.8–9.6 Lac BDT) in bank",
+      "label": "Financial Proof : ~€4,800–€8,000 in bank",
       "bullets": [
-        "Minimum requirement: €400/month (~48,000 BDT)",
-        "Showing more (€6,000–€8,000) is recommended for a stronger application",
-        "Bank statement must clearly show your name and current balance"
+        "Minimum €400/month; showing €6,000–€8,000 recommended",
+        "Bank statement must clearly show your name and balance"
       ],
       "color": "orange"
     },
     {
       "label": "Book Student Housing / Dormitory",
       "bullets": [
-        "University dormitory: €100–€200/month (~12,000–24,000 BDT) — very affordable",
-        "Contact International Office immediately after receiving admission",
+        "University dormitory: €100–€200/month — very affordable",
         "Housing confirmation required for visa application"
       ],
       "color": "gray"
@@ -42,39 +37,35 @@
     {
       "label": "Arrange Health Insurance",
       "bullets": [
-        "Mandatory for visa application",
-        "Must cover entire study period in Lithuania",
-        "Private insurance: ~€100–€300/year (~12,000–36,000 BDT)"
+        "Mandatory for visa — must cover entire study period",
+        "Private insurance: ~€100–€300/year"
       ],
       "color": "lightblue"
     },
     {
-      "label": "Lithuanian Embassy New Delhi / VFS Global — National D Visa Application",
+      "label": "Lithuanian Embassy New Delhi : National D Visa Application",
       "bullets": [
-        "No Lithuanian Embassy in Bangladesh — apply via Embassy in New Delhi, India",
-        "VFS Global Dhaka may accept documents for forwarding — check current procedure",
-        "Visa fee: €80 (~9,600 BDT)",
-        "Processing time: 4–8 weeks"
+        "No Lithuanian Embassy in Bangladesh — apply via Embassy New Delhi or VFS Global Dhaka",
+        "Visa fee: €80 | Processing: 4–8 weeks"
       ],
       "color": "blue"
     },
     {
-      "label": "Arrive in Lithuania — Register for Temporary Residence Permit",
+      "label": "Arrive in Lithuania — Register for Residence Permit",
       "bullets": [
-        "Within 30 days of arrival, register at Migration Department (Migracijos departamentas)",
-        "Apply for Temporary Residence Permit (Leidimas laikinai gyventi) for the duration of your studies",
+        "Register at Migration Department within 30 days of arrival",
         "Obtain Lithuanian personal code (asmens kodas) for banking and work"
       ],
       "color": "green"
     }
   ],
   "costSteps": [
-    { "label": "Lithuanian National D Visa Fee : €80 (~9,600 BDT) — paid at Embassy or VFS", "color": "blue" },
-    { "label": "VFS Service Fee (if applicable) : ~€20–30 (~2,400–3,600 BDT)", "color": "lightyellow" },
-    { "label": "Financial Proof in Bank : ~€4,800–€8,000 (~5.8–9.6 Lac BDT) — your own money, not a fee", "color": "orange" },
-    { "label": "Health Insurance : ~€100–€300/year (~12,000–36,000 BDT)", "color": "gray" },
-    { "label": "University Application Fee : €0–30 depending on university (~0–3,600 BDT)", "color": "gray" },
-    { "label": "Air Ticket to Lithuania : ~60,000–80,000 BDT (via connection through Istanbul or Frankfurt)", "color": "blue" }
+    { "label": "Lithuanian National D Visa Fee : €80 — paid at Embassy or VFS", "color": "blue" },
+    { "label": "VFS Service Fee (if applicable) : ~€20–30", "color": "lightyellow" },
+    { "label": "Financial Proof in Bank : ~€4,800–€8,000 — your own money, not a fee", "color": "orange" },
+    { "label": "Health Insurance : ~€100–€300/year", "color": "gray" },
+    { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
+    { "label": "Air Ticket to Lithuania : varies by season and route", "color": "blue" }
   ],
   "resources": [
     {
