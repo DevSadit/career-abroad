@@ -1,0 +1,112 @@
+{
+  "title": "Application to Student Visa Process Steps for Hungary",
+  "infoLink": "https://stipendiumhungaricum.hu/",
+  "notice": null,
+  "processSteps": [
+    {
+      "label": "University Application : Stipendium Hungaricum or self-funded route",
+      "bullets": [
+        "Stipendium Hungaricum (SH): apply via Tempus Foundation portal — fully-funded scholarship",
+        "Self-funded: apply directly at ELTE, Corvinus, BME, Debrecen, or other universities"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Admission / Scholarship Letter",
+      "bullets": [
+        "SH scholars: receive scholarship contract and university acceptance from Tempus",
+        "Self-funded: Acceptance Letter + tuition invoice (€1,500–€8,000/year)"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Financial Proof : bank statement showing sufficient funds",
+      "bullets": [
+        "SH scholars: scholarship covers costs — bank statement still strengthens the file",
+        "Self-funded: ~€3,600–€6,000 recommended (min €300/month for the study period)"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global",
+      "bullets": [
+        "Hungary has an Embassy in Dhaka — apply directly or via VFS Global Dhaka",
+        "Fee: €80 | Processing: 3–6 weeks"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Arrive Hungary — Register at OIF (Immigration Police)",
+      "bullets": [
+        "Register within 30 days at local Office of Immigration and Nationality (OIF)",
+        "Obtain address card (lakcímkártya) — needed for bank account and university registration"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Residence Permit : apply before student visa expires",
+      "bullets": [
+        "Submit at OIF before initial visa expires — fee: ~€25–€40",
+        "Valid for duration of studies; renew each academic year"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "University Application Fee : free for SH; €0–€50 for self-funded", "color": "gray" },
+    { "label": "Student Visa (National D) Fee : €80 — paid at Embassy Dhaka or VFS", "color": "lightblue" },
+    { "label": "Financial Proof in Bank : ~€3,600–€6,000 (self-funded) — your own money, not a fee", "color": "orange" },
+    { "label": "Tuition Fee : €1,500–€8,000/year (self-funded; waived for SH scholars)", "color": "red" },
+    { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
+    { "label": "Residence Permit Fee : ~€25–€40 — paid at OIF after arrival", "color": "green" },
+    { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Stipendium Hungaricum — Official Scholarship Portal",
+      "url": "https://stipendiumhungaricum.hu/",
+      "icon": "award"
+    },
+    {
+      "label": "Study in Hungary — Official Guide",
+      "url": "https://studyinhungary.hu/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Tempus Public Foundation",
+      "url": "https://tpf.hu/en/",
+      "icon": "graduation"
+    },
+    {
+      "label": "OIF — Office of Immigration and Nationality",
+      "url": "https://www.oif.gov.hu/en/",
+      "icon": "file"
+    },
+    {
+      "label": "ELTE University — International Admissions",
+      "url": "https://www.elte.hu/en/",
+      "icon": "database"
+    },
+    {
+      "label": "Corvinus University Budapest — Admissions",
+      "url": "https://www.uni-corvinus.hu/en/",
+      "icon": "database"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Hungarian Embassy Dhaka",
+      "logo": "/flags/hu.svg",
+      "accent": "#CE2939",
+      "email": "mission.dhk@mfa.gov.hu",
+      "address": "House 31, Road 98, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Hungary Visa (Dhaka)",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com for Hungary/Bangladesh current procedure)"
+    }
+  ]
+}
