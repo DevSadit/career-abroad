@@ -1,0 +1,118 @@
+{
+  "title": "Application to Study Permit Process Steps for Lithuania",
+  "infoLink": "https://www.migracija.lt/en/",
+  "notice": "Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi.",
+  "processSteps": [
+    {
+      "label": "University Application : via admissions.lt or university portal",
+      "bullets": [
+        "admissions.lt covers most major Lithuanian universities",
+        "Application window: March–June for September intake"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "Tuition: €1,500–€6,000/year | Lithuanian Government Scholarship can waive fees entirely"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Financial Proof : ~€4,800–€8,000 in bank",
+      "bullets": [
+        "Minimum €400/month; showing €6,000–€8,000 recommended",
+        "Bank statement must clearly show your name and balance"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Book Student Housing / Dormitory",
+      "bullets": [
+        "University dormitory: €100–€200/month — very affordable",
+        "Housing confirmation required for visa application"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Arrange Health Insurance",
+      "bullets": [
+        "Mandatory for visa — must cover entire study period",
+        "Private insurance: ~€100–€300/year"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Lithuanian Embassy New Delhi : National D Visa Application",
+      "bullets": [
+        "No Lithuanian Embassy in Bangladesh — apply via Embassy New Delhi or VFS Global Dhaka",
+        "Visa fee: €80 | Processing: 4–8 weeks"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Arrive in Lithuania — Register for Residence Permit",
+      "bullets": [
+        "Register at Migration Department within 30 days of arrival",
+        "Obtain Lithuanian personal code (asmens kodas) for banking and work"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "Lithuanian National D Visa Fee : €80 — paid at Embassy or VFS", "color": "blue" },
+    { "label": "VFS Service Fee (if applicable) : ~€20–30", "color": "lightyellow" },
+    { "label": "Financial Proof in Bank : ~€4,800–€8,000 — your own money, not a fee", "color": "orange" },
+    { "label": "Health Insurance : ~€100–€300/year", "color": "gray" },
+    { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
+    { "label": "Air Ticket to Lithuania : varies by season and route", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Study in Lithuania — Official Portal",
+      "url": "https://www.studyinlithuania.lt/en/",
+      "icon": "graduation"
+    },
+    {
+      "label": "admissions.lt — Central Application Portal",
+      "url": "https://www.admissions.lt/",
+      "icon": "database"
+    },
+    {
+      "label": "Lithuanian Government Scholarships (EMFSL)",
+      "url": "https://www.emfsl.lt/en/",
+      "icon": "award"
+    },
+    {
+      "label": "Migration Department Lithuania",
+      "url": "https://www.migracija.lt/en/",
+      "icon": "file"
+    },
+    {
+      "label": "Lithuanian Embassy New Delhi",
+      "url": "https://in.mfa.lt/in/en/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Vilnius University International Admissions",
+      "url": "https://www.vu.lt/en/studies/international-students",
+      "icon": "graduation"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Lithuanian Embassy New Delhi",
+      "logo": "/flags/lt.svg",
+      "accent": "#006A44",
+      "email": "lt.amb.in@urm.lt",
+      "address": "A-26, Vasant Marg, Vasant Vihar, New Delhi 110057, India"
+    },
+    {
+      "name": "VFS Global — Lithuania Visa (Dhaka)",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check website for current procedure for Lithuania applications)"
+    }
+  ]
+}

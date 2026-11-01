@@ -1,0 +1,110 @@
+{
+  "title": "Application to Study Permit Process Steps for Denmark",
+  "infoLink": "https://www.newtodenmark.dk/you-want-to-study-in-denmark/student-at-a-higher-education-institution",
+  "notice": "1 DKK ≈ 13.5 BDT. Study permit processing takes 3–5 months — apply as soon as you receive your admission letter. SIRI handles all study permits for Denmark.",
+  "processSteps": [
+    {
+      "label": "University Application : via individual university portals (DTU, Copenhagen, Aarhus, CBS etc.)",
+      "bullets": [
+        "Most English-taught programs: apply directly to university website",
+        "Deadlines typically March–April for September intake"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "Non-EU/EEA students: tuition fees 45,000–120,000 DKK/year (6,07,000–16,20,000 BDT)",
+        "Check if your program or university offers a merit scholarship or tuition waiver"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Arrange Proof of Funds : 74,916 DKK in bank account",
+      "bullets": [
+        "Bank statement showing 74,916 DKK (6,243 DKK/month for one year) — must be in your name",
+        "Scholarship or stipend confirmation also accepted in lieu of bank funds"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Arrange Accommodation : Student housing or rental agreement confirmation",
+      "bullets": [
+        "Apply for student housing immediately after admission — Copenhagen waiting lists are long",
+        "Student housing: 3,000–5,500 DKK/month; private: 7,000–12,000 DKK/month in Copenhagen"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "SIRI Study Permit Application (online) : 2,205 DKK",
+      "bullets": [
+        "Apply at newtodenmark.dk — upload admission letter, bank statement, passport, accommodation proof",
+        "Processing: 3–5 months — apply as soon as you receive your admission letter"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "VFS Global Dhaka Biometrics Appointment",
+      "bullets": [
+        "Book appointment at vfsglobal.com well in advance",
+        "Bring original passport, SIRI reference number, and photo"
+      ],
+      "color": "blue"
+    }
+  ],
+  "costSteps": [
+    { "label": "SIRI Study Permit Fee : 2,205 DKK (~29,770 BDT) — paid online at newtodenmark.dk", "color": "blue" },
+    { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
+    { "label": "Tuition Fee : 45,000–120,000 DKK/year (6,07,000–16,20,000 BDT) — program dependent", "color": "orange" },
+    { "label": "Proof of Funds (bank statement) : 74,916 DKK (~10,11,000 BDT) — stays in your account", "color": "gray" },
+    { "label": "Air Ticket to Denmark : ~70,000–90,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "SIRI — Study in Denmark",
+      "url": "https://www.newtodenmark.dk/you-want-to-study-in-denmark",
+      "icon": "graduation"
+    },
+    {
+      "label": "Study in Denmark — Official Guide",
+      "url": "https://studyindenmark.dk/",
+      "icon": "graduation"
+    },
+    {
+      "label": "DTU — Apply for Admission",
+      "url": "https://www.dtu.dk/english/education/msc/apply",
+      "icon": "database"
+    },
+    {
+      "label": "Danish Government Scholarships (DIKU)",
+      "url": "https://www.diku.no/en/programmes/",
+      "icon": "award"
+    },
+    {
+      "label": "Danish Embassy Dhaka",
+      "url": "https://bangladesh.um.dk/",
+      "icon": "file"
+    },
+    {
+      "label": "VFS Global — Denmark Visa Dhaka",
+      "url": "https://www.vfsglobal.com/denmark/bangladesh/",
+      "icon": "file"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Danish Embassy Dhaka",
+      "logo": "/flags/dk.svg",
+      "accent": "#C60C30",
+      "email": "dhaemb@um.dk",
+      "address": "House 1, Road 51, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Denmark Visa Dhaka",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com for current address and appointment slots)"
+    }
+  ]
+}

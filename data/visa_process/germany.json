@@ -1,0 +1,115 @@
+{
+  "title": "Application to Student Visa Process Steps for Germany",
+  "infoLink": "https://www.study-in-germany.de/",
+  "notice": null,
+  "processSteps": [
+    {
+      "label": "University Application : via uni-assist.de or direct university portal",
+      "bullets": [
+        "uni-assist fee: ~75 EUR (first) + 30 EUR each additional",
+        "Prepare: CV, Motivation Letter, 2 References, IELTS/TOEFL, transcripts"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Admission Letter & Blocked Account (Sperrkonto)",
+      "bullets": [
+        "Open Sperrkonto with Coracle, Expatrio, or Deutsche Bank — deposit 11,904 EUR/year",
+        "Receive Blocked Account Confirmation Letter for visa application"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Health Insurance Arrangement",
+      "bullets": [
+        "Public insurance (TK, AOK, Barmer): ~110–130 EUR/month — required for visa",
+        "Student rate valid up to age 30 or 14th semester"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Student Visa Application : via German Embassy Dhaka",
+      "bullets": [
+        "Register at German Embassy Dhaka Consular Services Portal first",
+        "Master's: Embassy emails → book VFS Global Dhaka → submit at VFS",
+        "Bachelor's: Embassy assigns appointment → submit directly at Embassy",
+        "Visa fee: EUR-based fixed amount | Processing: ~4 weeks"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Arrive in Germany & Register (Anmeldung)",
+      "bullets": [
+        "Register at Einwohnermeldeamt within 2 weeks — receive Steuer-ID",
+        "Register with health insurance provider"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Residence Permit (Aufenthaltserlaubnis)",
+      "bullets": [
+        "Apply at local Ausländerbehörde — fee: ~100 EUR",
+        "Bring: enrollment certificate, blocked account proof, insurance"
+      ],
+      "color": "green"
+    }
+  ],
+  "costSteps": [
+    { "label": "uni-assist Application Fee : ~75 EUR (first university) + 30 EUR each additional", "color": "green" },
+    { "label": "Blocked Account (Sperrkonto) : 11,904 EUR — withdrawn monthly (992 EUR/month) after arrival", "color": "orange" },
+    { "label": "Student Visa Fee : EUR-based fixed amount, paid in BDT at time of submission", "color": "lightblue" },
+    { "label": "VFS Global Service Fee : ~30–35 EUR — visa submission (Master's only)", "color": "blue" },
+    { "label": "Health Insurance : ~110–130 EUR/month — TK/AOK/Barmer (student rate)", "color": "gray" },
+    { "label": "Residence Permit Fee : ~100 EUR — paid at Ausländerbehörde after arrival", "color": "green" },
+    { "label": "Semester Contribution : 150–350 EUR/semester — includes transport pass in many states", "color": "gray" },
+    { "label": "Air Ticket to Germany : varies by season", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Study in Germany — Official Guide",
+      "url": "https://www.study-in-germany.de/",
+      "icon": "graduation"
+    },
+    {
+      "label": "uni-assist — Central Application Portal",
+      "url": "https://www.uni-assist.de/",
+      "icon": "database"
+    },
+    {
+      "label": "German Embassy Dhaka — Student Visa Info",
+      "url": "https://dhaka.diplo.de/bd-en/service/2685884-2685884",
+      "icon": "file"
+    },
+    {
+      "label": "DAAD Scholarships for Bangladesh",
+      "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+      "icon": "award"
+    },
+    {
+      "label": "Coracle — Blocked Account",
+      "url": "https://www.coracle.de/",
+      "icon": "database"
+    },
+    {
+      "label": "ANABIN — Degree Recognition Database",
+      "url": "https://anabin.kmk.org/",
+      "icon": "file"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "German Embassy Dhaka",
+      "logo": "/flags/de.svg",
+      "accent": "#000000",
+      "email": "dhaka@diplo.de",
+      "address": "House 10, Road 78, Gulshan-2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Germany Visa",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com/Germany/Bangladesh for current address and appointments)"
+    }
+  ]
+}

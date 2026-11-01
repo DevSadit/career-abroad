@@ -1,0 +1,112 @@
+{
+  "title": "Application to Study Permit Process Steps for Sweden",
+  "infoLink": "https://www.migrationsverket.se/English/Private-individuals/Studying-in-Sweden/Longer-than-3-months.html",
+  "notice": "1 SEK ≈ 10 BDT. Proof of funds (102,816 SEK) is your own living money shown via bank statement — it is NOT a blocked deposit like Norway. Study permit fee: 1,000 SEK (~10,000 BDT).",
+  "processSteps": [
+    {
+      "label": "University Application : via universityadmissions.se (deadline Jan 15 for Autumn, Aug 15 for Spring)",
+      "bullets": [
+        "Application fee: 900 SEK (~9,000 BDT) — covers all program choices in one cycle",
+        "You can select up to 4 programs ranked by priority"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "Offer / Admission Letter",
+      "bullets": [
+        "Non-EU/EEA students: tuition fees 80,000–180,000 SEK/year (8,00,000–18,00,000 BDT) depending on program",
+        "Check if your program offers a tuition waiver or university scholarship"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Arrange Proof of Funds : 102,816 SEK (~10,28,000 BDT) in bank account",
+      "bullets": [
+        "Required by Migrationsverket as proof of living funds for one academic year",
+        "This is shown via bank statement — no blocked deposit required",
+        "Amount is separate from tuition fee"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Arrange Accommodation : Student housing or private rental confirmation",
+      "bullets": [
+        "Apply to student housing immediately after admission — queues fill fast",
+        "Student housing: 4,000–7,000 SEK/month; private: 8,000–14,000 SEK/month in Stockholm"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "Migrationsverket Study Permit Application (online) : 1,000 SEK (~10,000 BDT)",
+      "bullets": [
+        "Upload admission letter, bank statement, passport scan, accommodation proof",
+        "Processing time: 4–8 weeks"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "VFS Global Dhaka Biometrics Appointment",
+      "bullets": [
+        "Book appointment at vfsglobal.com",
+        "Bring original passport, case reference number, and photo"
+      ],
+      "color": "blue"
+    }
+  ],
+  "costSteps": [
+    { "label": "University Application Fee : 900 SEK (~9,000 BDT) — universityadmissions.se", "color": "yellow" },
+    { "label": "Migrationsverket Study Permit Fee : 1,000 SEK (~10,000 BDT) — paid online", "color": "blue" },
+    { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
+    { "label": "Tuition Fee : 80,000–180,000 SEK/year (8,00,000–18,00,000 BDT) — program dependent", "color": "orange" },
+    { "label": "Proof of Funds (bank statement) : 102,816 SEK (~10,28,000 BDT) — stays in your account", "color": "gray" },
+    { "label": "Air Ticket to Sweden : ~70,000–90,000 BDT", "color": "blue" }
+  ],
+  "resources": [
+    {
+      "label": "Migrationsverket — Study Permit",
+      "url": "https://www.migrationsverket.se/English/Private-individuals/Studying-in-Sweden/Longer-than-3-months.html",
+      "icon": "graduation"
+    },
+    {
+      "label": "University Admissions Sweden — Apply",
+      "url": "https://www.universityadmissions.se/",
+      "icon": "database"
+    },
+    {
+      "label": "Study in Sweden — Official Guide",
+      "url": "https://studyinsweden.se/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Swedish Institute Scholarship",
+      "url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
+      "icon": "award"
+    },
+    {
+      "label": "Swedish Embassy Dhaka",
+      "url": "https://www.swedenabroad.se/en/embassies/bangladesh-dhaka/",
+      "icon": "file"
+    },
+    {
+      "label": "VFS Global — Sweden Visa Dhaka",
+      "url": "https://www.vfsglobal.com/sweden/bangladesh/",
+      "icon": "file"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Swedish Embassy Dhaka",
+      "logo": "/flags/se.svg",
+      "accent": "#006AA7",
+      "email": "ambassaden.dhaka@gov.se",
+      "address": "Plot 1, Road 51, Gulshan 2, Dhaka 1212, Bangladesh"
+    },
+    {
+      "name": "VFS Global — Sweden Visa Dhaka",
+      "logo": "/VFS.png",
+      "accent": "#003087",
+      "email": "info.devfd@vfshelpline.com",
+      "address": "VFS Global, Dhaka (check vfsglobal.com for current address and appointment slots)"
+    }
+  ]
+}

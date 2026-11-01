@@ -25,8 +25,8 @@ const Faq = () => {
         <Title title={"Faq"} subtitle={" Based On Countries"} />
 
         {/* Countries Pill Row */}
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-2 mt-8">
-          {countries.filter(c => c.code !== "pl").map((country, index) => (
+        <div className="flex flex-wrap justify-center gap-2 mt-8">
+          {countries.map((country, index) => (
             <Link
               href={country.href}
               key={country.code}
