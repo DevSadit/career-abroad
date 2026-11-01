@@ -6,84 +6,71 @@
     {
       "label": "University Application : via university portal or study.gov.pl",
       "bullets": [
-        "Most universities have their own portal (e.g. apply.uw.edu.pl, rekrutacja.agh.edu.pl, kozminski.edu.pl)",
         "Application window: January–June for October intake",
-        "Application fee: €0–€50 (public universities); up to €200 (some private)"
+        "Fee: €0–€50 (public); up to €200 (some private)"
       ],
       "color": "yellow"
     },
     {
       "label": "Admission / Offer Letter",
       "bullets": [
-        "Bachelor's: €500–€6,000/year | Master's: €1,000–€8,000/year | Medical: €8,000–€15,000+/year",
-        "State universities may offer Polish-taught programs at very low or no cost",
-        "Private universities (Kozminski, Lazarski, Vistula) offer more English-medium options"
+        "Bachelor's: €500–€6,000/yr | Master's: €1,000–€8,000/yr | Medical: €8,000–€15,000+/yr"
       ],
       "color": "green"
     },
     {
       "label": "NAWA Syrena Verification : mandatory since 1 July 2025",
       "bullets": [
-        "Apply online at syrena.nawa.gov.pl — completely free",
-        "Upload your admission letter and program details",
-        "Receive a Syrena Confirmation Letter — required for visa application",
-        "Can be completed from Dhaka; no travel needed for this step"
+        "Apply free at syrena.nawa.gov.pl — upload admission letter, receive Confirmation Letter",
+        "Required for visa application — can be completed from Dhaka"
       ],
       "color": "orange"
     },
     {
-      "label": "Apostille Your Documents : MoFA Dhaka (Bangladesh joined Hague Convention 30 March 2025)",
+      "label": "Apostille Documents via MoFA Dhaka",
       "bullets": [
-        "Degree Certificate, Transcript — and possibly Birth Certificate — may need Apostille",
-        "MoFA (Ministry of Foreign Affairs) Apostille is sufficient — no separate Embassy legalization needed",
-        "Ask your university exactly which documents need Apostille"
+        "Bangladesh joined Hague Apostille Convention on 30 March 2025",
+        "MoFA Apostille is sufficient — no separate Embassy legalization needed"
       ],
       "color": "gray"
     },
     {
-      "label": "Prepare Financial Proof : Credit Card with min 10,912 PLN limit",
+      "label": "Financial Proof : Credit Card min 10,912 PLN limit",
       "bullets": [
-        "Polish Embassy New Delhi does NOT accept Bangladeshi bank solvency statements",
-        "Required: credit card with minimum limit of 10,912 PLN (701 PLN × 12 months + 2,500 PLN)",
-        "Sponsor's credit card accepted with Affidavit of Support"
+        "Polish Embassy New Delhi does NOT accept Bangladeshi bank statements",
+        "Formula: 701 PLN × 12 months + 2,500 PLN = 10,912 PLN minimum"
       ],
       "color": "orange"
     },
     {
       "label": "Fill Visa Form on e-Konsulat Portal",
       "bullets": [
-        "Complete application at secure2.e-konsulat.gov.pl — handwritten forms NOT accepted",
-        "Print the completed form and sign before submission",
-        "Book appointment at VFS Global India (New Delhi) after completing the form"
+        "Complete at secure2.e-konsulat.gov.pl — handwritten forms NOT accepted",
+        "Print, sign, then book VFS Global India appointment"
       ],
       "color": "lightblue"
     },
     {
       "label": "Travel to New Delhi — Submit at VFS Global India",
       "bullets": [
-        "Obtain Indian Visa first — required to enter India for Poland visa submission",
-        "Submit documents + biometrics at VFS Global India, New Delhi",
-        "VFS India Email: info.polandin@vfshelpline.com",
-        "Visa fee: €200 (effective January 2026) | Processing: 2–8 weeks (legal max 30 days)"
+        "Obtain Indian Visa first to enter India",
+        "Submit documents + biometrics at VFS; Visa fee: €200 | Processing: 2–8 weeks"
       ],
       "color": "blue"
     },
     {
       "label": "Arrive in Poland — Register & Get PESEL",
       "bullets": [
-        "Register your address at Voivodeship Office (Urząd Wojewódzki) within 30 days of arrival",
-        "Obtain PESEL (personal ID number) — required for banking, work, healthcare",
-        "Enrol at university and obtain student ID"
+        "Register at Voivodeship Office within 30 days of arrival",
+        "Obtain PESEL — required for banking, work, and healthcare"
       ],
       "color": "green"
     },
     {
-      "label": "Apply for Karta Pobytu (Residence Card) : at least 45 days before visa expires",
+      "label": "Karta Pobytu (Residence Card) : apply 45 days before visa expires",
       "bullets": [
-        "Apply at Voivodeship Office via MOS portal online (digital since 1 January 2026)",
-        "Fee: PLN 440 (~€103 total)",
-        "Processing: 4–6 months; a temporary sticker/stamp is issued while waiting",
-        "Needed: university enrollment certificate, accommodation proof, health insurance, financial proof"
+        "Apply online via MOS portal (digital since 1 Jan 2026) — fee: PLN 440 (~€103)",
+        "Processing: 4–6 months; temporary sticker issued while waiting"
       ],
       "color": "green"
     }

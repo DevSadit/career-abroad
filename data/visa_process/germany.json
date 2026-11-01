@@ -6,17 +6,15 @@
     {
       "label": "University Application : via uni-assist.de or direct university portal",
       "bullets": [
-        "uni-assist fee: ~75 EUR (first university) + 30 EUR each additional",
-        "Winter Semester deadline: usually January–July | Summer Semester: July–January",
-        "Prepare: CV, Motivation Letter, 2 Reference Letters, IELTS/TOEFL, transcripts"
+        "uni-assist fee: ~75 EUR (first) + 30 EUR each additional",
+        "Prepare: CV, Motivation Letter, 2 References, IELTS/TOEFL, transcripts"
       ],
       "color": "green"
     },
     {
-      "label": "Admission Letter & Blocked Account Setup",
+      "label": "Admission Letter & Blocked Account (Sperrkonto)",
       "bullets": [
-        "Open Sperrkonto with Coracle, Expatrio, or Deutsche Bank",
-        "Deposit: 11,904 EUR/year — official 2024 requirement",
+        "Open Sperrkonto with Coracle, Expatrio, or Deutsche Bank — deposit 11,904 EUR/year",
         "Receive Blocked Account Confirmation Letter for visa application"
       ],
       "color": "orange"
@@ -24,37 +22,34 @@
     {
       "label": "Health Insurance Arrangement",
       "bullets": [
-        "Public health insurance (TK, AOK, Barmer): ~110–130 EUR/month",
-        "Required for visa application and Residence Permit",
+        "Public insurance (TK, AOK, Barmer): ~110–130 EUR/month — required for visa",
         "Student rate valid up to age 30 or 14th semester"
       ],
       "color": "gray"
     },
     {
-      "label": "Student Visa Application — Master's via VFS, Bachelor's via Embassy",
+      "label": "Student Visa Application : via German Embassy Dhaka",
       "bullets": [
-        "Register first via the German Embassy Dhaka Consular Services Portal",
-        "Master's: Embassy emails you → book VFS Global Dhaka appointment → submit docs at VFS",
-        "Bachelor's: Embassy requests docs by email → Embassy assigns appointment → submit at Embassy",
-        "Visa fee: EUR-based fixed amount, paid in BDT at submission | Processing: ~4 weeks"
+        "Register at German Embassy Dhaka Consular Services Portal first",
+        "Master's: Embassy emails → book VFS Global Dhaka → submit at VFS",
+        "Bachelor's: Embassy assigns appointment → submit directly at Embassy",
+        "Visa fee: EUR-based fixed amount | Processing: ~4 weeks"
       ],
       "color": "lightblue"
     },
     {
       "label": "Arrive in Germany & Register (Anmeldung)",
       "bullets": [
-        "Register at Einwohnermeldeamt (City Hall) within 2 weeks of arrival",
-        "Receive Steuer-ID (Tax ID) and register with health insurance provider",
-        "Apply for Residence Permit at Ausländerbehörde (Immigration Office)"
+        "Register at Einwohnermeldeamt within 2 weeks — receive Steuer-ID",
+        "Register with health insurance provider"
       ],
       "color": "blue"
     },
     {
-      "label": "Residence Permit (Aufenthaltserlaubnis) — conversion from entry visa",
+      "label": "Residence Permit (Aufenthaltserlaubnis)",
       "bullets": [
-        "Apply at local Ausländerbehörde with enrollment certificate, blocked account proof, insurance",
-        "Fee: ~100 EUR",
-        "Initially issued for 1–2 years; renewable for duration of studies"
+        "Apply at local Ausländerbehörde — fee: ~100 EUR",
+        "Bring: enrollment certificate, blocked account proof, insurance"
       ],
       "color": "green"
     }
