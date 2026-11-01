@@ -1,7 +1,7 @@
 {
   "title": "Application to Student Visa Process Steps for Germany",
   "infoLink": "https://www.study-in-germany.de/",
-  "notice": "1 EUR ≈ 119 BDT (approximate). Blocked Account (Sperrkonto) is NOT a fee — it is your own living money that can be withdrawn monthly (max 992 EUR/month) after arriving in Germany. APS Certificate is NOT required for Bangladeshi students (only required for India, China, Vietnam, Mongolia).",
+  "notice": null,
   "processSteps": [
     {
       "label": "University Application : via uni-assist.de or direct university portal",
@@ -16,7 +16,7 @@
       "label": "Admission Letter & Blocked Account Setup",
       "bullets": [
         "Open Sperrkonto with Coracle, Expatrio, or Deutsche Bank",
-        "Deposit: 11,904 EUR/year (~14,18,000 BDT) — 2024 requirement",
+        "Deposit: 11,904 EUR/year — official 2024 requirement",
         "Receive Blocked Account Confirmation Letter for visa application"
       ],
       "color": "orange"
@@ -36,7 +36,7 @@
         "Register first via the German Embassy Dhaka Consular Services Portal",
         "Master's: Embassy emails you → book VFS Global Dhaka appointment → submit docs at VFS",
         "Bachelor's: Embassy requests docs by email → Embassy assigns appointment → submit at Embassy",
-        "Visa fee: paid in BDT (EUR-based fixed amount) | Processing: ~4 weeks"
+        "Visa fee: EUR-based fixed amount, paid in BDT at submission | Processing: ~4 weeks"
       ],
       "color": "lightblue"
     },
@@ -61,13 +61,13 @@
   ],
   "costSteps": [
     { "label": "uni-assist Application Fee : ~75 EUR (first university) + 30 EUR each additional", "color": "green" },
-    { "label": "Blocked Account (Sperrkonto) : 11,904 EUR (~14,18,000 BDT) — refunded monthly after arrival", "color": "orange" },
-    { "label": "Student Visa Fee : 75 EUR (~9,000 BDT) — paid at German Embassy", "color": "lightblue" },
-    { "label": "VFS Global Service Fee : ~30–35 EUR (~4,000 BDT) — visa submission", "color": "blue" },
+    { "label": "Blocked Account (Sperrkonto) : 11,904 EUR — withdrawn monthly (992 EUR/month) after arrival", "color": "orange" },
+    { "label": "Student Visa Fee : EUR-based fixed amount, paid in BDT at time of submission", "color": "lightblue" },
+    { "label": "VFS Global Service Fee : ~30–35 EUR — visa submission (Master's only)", "color": "blue" },
     { "label": "Health Insurance : ~110–130 EUR/month — TK/AOK/Barmer (student rate)", "color": "gray" },
     { "label": "Residence Permit Fee : ~100 EUR — paid at Ausländerbehörde after arrival", "color": "green" },
     { "label": "Semester Contribution : 150–350 EUR/semester — includes transport pass in many states", "color": "gray" },
-    { "label": "Air Ticket to Germany : ~70,000–90,000 BDT", "color": "blue" }
+    { "label": "Air Ticket to Germany : varies by season", "color": "blue" }
   ],
   "resources": [
     {
