@@ -1,78 +1,103 @@
 {
   "title": "Application to Study Permit Process Steps for Poland",
-  "infoLink": "https://www.gov.pl/web/mswia-en/residence-permit",
-  "notice": "1 EUR ≈ 120 BDT | 1 PLN ≈ 30 BDT (2026). Poland is a Schengen country — your National D Visa also allows travel across 27 Schengen countries.",
+  "infoLink": "https://study.gov.pl/",
+  "notice": "ঢাকায় কোনো Polish Embassy নেই। ভিসার জন্য New Delhi (India) যেতে হবে — আগে Indian Visa নিন।",
   "processSteps": [
     {
       "label": "University Application : via university portal or study.gov.pl",
       "bullets": [
-        "Most universities have their own portal (e.g. apply.uw.edu.pl, rekrutacja.agh.edu.pl)",
+        "Most universities have their own portal (e.g. apply.uw.edu.pl, rekrutacja.agh.edu.pl, kozminski.edu.pl)",
         "Application window: January–June for October intake",
-        "Some programs have no application fee; others charge €20–50"
+        "Application fee: €0–€50 (public universities); up to €200 (some private)"
       ],
       "color": "yellow"
     },
     {
-      "label": "Offer / Admission Letter",
+      "label": "Admission / Offer Letter",
       "bullets": [
-        "English-taught programs: tuition €2,000–€8,000/year (2.4–9.6 Lac BDT) depending on university and program",
-        "Polish-taught programs at state universities may be free or very low cost"
+        "Bachelor's: €500–€6,000/year | Master's: €1,000–€8,000/year | Medical: €8,000–€15,000+/year",
+        "State universities may offer Polish-taught programs at very low or no cost",
+        "Private universities (Kozminski, Lazarski, Vistula) offer more English-medium options"
       ],
       "color": "green"
     },
     {
-      "label": "Prepare Financial Proof : ~60,000 PLN (~18,00,000 BDT) in bank",
+      "label": "NAWA Syrena Verification : mandatory since 1 July 2025",
       "bullets": [
-        "Shows ~5,000 PLN/month (~1,50,000 BDT) for one academic year",
-        "Bank statement must clearly show your name and balance",
-        "Sponsor's affidavit also accepted if funds belong to parents/guardian"
+        "Apply online at syrena.nawa.gov.pl — completely free",
+        "Upload your admission letter and program details",
+        "Receive a Syrena Confirmation Letter — required for visa application",
+        "Can be completed from Dhaka; no travel needed for this step"
       ],
       "color": "orange"
     },
     {
-      "label": "Book Student Housing / Dormitory",
+      "label": "Apostille Your Documents : MoFA Dhaka (Bangladesh joined Hague Convention 30 March 2025)",
       "bullets": [
-        "University dormitory (akademik): 500–1,000 PLN/month (~15,000–30,000 BDT)",
-        "Apply immediately after receiving admission — spots fill fast",
-        "Housing confirmation required for visa application"
+        "Degree Certificate, Transcript — and possibly Birth Certificate — may need Apostille",
+        "MoFA (Ministry of Foreign Affairs) Apostille is sufficient — no separate Embassy legalization needed",
+        "Ask your university exactly which documents need Apostille"
       ],
       "color": "gray"
     },
     {
-      "label": "Polish Embassy Dhaka — National D Visa Application",
+      "label": "Prepare Financial Proof : Credit Card with min 10,912 PLN limit",
       "bullets": [
-        "Book appointment online or by phone",
-        "Submit application form + all documents in person",
-        "Visa fee: €80 (~9,600 BDT) — paid at Embassy",
-        "Processing time: 3–8 weeks"
+        "Polish Embassy New Delhi does NOT accept Bangladeshi bank solvency statements",
+        "Required: credit card with minimum limit of 10,912 PLN (701 PLN × 12 months + 2,500 PLN)",
+        "Sponsor's credit card accepted with Affidavit of Support"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Fill Visa Form on e-Konsulat Portal",
+      "bullets": [
+        "Complete application at secure2.e-konsulat.gov.pl — handwritten forms NOT accepted",
+        "Print the completed form and sign before submission",
+        "Book appointment at VFS Global India (New Delhi) after completing the form"
       ],
       "color": "lightblue"
     },
     {
-      "label": "VFS Global / Biometrics (if required)",
+      "label": "Travel to New Delhi — Submit at VFS Global India",
       "bullets": [
-        "Polish Embassy Dhaka may direct applicants to VFS for biometrics",
-        "Check Embassy website for current biometrics procedure"
+        "Obtain Indian Visa first — required to enter India for Poland visa submission",
+        "Submit documents + biometrics at VFS Global India, New Delhi",
+        "VFS India Email: info.polandin@vfshelpline.com",
+        "Visa fee: €200 (effective January 2026) | Processing: 2–8 weeks (legal max 30 days)"
       ],
       "color": "blue"
     },
     {
-      "label": "Arrive in Poland — Register for Temporary Residence Permit",
+      "label": "Arrive in Poland — Register & Get PESEL",
       "bullets": [
-        "Within 30 days of arrival, register your address at local Voivodeship (Urząd Wojewódzki)",
-        "Apply for Karta Pobytu (Residence Card) if staying beyond 90 days",
-        "Obtain PESEL (personal ID number) for banking and work"
+        "Register your address at Voivodeship Office (Urząd Wojewódzki) within 30 days of arrival",
+        "Obtain PESEL (personal ID number) — required for banking, work, healthcare",
+        "Enrol at university and obtain student ID"
+      ],
+      "color": "green"
+    },
+    {
+      "label": "Apply for Karta Pobytu (Residence Card) : at least 45 days before visa expires",
+      "bullets": [
+        "Apply at Voivodeship Office via MOS portal online (digital since 1 January 2026)",
+        "Fee: PLN 440 (~€103 total)",
+        "Processing: 4–6 months; a temporary sticker/stamp is issued while waiting",
+        "Needed: university enrollment certificate, accommodation proof, health insurance, financial proof"
       ],
       "color": "green"
     }
   ],
   "costSteps": [
-    { "label": "Polish National D Visa Fee : €80 (~9,600 BDT) — paid at Embassy", "color": "blue" },
-    { "label": "VFS / Biometrics Service Fee (if applicable) : ~€20–30 (~2,400–3,600 BDT)", "color": "lightyellow" },
-    { "label": "Financial Proof in Bank : ~60,000 PLN (~18,00,000 BDT) — your own money, not a fee", "color": "orange" },
-    { "label": "University Application Fee : €0–50 depending on university (~0–6,000 BDT)", "color": "gray" },
-    { "label": "Dormitory Deposit / First Month Rent : 500–2,500 PLN (~15,000–75,000 BDT)", "color": "gray" },
-    { "label": "Air Ticket to Poland : ~60,000–80,000 BDT", "color": "blue" }
+    { "label": "NAWA Syrena Verification : Free — online at syrena.nawa.gov.pl", "color": "orange" },
+    { "label": "MoFA Apostille : per document — check current MoFA fee schedule", "color": "gray" },
+    { "label": "Indian Visa : required to travel to New Delhi for Poland visa submission", "color": "lightyellow" },
+    { "label": "Polish National D Visa Fee : €200 (from January 2026) — paid at VFS India", "color": "blue" },
+    { "label": "VFS Global India Service Fee : check vfsglobal.com/Poland/India for current fee", "color": "blue" },
+    { "label": "University Application Fee : €0–€200 depending on university", "color": "gray" },
+    { "label": "Dormitory / First Month Rent : 500–2,500 PLN — varies by city and university", "color": "gray" },
+    { "label": "Karta Pobytu (Residence Card) : PLN 440 (~€103) — paid after arrival", "color": "green" },
+    { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" }
   ],
   "resources": [
     {
@@ -81,24 +106,24 @@
       "icon": "graduation"
     },
     {
+      "label": "NAWA Syrena — Mandatory Verification Portal",
+      "url": "https://syrena.nawa.gov.pl/",
+      "icon": "file"
+    },
+    {
+      "label": "e-Konsulat — Poland Visa Application Form",
+      "url": "https://secure2.e-konsulat.gov.pl/",
+      "icon": "database"
+    },
+    {
       "label": "NAWA — Polish National Agency for Academic Exchange",
       "url": "https://nawa.gov.pl/en",
       "icon": "award"
     },
     {
-      "label": "Polish Government Scholarship (Banach Programme)",
-      "url": "https://nawa.gov.pl/en/scientists/banach-scholarship-programme",
-      "icon": "award"
-    },
-    {
-      "label": "Residence Permit Info (Gov.pl)",
+      "label": "Residence Permit Info — Gov.pl",
       "url": "https://www.gov.pl/web/mswia-en/residence-permit",
       "icon": "file"
-    },
-    {
-      "label": "Polish Embassy Dhaka",
-      "url": "https://dhaka.msz.gov.pl/en/",
-      "icon": "graduation"
     },
     {
       "label": "AGH Krakow International Admissions",
@@ -108,18 +133,18 @@
   ],
   "contacts": [
     {
-      "name": "Polish Embassy Dhaka",
+      "name": "Polish Embassy New Delhi",
       "logo": "/flags/pl.svg",
       "accent": "#DC143C",
-      "email": "info.dha@msz.gov.pl",
-      "address": "House 15, Road 88, Gulshan-2, Dhaka 1212, Bangladesh"
+      "email": "newdelhi.consul@msz.gov.pl",
+      "address": "50-M, Santipath, Chanakyapuri, New Delhi – 110021, India"
     },
     {
-      "name": "VFS Global — Poland Visa (Dhaka)",
+      "name": "VFS Global — Poland Visa (India)",
       "logo": "/VFS.png",
       "accent": "#003087",
-      "email": "info.devfd@vfshelpline.com",
-      "address": "VFS Global, Dhaka (check website for current address and appointment slots)"
+      "email": "info.polandin@vfshelpline.com",
+      "address": "VFS Global India, New Delhi (check vfsglobal.com/Poland/India for appointment)"
     }
   ]
 }
