@@ -106,12 +106,17 @@ export default function SessionInfoBanner() {
           </div>
 
           {/* Urgent slot notice */}
-          <div className="flex items-center gap-2.5 mb-5 rounded-xl border border-orange-200 bg-orange-50 px-4 py-2.5">
-            <Zap className="h-4 w-4 text-orange-500 shrink-0" />
-            <p className="text-sm text-orange-800">
+          <div
+            className="flex items-center gap-3 mb-5 rounded-xl bg-[#eef0fb] px-4 py-3"
+            style={{ borderLeft: "4px solid #364bc5" }}
+          >
+            <Zap className="h-4 w-4 shrink-0" style={{ color: "#364bc5" }} />
+            <p className="text-sm" style={{ color: "#1e2e7a" }}>
               <span className="font-semibold">Urgent Slots available on request</span>
-              {" · "}Urgent fee:{" "}
-              <span className="font-semibold">€10 Euro</span> or{" "}
+              <span className="mx-2 text-[#364bc5]/40">|</span>
+              Fee:{" "}
+              <span className="font-semibold">€10 Euro</span>
+              {" "}or{" "}
               <span className="font-semibold">৳1,400 BDT</span>
             </p>
           </div>
