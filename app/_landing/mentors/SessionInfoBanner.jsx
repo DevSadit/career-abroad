@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Video, Clock, AlertCircle, Mail, X } from "lucide-react";
+import { Video, Clock, AlertCircle, Mail, X, Zap } from "lucide-react";
 
 const BKASH = {
   title: "Pay via bKash",
@@ -103,6 +103,22 @@ export default function SessionInfoBanner() {
             >
               Bank Transfer
             </button>
+          </div>
+
+          {/* Urgent slot notice */}
+          <div
+            className="flex items-center gap-3 mb-5 rounded-xl bg-[#eef0fb] px-4 py-3"
+            style={{ borderLeft: "4px solid #364bc5" }}
+          >
+            <Zap className="h-4 w-4 shrink-0" style={{ color: "#364bc5" }} />
+            <p className="text-sm" style={{ color: "#1e2e7a" }}>
+              <span className="font-semibold">Urgent Slots available on request</span>
+              <span className="mx-2 text-[#364bc5]/40">|</span>
+              Fee:{" "}
+              <span className="font-semibold">€10 Euro</span>
+              {" "}or{" "}
+              <span className="font-semibold">৳1,400 BDT</span>
+            </p>
           </div>
 
           {/* 24-hour warning + receipt buttons */}
