@@ -39,8 +39,7 @@
   "costSteps": [
     { "label": "Biometric Appointment : Estonian Embassy — New Delhi, India (also possible via China or Singapore)", "color": "blue" },
     { "label": "Indian Visa : required to travel to New Delhi (or China / Singapore) for biometrics", "color": "lightyellow" },
-    { "label": "Air Ticket to Estonia : varies by season and route", "color": "blue" },
-    { "label": "Arrive Estonia — Register at local government office within 30 days", "color": "green" }
+    { "label": "Air Ticket to Estonia : varies by season and route", "color": "blue" }
   ],
   "resources": [
     {
