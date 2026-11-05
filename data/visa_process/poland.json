@@ -59,6 +59,17 @@
     { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" },
     { "label": "Karta Pobytu (Residence Card) : PLN 440 (~€103) — paid after arrival", "color": "green" }
   ],
+  "mentor": {
+    "name": "Nazim Uddin",
+    "image": "/mentors/NazimUddin2.png",
+    "degree": "MA in International Relations",
+    "details": ["University of Wroclaw, Poland", "BSS in Political Science"],
+    "flags": ["pl", "lt"],
+    "profileLink": "/#mentors",
+    "bookingLink": "https://cal.com/nazim-uddin-study-abroad/secret",
+    "ctaBefore": "পোল্যান্ডে উচ্চশিক্ষা নিয়ে বিস্তারিত আলোচনার জন্য আমাদের পোল্যান্ডের মেন্টর ",
+    "ctaAfter": " এর ১:১ পেইড সেশন বুক করুন"
+  },
   "resources": [
     {
       "label": "Study in Poland — Official Portal",
