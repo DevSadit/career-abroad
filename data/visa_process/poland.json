@@ -1,8 +1,24 @@
 {
   "title": "Application to Study Permit Process Steps for Poland",
   "infoLink": "https://study.gov.pl/",
-  "notice": "ঢাকায় কোনো Polish Embassy নেই। ভিসার জন্য New Delhi (India) যেতে হবে — আগে Indian Visa নিন।",
+  "notice": "ঢাকায় কোনো Polish Embassy নেই। ভিসার জন্য New Delhi (India) যেতে হবে।",
   "processSteps": [
+    {
+      "label": "Apostille Documents via MoFA Dhaka",
+      "bullets": [
+        "Bangladesh joined Hague Apostille Convention on 30 March 2025",
+        "MoFA Apostille is sufficient — no separate Embassy legalization needed"
+      ],
+      "color": "gray"
+    },
+    {
+      "label": "NAWA Syrena Verification : mandatory since 1 July 2025",
+      "bullets": [
+        "Apply free at syrena.nawa.gov.pl — upload admission letter, receive Confirmation Letter",
+        "Required for visa application — can be completed from Dhaka"
+      ],
+      "color": "orange"
+    },
     {
       "label": "University Application : via university portal or study.gov.pl",
       "bullets": [
@@ -19,18 +35,10 @@
       "color": "green"
     },
     {
-      "label": "NAWA Syrena Verification : mandatory since 1 July 2025",
+      "label": "Book Dormitory / Accommodation",
       "bullets": [
-        "Apply free at syrena.nawa.gov.pl — upload admission letter, receive Confirmation Letter",
-        "Required for visa application — can be completed from Dhaka"
-      ],
-      "color": "orange"
-    },
-    {
-      "label": "Apostille Documents via MoFA Dhaka",
-      "bullets": [
-        "Bangladesh joined Hague Apostille Convention on 30 March 2025",
-        "MoFA Apostille is sufficient — no separate Embassy legalization needed"
+        "Apply for university dormitory immediately after admission — spots fill quickly",
+        "Housing confirmation letter required for visa | Cost: 500–2,500 PLN/month"
       ],
       "color": "gray"
     },
@@ -41,50 +49,15 @@
         "Formula: 701 PLN × 12 months + 2,500 PLN = 10,912 PLN minimum"
       ],
       "color": "orange"
-    },
-    {
-      "label": "Fill Visa Form on e-Konsulat Portal",
-      "bullets": [
-        "Complete at secure2.e-konsulat.gov.pl — handwritten forms NOT accepted",
-        "Print, sign, then book VFS Global India appointment"
-      ],
-      "color": "lightblue"
-    },
-    {
-      "label": "Travel to New Delhi — Submit at VFS Global India",
-      "bullets": [
-        "Obtain Indian Visa first to enter India",
-        "Submit documents + biometrics at VFS; Visa fee: €200 | Processing: 2–8 weeks"
-      ],
-      "color": "blue"
-    },
-    {
-      "label": "Arrive in Poland — Register & Get PESEL",
-      "bullets": [
-        "Register at Voivodeship Office within 30 days of arrival",
-        "Obtain PESEL — required for banking, work, and healthcare"
-      ],
-      "color": "green"
-    },
-    {
-      "label": "Karta Pobytu (Residence Card) : apply 45 days before visa expires",
-      "bullets": [
-        "Apply online via MOS portal (digital since 1 Jan 2026) — fee: PLN 440 (~€103)",
-        "Processing: 4–6 months; temporary sticker issued while waiting"
-      ],
-      "color": "green"
     }
   ],
   "costSteps": [
-    { "label": "NAWA Syrena Verification : Free — online at syrena.nawa.gov.pl", "color": "orange" },
-    { "label": "MoFA Apostille : per document — check current MoFA fee schedule", "color": "gray" },
+    { "label": "Fill Visa Form : secure2.e-konsulat.gov.pl — handwritten forms NOT accepted; print, sign, book VFS India appointment", "color": "lightblue" },
     { "label": "Indian Visa : required to travel to New Delhi for Poland visa submission", "color": "lightyellow" },
     { "label": "Polish National D Visa Fee : €200 (from January 2026) — paid at VFS India", "color": "blue" },
     { "label": "VFS Global India Service Fee : check vfsglobal.com/Poland/India for current fee", "color": "blue" },
-    { "label": "University Application Fee : €0–€200 depending on university", "color": "gray" },
-    { "label": "Dormitory / First Month Rent : 500–2,500 PLN — varies by city and university", "color": "gray" },
-    { "label": "Karta Pobytu (Residence Card) : PLN 440 (~€103) — paid after arrival", "color": "green" },
-    { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" }
+    { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" },
+    { "label": "Karta Pobytu (Residence Card) : PLN 440 (~€103) — paid after arrival", "color": "green" }
   ],
   "resources": [
     {
