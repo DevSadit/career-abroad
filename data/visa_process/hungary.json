@@ -37,6 +37,7 @@
     }
   ],
   "costSteps": [
+    { "label": "Police Clearance Certificate (PCC) : 500–1,000 BDT — apply via MOHA Bangladesh", "color": "orange" },
     { "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global — Fee: €80 | Processing: 3–6 weeks", "color": "lightblue" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
