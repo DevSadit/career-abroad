@@ -4,14 +4,6 @@
   "notice": "ঢাকায় কোনো Polish Embassy নেই। ভিসার জন্য New Delhi (India) যেতে হবে — আগে Indian Visa নিন।",
   "processSteps": [
     {
-      "label": "Apostille Documents via MoFA Dhaka",
-      "bullets": [
-        "Bangladesh joined Hague Apostille Convention on 30 March 2025",
-        "MoFA Apostille is sufficient — no separate Embassy legalization needed"
-      ],
-      "color": "gray"
-    },
-    {
       "label": "NAWA Syrena Verification : mandatory since 1 July 2025",
       "bullets": [
         "Apply free at syrena.nawa.gov.pl — upload admission letter, receive Confirmation Letter",
@@ -38,7 +30,7 @@
       "label": "Book Dormitory / Accommodation",
       "bullets": [
         "Apply for university dormitory immediately after admission — spots fill quickly",
-        "Housing confirmation letter required for visa application"
+        "Housing confirmation letter required for visa | Cost: 500–2,500 PLN/month"
       ],
       "color": "gray"
     },
@@ -60,10 +52,7 @@
     }
   ],
   "costSteps": [
-    { "label": "NAWA Syrena Verification : Free — online at syrena.nawa.gov.pl", "color": "orange" },
-    { "label": "MoFA Apostille : per document — check current MoFA fee schedule", "color": "gray" },
-    { "label": "University Application Fee : €0–€200 depending on university", "color": "gray" },
-    { "label": "Dormitory / First Month Rent : 500–2,500 PLN — varies by city and university", "color": "gray" },
+    { "label": "MoFA Apostille : per document — Bangladesh in Hague Convention since 30 March 2025", "color": "gray" },
     { "label": "Indian Visa : required to travel to New Delhi for Poland visa submission", "color": "lightyellow" },
     { "label": "Polish National D Visa Fee : €200 (from January 2026) — paid at VFS India", "color": "blue" },
     { "label": "VFS Global India Service Fee : check vfsglobal.com/Poland/India for current fee", "color": "blue" },
