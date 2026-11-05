@@ -40,6 +40,17 @@
     { "name": "Asisa", "cost": "€400–550/year" },
     { "name": "Swisscare", "cost": "€380–400/year" }
   ],
+  "mentor": {
+    "name": "Ahsan Suny",
+    "image": "/mentors/Suny_Mentor1.png",
+    "degree": "PhD Researcher, Spain (AI & Robotics)",
+    "details": ["MSc in Embedded Systems – France", "BSc in Electrical & Electronic Engineering"],
+    "flags": ["es"],
+    "profileLink": "/#mentors",
+    "bookingLink": "https://cal.com/ahsansuny2026/40min",
+    "ctaBefore": "স্পেনে উচ্চশিক্ষা নিয়ে বিস্তারিত আলোচনার জন্য আমাদের স্পেনের মেন্টর ",
+    "ctaAfter": " এর ১:১ পেইড সেশন বুক করুন"
+  },
   "resources": [
     {
       "label": "Higher Study in Spain : Complete Guidelines",

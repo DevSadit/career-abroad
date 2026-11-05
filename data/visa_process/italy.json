@@ -30,6 +30,17 @@
     { "label": "One way Air Ticket Booking : 700–1000 euros", "color": "yellow" },
     { "label": "Visa File Submission in VFS : D-form + passport (2 blank pages) + 2 ICAO photo", "color": "gray" }
   ],
+  "mentor": {
+    "name": "Sufian Tanim",
+    "image": "/mentors/Sufian_Tanim6.png",
+    "degree": "MSc in Civil Engineering",
+    "details": ["Politecnico di Torino, Italy", "BSc in Civil Engineering"],
+    "flags": ["it"],
+    "profileLink": "/#mentors",
+    "bookingLink": "https://cal.com/md-abu-sufian-tanim/40-min-meeting",
+    "ctaBefore": "ইতালিতে উচ্চশিক্ষা নিয়ে বিস্তারিত আলোচনার জন্য আমাদের ইতালির মেন্টর ",
+    "ctaAfter": " এর ১:১ পেইড সেশন বুক করুন"
+  },
   "resources": [
     {
       "label": "Italy Student Visa Full Guide — Ahsan Sunny",
