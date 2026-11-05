@@ -37,7 +37,6 @@
     }
   ],
   "costSteps": [
-    { "label": "TRP Application via PPA Portal (eesti.ee) : fee €96 | Processing: 2–3 months", "color": "lightblue" },
     { "label": "Biometric Appointment : Estonian Embassy — New Delhi, India (also possible via China or Singapore)", "color": "blue" },
     { "label": "Indian Visa : required to travel to New Delhi (or China / Singapore) for biometrics", "color": "lightyellow" },
     { "label": "Air Ticket to Estonia : varies by season and route", "color": "blue" },
