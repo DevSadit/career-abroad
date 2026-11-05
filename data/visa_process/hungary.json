@@ -6,16 +6,16 @@
     {
       "label": "University Application : Stipendium Hungaricum or self-funded route",
       "bullets": [
-        "Stipendium Hungaricum (SH): apply via Tempus Foundation portal — fully-funded scholarship",
-        "Self-funded: apply directly at ELTE, Corvinus, BME, Debrecen, or other universities"
+        "Stipendium Hungaricum (SH): apply via Tempus Foundation portal — fully-funded (no application fee)",
+        "Self-funded: apply directly at ELTE, Corvinus, BME, Debrecen — fee €100–€150 per university"
       ],
       "color": "yellow"
     },
     {
       "label": "Admission / Scholarship Letter",
       "bullets": [
-        "SH scholars: receive scholarship contract and university acceptance from Tempus",
-        "Self-funded: Acceptance Letter + tuition invoice (€1,500–€8,000/year)"
+        "SH scholars: scholarship contract from Tempus — tuition waived; health insurance included",
+        "Self-funded: Acceptance Letter + tuition €1,500–€8,000/year; health insurance ~€100–€300/year"
       ],
       "color": "green"
     },
@@ -53,9 +53,6 @@
     }
   ],
   "costSteps": [
-    { "label": "University Application Fee : free for SH; €100–€150 per university (self-funded)", "color": "gray" },
-    { "label": "Tuition Fee : €1,500–€8,000/year (self-funded; waived for SH scholars)", "color": "red" },
-    { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [
