@@ -20,6 +20,14 @@
       "color": "green"
     },
     {
+      "label": "Accommodation / Dormitory Booking : €200–€300/month",
+      "bullets": [
+        "Apply for university dormitory immediately after admission — spots fill fast",
+        "Private rental: €300–€500/month in Budapest; cheaper in Debrecen, Pécs, Győr"
+      ],
+      "color": "gray"
+    },
+    {
       "label": "Financial Proof : bank statement showing sufficient funds",
       "bullets": [
         "SH scholars: scholarship covers costs — bank statement still strengthens the file",
