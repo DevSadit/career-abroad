@@ -14,8 +14,8 @@
     {
       "label": "Admission / Scholarship Letter",
       "bullets": [
-        "SH scholars: scholarship contract from Tempus — tuition waived; health insurance included",
-        "Self-funded: Acceptance Letter + tuition €1,500–€8,000/year; health insurance ~€100–€300/year"
+        "SH scholars: scholarship contract from Tempus — tuition waived",
+        "Self-funded: Acceptance Letter + tuition invoice €1,500–€8,000/year"
       ],
       "color": "green"
     },
@@ -53,6 +53,7 @@
     }
   ],
   "costSteps": [
+    { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [
