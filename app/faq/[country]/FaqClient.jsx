@@ -78,58 +78,25 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
         {processData && <VisaProcessSection data={processData} />}
 
         {/* Mentor CTA block */}
-        {processData?.mentor && (() => {
-          const m = processData.mentor;
-          return (
-            <div className="max-w-6xl mx-auto mt-6 mb-2">
-              <p lang="bn" className="font-bn text-center text-gray-500 mb-4 text-sm sm:text-base leading-relaxed">
-                {m.ctaBefore}
-                <Link href={m.profileLink} className="text-[#364bc5] font-semibold hover:underline">
-                  {m.name}
+        {processData?.mentor && (
+          <div className="max-w-6xl mx-auto mt-6 mb-2">
+            <div
+              className="rounded-xl bg-[#eef0fb] px-5 py-4"
+              style={{ borderLeft: "4px solid #364bc5" }}
+            >
+              <p lang="bn" className="font-bn text-sm sm:text-base leading-relaxed" style={{ color: "#1e2e7a" }}>
+                {processData.mentor.ctaBefore}
+                <Link
+                  href={processData.mentor.profileLink}
+                  className="font-semibold underline underline-offset-2 hover:text-[#364bc5]"
+                >
+                  {processData.mentor.name}
                 </Link>
-                {m.ctaAfter}
+                {processData.mentor.ctaAfter}
               </p>
-              <div className="bg-white rounded-3xl border border-gray-200 shadow-sm p-5 sm:p-6 flex items-center gap-5 max-w-sm mx-auto">
-                <Image
-                  src={m.image}
-                  width={80}
-                  height={80}
-                  alt={m.name}
-                  className="rounded-full object-cover w-20 h-20 shrink-0 ring-2 ring-[#364bc5]/15"
-                />
-                <div className="flex-1 min-w-0">
-                  <Link href={m.profileLink} className="text-lg font-bold text-gray-900 hover:text-[#364bc5] transition-colors leading-tight block">
-                    {m.name}
-                  </Link>
-                  <span className="mt-1.5 inline-block bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">
-                    {m.degree}
-                  </span>
-                  <ul className="mt-2 space-y-1">
-                    {m.details.map((d, i) => (
-                      <li key={i} className="text-xs text-gray-600 flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#364bc5] shrink-0" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center gap-2 mt-2.5">
-                    {m.flags.map(code => (
-                      <Image key={code} src={`/flags/${code}.svg`} width={22} height={15} alt={code} className="rounded-sm" />
-                    ))}
-                  </div>
-                  <a
-                    href={m.bookingLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 bg-[#364bc5] text-white text-xs font-semibold px-5 py-2 rounded-full hover:bg-[#2d3fa8] transition-colors"
-                  >
-                    Book a Session →
-                  </a>
-                </div>
-              </div>
             </div>
-          );
-        })()}
+          </div>
+        )}
 
         {/* Quick Reference cards (translators + health insurance) */}
         {(processData?.authorizedTranslators?.length > 0 || processData?.healthInsurance?.length > 0) && (
