@@ -60,10 +60,7 @@
     }
   ],
   "costSteps": [
-    { "label": "Lithuanian National D Visa Fee : €80 — paid at Embassy or VFS", "color": "blue" },
     { "label": "VFS Service Fee (if applicable) : ~€20–30", "color": "lightyellow" },
-    { "label": "Financial Proof in Bank : ~€4,800–€8,000 — your own money, not a fee", "color": "orange" },
-    { "label": "Health Insurance : ~€100–€300/year", "color": "gray" },
     { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
     { "label": "Air Ticket to Lithuania : varies by season and route", "color": "blue" }
   ],

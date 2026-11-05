@@ -20,45 +20,25 @@
       "color": "green"
     },
     {
+      "label": "Accommodation / Student Housing : €200–€400/month",
+      "color": "gray"
+    },
+    {
+      "label": "Health Insurance : ~€100–€300/year — required for permit application",
+      "color": "purple"
+    },
+    {
       "label": "Financial Proof : ~€564/month minimum",
       "bullets": [
         "Bank statement showing at least €564/month (≈€6,768/year) in savings",
         "Scholarship letter can substitute or supplement bank statement"
       ],
       "color": "orange"
-    },
-    {
-      "label": "Apply for Temporary Residence Permit : PPA online portal",
-      "bullets": [
-        "Submit application at eesti.ee — fee: €96 | Processing: 2–3 months",
-        "Upload admission letter, financial proof, health insurance, accommodation proof"
-      ],
-      "color": "lightblue"
-    },
-    {
-      "label": "Biometrics at Estonian Embassy New Delhi",
-      "bullets": [
-        "No Estonian Embassy in Bangladesh — obtain Indian Visa first to travel to Delhi",
-        "Submit fingerprints and photo at Estonian Embassy New Delhi"
-      ],
-      "color": "blue"
-    },
-    {
-      "label": "Arrive Estonia — Register & Get ID Code",
-      "bullets": [
-        "Register at local government office within 30 days — receive Estonian personal code",
-        "Collect physical residence card; valid for duration of studies"
-      ],
-      "color": "green"
     }
   ],
   "costSteps": [
-    { "label": "Temporary Residence Permit Fee : €96 — paid online via PPA portal", "color": "lightblue" },
-    { "label": "Indian Visa : required to travel to New Delhi for biometrics submission", "color": "lightyellow" },
-    { "label": "Financial Proof in Bank : ~€6,768/year (€564/month) — your own money, not a fee", "color": "orange" },
-    { "label": "Tuition Fee : €1,660–€7,500/year — varies by university and program", "color": "red" },
-    { "label": "Health Insurance : ~€100–€300/year — required for permit application", "color": "gray" },
-    { "label": "University Application Fee : ~€0–€50 depending on university", "color": "gray" },
+    { "label": "Biometric Appointment : Estonian Embassy — New Delhi, India (also possible via China or Singapore)", "color": "blue" },
+    { "label": "Indian Visa : required to travel to New Delhi (or China / Singapore) for biometrics", "color": "lightyellow" },
     { "label": "Air Ticket to Estonia : varies by season and route", "color": "blue" }
   ],
   "resources": [

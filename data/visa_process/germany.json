@@ -31,9 +31,7 @@
       "label": "Student Visa Application : via German Embassy Dhaka",
       "bullets": [
         "Register at German Embassy Dhaka Consular Services Portal first",
-        "Master's: Embassy emails → book VFS Global Dhaka → submit at VFS",
-        "Bachelor's: Embassy assigns appointment → submit directly at Embassy",
-        "Visa fee: EUR-based fixed amount | Processing: ~4 weeks"
+        "Master's: via VFS Global Dhaka | Bachelor's: submit directly at Embassy"
       ],
       "color": "lightblue"
     },
@@ -55,12 +53,9 @@
     }
   ],
   "costSteps": [
-    { "label": "uni-assist Application Fee : ~75 EUR (first university) + 30 EUR each additional", "color": "green" },
     { "label": "Blocked Account (Sperrkonto) : 11,904 EUR — withdrawn monthly (992 EUR/month) after arrival", "color": "orange" },
     { "label": "Student Visa Fee : EUR-based fixed amount, paid in BDT at time of submission", "color": "lightblue" },
     { "label": "VFS Global Service Fee : ~30–35 EUR — visa submission (Master's only)", "color": "blue" },
-    { "label": "Health Insurance : ~110–130 EUR/month — TK/AOK/Barmer (student rate)", "color": "gray" },
-    { "label": "Residence Permit Fee : ~100 EUR — paid at Ausländerbehörde after arrival", "color": "green" },
     { "label": "Semester Contribution : 150–350 EUR/semester — includes transport pass in many states", "color": "gray" },
     { "label": "Air Ticket to Germany : varies by season", "color": "blue" }
   ],

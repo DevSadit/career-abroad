@@ -77,6 +77,27 @@ export default function FaqClient({ countryName, flagSrc, faqData, processData }
         {/* Visa process section (country-specific) */}
         {processData && <VisaProcessSection data={processData} />}
 
+        {/* Mentor CTA block */}
+        {processData?.mentor && (
+          <div className="max-w-6xl mx-auto mt-6 mb-2">
+            <div
+              className="rounded-xl bg-[#eef0fb] px-5 py-4"
+              style={{ borderLeft: "4px solid #364bc5" }}
+            >
+              <p lang="bn" className="font-bn text-sm sm:text-base leading-relaxed" style={{ color: "#1e2e7a" }}>
+                {processData.mentor.ctaBefore}
+                <Link
+                  href={processData.mentor.profileLink}
+                  className="font-semibold underline underline-offset-2 hover:text-[#364bc5]"
+                >
+                  {processData.mentor.name}
+                </Link>
+                {processData.mentor.ctaAfter}
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Quick Reference cards (translators + health insurance) */}
         {(processData?.authorizedTranslators?.length > 0 || processData?.healthInsurance?.length > 0) && (
           <div className="max-w-6xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

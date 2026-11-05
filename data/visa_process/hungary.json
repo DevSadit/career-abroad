@@ -6,18 +6,26 @@
     {
       "label": "University Application : Stipendium Hungaricum or self-funded route",
       "bullets": [
-        "Stipendium Hungaricum (SH): apply via Tempus Foundation portal — fully-funded scholarship",
-        "Self-funded: apply directly at ELTE, Corvinus, BME, Debrecen, or other universities"
+        "Stipendium Hungaricum (SH): apply via Tempus Foundation portal — fully-funded (no application fee)",
+        "Self-funded: apply directly at ELTE, Corvinus, BME, Debrecen — fee €100–€150 per university"
       ],
       "color": "yellow"
     },
     {
       "label": "Admission / Scholarship Letter",
       "bullets": [
-        "SH scholars: receive scholarship contract and university acceptance from Tempus",
-        "Self-funded: Acceptance Letter + tuition invoice (€1,500–€8,000/year)"
+        "SH scholars: scholarship contract from Tempus — tuition waived",
+        "Self-funded: Acceptance Letter + tuition invoice €1,500–€8,000/year"
       ],
       "color": "green"
+    },
+    {
+      "label": "Accommodation / Dormitory Booking : €200–€300/month (dorm); €300–€500/month (private)",
+      "color": "gray"
+    },
+    {
+      "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year",
+      "color": "purple"
     },
     {
       "label": "Financial Proof : bank statement showing sufficient funds",
@@ -26,39 +34,11 @@
         "Self-funded: ~€3,600–€6,000 recommended (min €300/month for the study period)"
       ],
       "color": "orange"
-    },
-    {
-      "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global",
-      "bullets": [
-        "Hungary has an Embassy in Dhaka — apply directly or via VFS Global Dhaka",
-        "Fee: €80 | Processing: 3–6 weeks"
-      ],
-      "color": "lightblue"
-    },
-    {
-      "label": "Arrive Hungary — Register at OIF (Immigration Police)",
-      "bullets": [
-        "Register within 30 days at local Office of Immigration and Nationality (OIF)",
-        "Obtain address card (lakcímkártya) — needed for bank account and university registration"
-      ],
-      "color": "blue"
-    },
-    {
-      "label": "Residence Permit : apply before student visa expires",
-      "bullets": [
-        "Submit at OIF before initial visa expires — fee: ~€25–€40",
-        "Valid for duration of studies; renew each academic year"
-      ],
-      "color": "green"
     }
   ],
   "costSteps": [
-    { "label": "University Application Fee : free for SH; €100–€150 per university (self-funded)", "color": "gray" },
-    { "label": "Student Visa (National D) Fee : €80 — paid at Embassy Dhaka or VFS", "color": "lightblue" },
-    { "label": "Financial Proof in Bank : ~€3,600–€6,000 (self-funded) — your own money, not a fee", "color": "orange" },
-    { "label": "Tuition Fee : €1,500–€8,000/year (self-funded; waived for SH scholars)", "color": "red" },
-    { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
-    { "label": "Residence Permit Fee : ~€25–€40 — paid at OIF after arrival", "color": "green" },
+    { "label": "Police Clearance Certificate (PCC) : 500–1,000 BDT", "color": "orange" },
+    { "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global — Fee: €80 | Processing: 3–6 weeks", "color": "lightblue" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [

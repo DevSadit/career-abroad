@@ -58,6 +58,17 @@
     { "label": "Visa Stamping Fee : ~22,000 BDT", "color": "gray" },
     { "label": "Air Ticket to Austria : ~100,000 BDT", "color": "blue" }
   ],
+  "mentor": {
+    "name": "Mohammad Faisal",
+    "image": "/mentors/Faisal_Mentor6.png",
+    "degree": "MSc in Cybersecurity",
+    "details": ["Johannes Kepler University Linz, Austria", "BSc in CSE"],
+    "flags": ["at", "de", "fi", "dk"],
+    "profileLink": "/#mentors",
+    "bookingLink": "https://cal.com/mohammad-faisal-ijmhzp/40min",
+    "ctaBefore": "অস্ট্রিয়ায় উচ্চশিক্ষা নিয়ে বিস্তারিত আলোচনার জন্য আমাদের অস্ট্রিয়ার মেন্টর ",
+    "ctaAfter": " এর ১:১ পেইড সেশন বুক করুন"
+  },
   "resources": [
     {
       "label": "Austria Student Visa Full Guide — Ahsan Sunny",

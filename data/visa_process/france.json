@@ -19,6 +19,17 @@
     { "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro", "color": "blue" }
   ],
   "costSteps": [],
+  "mentor": {
+    "name": "Safkat Islam",
+    "image": "/mentors/Tumpa_Mentor2.png",
+    "degree": "PhD Researcher (THz Photonics)",
+    "details": ["MSc in Wireless IC – France", "BSc in Electrical & Electronic Engineering"],
+    "flags": ["fr", "de", "be", "no"],
+    "profileLink": "/#mentors",
+    "bookingLink": "https://cal.com/safkat-islam-bl56lx/single-consultation-session",
+    "ctaBefore": "ফ্রান্সে উচ্চশিক্ষা নিয়ে বিস্তারিত আলোচনার জন্য আমাদের ফ্রান্সের মেন্টর ",
+    "ctaAfter": " এর ১:১ পেইড সেশন বুক করুন"
+  },
   "resources": [
     {
       "label": "Higher Study in France : Complete Guidelines",
