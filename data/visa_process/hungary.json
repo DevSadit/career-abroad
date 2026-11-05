@@ -34,22 +34,6 @@
         "Fee: €80 | Processing: 3–6 weeks"
       ],
       "color": "lightblue"
-    },
-    {
-      "label": "Arrive Hungary — Register at OIF (Immigration Police)",
-      "bullets": [
-        "Register within 30 days at local Office of Immigration and Nationality (OIF)",
-        "Obtain address card (lakcímkártya) — needed for bank account and university registration"
-      ],
-      "color": "blue"
-    },
-    {
-      "label": "Residence Permit : apply before student visa expires",
-      "bullets": [
-        "Submit at OIF before initial visa expires — fee: ~€25–€40",
-        "Valid for duration of studies; renew each academic year"
-      ],
-      "color": "green"
     }
   ],
   "costSteps": [
