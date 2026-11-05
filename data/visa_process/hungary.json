@@ -28,6 +28,14 @@
       "color": "gray"
     },
     {
+      "label": "Health Insurance : ~€100–€300/year",
+      "bullets": [
+        "SH scholars: health insurance included in scholarship package",
+        "Self-funded: purchase private health insurance before visa application"
+      ],
+      "color": "purple"
+    },
+    {
       "label": "Financial Proof : bank statement showing sufficient funds",
       "bullets": [
         "SH scholars: scholarship covers costs — bank statement still strengthens the file",
@@ -45,7 +53,6 @@
     }
   ],
   "costSteps": [
-    { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [
