@@ -53,9 +53,7 @@
     }
   ],
   "costSteps": [
-    { "label": "Temporary Residence Permit Fee : €96 — paid online via PPA portal", "color": "lightblue" },
     { "label": "Indian Visa : required to travel to New Delhi for biometrics submission", "color": "lightyellow" },
-    { "label": "Financial Proof in Bank : ~€6,768/year (€564/month) — your own money, not a fee", "color": "orange" },
     { "label": "Tuition Fee : €1,660–€7,500/year — varies by university and program", "color": "red" },
     { "label": "Health Insurance : ~€100–€300/year — required for permit application", "color": "gray" },
     { "label": "University Application Fee : ~€0–€50 depending on university", "color": "gray" },

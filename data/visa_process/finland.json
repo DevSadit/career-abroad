@@ -1,32 +1,29 @@
 {
   "title": "Application to Residence Permit (Study) Process Steps for Finland",
   "infoLink": "https://migri.fi/en/studying-in-finland",
-  "notice": "1 EUR ≈ 120 BDT. There is no Finnish Embassy in Dhaka — all applications are submitted online via enterfinland.fi and biometrics at VFS Global Dhaka. Processing: 1–3 months.",
+  "notice": "There is no Finnish Embassy in Dhaka — all applications are submitted online via enterfinland.fi and biometrics at VFS Global Dhaka. Processing: 1–3 months.",
   "processSteps": [
     {
       "label": "University Application : via studyinfo.fi (Opintopolku) — deadline typically Jan 20 for Autumn",
       "bullets": [
         "Application is free — no application fee for public universities",
-        "Select up to 6 programs ranked by priority",
-        "Both Finnish-taught and English-taught programs listed on studyinfo.fi"
+        "Select up to 6 programs ranked by priority"
       ],
       "color": "yellow"
     },
     {
       "label": "Offer / Admission Letter",
       "bullets": [
-        "Non-EU/EEA students: tuition fees 8,000–20,000 EUR/year (9,60,000–24,00,000 BDT)",
-        "Many universities offer merit-based tuition waivers — check your university's scholarship page",
-        "Accept your study place by the deadline stated in the offer letter"
+        "Non-EU/EEA students: tuition fees 8,000–20,000 EUR/year",
+        "Many universities offer merit-based tuition waivers — check your university's scholarship page"
       ],
       "color": "green"
     },
     {
-      "label": "Arrange Proof of Funds : €6,720/year (~8,06,400 BDT) — €560/month",
+      "label": "Arrange Proof of Funds : €6,720/year — €560/month",
       "bullets": [
         "Required by Migri as proof of living funds",
-        "Shown via bank statement or scholarship/stipend letter",
-        "Separate from tuition fee requirement"
+        "Shown via bank statement or scholarship/stipend letter"
       ],
       "color": "orange"
     },
@@ -39,11 +36,10 @@
       "color": "gray"
     },
     {
-      "label": "Migri Residence Permit Application (online) : 470 EUR (~56,400 BDT)",
+      "label": "Migri Residence Permit Application (online) : 470 EUR",
       "bullets": [
         "Apply at enterfinland.fi",
-        "Upload admission letter, proof of funds, passport scan, accommodation proof",
-        "Processing time: 1–3 months"
+        "Upload admission letter, proof of funds, passport scan, accommodation proof"
       ],
       "color": "lightblue"
     },
@@ -51,17 +47,14 @@
       "label": "VFS Global Dhaka Biometrics Appointment",
       "bullets": [
         "Book appointment at vfsglobal.com",
-        "Bring original passport, Migri case reference, and photo",
-        "No Finnish Embassy in Dhaka — VFS handles all biometric submissions"
+        "Bring original passport, Migri case reference, and photo"
       ],
       "color": "blue"
     }
   ],
   "costSteps": [
-    { "label": "Migri Residence Permit Fee : 470 EUR (~56,400 BDT) — paid via enterfinland.fi", "color": "blue" },
     { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
-    { "label": "Tuition Fee : 8,000–20,000 EUR/year (9,60,000–24,00,000 BDT) — waiver often available", "color": "orange" },
-    { "label": "Proof of Funds (bank statement) : €6,720 (~8,06,400 BDT) — stays in your account", "color": "gray" },
+    { "label": "Tuition Fee : 8,000–20,000 EUR/year — waiver often available", "color": "orange" },
     { "label": "Air Ticket to Finland : ~70,000–90,000 BDT", "color": "blue" }
   ],
   "resources": [

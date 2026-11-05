@@ -1,7 +1,7 @@
 {
   "title": "Application to Study Permit Process Steps for Denmark",
   "infoLink": "https://www.newtodenmark.dk/you-want-to-study-in-denmark/student-at-a-higher-education-institution",
-  "notice": "1 DKK ≈ 13.5 BDT. Study permit processing takes 3–5 months — apply as soon as you receive your admission letter. SIRI handles all study permits for Denmark.",
+  "notice": "Study permit processing takes 3–5 months — apply as soon as you receive your admission letter. SIRI handles all study permits for Denmark.",
   "processSteps": [
     {
       "label": "University Application : via individual university portals (DTU, Copenhagen, Aarhus, CBS etc.)",
@@ -14,7 +14,7 @@
     {
       "label": "Offer / Admission Letter",
       "bullets": [
-        "Non-EU/EEA students: tuition fees 45,000–120,000 DKK/year (6,07,000–16,20,000 BDT)",
+        "Non-EU/EEA students: tuition fees 45,000–120,000 DKK/year",
         "Check if your program or university offers a merit scholarship or tuition waiver"
       ],
       "color": "green"
@@ -53,10 +53,8 @@
     }
   ],
   "costSteps": [
-    { "label": "SIRI Study Permit Fee : 2,205 DKK (~29,770 BDT) — paid online at newtodenmark.dk", "color": "blue" },
     { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
-    { "label": "Tuition Fee : 45,000–120,000 DKK/year (6,07,000–16,20,000 BDT) — program dependent", "color": "orange" },
-    { "label": "Proof of Funds (bank statement) : 74,916 DKK (~10,11,000 BDT) — stays in your account", "color": "gray" },
+    { "label": "Tuition Fee : 45,000–120,000 DKK/year — program dependent", "color": "orange" },
     { "label": "Air Ticket to Denmark : ~70,000–90,000 BDT", "color": "blue" }
   ],
   "resources": [

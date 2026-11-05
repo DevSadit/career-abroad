@@ -61,11 +61,7 @@
     }
   ],
   "costSteps": [
-    { "label": "MVV Entry Visa Fee : 192 EUR — paid at Dutch Embassy via VFS", "color": "lightblue" },
-    { "label": "VFS Global Service Fee : ~30 EUR — visa submission", "color": "blue" },
-    { "label": "Financial Proof in Bank : ~11,000–14,000 EUR — your own living funds, not a fee", "color": "orange" },
     { "label": "Tuition Fee : 8,000–20,000 EUR/year — varies by university and program", "color": "red" },
-    { "label": "Health Insurance : ~120–160 EUR/month — Zorgverzekering required within 4 months", "color": "gray" },
     { "label": "BSN Registration : free at Gemeente (City Hall)", "color": "green" },
     { "label": "Air Ticket to Netherlands : varies by season and route", "color": "blue" }
   ],

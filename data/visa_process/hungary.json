@@ -54,11 +54,8 @@
   ],
   "costSteps": [
     { "label": "University Application Fee : free for SH; €100–€150 per university (self-funded)", "color": "gray" },
-    { "label": "Student Visa (National D) Fee : €80 — paid at Embassy Dhaka or VFS", "color": "lightblue" },
-    { "label": "Financial Proof in Bank : ~€3,600–€6,000 (self-funded) — your own money, not a fee", "color": "orange" },
     { "label": "Tuition Fee : €1,500–€8,000/year (self-funded; waived for SH scholars)", "color": "red" },
     { "label": "Health Insurance : included for SH scholars; self-funded ~€100–€300/year", "color": "gray" },
-    { "label": "Residence Permit Fee : ~€25–€40 — paid at OIF after arrival", "color": "green" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [
