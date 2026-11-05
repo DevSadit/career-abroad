@@ -38,17 +38,10 @@
         "Self-funded: ~€3,600–€6,000 recommended (min €300/month for the study period)"
       ],
       "color": "orange"
-    },
-    {
-      "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global",
-      "bullets": [
-        "Hungary has an Embassy in Dhaka — apply directly or via VFS Global Dhaka",
-        "Fee: €80 | Processing: 3–6 weeks"
-      ],
-      "color": "lightblue"
     }
   ],
   "costSteps": [
+    { "label": "Student Visa (National D) : Hungarian Embassy Dhaka or VFS Global — Fee: €80 | Processing: 3–6 weeks", "color": "lightblue" },
     { "label": "Air Ticket to Hungary : varies by season and route", "color": "blue" }
   ],
   "resources": [
