@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import recordings from "@/data/class_recordings.json";
+import supabaseAdmin from "@/lib/supabaseAdmin";
 
 export async function POST(request) {
   try {
@@ -7,9 +8,14 @@ export async function POST(request) {
     if (!email) return NextResponse.json({ error: "Email required" }, { status: 400 });
 
     const normalised = email.trim().toLowerCase();
-    const enrolled = recordings.enrolled_emails.map((e) => e.toLowerCase());
 
-    if (!enrolled.includes(normalised)) {
+    const { data, error } = await supabaseAdmin
+      .from("enrolled_students")
+      .select("email")
+      .eq("email", normalised)
+      .maybeSingle();
+
+    if (error || !data) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 

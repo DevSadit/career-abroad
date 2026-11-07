@@ -10,8 +10,14 @@ export async function POST(request) {
     }
 
     const normalised = email.trim().toLowerCase();
-    const enrolled = recordings.enrolled_emails.map((e) => e.toLowerCase());
-    if (!enrolled.includes(normalised)) {
+
+    const { data: student, error: dbError } = await supabaseAdmin
+      .from("enrolled_students")
+      .select("email")
+      .eq("email", normalised)
+      .maybeSingle();
+
+    if (dbError || !student) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 
