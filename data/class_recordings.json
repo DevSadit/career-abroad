@@ -1,0 +1,141 @@
+{
+  "enrolled_emails": [
+    "kap.halderg@gmail.com",
+    "hossain05asif@gmail.com",
+    "arzupreety.bd@gmail.com",
+    "shathidebnathgopa19980@gmail.com",
+    "labibmashrafe1000@gmail.com",
+    "shafiul.shuvo113@gmail.com",
+    "otoporehsan@gmail.com",
+    "krishnobanik25@gmail.com",
+    "munemmostaqem@gmail.com",
+    "gourdhanbarman39@gmail.com",
+    "shathigopa@gmail.com",
+    "gulapurrahmancse@gmail.com",
+    "pritomdebnath480@gmail.com",
+    "sayed.mahmud.eee@gmail.com",
+    "hasmoynul.nishad57@gmail.com",
+    "abbaspusteee11@gmail.com",
+    "amanullahakhando@gmail.com",
+    "sadbinsiam01@gmail.com",
+    "shuvraa.ce@gmail.com",
+    "saikatsplanet@gmail.com",
+    "meherajulalam@gmail.com",
+    "studyabirjsr@gmail.com",
+    "rankrahat2424@gmail.com",
+    "samnunmoheb46@gmail.com",
+    "adnanzaidy340@gmail.com",
+    "toufiq3.ahmed@gmail.com",
+    "nahid.hasan5254@gmail.com",
+    "pioprojesh2018@gmail.com",
+    "safkat.islam251@gmail.com",
+    "maishamomy277@gmail.com",
+    "mrsabbir.work@gmail.com",
+    "jahinurghatail@gmail.com",
+    "imranuddin.puc.eee@gmail.com",
+    "www.saowdahussain12@gmail.com",
+    "mentors.career.abroad26@gmail.com",
+    "ehsan.puc16@gmail.com",
+    "mohammadalisk050@gmail.com"
+  ],
+  "courses": [
+    {
+      "id": "france",
+      "title": "France : University Program Searching & Application",
+      "flag": "🇫🇷",
+      "color": "#364bc5",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "0R3qTetz52E",
+          "resources": []
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "vJo3l1noglM",
+          "resources": []
+        },
+        {
+          "number": 3,
+          "title": "Class 3",
+          "youtubeId": "ko6fjWGH9VY",
+          "resources": []
+        },
+        {
+          "number": 4,
+          "title": "Class 4",
+          "youtubeId": "kQJXnLSH9dA",
+          "resources": []
+        },
+        {
+          "number": 5,
+          "title": "Class 5",
+          "youtubeId": "vRREJKwLX44",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "title": "Italy : University Program Searching & Application",
+      "flag": "🇮🇹",
+      "color": "#059669",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "_M-RtFVbMVo",
+          "resources": []
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "WGFB-x8Lc8M",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "belgium",
+      "title": "Belgium : University Program Searching & Application",
+      "flag": "🇧🇪",
+      "color": "#d97706",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "jYwI6SCLxso",
+          "resources": []
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "Om6nKqyuVkU",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "estonia",
+      "title": "Estonia : University Program Searching & Application",
+      "flag": "🇪🇪",
+      "color": "#0891b2",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "C2-R7IhKRgE",
+          "resources": []
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "-cPCEdn6Rdc",
+          "resources": []
+        }
+      ]
+    }
+  ]
+}
