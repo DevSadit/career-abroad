@@ -49,7 +49,14 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "0R3qTetz52E",
-          "resources": []
+          "resources": [
+            { "id": "france-course-guide", "label": "Course Guide", "type": "pdf", "storagePath": "France/French University Searching & Application Course.pdf" },
+            { "id": "france-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "France/France University Database.xlsx" },
+            { "id": "france-campus-list", "label": "Campus France University List", "type": "pdf", "storagePath": "France/Campus France University List.pdf" },
+            { "id": "france-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "France/English_Masters_France_2025_26.pdf" },
+            { "id": "france-monmaster", "label": "MonMaster Calendar", "type": "pdf", "storagePath": "France/Monmaster Calender.pdf" },
+            { "id": "france-italy-guide", "label": "Higher Study in Italy (PDF)", "type": "pdf", "storagePath": "France/HIgher Study in Italy.pdf" }
+          ]
         },
         {
           "number": 2,
@@ -87,7 +94,10 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "_M-RtFVbMVo",
-          "resources": []
+          "resources": [
+            { "id": "italy-app-guide", "label": "University Application Guide", "type": "pdf", "storagePath": "Italy/Italy University Application.pdf" },
+            { "id": "italy-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Italy/Italy University Database.xlsx" }
+          ]
         },
         {
           "number": 2,
@@ -107,7 +117,11 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "jYwI6SCLxso",
-          "resources": []
+          "resources": [
+            { "id": "belgium-slides", "label": "Course Slides 2027", "type": "pdf", "storagePath": "Belgium/Higher Study in Belgium 2027 Slide.pdf" },
+            { "id": "belgium-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Belgium/Belgian_University_Database.xlsx" },
+            { "id": "belgium-webinar", "label": "Webinar Slides", "type": "pdf", "storagePath": "Belgium/Webinar_Higher_Study_Belgium.pdf" }
+          ]
         },
         {
           "number": 2,
@@ -127,7 +141,9 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "C2-R7IhKRgE",
-          "resources": []
+          "resources": [
+            { "id": "estonia-study-guide", "label": "Estonia Study Guide A–Z", "type": "pdf", "storagePath": "Estonia/ESTONIA_ STUDY_A 2 Z.pdf" }
+          ]
         },
         {
           "number": 2,
