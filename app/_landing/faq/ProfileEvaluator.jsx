@@ -320,11 +320,11 @@ export default function ProfileEvaluator() {
   }, [cgpa, ielts, budget, publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia, hasProfile]);
 
   return (
-    <section className="py-14 md:py-20 bg-gradient-to-b from-[#eef2ff] via-[#f5f7ff] to-white">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-[#eef2ff] via-[#f5f7ff] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold mb-4"
             style={{ backgroundColor: `${primary}12`, color: primary }}
@@ -341,10 +341,10 @@ export default function ProfileEvaluator() {
         </div>
 
         {/* Form card */}
-        <div className="bg-white rounded-3xl shadow-md border border-gray-100 p-6 sm:p-8 mb-3">
+        <div className="bg-white rounded-3xl shadow-md border border-gray-100 p-6 sm:p-8 mb-2">
 
           {/* Row 1 — numeric inputs */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
             <div>
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
                 CGPA (out of 4.0)
@@ -398,7 +398,7 @@ export default function ProfileEvaluator() {
           </div>
 
           {/* Row 2 — pill selectors */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <div>
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
                 Publications
@@ -434,12 +434,12 @@ export default function ProfileEvaluator() {
             <Toggle value={hasSpouse} onChange={setHasSpouse} label="Bringing Spouse" />
             <Toggle value={hasChild} onChange={setHasChild} label="Bringing Child" />
             <Toggle value={wantScholarship} onChange={setWantScholarship} label="Need Scholarship" />
-            <Toggle value={canTravelIndia} onChange={setCanTravelIndia} label="Can apply from India" />
+            <Toggle value={canTravelIndia} onChange={setCanTravelIndia} label="Visa via 3rd Country" />
           </div>
         </div>
 
         {/* Exchange rate note */}
-        <p className="text-center text-xs text-gray-400 mb-8">
+        <p className="text-center text-xs text-gray-400 mb-5">
           * Fund &amp; tuition estimates converted at approx. rates: 1 EUR ≈ ৳125 · 1 NOK ≈ ৳11 · 1 PLN ≈ ৳28 &nbsp;(indicative, 2025)
         </p>
 
@@ -451,7 +451,7 @@ export default function ProfileEvaluator() {
           </div>
         ) : (
           <>
-            <div className="flex flex-wrap gap-3 mb-6 justify-center">
+            <div className="flex flex-wrap gap-3 mb-4 justify-center">
               {Object.entries(MATCH).map(([key, m]) => (
                 <span key={key} className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: m.bg }}>
                   {m.label}
@@ -556,7 +556,7 @@ export default function ProfileEvaluator() {
         )}
 
         {/* CTA */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#faq"
             className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold transition hover:opacity-90"
@@ -566,12 +566,12 @@ export default function ProfileEvaluator() {
             <ChevronRight className="w-4 h-4" />
           </a>
           <a
-            href="#contact"
+            href="#mentors"
             className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             style={{ backgroundColor: primary }}
           >
             <Calendar className="w-4 h-4" />
-            Book a consultation with our mentors
+            Book appointment with our experts
           </a>
         </div>
 
