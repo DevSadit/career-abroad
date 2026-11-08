@@ -191,77 +191,93 @@ const ClassesClient = () => {
         ))}
       </div>
 
-      {/* Class list */}
+      {/* Main content + sidebar */}
       {activeCourse && (
-        <div className="space-y-6">
-          <div
-            className="flex items-center gap-2 mb-2 text-sm font-medium"
-            style={{ color: activeCourse.color }}
-          >
-            <span>{activeCourse.flag}</span>
-            <span>{activeCourse.title}</span>
-          </div>
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
 
-          {activeCourse.classes.map((cls) => (
-            <div
-              key={cls.number}
-              className="rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-sm"
-              style={{ borderTop: `3px solid ${activeCourse.color}` }}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-0">
-                {/* Video embed */}
+          {/* ── Class list ── */}
+          <div className="flex-1 min-w-0 space-y-5">
+            <div className="flex items-center gap-2 text-sm font-medium mb-1" style={{ color: activeCourse.color }}>
+              <span>{activeCourse.flag}</span>
+              <span>{activeCourse.title}</span>
+            </div>
+
+            {activeCourse.classes.map((cls) => (
+              <div
+                key={cls.number}
+                className="rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-sm"
+                style={{ borderTop: `3px solid ${activeCourse.color}` }}
+              >
                 <div className="p-4">
                   <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-100">
                     <iframe
                       src={`https://www.youtube.com/embed/${cls.youtubeId}?rel=0&modestbranding=1&iv_load_policy=3`}
-                      title={`${activeCourse.title} — ${cls.title}`}
+                      title={`${activeCourse.title} — Class ${cls.number}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       loading="lazy"
                       className="w-full h-full"
                     />
-                    {/* Cover entire bottom bar: visually hides + blocks Watch on YouTube & Share */}
                     <div className="absolute bottom-0 left-0 right-0 h-12 z-10 bg-gradient-to-t from-black/95 to-transparent" />
                   </div>
                 </div>
-
-                {/* Class info + resources */}
-                <div className="flex flex-col justify-center px-4 pb-4 lg:py-4 lg:pl-0 lg:pr-5">
+                <div className="px-4 pb-4 flex items-center gap-2">
                   <div
-                    className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold mb-3 w-fit"
+                    className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold"
                     style={{ backgroundColor: `${activeCourse.color}12`, color: activeCourse.color }}
                   >
                     <PlayCircle className="w-3.5 h-3.5" />
                     Class {cls.number}
                   </div>
-
-                  <p className="text-sm font-semibold text-gray-900 mb-1">{cls.title}</p>
-                  <p className="text-xs text-gray-500 mb-4">{activeCourse.title}</p>
-
-                  {cls.resources.length > 0 ? (
-                    <div className="space-y-2">
-                      <p className="text-xs uppercase tracking-wider text-gray-400 font-medium mb-2">Downloads</p>
-                      {cls.resources.map((res) => (
-                        <button
-                          key={res.id}
-                          onClick={() => handleDownload(res.id)}
-                          disabled={downloading[res.id]}
-                          className="flex items-center gap-2 w-full rounded-xl px-3 py-2.5 text-xs font-semibold transition hover:opacity-80 disabled:opacity-50"
-                          style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
-                        >
-                          {fileIcon(res.type)}
-                          <span className="flex-1 text-left">{res.label}</span>
-                          <Download className="w-3.5 h-3.5 shrink-0" />
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-xs text-gray-400 italic">Resources coming soon</p>
+                  {cls.title && cls.title !== `Class ${cls.number}` && (
+                    <p className="text-sm text-gray-600">{cls.title}</p>
                   )}
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* ── Course Materials sidebar ── */}
+          <div className="w-full lg:w-72 shrink-0 lg:sticky lg:top-24">
+            <div className="rounded-3xl border border-gray-100 bg-white shadow-sm overflow-hidden">
+              <div
+                className="px-5 py-4 border-b border-gray-100"
+                style={{ backgroundColor: `${activeCourse.color}0d` }}
+              >
+                <div className="flex items-center gap-2 mb-0.5">
+                  <BookOpen className="w-4 h-4" style={{ color: activeCourse.color }} />
+                  <p className="text-sm font-bold text-gray-900">Course Materials</p>
+                </div>
+                <p className="text-xs text-gray-500">
+                  {activeCourse.classes.flatMap((c) => c.resources).length} file{activeCourse.classes.flatMap((c) => c.resources).length !== 1 ? "s" : ""} · {activeCourse.flag} {activeCourse.id.charAt(0).toUpperCase() + activeCourse.id.slice(1)} course
+                </p>
+              </div>
+              <div className="p-4 space-y-2">
+                {activeCourse.classes.flatMap((c) => c.resources).length > 0 ? (
+                  activeCourse.classes.flatMap((c) => c.resources).map((res) => (
+                    <button
+                      key={res.id}
+                      onClick={() => handleDownload(res.id)}
+                      disabled={downloading[res.id]}
+                      className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2.5 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
+                    >
+                      {fileIcon(res.type)}
+                      <span className="flex-1 leading-snug">{res.label}</span>
+                      {downloading[res.id] ? (
+                        <div className="w-3.5 h-3.5 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
+                      ) : (
+                        <Download className="w-3.5 h-3.5 shrink-0" />
+                      )}
+                    </button>
+                  ))
+                ) : (
+                  <p className="text-xs text-gray-400 italic text-center py-6">Resources coming soon</p>
+                )}
+              </div>
             </div>
-          ))}
+          </div>
+
         </div>
       )}
     </div>
