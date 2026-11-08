@@ -136,6 +136,16 @@ const COUNTRIES = [
   },
 ];
 
+function isEligible(country, p) {
+  if (p.cgpa > 0 && p.cgpa < country.minCgpa && !country.cgpaFlexible) return false;
+  if (p.ielts > 0 && p.ielts < country.minIelts) return false;
+  if (p.budget > 0 && p.budget < country.minFundLac) return false;
+  if (p.hasSpouse && !country.spouseAllowed) return false;
+  if (p.hasChild && !country.childAllowed) return false;
+  if (!p.canTravelIndia && !country.visaCities.includes("Dhaka")) return false;
+  return true;
+}
+
 function evaluate(country, p) {
   let score = 100;
   const pros = [];
@@ -232,10 +242,9 @@ function evaluate(country, p) {
 }
 
 const MATCH = {
-  strong:      { label: "Strong Match",  bg: "#059669" },
-  good:        { label: "Good Match",    bg: primary },
-  possible:    { label: "Possible",      bg: "#d97706" },
-  challenging: { label: "Challenging",   bg: "#dc2626" },
+  strong:   { label: "Strong Match", bg: "#059669" },
+  good:     { label: "Good Match",   bg: primary },
+  possible: { label: "Possible",     bg: "#d97706" },
 };
 
 const BUDGET_BADGE = {
@@ -305,6 +314,7 @@ export default function ProfileEvaluator() {
       publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia,
     };
     return COUNTRIES
+      .filter((c) => isEligible(c, p))
       .map((c) => ({ country: c, ...evaluate(c, p) }))
       .sort((a, b) => b.score - a.score);
   }, [cgpa, ielts, budget, publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia, hasProfile]);
@@ -449,9 +459,17 @@ export default function ProfileEvaluator() {
               ))}
             </div>
 
+            {results.length === 0 && (
+              <div className="text-center py-12 text-gray-400 bg-white rounded-2xl border border-gray-100 mb-6">
+                <AlertTriangle className="w-10 h-10 mx-auto mb-3 opacity-30" />
+                <p className="text-sm font-semibold text-gray-600">No countries match your current profile</p>
+                <p className="text-xs mt-1">Try adjusting your budget, IELTS, or dependent options above.</p>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {results.map(({ country, matchLevel, pros, cons, budgetStatus }) => {
-                const m = MATCH[matchLevel];
+                const m = MATCH[matchLevel] ?? MATCH.possible;
                 const bb = budgetStatus ? BUDGET_BADGE[budgetStatus] : null;
                 return (
                   <div
