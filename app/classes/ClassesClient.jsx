@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap } from "lucide-react";
 
 const primary = "#364bc5";
@@ -14,6 +15,9 @@ const fileIcon = (type) => {
 };
 
 const ClassesClient = () => {
+  const searchParams = useSearchParams();
+  const requestedCourse = searchParams.get("course");
+
   const [phase, setPhase] = useState("gate"); // "gate" | "unlocked"
   const [email, setEmail] = useState("");
   const [inputEmail, setInputEmail] = useState("");
@@ -46,7 +50,8 @@ const ClassesClient = () => {
       if (data.courses) {
         setCourses(data.courses);
         setEmail(emailToVerify);
-        setActiveCountry(data.courses[0]?.id ?? null);
+        const target = requestedCourse && data.courses.find((c) => c.id === requestedCourse);
+        setActiveCountry(target ? target.id : (data.courses[0]?.id ?? null));
         setPhase("unlocked");
         setStatus("idle");
         try { localStorage.setItem(STORAGE_KEY, emailToVerify); } catch {}
