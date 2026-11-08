@@ -146,10 +146,18 @@ function formatLac(val) {
   return Math.round(val * 10) / 10;
 }
 
+// spouse needs same as student (+1×), child needs half (+0.5×)
+function effectiveFundLac(country, p) {
+  let mult = 1;
+  if (p.hasSpouse) mult += 1;
+  if (p.hasChild) mult += 0.5;
+  return Math.round(country.minFundLac * mult * 10) / 10;
+}
+
 function isEligible(country, p) {
   if (p.cgpa > 0 && p.cgpa < country.minCgpa && !country.cgpaFlexible) return false;
   if (p.ielts > 0 && p.ielts < country.minIelts) return false;
-  if (p.budget > 0 && p.budget < country.minFundLac) return false;
+  if (p.budget > 0 && p.budget < effectiveFundLac(country, p)) return false;
   if (p.hasSpouse && !country.spouseAllowed) return false;
   if (p.hasChild && !country.childAllowed) return false;
   if (!p.canTravelIndia && !country.visaCities.includes("Dhaka")) return false;
@@ -167,12 +175,13 @@ function evaluate(country, p) {
     cons.push(`CGPA ${country.minCgpa}+ preferred (flexible admission possible)`);
   }
 
+  const reqFund = effectiveFundLac(country, p);
   if (p.budget > 0) {
-    const diff = p.budget - country.minFundLac;
+    const diff = p.budget - reqFund;
     if (diff >= 0) {
       budgetStatus = "ok";
       score += 5;
-    } else if (diff >= -(country.minFundLac * 0.25)) {
+    } else if (diff >= -(reqFund * 0.25)) {
       budgetStatus = "tight";
       score -= 20;
     } else {
@@ -213,7 +222,7 @@ function evaluate(country, p) {
   if (score >= 110) matchLevel = "strong";
   else if (score >= 90) matchLevel = "good";
 
-  return { score, matchLevel, pros, cons, budgetStatus };
+  return { score, matchLevel, pros, cons, budgetStatus, reqFund };
 }
 
 const MATCH = {
@@ -439,7 +448,7 @@ export default function ProfileEvaluator() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                      {results.map(({ country, matchLevel, pros, cons, budgetStatus }) => {
+                      {results.map(({ country, matchLevel, pros, cons, budgetStatus, reqFund }) => {
                         const m = MATCH[matchLevel] ?? MATCH.possible;
                         const bb = budgetStatus ? BUDGET_BADGE[budgetStatus] : null;
                         return (
@@ -477,7 +486,12 @@ export default function ProfileEvaluator() {
                                   </div>
                                 </div>
                                 <div className="text-right shrink-0">
-                                  <p className="text-xs font-bold" style={{ color: primary }}>≈৳{country.minFundLac} lac</p>
+                                  <p className="text-xs font-bold" style={{ color: primary }}>
+                                    ≈৳{reqFund ?? country.minFundLac} lac
+                                  </p>
+                                  {(hasSpouse || hasChild) && (
+                                    <p className="text-xs text-gray-400">family total</p>
+                                  )}
                                   {bb && (
                                     <span className="inline-block rounded-full px-1.5 py-0.5 text-xs font-semibold mt-0.5" style={{ backgroundColor: bb.bg, color: bb.text }}>
                                       {bb.label}
