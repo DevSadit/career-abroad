@@ -5,6 +5,7 @@
       "title": "France : University Program Searching & Application",
       "flag": "🇫🇷",
       "color": "#364bc5",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -16,33 +17,13 @@
             { "id": "france-campus-list", "label": "Campus France University List", "type": "pdf", "storagePath": "France/Campus France University List.pdf" },
             { "id": "france-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "France/English_Masters_France_2025_26.pdf" },
             { "id": "france-monmaster", "label": "MonMaster Calendar", "type": "pdf", "storagePath": "France/Monmaster Calender.pdf" },
-            { "id": "france-italy-guide", "label": "Higher Study in Italy (PDF)", "type": "pdf", "storagePath": "France/HIgher Study in Italy.pdf" }
+            { "id": "france-language-programs", "label": "French Language Programs 2025–26", "type": "pdf", "storagePath": "France/French_Language_Programs_2025_26.pdf" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "vJo3l1noglM",
-          "resources": []
-        },
-        {
-          "number": 3,
-          "title": "Class 3",
-          "youtubeId": "ko6fjWGH9VY",
-          "resources": []
-        },
-        {
-          "number": 4,
-          "title": "Class 4",
-          "youtubeId": "kQJXnLSH9dA",
-          "resources": []
-        },
-        {
-          "number": 5,
-          "title": "Class 5",
-          "youtubeId": "vRREJKwLX44",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "vJo3l1noglM", "resources": [] },
+        { "number": 3, "title": "Class 3", "youtubeId": "ko6fjWGH9VY", "resources": [] },
+        { "number": 4, "title": "Class 4", "youtubeId": "kQJXnLSH9dA", "resources": [] },
+        { "number": 5, "title": "Class 5", "youtubeId": "vRREJKwLX44", "resources": [] }
       ]
     },
     {
@@ -50,22 +31,19 @@
       "title": "Italy : University Program Searching & Application",
       "flag": "🇮🇹",
       "color": "#059669",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
           "title": "Class 1",
           "youtubeId": "_M-RtFVbMVo",
           "resources": [
+            { "id": "italy-higher-study", "label": "Higher Study in Italy", "type": "pdf", "storagePath": "Italy/HIgher Study in Italy.pdf" },
             { "id": "italy-app-guide", "label": "University Application Guide", "type": "pdf", "storagePath": "Italy/Italy University Application.pdf" },
             { "id": "italy-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Italy/Italy University Database.xlsx" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "WGFB-x8Lc8M",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "WGFB-x8Lc8M", "resources": [] }
       ]
     },
     {
@@ -73,6 +51,7 @@
       "title": "Belgium : University Program Searching & Application",
       "flag": "🇧🇪",
       "color": "#d97706",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -84,12 +63,31 @@
             { "id": "belgium-webinar", "label": "Webinar Slides", "type": "pdf", "storagePath": "Belgium/Webinar_Higher_Study_Belgium.pdf" }
           ]
         },
+        { "number": 2, "title": "Class 2", "youtubeId": "Om6nKqyuVkU", "resources": [] }
+      ]
+    },
+    {
+      "id": "spain",
+      "title": "Spain : University Database & Application",
+      "flag": "🇪🇸",
+      "color": "#dc2626",
+      "accessKey": "university",
+      "classes": [
         {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "Om6nKqyuVkU",
-          "resources": []
-        }
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "emzjWK5ubhE",
+          "resources": [
+            { "id": "spain-uni-guide", "label": "Spain University Guide", "type": "pdf", "storagePath": "Spain/Spain_University_Guide.pdf" },
+            { "id": "spain-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "Spain/English_Masters_Spain_2025_26.pdf" },
+            { "id": "spain-language-programs", "label": "Spanish Language Programs 2025–26", "type": "pdf", "storagePath": "Spain/Spanish_Language_Programs_2025_26.pdf" },
+            { "id": "spain-uc3m-guide", "label": "UC3M Admission Guide", "type": "pdf", "storagePath": "Spain/UC3M Admission Guide.pdf" }
+          ]
+        },
+        { "number": 2, "title": "Class 2", "youtubeId": "wUsLiFtpc14", "resources": [] },
+        { "number": 3, "title": "Class 3", "youtubeId": "IFJMsFmCASs", "resources": [] },
+        { "number": 4, "title": "Class 4", "youtubeId": "WjCLT3HAeGE", "resources": [] },
+        { "number": 5, "title": "Class 5", "youtubeId": "K8u37IFxs9g", "resources": [] }
       ]
     },
     {
@@ -97,6 +95,7 @@
       "title": "Estonia : University Program Searching & Application",
       "flag": "🇪🇪",
       "color": "#0891b2",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -106,12 +105,168 @@
             { "id": "estonia-study-guide", "label": "Estonia Study Guide A–Z", "type": "pdf", "storagePath": "Estonia/ESTONIA_ STUDY_A 2 Z.pdf" }
           ]
         },
+        { "number": 2, "title": "Class 2", "youtubeId": "-cPCEdn6Rdc", "resources": [] }
+      ]
+    },
+    {
+      "id": "hungary",
+      "title": "Hungary : University Program Searching & Application",
+      "flag": "🇭🇺",
+      "color": "#8b5cf6",
+      "accessKey": "university",
+      "classes": [
         {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "-cPCEdn6Rdc",
-          "resources": []
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "bwE9UJYruD4",
+          "resources": [
+            { "id": "hungary-slides", "label": "Higher Study in Hungary 2027", "type": "pdf", "storagePath": "Hungary/Higher Study in Hungary 2027 Slide.pdf" },
+            { "id": "hungary-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Hungary/Hungarian_University_Database.xlsx" },
+            { "id": "hungary-stipendium", "label": "Stipendium Hungary Guide", "type": "pdf", "storagePath": "Hungary/Stipendium Hungary.pdf" }
+          ]
         }
+      ]
+    },
+    {
+      "id": "sop",
+      "title": "SOP Writing Mastercourse",
+      "flag": "✍️",
+      "color": "#7c3aed",
+      "accessKey": "sop",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "Hi5ayTAfcx4",
+          "resources": [
+            { "id": "sop-map", "label": "SOP Map", "type": "pdf", "storagePath": "SOP/SOP Map.pdf" },
+            { "id": "sop-database", "label": "SOP Database V2 (Oct 2026)", "type": "pdf", "storagePath": "SOP/SOP_Database_V2_October2026.pdf" },
+            { "id": "sop-how-to-write", "label": "How to Write a Letter of Motivation", "type": "pdf", "storagePath": "SOP/How_to_write_a_letter_of_motivation.pdf" },
+            { "id": "sop-info", "label": "Statement of Purpose — Information", "type": "pdf", "storagePath": "SOP/Statement_of_Purpose_information.pdf" },
+            { "id": "sop-annotated-1", "label": "Annotated Example 1", "type": "pdf", "storagePath": "SOP/Annotated-Example-1.pdf" },
+            { "id": "sop-annotated-2", "label": "Annotated Example 2", "type": "pdf", "storagePath": "SOP/Annotated-Example-2.pdf" },
+            { "id": "sop-cornell", "label": "SOP — Cornell University Sample", "type": "pdf", "storagePath": "SOP/SOP_Cornell.pdf" },
+            { "id": "sop-april-2011", "label": "Statement of Purpose — April 2011 Sample", "type": "pdf", "storagePath": "SOP/StatementofPurposeApril2011-2_000.pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scholarship",
+      "title": "Scholarship Preparation Course",
+      "flag": "🎓",
+      "color": "#d97706",
+      "accessKey": "scholarship",
+      "resourceGroups": [
+        {
+          "id": "erasmus",
+          "label": "Erasmus Mundus",
+          "color": "#7c3aed",
+          "resources": [
+            { "id": "erasmus-webinar", "label": "Erasmus Mundus Webinar", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erusmus Scholarship Webinar.pdf" },
+            { "id": "erasmus-emjm-materials", "label": "EMJM: Materials, Chemistry & Food Science", "type": "pdf", "storagePath": "Scholarship/Erusmus/EMJM_Materials, Chemistry and Food Science.pdf" },
+            { "id": "erasmus-2027-biotech", "label": "2027: Biotech, Biomedical & Neuroscience", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Biotech_Biomedical_Neuroscience.pdf" },
+            { "id": "erasmus-2027-civil", "label": "2027: Civil, Structures & Smart Cities", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Civil_Structures_Transport_SmartCities.pdf" },
+            { "id": "erasmus-2027-cs", "label": "2027: Computer Science, AI & Cyber", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Computer_Science_AI_Data_Cyber.pdf" },
+            { "id": "erasmus-2027-economics", "label": "2027: Economics, Business & Finance", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Economics_Business_Finance.pdf" },
+            { "id": "erasmus-2027-education", "label": "2027: Education & Linguistics", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Education_Languages_Linguistics.pdf" },
+            { "id": "erasmus-2027-electrical", "label": "2027: Electrical Power & Control", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Electrical_Power_Control.pdf" },
+            { "id": "erasmus-2027-electronics", "label": "2027: Electronics & Microelectronics", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Electronics_Embedded_Microelectronics.pdf" },
+            { "id": "erasmus-2027-environment", "label": "2027: Environment, Water & Agriculture", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Environment_Water_Earth_Agriculture.pdf" },
+            { "id": "erasmus-2027-marine", "label": "2027: Marine & Ocean Sciences", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Marine_Maritime_Ocean.pdf" },
+            { "id": "erasmus-2027-nano", "label": "2027: Nano, Photonics & Quantum", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Nano_Photonics_Optics_Quantum.pdf" },
+            { "id": "erasmus-2027-physics", "label": "2027: Physics & Mathematics", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Physics_Astrophysics_Mathematics.pdf" },
+            { "id": "erasmus-2027-policy", "label": "2027: Policy, Law & Human Rights", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Policy_IR_Law_HumanRights.pdf" },
+            { "id": "erasmus-2027-health", "label": "2027: Public Health & Nutrition", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Public_Health_Medicine_Nutrition.pdf" },
+            { "id": "erasmus-2027-energy", "label": "2027: Renewable Energy & Climate", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Renewable_Energy_Hydrogen_Climate.pdf" },
+            { "id": "erasmus-2027-robotics", "label": "2027: Robotics, Mechatronics & Aerospace", "type": "pdf", "storagePath": "Scholarship/Erusmus/Erasmus_Mundus_2027_Robotics_Mechatronics_Mechanical_Aerospace.pdf" }
+          ]
+        },
+        {
+          "id": "france-scholarship",
+          "label": "French Scholarships",
+          "color": "#2563eb",
+          "resources": [
+            { "id": "fr-sch-eiffel-flyer", "label": "Eiffel Scholarship Flyer 2026–27", "type": "pdf", "storagePath": "Scholarship/French Scholarships/flyer_eiffel_2026-2027_en_1_0.pdf" },
+            { "id": "fr-sch-eiffel-formations", "label": "Eiffel Eligible Formations 2026–27", "type": "pdf", "storagePath": "Scholarship/French Scholarships/2026-27_Formations_eligibles_Bourse_Eiffel_0.pdf" },
+            { "id": "fr-sch-eiffel-masters", "label": "Eiffel Masters List 2026", "type": "xlsx", "storagePath": "Scholarship/French Scholarships/Masters eligibles Eiffel 2026_update20251007_1.xlsx" },
+            { "id": "fr-sch-eiffel-orleans", "label": "Eiffel — University of Orléans Form", "type": "docx", "storagePath": "Scholarship/French Scholarships/Eiffel_Form_University_Orleans.docx" },
+            { "id": "fr-sch-eiffel-toulouse", "label": "Eiffel — Toulouse", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Eiffel_Toulouse.pdf" },
+            { "id": "fr-sch-paris-cite-master", "label": "Eiffel — Paris Cité (Masters)", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Paris_Cite_Eiffel_Master.pdf" },
+            { "id": "fr-sch-paris-cite-phd", "label": "Eiffel — Paris Cité (PhD)", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Paris_Cite_Eiffel_PhD.pdf" },
+            { "id": "fr-sch-uga-idex", "label": "UGA IDEX 2026–27", "type": "pdf", "storagePath": "Scholarship/French Scholarships/UGA IDEX 2026-27.pdf" },
+            { "id": "fr-sch-uga-eiffel-form", "label": "UGA Eiffel Application Form", "type": "pdf", "storagePath": "Scholarship/French Scholarships/UGA_Eiffel_Form.pdf" },
+            { "id": "fr-sch-uga-faculty", "label": "UGA Faculty List", "type": "pdf", "storagePath": "Scholarship/French Scholarships/UGA_Faculty.pdf" },
+            { "id": "fr-sch-paris-saclay-idex", "label": "Paris-Saclay IDEX 2026–27", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Paris sacly IDEX 2026-27.pdf" },
+            { "id": "fr-sch-paris-saclay-internship", "label": "Paris-Saclay Internship Scholarship", "type": "pdf", "storagePath": "Scholarship/French Scholarships/ParisSacly Internship Scholarship.pdf" },
+            { "id": "fr-sch-tableau-excellence", "label": "Tableau Excellence Scholarship 26–27", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Tableau Bourse d'excellence 26-27 ENG.pdf" },
+            { "id": "fr-sch-project-letter", "label": "Project Letter Template", "type": "pdf", "storagePath": "Scholarship/French Scholarships/project_letter_en.pdf" },
+            { "id": "fr-sch-6g", "label": "6G Scholarship", "type": "pdf", "storagePath": "Scholarship/French Scholarships/6G Scholarship.pdf" },
+            { "id": "fr-sch-ampere", "label": "Ampere Scholarship", "type": "pdf", "storagePath": "Scholarship/French Scholarships/Ampere Scholarship.pdf" },
+            { "id": "fr-sch-eurecom", "label": "EURECOM Scholarship", "type": "pdf", "storagePath": "Scholarship/French Scholarships/EURECOM Scholarship.pdf" },
+            { "id": "fr-sch-idil", "label": "IDIL Scholarship", "type": "pdf", "storagePath": "Scholarship/French Scholarships/IDIL Scholarship.pdf" }
+          ]
+        },
+        {
+          "id": "italy-scholarship",
+          "label": "Italian Scholarships",
+          "color": "#059669",
+          "resources": [
+            { "id": "it-sch-maeci-call", "label": "MAECI Scholarship Call", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/MAECI Scholarship Call.pdf" },
+            { "id": "it-sch-maeci-slides", "label": "MAECI Scholarship 2026 (Slides)", "type": "pptx", "storagePath": "Scholarship/Italian Scholarships/MAECI_Scholarship_2026_English.pptx" },
+            { "id": "it-sch-padua-excellence", "label": "Padua Excellence Scholarship 2026–27", "type": "pptx", "storagePath": "Scholarship/Italian Scholarships/Padua_Excellence_Scholarship_2026_27.pptx" },
+            { "id": "it-sch-padua", "label": "Padua Scholarship", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/Padua Scholarship.pdf" },
+            { "id": "it-sch-bicocca", "label": "Bicocca BISP Scholarship 2026–27", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/Bicocca_BISP_Scholarship_2026_27_UPDATED.pdf" },
+            { "id": "it-sch-cafoscari", "label": "Ca' Foscari Scholarship", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/Ca Foscari Scholarship.pdf" },
+            { "id": "it-sch-cafoscari-slides", "label": "Ca' Foscari Scholarship (Slides)", "type": "pptx", "storagePath": "Scholarship/Italian Scholarships/CaFoscari_Scholarship_2026_27.pptx" },
+            { "id": "it-sch-polimi-merit", "label": "PoliMI Merit Scholarship 2026–27", "type": "pptx", "storagePath": "Scholarship/Italian Scholarships/PoliMi_Merit_Scholarship_2026_27.pptx" },
+            { "id": "it-sch-polimi", "label": "PoliMI Scholarship", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/PoliMI Scholarship.pdf" },
+            { "id": "it-sch-milano-dsu", "label": "Milano DSU", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/Milano_DSU.pdf" },
+            { "id": "it-sch-esu-padova", "label": "ESU Padova", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/ESU Padova.pdf" },
+            { "id": "it-sch-esu-verona", "label": "ESU Verona", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/ESU Verona.pdf" },
+            { "id": "it-sch-edisu-pavia", "label": "EDISU Pavia", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/EDISU PAVIA.pdf" },
+            { "id": "it-sch-piemonte-dsu", "label": "Piemonte DSU", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/PIEMONTE DSU.pdf" },
+            { "id": "it-sch-lazio-disco", "label": "LAZIO DISCO", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/LAZIO DISCO.pdf" },
+            { "id": "it-sch-erdis-marche", "label": "ERDIS Marche", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/ERDIS MARCHE.pdf" },
+            { "id": "it-sch-adisu-umbria", "label": "ADISU Umbria", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/ADISU UMBRIA.pdf" },
+            { "id": "it-sch-adsu-aquila", "label": "ADSU L'Aquila", "type": "pdf", "storagePath": "Scholarship/Italian Scholarships/ADSU LAQUILA.pdf" }
+          ]
+        },
+        {
+          "id": "sweden-scholarship",
+          "label": "Swedish Institute",
+          "color": "#0369a1",
+          "resources": [
+            { "id": "si-sch-guide", "label": "SI Scholarship Guide", "type": "pdf", "storagePath": "Scholarship/Swedish Institute Scholarship/SI scholarship.pdf" },
+            { "id": "si-sch-masters", "label": "Eligible Masters Programmes 2026–27", "type": "pdf", "storagePath": "Scholarship/Swedish Institute Scholarship/eligible-master-programmes-si-sgp-2026_2027-tillganglighetsanpassad.pdf" },
+            { "id": "si-sch-cv", "label": "CV Template", "type": "docx", "storagePath": "Scholarship/Swedish Institute Scholarship/cv-si-scholarships-2026_2027-updated-.docx" },
+            { "id": "si-sch-reference", "label": "Letter of Reference Form", "type": "docx", "storagePath": "Scholarship/Swedish Institute Scholarship/letter-of-reference-form-si-scholarships-2026_2027.docx" },
+            { "id": "si-sch-work-leadership", "label": "Proof of Work & Leadership Form", "type": "docx", "storagePath": "Scholarship/Swedish Institute Scholarship/proof-of-work-and-leadership-experience-2026_2027.docx" }
+          ]
+        },
+        {
+          "id": "czech-scholarship",
+          "label": "Czech Republic",
+          "color": "#dc2626",
+          "resources": [
+            { "id": "cz-sch-slides", "label": "Czech Government Scholarship 2027–28 (Slides)", "type": "pptx", "storagePath": "Scholarship/Czech Scholarship/Czech_Government_Scholarship_Bangladesh_2027-28.pptx" },
+            { "id": "cz-sch-guidelines-full", "label": "Scholarship Guidelines 2026", "type": "pdf", "storagePath": "Scholarship/Czech Scholarship/Czech Republic Scholarship Guidelines_2026-1.pdf" },
+            { "id": "cz-sch-guidelines", "label": "Guidelines 2026", "type": "pdf", "storagePath": "Scholarship/Czech Scholarship/Guidelines_2026-1.pdf" },
+            { "id": "cz-sch-faq", "label": "FAQ 2026", "type": "pdf", "storagePath": "Scholarship/Czech Scholarship/FAQ_2026-1.pdf" },
+            { "id": "cz-sch-masters", "label": "Selected Masters Programmes (English)", "type": "xlsx", "storagePath": "Scholarship/Czech Scholarship/Selected_Master_s_programmes_offered_in_English_2026.xlsx" },
+            { "id": "cz-sch-doctoral", "label": "Selected Doctoral Programmes (English)", "type": "xlsx", "storagePath": "Scholarship/Czech Scholarship/Selected_Doctoral_programmes_offered_in_English_2026.xlsx" }
+          ]
+        }
+      ],
+      "classes": [
+        { "number": 1, "title": "ERASMUS Mundus Scholarship", "youtubeId": "2Q9bulkFNRY", "resources": [] },
+        { "number": 2, "title": "Italy Government Scholarship", "youtubeId": "-7zwm7tY2q8", "resources": [] },
+        { "number": 3, "title": "Italy Regional Scholarship", "youtubeId": "RNLixD6bgpc", "resources": [] },
+        { "number": 4, "title": "Italy DSU Scholarship", "youtubeId": "gCd2wwcQYg8", "resources": [] },
+        { "number": 5, "title": "France Eiffel Scholarship", "youtubeId": "0BLBQFnIDVg", "resources": [] },
+        { "number": 6, "title": "France IDEX Scholarship", "youtubeId": "85fMGHa26nY", "resources": [] },
+        { "number": 7, "title": "Swedish Institute Scholarship", "youtubeId": "9HFzH-Xje4s", "resources": [] },
+        { "number": 8, "title": "Czech Republic Scholarship", "youtubeId": "LPr0UbWlQ4U", "resources": [] }
       ]
     }
   ]

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap, ShieldX, ChevronDown, Presentation } from "lucide-react";
 
 const primary = "#364bc5";
 
@@ -9,18 +10,23 @@ const STORAGE_KEY = "career-abroad-class-email";
 
 const fileIcon = (type) => {
   if (type === "xlsx" || type === "excel") return <FileSpreadsheet className="w-3.5 h-3.5" />;
-  if (type === "pdf") return <FileText className="w-3.5 h-3.5" />;
+  if (type === "pptx") return <Presentation className="w-3.5 h-3.5" />;
+  if (type === "pdf" || type === "docx") return <FileText className="w-3.5 h-3.5" />;
   return <BookOpen className="w-3.5 h-3.5" />;
 };
 
 const ClassesClient = () => {
-  const [phase, setPhase] = useState("gate"); // "gate" | "unlocked"
+  const searchParams = useSearchParams();
+  const requestedCourse = searchParams.get("course");
+
+  const [phase, setPhase] = useState("gate"); // "gate" | "unlocked" | "denied"
   const [email, setEmail] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [status, setStatus] = useState("idle"); // "idle" | "loading" | "error"
   const [courses, setCourses] = useState([]);
   const [activeCountry, setActiveCountry] = useState(null);
   const [downloading, setDownloading] = useState({}); // resourceId -> bool
+  const [openGroups, setOpenGroups] = useState({});
 
   // Restore verified email from localStorage
   useEffect(() => {
@@ -44,9 +50,18 @@ const ClassesClient = () => {
       });
       const data = await res.json();
       if (data.courses) {
+        // If arriving via ?course=X but that course isn't in their access list → denied
+        if (requestedCourse && !data.courses.find((c) => c.id === requestedCourse)) {
+          setEmail(emailToVerify);
+          setPhase("denied");
+          setStatus("idle");
+          try { localStorage.removeItem(STORAGE_KEY); } catch {}
+          return;
+        }
         setCourses(data.courses);
         setEmail(emailToVerify);
-        setActiveCountry(data.courses[0]?.id ?? null);
+        const target = requestedCourse && data.courses.find((c) => c.id === requestedCourse);
+        setActiveCountry(target ? target.id : (data.courses[0]?.id ?? null));
         setPhase("unlocked");
         setStatus("idle");
         try { localStorage.setItem(STORAGE_KEY, emailToVerify); } catch {}
@@ -79,6 +94,33 @@ const ClassesClient = () => {
   };
 
   const activeCourse = courses.find((c) => c.id === activeCountry);
+
+  // ── Denied phase ────────────────────────────────────────────────────────────
+  if (phase === "denied") {
+    return (
+      <div className="mt-10 sm:mt-16 flex flex-col items-center">
+        <div className="w-full max-w-md rounded-3xl border border-red-100 bg-white shadow-md p-10 text-center">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-50 mb-5">
+            <ShieldX className="w-7 h-7 text-red-500" />
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Access Not Permitted</h2>
+          <p className="text-sm text-gray-500 mb-1">
+            <span className="font-medium text-gray-700">{email}</span> is not enrolled in this course.
+          </p>
+          <p className="text-sm text-gray-400 mb-7">
+            Please contact us if you believe this is a mistake.
+          </p>
+          <button
+            onClick={() => { setPhase("gate"); setEmail(""); setInputEmail(""); setStatus("idle"); }}
+            className="w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            style={{ backgroundColor: primary }}
+          >
+            Try a Different Email
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   // ── Gate phase ──────────────────────────────────────────────────────────────
   if (phase === "gate") {
@@ -191,75 +233,149 @@ const ClassesClient = () => {
         ))}
       </div>
 
-      {/* Class list */}
+      {/* Main content + sidebar */}
       {activeCourse && (
-        <div className="space-y-6">
-          <div
-            className="flex items-center gap-2 mb-2 text-sm font-medium"
-            style={{ color: activeCourse.color }}
-          >
-            <span>{activeCourse.flag}</span>
-            <span>{activeCourse.title}</span>
-          </div>
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
 
-          {activeCourse.classes.map((cls) => (
-            <div
-              key={cls.number}
-              className="rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-sm"
-              style={{ borderTop: `3px solid ${activeCourse.color}` }}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-0">
-                {/* Video embed */}
+          {/* ── Class list ── */}
+          <div className="flex-1 min-w-0 space-y-5">
+            <div className="flex items-center gap-2 text-sm font-medium mb-1" style={{ color: activeCourse.color }}>
+              <span>{activeCourse.flag}</span>
+              <span>{activeCourse.title}</span>
+            </div>
+
+            {activeCourse.classes.map((cls) => (
+              <div
+                key={cls.number}
+                className="rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-sm"
+                style={{ borderTop: `3px solid ${activeCourse.color}` }}
+              >
                 <div className="p-4">
                   <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-100">
                     <iframe
                       src={`https://www.youtube.com/embed/${cls.youtubeId}?rel=0&modestbranding=1&iv_load_policy=3`}
-                      title={`${activeCourse.title} — ${cls.title}`}
+                      title={`${activeCourse.title} — Class ${cls.number}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       loading="lazy"
                       className="w-full h-full"
                     />
+                    <div className="absolute bottom-0 left-0 right-0 h-12 z-10 bg-gradient-to-t from-black/95 to-transparent" />
                   </div>
                 </div>
-
-                {/* Class info + resources */}
-                <div className="flex flex-col justify-center px-4 pb-4 lg:py-4 lg:pl-0 lg:pr-5">
+                <div className="px-4 pb-4 flex items-center gap-2">
                   <div
-                    className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold mb-3 w-fit"
+                    className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold"
                     style={{ backgroundColor: `${activeCourse.color}12`, color: activeCourse.color }}
                   >
                     <PlayCircle className="w-3.5 h-3.5" />
                     Class {cls.number}
                   </div>
-
-                  <p className="text-sm font-semibold text-gray-900 mb-1">{cls.title}</p>
-                  <p className="text-xs text-gray-500 mb-4">{activeCourse.title}</p>
-
-                  {cls.resources.length > 0 ? (
-                    <div className="space-y-2">
-                      <p className="text-xs uppercase tracking-wider text-gray-400 font-medium mb-2">Downloads</p>
-                      {cls.resources.map((res) => (
-                        <button
-                          key={res.id}
-                          onClick={() => handleDownload(res.id)}
-                          disabled={downloading[res.id]}
-                          className="flex items-center gap-2 w-full rounded-xl px-3 py-2.5 text-xs font-semibold transition hover:opacity-80 disabled:opacity-50"
-                          style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
-                        >
-                          {fileIcon(res.type)}
-                          <span className="flex-1 text-left">{res.label}</span>
-                          <Download className="w-3.5 h-3.5 shrink-0" />
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-xs text-gray-400 italic">Resources coming soon</p>
+                  {cls.title && cls.title !== `Class ${cls.number}` && (
+                    <p className="text-sm text-gray-600">{cls.title}</p>
                   )}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* ── Course Materials sidebar ── */}
+          <div className="w-full lg:w-72 shrink-0 lg:sticky lg:top-24">
+            {activeCourse.resourceGroups ? (
+              /* Grouped layout (e.g. Scholarship course) */
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 px-1 mb-1">
+                  <BookOpen className="w-4 h-4 text-gray-400" />
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Course Materials</p>
+                </div>
+                {activeCourse.resourceGroups.map((group) => (
+                  <div key={group.id} className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm">
+                    <button
+                      onClick={() => setOpenGroups((prev) => ({ ...prev, [group.id]: !prev[group.id] }))}
+                      className="w-full flex items-center justify-between px-4 py-3 text-xs font-bold transition hover:opacity-80"
+                      style={{ backgroundColor: `${group.color}0d`, color: group.color }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-3.5 h-3.5" />
+                        <span>{group.label}</span>
+                        <span
+                          className="rounded-full px-1.5 py-0.5 text-xs font-bold"
+                          style={{ backgroundColor: `${group.color}20` }}
+                        >
+                          {group.resources.length}
+                        </span>
+                      </div>
+                      <ChevronDown
+                        className="w-3.5 h-3.5 transition-transform duration-200"
+                        style={{ transform: openGroups[group.id] ? "rotate(180deg)" : "rotate(0deg)" }}
+                      />
+                    </button>
+                    {openGroups[group.id] && (
+                      <div className="p-3 space-y-1.5">
+                        {group.resources.map((res) => (
+                          <button
+                            key={res.id}
+                            onClick={() => handleDownload(res.id)}
+                            disabled={downloading[res.id]}
+                            className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
+                            style={{ backgroundColor: `${group.color}0a`, color: group.color }}
+                          >
+                            {fileIcon(res.type)}
+                            <span className="flex-1 leading-snug">{res.label}</span>
+                            {downloading[res.id] ? (
+                              <div className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
+                            ) : (
+                              <Download className="w-3 h-3 shrink-0" />
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              /* Flat layout (university / SOP courses) */
+              <div className="rounded-3xl border border-gray-100 bg-white shadow-sm overflow-hidden">
+                <div
+                  className="px-5 py-4 border-b border-gray-100"
+                  style={{ backgroundColor: `${activeCourse.color}0d` }}
+                >
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <BookOpen className="w-4 h-4" style={{ color: activeCourse.color }} />
+                    <p className="text-sm font-bold text-gray-900">Course Materials</p>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {activeCourse.classes.flatMap((c) => c.resources).length} file{activeCourse.classes.flatMap((c) => c.resources).length !== 1 ? "s" : ""} · {activeCourse.flag} {activeCourse.id.charAt(0).toUpperCase() + activeCourse.id.slice(1)} course
+                  </p>
+                </div>
+                <div className="p-4 space-y-2">
+                  {activeCourse.classes.flatMap((c) => c.resources).length > 0 ? (
+                    activeCourse.classes.flatMap((c) => c.resources).map((res) => (
+                      <button
+                        key={res.id}
+                        onClick={() => handleDownload(res.id)}
+                        disabled={downloading[res.id]}
+                        className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2.5 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
+                        style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
+                      >
+                        {fileIcon(res.type)}
+                        <span className="flex-1 leading-snug">{res.label}</span>
+                        {downloading[res.id] ? (
+                          <div className="w-3.5 h-3.5 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
+                        ) : (
+                          <Download className="w-3.5 h-3.5 shrink-0" />
+                        )}
+                      </button>
+                    ))
+                  ) : (
+                    <p className="text-xs text-gray-400 italic text-center py-6">Resources coming soon</p>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
         </div>
       )}
     </div>

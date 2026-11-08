@@ -9,9 +9,9 @@ export async function POST(request) {
 
     const normalised = email.trim().toLowerCase();
 
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin()
       .from("enrolled_students")
-      .select("email")
+      .select("email, university_access, sop_access, scholarship_access")
       .eq("email", normalised)
       .maybeSingle();
 
@@ -19,19 +19,34 @@ export async function POST(request) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 
-    // Strip storagePath from every resource before sending to client
-    const courses = recordings.courses.map((course) => ({
-      id: course.id,
-      title: course.title,
-      flag: course.flag,
-      color: course.color,
-      classes: course.classes.map((cls) => ({
-        number: cls.number,
-        title: cls.title,
-        youtubeId: cls.youtubeId,
-        resources: cls.resources.map(({ id, label, type }) => ({ id, label, type })),
-      })),
-    }));
+    const courses = recordings.courses
+      .filter((course) => {
+        if (course.accessKey === "university") return data.university_access === true;
+        if (course.accessKey === "sop") return data.sop_access === true;
+        if (course.accessKey === "scholarship") return data.scholarship_access === true;
+        return false;
+      })
+      .map((course) => ({
+        id: course.id,
+        title: course.title,
+        flag: course.flag,
+        color: course.color,
+        // Sanitised resourceGroups — strip storagePath
+        ...(course.resourceGroups && {
+          resourceGroups: course.resourceGroups.map((g) => ({
+            id: g.id,
+            label: g.label,
+            color: g.color,
+            resources: g.resources.map(({ id, label, type }) => ({ id, label, type })),
+          })),
+        }),
+        classes: course.classes.map((cls) => ({
+          number: cls.number,
+          title: cls.title,
+          youtubeId: cls.youtubeId,
+          resources: cls.resources.map(({ id, label, type }) => ({ id, label, type })),
+        })),
+      }));
 
     return NextResponse.json({ courses });
   } catch {
