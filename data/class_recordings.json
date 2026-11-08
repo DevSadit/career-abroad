@@ -93,6 +93,44 @@
       ]
     },
     {
+      "id": "spain",
+      "title": "Spain : University Database & Application",
+      "flag": "🇪🇸",
+      "color": "#dc2626",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "emzjWK5ubhE",
+          "resources": []
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "wUsLiFtpc14",
+          "resources": []
+        },
+        {
+          "number": 3,
+          "title": "Class 3",
+          "youtubeId": "IFJMsFmCASs",
+          "resources": []
+        },
+        {
+          "number": 4,
+          "title": "Class 4",
+          "youtubeId": "WjCLT3HAeGE",
+          "resources": []
+        },
+        {
+          "number": 5,
+          "title": "Class 5",
+          "youtubeId": "K8u37IFxs9g",
+          "resources": []
+        }
+      ]
+    },
+    {
       "id": "estonia",
       "title": "Estonia : University Program Searching & Application",
       "flag": "🇪🇪",
