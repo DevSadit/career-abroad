@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap } from "lucide-react";
+import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap, ShieldX } from "lucide-react";
 
 const primary = "#364bc5";
 
@@ -18,7 +18,7 @@ const ClassesClient = () => {
   const searchParams = useSearchParams();
   const requestedCourse = searchParams.get("course");
 
-  const [phase, setPhase] = useState("gate"); // "gate" | "unlocked"
+  const [phase, setPhase] = useState("gate"); // "gate" | "unlocked" | "denied"
   const [email, setEmail] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [status, setStatus] = useState("idle"); // "idle" | "loading" | "error"
@@ -48,6 +48,14 @@ const ClassesClient = () => {
       });
       const data = await res.json();
       if (data.courses) {
+        // If arriving via ?course=X but that course isn't in their access list → denied
+        if (requestedCourse && !data.courses.find((c) => c.id === requestedCourse)) {
+          setEmail(emailToVerify);
+          setPhase("denied");
+          setStatus("idle");
+          try { localStorage.removeItem(STORAGE_KEY); } catch {}
+          return;
+        }
         setCourses(data.courses);
         setEmail(emailToVerify);
         const target = requestedCourse && data.courses.find((c) => c.id === requestedCourse);
@@ -84,6 +92,33 @@ const ClassesClient = () => {
   };
 
   const activeCourse = courses.find((c) => c.id === activeCountry);
+
+  // ── Denied phase ────────────────────────────────────────────────────────────
+  if (phase === "denied") {
+    return (
+      <div className="mt-10 sm:mt-16 flex flex-col items-center">
+        <div className="w-full max-w-md rounded-3xl border border-red-100 bg-white shadow-md p-10 text-center">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-50 mb-5">
+            <ShieldX className="w-7 h-7 text-red-500" />
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Access Not Permitted</h2>
+          <p className="text-sm text-gray-500 mb-1">
+            <span className="font-medium text-gray-700">{email}</span> is not enrolled in this course.
+          </p>
+          <p className="text-sm text-gray-400 mb-7">
+            Please contact us if you believe this is a mistake.
+          </p>
+          <button
+            onClick={() => { setPhase("gate"); setEmail(""); setInputEmail(""); setStatus("idle"); }}
+            className="w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            style={{ backgroundColor: primary }}
+          >
+            Try a Different Email
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   // ── Gate phase ──────────────────────────────────────────────────────────────
   if (phase === "gate") {
