@@ -49,16 +49,16 @@ export default function SessionInfoBanner() {
               <p className="text-xs uppercase tracking-wider text-gray-500">1-on-1 Sessions</p>
               <h3 className="mt-1 text-xl font-semibold text-gray-900">Book a Session with Our Mentors</h3>
             </div>
-            <div className="flex gap-3 sm:ml-auto shrink-0">
-              <div className="rounded-2xl bg-[#364bc5] px-4 py-2.5 text-center min-w-[100px]">
-                <p className="text-xs text-blue-200 font-medium mb-0.5">From Bangladesh</p>
-                <p className="text-lg font-bold text-white leading-tight">৳1,000</p>
-                <p className="text-xs text-blue-300">BDT</p>
+            <div className="flex gap-2 sm:gap-3 sm:ml-auto shrink-0">
+              <div className="rounded-xl sm:rounded-2xl bg-[#364bc5] px-3 sm:px-4 py-2 sm:py-2.5 text-center min-w-[88px] sm:min-w-[100px]">
+                <p className="text-[10px] sm:text-xs text-blue-200 font-medium mb-0.5">From Bangladesh</p>
+                <p className="text-base sm:text-lg font-bold text-white leading-tight">৳1,000</p>
+                <p className="text-[10px] sm:text-xs text-blue-300">BDT</p>
               </div>
-              <div className="rounded-2xl bg-[#364bc5] px-4 py-2.5 text-center min-w-[100px]">
-                <p className="text-xs text-blue-200 font-medium mb-0.5">From Abroad</p>
-                <p className="text-lg font-bold text-white leading-tight">€10</p>
-                <p className="text-xs text-blue-300">Euro</p>
+              <div className="rounded-xl sm:rounded-2xl bg-[#364bc5] px-3 sm:px-4 py-2 sm:py-2.5 text-center min-w-[88px] sm:min-w-[100px]">
+                <p className="text-[10px] sm:text-xs text-blue-200 font-medium mb-0.5">From Abroad</p>
+                <p className="text-base sm:text-lg font-bold text-white leading-tight">€10</p>
+                <p className="text-[10px] sm:text-xs text-blue-300">Euro</p>
               </div>
             </div>
           </div>
