@@ -11,7 +11,7 @@ export async function POST(request) {
 
     const { data, error } = await supabaseAdmin()
       .from("enrolled_students")
-      .select("email, sop_access")
+      .select("email, university_access, sop_access")
       .eq("email", normalised)
       .maybeSingle();
 
@@ -19,11 +19,12 @@ export async function POST(request) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 
-    // Filter by accessKey, then strip storagePath before sending to client
+    // Filter by accessKey — each course type checked independently
     const courses = recordings.courses
       .filter((course) => {
+        if (course.accessKey === "university") return data.university_access === true;
         if (course.accessKey === "sop") return data.sop_access === true;
-        return true;
+        return false;
       })
       .map((course) => ({
         id: course.id,
