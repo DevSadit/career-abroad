@@ -220,10 +220,8 @@ const ClassesClient = () => {
                       loading="lazy"
                       className="w-full h-full"
                     />
-                    {/* Block "Watch on YouTube" button — bottom-right */}
-                    <div className="absolute bottom-0 right-0 w-44 h-10 z-10" />
-                    {/* Block share button — bottom-left */}
-                    <div className="absolute bottom-0 left-0 w-12 h-10 z-10" />
+                    {/* Cover entire bottom bar: visually hides + blocks Watch on YouTube & Share */}
+                    <div className="absolute bottom-0 left-0 right-0 h-12 z-10 bg-gradient-to-t from-black/95 to-transparent" />
                   </div>
                 </div>
 
