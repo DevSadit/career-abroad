@@ -1,0 +1,118 @@
+{
+  "courses": [
+    {
+      "id": "france",
+      "title": "France : University Program Searching & Application",
+      "flag": "🇫🇷",
+      "color": "#364bc5",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "0R3qTetz52E",
+          "resources": [
+            { "id": "france-course-guide", "label": "Course Guide", "type": "pdf", "storagePath": "France/French University Searching & Application Course.pdf" },
+            { "id": "france-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "France/France University Database.xlsx" },
+            { "id": "france-campus-list", "label": "Campus France University List", "type": "pdf", "storagePath": "France/Campus France University List.pdf" },
+            { "id": "france-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "France/English_Masters_France_2025_26.pdf" },
+            { "id": "france-monmaster", "label": "MonMaster Calendar", "type": "pdf", "storagePath": "France/Monmaster Calender.pdf" },
+            { "id": "france-italy-guide", "label": "Higher Study in Italy (PDF)", "type": "pdf", "storagePath": "France/HIgher Study in Italy.pdf" }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "vJo3l1noglM",
+          "resources": []
+        },
+        {
+          "number": 3,
+          "title": "Class 3",
+          "youtubeId": "ko6fjWGH9VY",
+          "resources": []
+        },
+        {
+          "number": 4,
+          "title": "Class 4",
+          "youtubeId": "kQJXnLSH9dA",
+          "resources": []
+        },
+        {
+          "number": 5,
+          "title": "Class 5",
+          "youtubeId": "vRREJKwLX44",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "title": "Italy : University Program Searching & Application",
+      "flag": "🇮🇹",
+      "color": "#059669",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "_M-RtFVbMVo",
+          "resources": [
+            { "id": "italy-app-guide", "label": "University Application Guide", "type": "pdf", "storagePath": "Italy/Italy University Application.pdf" },
+            { "id": "italy-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Italy/Italy University Database.xlsx" }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "WGFB-x8Lc8M",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "belgium",
+      "title": "Belgium : University Program Searching & Application",
+      "flag": "🇧🇪",
+      "color": "#d97706",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "jYwI6SCLxso",
+          "resources": [
+            { "id": "belgium-slides", "label": "Course Slides 2027", "type": "pdf", "storagePath": "Belgium/Higher Study in Belgium 2027 Slide.pdf" },
+            { "id": "belgium-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Belgium/Belgian_University_Database.xlsx" },
+            { "id": "belgium-webinar", "label": "Webinar Slides", "type": "pdf", "storagePath": "Belgium/Webinar_Higher_Study_Belgium.pdf" }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "Om6nKqyuVkU",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "estonia",
+      "title": "Estonia : University Program Searching & Application",
+      "flag": "🇪🇪",
+      "color": "#0891b2",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "C2-R7IhKRgE",
+          "resources": [
+            { "id": "estonia-study-guide", "label": "Estonia Study Guide A–Z", "type": "pdf", "storagePath": "Estonia/ESTONIA_ STUDY_A 2 Z.pdf" }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Class 2",
+          "youtubeId": "-cPCEdn6Rdc",
+          "resources": []
+        }
+      ]
+    }
+  ]
+}
