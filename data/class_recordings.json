@@ -138,7 +138,16 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "Hi5ayTAfcx4",
-          "resources": []
+          "resources": [
+            { "id": "sop-map", "label": "SOP Map", "type": "pdf", "storagePath": "SOP/SOP Map.pdf" },
+            { "id": "sop-database", "label": "SOP Database V2 (Oct 2026)", "type": "pdf", "storagePath": "SOP/SOP_Database_V2_October2026.pdf" },
+            { "id": "sop-how-to-write", "label": "How to Write a Letter of Motivation", "type": "pdf", "storagePath": "SOP/How_to_write_a_letter_of_motivation.pdf" },
+            { "id": "sop-info", "label": "Statement of Purpose — Information", "type": "pdf", "storagePath": "SOP/Statement_of_Purpose_information.pdf" },
+            { "id": "sop-annotated-1", "label": "Annotated Example 1", "type": "pdf", "storagePath": "SOP/Annotated-Example-1.pdf" },
+            { "id": "sop-annotated-2", "label": "Annotated Example 2", "type": "pdf", "storagePath": "SOP/Annotated-Example-2.pdf" },
+            { "id": "sop-cornell", "label": "SOP — Cornell University Sample", "type": "pdf", "storagePath": "SOP/SOP_Cornell.pdf" },
+            { "id": "sop-april-2011", "label": "Statement of Purpose — April 2011 Sample", "type": "pdf", "storagePath": "SOP/StatementofPurposeApril2011-2_000.pdf" }
+          ]
         }
       ]
     }
