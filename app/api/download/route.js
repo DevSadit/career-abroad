@@ -11,7 +11,7 @@ export async function POST(request) {
 
     const normalised = email.trim().toLowerCase();
 
-    const { data: student, error: dbError } = await supabaseAdmin
+    const { data: student, error: dbError } = await supabaseAdmin()
       .from("enrolled_students")
       .select("email")
       .eq("email", normalised)
@@ -35,7 +35,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Resource not found" }, { status: 404 });
     }
 
-    const { data, error } = await supabaseAdmin.storage
+    const { data, error } = await supabaseAdmin().storage
       .from("course-resources")
       .createSignedUrl(storagePath, 60);
 

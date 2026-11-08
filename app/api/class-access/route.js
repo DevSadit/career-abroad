@@ -9,7 +9,7 @@ export async function POST(request) {
 
     const normalised = email.trim().toLowerCase();
 
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin()
       .from("enrolled_students")
       .select("email")
       .eq("email", normalised)
