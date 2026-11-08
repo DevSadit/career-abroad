@@ -6,6 +6,7 @@ import Mentors from "./mentors/Mentors";
 import Achivements from "./achivements/Achivements";
 import PremiumCard from "../_shared/PremiumCard";
 import Scolarship from "./scolarships/Scolarship";
+import ProfileEvaluator from "./faq/ProfileEvaluator";
 
 const Landing = () => {
   return (
@@ -16,6 +17,7 @@ const Landing = () => {
       <Mentors />
       <Achivements />
       <Scolarship />
+      <ProfileEvaluator />
       <Faq />
     </div>
   );
