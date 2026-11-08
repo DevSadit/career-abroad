@@ -48,11 +48,11 @@ export default function SessionInfoBanner() {
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">1-on-1 Sessions</p>
               <h3 className="mt-1 text-xl font-semibold text-gray-900">Book a Session with Our Mentors</h3>
+              <p className="mt-1 text-xs text-gray-400">From Bangladesh · From Abroad</p>
             </div>
             <div className="flex flex-wrap gap-2 sm:ml-auto">
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">€5 Euro</span>
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">$6 USD</span>
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">৳720 BDT</span>
+              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">৳1,000 BDT</span>
+              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">€10 Euro</span>
             </div>
           </div>
 
@@ -115,9 +115,9 @@ export default function SessionInfoBanner() {
               <span className="font-semibold">Urgent Slots available on request</span>
               <span className="mx-2 text-[#364bc5]/40">|</span>
               Fee:{" "}
-              <span className="font-semibold">€10 Euro</span>
+              <span className="font-semibold">€20 Euro</span>
               {" "}or{" "}
-              <span className="font-semibold">৳1,400 BDT</span>
+              <span className="font-semibold">৳2,800 BDT</span>
             </p>
           </div>
 
