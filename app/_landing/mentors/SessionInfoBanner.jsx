@@ -48,11 +48,18 @@ export default function SessionInfoBanner() {
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">1-on-1 Sessions</p>
               <h3 className="mt-1 text-xl font-semibold text-gray-900">Book a Session with Our Mentors</h3>
-              <p className="mt-1 text-xs text-gray-400">From Bangladesh · From Abroad</p>
             </div>
-            <div className="flex flex-wrap gap-2 sm:ml-auto">
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">৳1,000 BDT</span>
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">€10 Euro</span>
+            <div className="flex gap-3 sm:ml-auto shrink-0">
+              <div className="rounded-2xl bg-[#364bc5] px-4 py-2.5 text-center min-w-[100px]">
+                <p className="text-xs text-blue-200 font-medium mb-0.5">From Bangladesh</p>
+                <p className="text-lg font-bold text-white leading-tight">৳1,000</p>
+                <p className="text-xs text-blue-300">BDT</p>
+              </div>
+              <div className="rounded-2xl bg-[#364bc5] px-4 py-2.5 text-center min-w-[100px]">
+                <p className="text-xs text-blue-200 font-medium mb-0.5">From Abroad</p>
+                <p className="text-lg font-bold text-white leading-tight">€10</p>
+                <p className="text-xs text-blue-300">Euro</p>
+              </div>
             </div>
           </div>
 
