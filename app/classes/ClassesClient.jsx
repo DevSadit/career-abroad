@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap, ShieldX } from "lucide-react";
+import { Mail, Download, PlayCircle, BookOpen, FileText, FileSpreadsheet, X, GraduationCap, ShieldX, ChevronDown, Presentation } from "lucide-react";
 
 const primary = "#364bc5";
 
@@ -10,7 +10,8 @@ const STORAGE_KEY = "career-abroad-class-email";
 
 const fileIcon = (type) => {
   if (type === "xlsx" || type === "excel") return <FileSpreadsheet className="w-3.5 h-3.5" />;
-  if (type === "pdf") return <FileText className="w-3.5 h-3.5" />;
+  if (type === "pptx") return <Presentation className="w-3.5 h-3.5" />;
+  if (type === "pdf" || type === "docx") return <FileText className="w-3.5 h-3.5" />;
   return <BookOpen className="w-3.5 h-3.5" />;
 };
 
@@ -25,6 +26,7 @@ const ClassesClient = () => {
   const [courses, setCourses] = useState([]);
   const [activeCountry, setActiveCountry] = useState(null);
   const [downloading, setDownloading] = useState({}); // resourceId -> bool
+  const [openGroups, setOpenGroups] = useState({});
 
   // Restore verified email from localStorage
   useEffect(() => {
@@ -279,43 +281,99 @@ const ClassesClient = () => {
 
           {/* ── Course Materials sidebar ── */}
           <div className="w-full lg:w-72 shrink-0 lg:sticky lg:top-24">
-            <div className="rounded-3xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-              <div
-                className="px-5 py-4 border-b border-gray-100"
-                style={{ backgroundColor: `${activeCourse.color}0d` }}
-              >
-                <div className="flex items-center gap-2 mb-0.5">
-                  <BookOpen className="w-4 h-4" style={{ color: activeCourse.color }} />
-                  <p className="text-sm font-bold text-gray-900">Course Materials</p>
+            {activeCourse.resourceGroups ? (
+              /* Grouped layout (e.g. Scholarship course) */
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 px-1 mb-1">
+                  <BookOpen className="w-4 h-4 text-gray-400" />
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Course Materials</p>
                 </div>
-                <p className="text-xs text-gray-500">
-                  {activeCourse.classes.flatMap((c) => c.resources).length} file{activeCourse.classes.flatMap((c) => c.resources).length !== 1 ? "s" : ""} · {activeCourse.flag} {activeCourse.id.charAt(0).toUpperCase() + activeCourse.id.slice(1)} course
-                </p>
-              </div>
-              <div className="p-4 space-y-2">
-                {activeCourse.classes.flatMap((c) => c.resources).length > 0 ? (
-                  activeCourse.classes.flatMap((c) => c.resources).map((res) => (
+                {activeCourse.resourceGroups.map((group) => (
+                  <div key={group.id} className="rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm">
                     <button
-                      key={res.id}
-                      onClick={() => handleDownload(res.id)}
-                      disabled={downloading[res.id]}
-                      className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2.5 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
+                      onClick={() => setOpenGroups((prev) => ({ ...prev, [group.id]: !prev[group.id] }))}
+                      className="w-full flex items-center justify-between px-4 py-3 text-xs font-bold transition hover:opacity-80"
+                      style={{ backgroundColor: `${group.color}0d`, color: group.color }}
                     >
-                      {fileIcon(res.type)}
-                      <span className="flex-1 leading-snug">{res.label}</span>
-                      {downloading[res.id] ? (
-                        <div className="w-3.5 h-3.5 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
-                      ) : (
-                        <Download className="w-3.5 h-3.5 shrink-0" />
-                      )}
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-3.5 h-3.5" />
+                        <span>{group.label}</span>
+                        <span
+                          className="rounded-full px-1.5 py-0.5 text-xs font-bold"
+                          style={{ backgroundColor: `${group.color}20` }}
+                        >
+                          {group.resources.length}
+                        </span>
+                      </div>
+                      <ChevronDown
+                        className="w-3.5 h-3.5 transition-transform duration-200"
+                        style={{ transform: openGroups[group.id] ? "rotate(180deg)" : "rotate(0deg)" }}
+                      />
                     </button>
-                  ))
-                ) : (
-                  <p className="text-xs text-gray-400 italic text-center py-6">Resources coming soon</p>
-                )}
+                    {openGroups[group.id] && (
+                      <div className="p-3 space-y-1.5">
+                        {group.resources.map((res) => (
+                          <button
+                            key={res.id}
+                            onClick={() => handleDownload(res.id)}
+                            disabled={downloading[res.id]}
+                            className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
+                            style={{ backgroundColor: `${group.color}0a`, color: group.color }}
+                          >
+                            {fileIcon(res.type)}
+                            <span className="flex-1 leading-snug">{res.label}</span>
+                            {downloading[res.id] ? (
+                              <div className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
+                            ) : (
+                              <Download className="w-3 h-3 shrink-0" />
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-            </div>
+            ) : (
+              /* Flat layout (university / SOP courses) */
+              <div className="rounded-3xl border border-gray-100 bg-white shadow-sm overflow-hidden">
+                <div
+                  className="px-5 py-4 border-b border-gray-100"
+                  style={{ backgroundColor: `${activeCourse.color}0d` }}
+                >
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <BookOpen className="w-4 h-4" style={{ color: activeCourse.color }} />
+                    <p className="text-sm font-bold text-gray-900">Course Materials</p>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {activeCourse.classes.flatMap((c) => c.resources).length} file{activeCourse.classes.flatMap((c) => c.resources).length !== 1 ? "s" : ""} · {activeCourse.flag} {activeCourse.id.charAt(0).toUpperCase() + activeCourse.id.slice(1)} course
+                  </p>
+                </div>
+                <div className="p-4 space-y-2">
+                  {activeCourse.classes.flatMap((c) => c.resources).length > 0 ? (
+                    activeCourse.classes.flatMap((c) => c.resources).map((res) => (
+                      <button
+                        key={res.id}
+                        onClick={() => handleDownload(res.id)}
+                        disabled={downloading[res.id]}
+                        className="flex items-center gap-2.5 w-full rounded-xl px-3 py-2.5 text-xs font-medium text-left transition hover:opacity-80 disabled:opacity-50"
+                        style={{ backgroundColor: `${activeCourse.color}10`, color: activeCourse.color }}
+                      >
+                        {fileIcon(res.type)}
+                        <span className="flex-1 leading-snug">{res.label}</span>
+                        {downloading[res.id] ? (
+                          <div className="w-3.5 h-3.5 border border-current border-t-transparent rounded-full animate-spin shrink-0" />
+                        ) : (
+                          <Download className="w-3.5 h-3.5 shrink-0" />
+                        )}
+                      </button>
+                    ))
+                  ) : (
+                    <p className="text-xs text-gray-400 italic text-center py-6">Resources coming soon</p>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
         </div>

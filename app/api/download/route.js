@@ -21,14 +21,21 @@ export async function POST(request) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 
-    // Find the resource storagePath by id
+    // Search class-level resources AND course-level resourceGroups
     let storagePath = null;
     for (const course of recordings.courses) {
       for (const cls of course.classes) {
-        const resource = cls.resources.find((r) => r.id === resourceId);
-        if (resource) { storagePath = resource.storagePath; break; }
+        const r = cls.resources.find((r) => r.id === resourceId);
+        if (r) { storagePath = r.storagePath; break; }
       }
       if (storagePath) break;
+      if (course.resourceGroups) {
+        for (const group of course.resourceGroups) {
+          const r = group.resources.find((r) => r.id === resourceId);
+          if (r) { storagePath = r.storagePath; break; }
+        }
+        if (storagePath) break;
+      }
     }
 
     if (!storagePath) {
