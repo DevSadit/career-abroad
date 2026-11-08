@@ -16,7 +16,8 @@
             { "id": "france-campus-list", "label": "Campus France University List", "type": "pdf", "storagePath": "France/Campus France University List.pdf" },
             { "id": "france-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "France/English_Masters_France_2025_26.pdf" },
             { "id": "france-monmaster", "label": "MonMaster Calendar", "type": "pdf", "storagePath": "France/Monmaster Calender.pdf" },
-            { "id": "france-italy-guide", "label": "Higher Study in Italy (PDF)", "type": "pdf", "storagePath": "France/HIgher Study in Italy.pdf" }
+            { "id": "france-italy-guide", "label": "Higher Study in Italy (PDF)", "type": "pdf", "storagePath": "France/HIgher Study in Italy.pdf" },
+            { "id": "france-language-programs", "label": "French Language Programs 2025–26", "type": "pdf", "storagePath": "France/French_Language_Programs_2025_26.pdf" }
           ]
         },
         {
@@ -102,7 +103,12 @@
           "number": 1,
           "title": "Class 1",
           "youtubeId": "emzjWK5ubhE",
-          "resources": []
+          "resources": [
+            { "id": "spain-uni-guide", "label": "Spain University Guide", "type": "pdf", "storagePath": "Spain/Spain_University_Guide.pdf" },
+            { "id": "spain-english-masters", "label": "English Masters List 2025–26", "type": "pdf", "storagePath": "Spain/English_Masters_Spain_2025_26.pdf" },
+            { "id": "spain-language-programs", "label": "Spanish Language Programs 2025–26", "type": "pdf", "storagePath": "Spain/Spanish_Language_Programs_2025_26.pdf" },
+            { "id": "spain-uc3m-guide", "label": "UC3M Admission Guide", "type": "pdf", "storagePath": "Spain/UC3M Admission Guide.pdf" }
+          ]
         },
         {
           "number": 2,
