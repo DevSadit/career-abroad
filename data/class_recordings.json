@@ -5,6 +5,7 @@
       "title": "France : University Program Searching & Application",
       "flag": "🇫🇷",
       "color": "#364bc5",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -19,30 +20,10 @@
             { "id": "france-language-programs", "label": "French Language Programs 2025–26", "type": "pdf", "storagePath": "France/French_Language_Programs_2025_26.pdf" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "vJo3l1noglM",
-          "resources": []
-        },
-        {
-          "number": 3,
-          "title": "Class 3",
-          "youtubeId": "ko6fjWGH9VY",
-          "resources": []
-        },
-        {
-          "number": 4,
-          "title": "Class 4",
-          "youtubeId": "kQJXnLSH9dA",
-          "resources": []
-        },
-        {
-          "number": 5,
-          "title": "Class 5",
-          "youtubeId": "vRREJKwLX44",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "vJo3l1noglM", "resources": [] },
+        { "number": 3, "title": "Class 3", "youtubeId": "ko6fjWGH9VY", "resources": [] },
+        { "number": 4, "title": "Class 4", "youtubeId": "kQJXnLSH9dA", "resources": [] },
+        { "number": 5, "title": "Class 5", "youtubeId": "vRREJKwLX44", "resources": [] }
       ]
     },
     {
@@ -50,6 +31,7 @@
       "title": "Italy : University Program Searching & Application",
       "flag": "🇮🇹",
       "color": "#059669",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -61,12 +43,7 @@
             { "id": "italy-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Italy/Italy University Database.xlsx" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "WGFB-x8Lc8M",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "WGFB-x8Lc8M", "resources": [] }
       ]
     },
     {
@@ -74,6 +51,7 @@
       "title": "Belgium : University Program Searching & Application",
       "flag": "🇧🇪",
       "color": "#d97706",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -85,12 +63,7 @@
             { "id": "belgium-webinar", "label": "Webinar Slides", "type": "pdf", "storagePath": "Belgium/Webinar_Higher_Study_Belgium.pdf" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "Om6nKqyuVkU",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "Om6nKqyuVkU", "resources": [] }
       ]
     },
     {
@@ -98,6 +71,7 @@
       "title": "Spain : University Database & Application",
       "flag": "🇪🇸",
       "color": "#dc2626",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -110,30 +84,10 @@
             { "id": "spain-uc3m-guide", "label": "UC3M Admission Guide", "type": "pdf", "storagePath": "Spain/UC3M Admission Guide.pdf" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "wUsLiFtpc14",
-          "resources": []
-        },
-        {
-          "number": 3,
-          "title": "Class 3",
-          "youtubeId": "IFJMsFmCASs",
-          "resources": []
-        },
-        {
-          "number": 4,
-          "title": "Class 4",
-          "youtubeId": "WjCLT3HAeGE",
-          "resources": []
-        },
-        {
-          "number": 5,
-          "title": "Class 5",
-          "youtubeId": "K8u37IFxs9g",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "wUsLiFtpc14", "resources": [] },
+        { "number": 3, "title": "Class 3", "youtubeId": "IFJMsFmCASs", "resources": [] },
+        { "number": 4, "title": "Class 4", "youtubeId": "WjCLT3HAeGE", "resources": [] },
+        { "number": 5, "title": "Class 5", "youtubeId": "K8u37IFxs9g", "resources": [] }
       ]
     },
     {
@@ -141,6 +95,7 @@
       "title": "Estonia : University Program Searching & Application",
       "flag": "🇪🇪",
       "color": "#0891b2",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -150,12 +105,7 @@
             { "id": "estonia-study-guide", "label": "Estonia Study Guide A–Z", "type": "pdf", "storagePath": "Estonia/ESTONIA_ STUDY_A 2 Z.pdf" }
           ]
         },
-        {
-          "number": 2,
-          "title": "Class 2",
-          "youtubeId": "-cPCEdn6Rdc",
-          "resources": []
-        }
+        { "number": 2, "title": "Class 2", "youtubeId": "-cPCEdn6Rdc", "resources": [] }
       ]
     },
     {
@@ -163,6 +113,7 @@
       "title": "Hungary : University Program Searching & Application",
       "flag": "🇭🇺",
       "color": "#8b5cf6",
+      "accessKey": "university",
       "classes": [
         {
           "number": 1,
@@ -173,6 +124,21 @@
             { "id": "hungary-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Hungary/Hungarian_University_Database.xlsx" },
             { "id": "hungary-stipendium", "label": "Stipendium Hungary Guide", "type": "pdf", "storagePath": "Hungary/Stipendium Hungary.pdf" }
           ]
+        }
+      ]
+    },
+    {
+      "id": "sop",
+      "title": "SOP Writing Mastercourse",
+      "flag": "✍️",
+      "color": "#7c3aed",
+      "accessKey": "sop",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "Hi5ayTAfcx4",
+          "resources": []
         }
       ]
     }

@@ -11,7 +11,7 @@ export async function POST(request) {
 
     const { data, error } = await supabaseAdmin()
       .from("enrolled_students")
-      .select("email")
+      .select("email, sop_access")
       .eq("email", normalised)
       .maybeSingle();
 
@@ -19,19 +19,24 @@ export async function POST(request) {
       return NextResponse.json({ error: "Not enrolled" }, { status: 403 });
     }
 
-    // Strip storagePath from every resource before sending to client
-    const courses = recordings.courses.map((course) => ({
-      id: course.id,
-      title: course.title,
-      flag: course.flag,
-      color: course.color,
-      classes: course.classes.map((cls) => ({
-        number: cls.number,
-        title: cls.title,
-        youtubeId: cls.youtubeId,
-        resources: cls.resources.map(({ id, label, type }) => ({ id, label, type })),
-      })),
-    }));
+    // Filter by accessKey, then strip storagePath before sending to client
+    const courses = recordings.courses
+      .filter((course) => {
+        if (course.accessKey === "sop") return data.sop_access === true;
+        return true;
+      })
+      .map((course) => ({
+        id: course.id,
+        title: course.title,
+        flag: course.flag,
+        color: course.color,
+        classes: course.classes.map((cls) => ({
+          number: cls.number,
+          title: cls.title,
+          youtubeId: cls.youtubeId,
+          resources: cls.resources.map(({ id, label, type }) => ({ id, label, type })),
+        })),
+      }));
 
     return NextResponse.json({ courses });
   } catch {
