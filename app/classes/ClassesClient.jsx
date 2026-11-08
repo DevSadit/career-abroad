@@ -21,6 +21,7 @@ const ClassesClient = () => {
   const [courses, setCourses] = useState([]);
   const [activeCountry, setActiveCountry] = useState(null);
   const [downloading, setDownloading] = useState({}); // resourceId -> bool
+  const [playing, setPlaying] = useState({}); // youtubeId -> bool
 
   // Restore verified email from localStorage
   useEffect(() => {
@@ -211,17 +212,38 @@ const ClassesClient = () => {
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-0">
                 {/* Video embed */}
                 <div className="p-4">
-                  <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-100">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${cls.youtubeId}?rel=0&modestbranding=1&iv_load_policy=3`}
-                      title={`${activeCourse.title} — ${cls.title}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                      className="w-full h-full"
-                    />
-                    {/* Cover entire bottom bar: visually hides + blocks Watch on YouTube & Share */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 z-10 bg-gradient-to-t from-black/95 to-transparent" />
+                  <div className="relative aspect-video rounded-2xl overflow-hidden bg-black">
+                    {playing[cls.youtubeId] ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${cls.youtubeId}?rel=0&modestbranding=1&iv_load_policy=3&autoplay=1`}
+                        title={`${activeCourse.title} — ${cls.title}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                    ) : (
+                      <button
+                        className="w-full h-full relative group"
+                        onClick={() => setPlaying((p) => ({ ...p, [cls.youtubeId]: true }))}
+                        aria-label={`Play ${cls.title || `Class ${cls.number}`}`}
+                      >
+                        <img
+                          src={`https://img.youtube.com/vi/${cls.youtubeId}/mqdefault.jpg`}
+                          alt={cls.title || `Class ${cls.number}`}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Dark overlay on hover */}
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                        {/* Play button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                            <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7 ml-1">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                    )}
                   </div>
                 </div>
 
