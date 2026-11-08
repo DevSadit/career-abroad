@@ -56,6 +56,7 @@
           "title": "Class 1",
           "youtubeId": "_M-RtFVbMVo",
           "resources": [
+            { "id": "italy-higher-study", "label": "Higher Study in Italy", "type": "pdf", "storagePath": "Italy/HIgher Study in Italy.pdf" },
             { "id": "italy-app-guide", "label": "University Application Guide", "type": "pdf", "storagePath": "Italy/Italy University Application.pdf" },
             { "id": "italy-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Italy/Italy University Database.xlsx" }
           ]
@@ -154,6 +155,24 @@
           "title": "Class 2",
           "youtubeId": "-cPCEdn6Rdc",
           "resources": []
+        }
+      ]
+    },
+    {
+      "id": "hungary",
+      "title": "Hungary : University Program Searching & Application",
+      "flag": "🇭🇺",
+      "color": "#8b5cf6",
+      "classes": [
+        {
+          "number": 1,
+          "title": "Class 1",
+          "youtubeId": "bwE9UJYruD4",
+          "resources": [
+            { "id": "hungary-slides", "label": "Higher Study in Hungary 2027", "type": "pdf", "storagePath": "Hungary/Higher Study in Hungary 2027 Slide.pdf" },
+            { "id": "hungary-uni-database", "label": "University Database", "type": "xlsx", "storagePath": "Hungary/Hungarian_University_Database.xlsx" },
+            { "id": "hungary-stipendium", "label": "Stipendium Hungary Guide", "type": "pdf", "storagePath": "Hungary/Stipendium Hungary.pdf" }
+          ]
         }
       ]
     }
