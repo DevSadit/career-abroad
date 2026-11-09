@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "./hero/Hero";
-import CoursesSection from "./courses/CoursesSection";
 import Faq from "./faq/Faq";
 import Mentors from "./mentors/Mentors";
 import Achivements from "./achivements/Achivements";
@@ -13,7 +12,6 @@ const Landing = () => {
     <div className="">
       <Hero />
       <PremiumCard />
-      <CoursesSection />
       <Mentors />
       <Achivements />
       <Scolarship />
@@ -24,4 +22,3 @@ const Landing = () => {
 };
 
 export default Landing;
-// Most Popular Courses
