@@ -2,19 +2,19 @@
   {
     "title": "University Searching & Application Course",
     "url": "https://www.youtube.com/embed/R_Lf_CCHS2s?si=QzOnAbHlXEerMSZj",
-    "course_link": "/classes",
+    "course_link": "/courses/content",
     "theme": "#059669"
   },
   {
     "title": "SOP Writing Mastercourse",
     "url": "https://www.youtube.com/embed/oBy4pNO3FKg?si=74adkdovDlcUWnSt",
-    "course_link": "/classes?course=sop",
+    "course_link": "/courses/content?course=sop",
     "theme": "#7c3aed"
   },
   {
     "title": "Scholarship Preparation Course",
     "url": "https://www.youtube.com/embed/i_Oyd65esJM?si=2X_RIvXCuyYfRMaa",
-    "course_link": "/classes?course=scholarship",
+    "course_link": "/courses/content?course=scholarship",
     "theme": "#d97706"
   },
   {

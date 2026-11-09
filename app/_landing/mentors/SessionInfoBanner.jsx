@@ -49,10 +49,17 @@ export default function SessionInfoBanner() {
               <p className="text-xs uppercase tracking-wider text-gray-500">1-on-1 Sessions</p>
               <h3 className="mt-1 text-xl font-semibold text-gray-900">Book a Session with Our Mentors</h3>
             </div>
-            <div className="flex flex-wrap gap-2 sm:ml-auto">
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">€5 Euro</span>
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">$6 USD</span>
-              <span className="px-3 py-1 rounded-full text-sm font-bold text-white bg-[#364bc5]">৳720 BDT</span>
+            <div className="flex gap-2 sm:gap-3 sm:ml-auto shrink-0">
+              <div className="rounded-xl sm:rounded-2xl bg-[#364bc5] px-3 sm:px-4 py-2 sm:py-2.5 text-center min-w-[88px] sm:min-w-[100px]">
+                <p className="text-[10px] sm:text-xs text-blue-200 font-medium mb-0.5">From Bangladesh</p>
+                <p className="text-base sm:text-lg font-bold text-white leading-tight">৳1,000</p>
+                <p className="text-[10px] sm:text-xs text-blue-300">BDT</p>
+              </div>
+              <div className="rounded-xl sm:rounded-2xl bg-[#364bc5] px-3 sm:px-4 py-2 sm:py-2.5 text-center min-w-[88px] sm:min-w-[100px]">
+                <p className="text-[10px] sm:text-xs text-blue-200 font-medium mb-0.5">From Abroad</p>
+                <p className="text-base sm:text-lg font-bold text-white leading-tight">€10</p>
+                <p className="text-[10px] sm:text-xs text-blue-300">Euro</p>
+              </div>
             </div>
           </div>
 
@@ -115,9 +122,9 @@ export default function SessionInfoBanner() {
               <span className="font-semibold">Urgent Slots available on request</span>
               <span className="mx-2 text-[#364bc5]/40">|</span>
               Fee:{" "}
-              <span className="font-semibold">€10 Euro</span>
+              <span className="font-semibold">€20 Euro</span>
               {" "}or{" "}
-              <span className="font-semibold">৳1,400 BDT</span>
+              <span className="font-semibold">৳2,800 BDT</span>
             </p>
           </div>
 

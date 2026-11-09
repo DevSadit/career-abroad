@@ -8,8 +8,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   { name: "Mentorship", href: "/complete-mentorship-program" },
-  { name: "Course Contents", href: "/course-content" },
-  { name: "Classes", href: "/classes" },
+  { name: "Courses", href: "/courses" },
   { name: "Services", href: "/services" },
   { name: "Scholarships", href: "/scholarships" },
   {
