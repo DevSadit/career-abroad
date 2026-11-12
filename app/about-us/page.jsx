@@ -274,7 +274,11 @@ const Page = () => {
           style={{ borderLeftColor: primary, backgroundColor: `${primary}06` }}
         >
           <p lang="bn" className="font-bn text-sm sm:text-base text-gray-700 leading-relaxed">
-            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশন ও ডিসকাশন এর জন্য আমাদের দেশভিত্তিক মেন্টরদের{" "}
+            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Free Profile Evaluator
+            </Link>{" "}
+            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
             <Link
               href="/#mentors"
               className="font-semibold underline underline-offset-2"

@@ -1,11 +1,9 @@
 "use client";
 import React, { useState, useMemo, useEffect } from "react";
-import { Target, ChevronRight, Calendar, CheckCircle2, AlertTriangle, Wallet } from "lucide-react";
+import { Target, ChevronRight, Calendar, CheckCircle2, AlertTriangle, Wallet, GraduationCap, BookOpen } from "lucide-react";
 
 const primary = "#364bc5";
 
-// fundCurrency + fundAmount store the amount in original currency for live conversion
-// EUR, PLN, BDT supported
 const COUNTRIES = [
   {
     id: "france", name: "France", flag: "🇫🇷",
@@ -49,7 +47,8 @@ const COUNTRIES = [
     fundType: "show", fundOrig: "€600/mo + tuition", fundCurrency: "EUR", fundAmount: 12000,
     minCgpa: 3.0, cgpaFlexible: true, minIelts: 6.0,
     spouseAllowed: false, childAllowed: false, visaCities: ["Dhaka"],
-    hasScholarship: false, scholarships: [],
+    hasScholarship: true, scholarships: ["Stipendium Hungaricum"],
+    scholarshipCgpa: 3.5, scholarshipPubs: 1, scholarshipWorkExp: 0, scholarshipMinIelts: 6.5,
   },
   {
     id: "germany", name: "Germany", flag: "🇩🇪",
@@ -135,6 +134,85 @@ const COUNTRIES = [
   },
 ];
 
+// 9 countries available for Bachelor applicants (HSC/A-Level)
+// minPct = minimum combined SSC+HSC percentage required
+const BACHELOR_COUNTRIES = [
+  {
+    id: "italy", name: "Italy", flag: "🇮🇹",
+    tuitionOrig: "€400–600/yr",
+    fundType: "show", fundOrig: "€12,000–14,000", fundCurrency: "EUR", fundAmount: 13000,
+    minPct: 80, minIelts: 6.0,
+    entranceExam: "CEnTs 60–70+/100",
+    spouseAllowed: false, childAllowed: false, visaCities: ["Dhaka"],
+    hasScholarship: true, scholarshipName: "DSU", scholarshipForAll: true,
+  },
+  {
+    id: "belgium", name: "Belgium", flag: "🇧🇪",
+    tuitionOrig: "€6,000–8,000/yr",
+    fundType: "block", fundOrig: "€14,000/yr", fundCurrency: "EUR", fundAmount: 14000,
+    minPct: 80, minIelts: 6.5,
+    entranceExam: null,
+    spouseAllowed: true, childAllowed: false, visaCities: ["Dhaka"],
+  },
+  {
+    id: "estonia", name: "Estonia", flag: "🇪🇪",
+    tuitionOrig: "€5,000–8,000/yr",
+    fundType: "show", fundOrig: "€700/mo + tuition (1yr)", fundCurrency: "EUR", fundAmount: 14000,
+    minPct: 60, minIelts: 6.0,
+    entranceExam: null,
+    spouseAllowed: true, childAllowed: true, visaCities: ["India", "China", "Singapore"],
+  },
+  {
+    id: "hungary", name: "Hungary", flag: "🇭🇺",
+    tuitionOrig: "€4,600–9,400/yr",
+    fundType: "show", fundOrig: "€600/mo + tuition", fundCurrency: "EUR", fundAmount: 12000,
+    minPct: 60, minIelts: 5.5,
+    entranceExam: null,
+    spouseAllowed: false, childAllowed: false, visaCities: ["Dhaka"],
+    hasScholarship: true, scholarshipName: "Stipendium Hungaricum", scholarshipMinPct: 80, scholarshipMinIelts: 6.5,
+  },
+  {
+    id: "netherlands", name: "Netherlands", flag: "🇳🇱",
+    tuitionOrig: "€14,000–20,000/yr",
+    fundType: "show", fundOrig: "৳20–25 lac + tuition", fundCurrency: "BDT", fundAmount: 2000000,
+    minPct: 60, minIelts: 6.5,
+    entranceExam: null,
+    spouseAllowed: true, childAllowed: true, visaCities: ["Dhaka"],
+  },
+  {
+    id: "poland", name: "Poland", flag: "🇵🇱",
+    tuitionOrig: "€2,000–6,000/yr",
+    fundType: "show", fundOrig: "10,912 PLN + tuition", fundCurrency: "PLN", fundAmount: 10912,
+    minPct: 65, minIelts: 6.0,
+    entranceExam: null,
+    spouseAllowed: false, childAllowed: false, visaCities: ["India"],
+  },
+  {
+    id: "lithuania", name: "Lithuania", flag: "🇱🇹",
+    tuitionOrig: "€3,000–6,000/yr",
+    fundType: "show", fundOrig: "€10,000 + tuition", fundCurrency: "EUR", fundAmount: 10000,
+    minPct: 60, minIelts: 5.5,
+    entranceExam: null,
+    spouseAllowed: true, childAllowed: true, visaCities: ["India"],
+  },
+  {
+    id: "sweden", name: "Sweden", flag: "🇸🇪",
+    tuitionOrig: "€11,000–26,000/yr",
+    fundType: "show", fundOrig: "৳16–20 lac + tuition", fundCurrency: "BDT", fundAmount: 1600000,
+    minPct: 60, minIelts: 6.5,
+    entranceExam: null,
+    spouseAllowed: true, childAllowed: true, visaCities: ["Dhaka"],
+  },
+  {
+    id: "finland", name: "Finland", flag: "🇫🇮",
+    tuitionOrig: "€10,000–15,000/yr",
+    fundType: "show", fundOrig: "৳15–20 lac + tuition", fundCurrency: "BDT", fundAmount: 1500000,
+    minPct: 60, minIelts: 6.5,
+    entranceExam: null,
+    spouseAllowed: false, childAllowed: false, visaCities: ["India"],
+  },
+];
+
 function toFundLac(amount, currency, rates) {
   if (currency === "BDT") return amount / 100000;
   if (currency === "EUR") return (amount * rates.EUR) / 100000;
@@ -146,7 +224,6 @@ function formatLac(val) {
   return Math.round(val * 10) / 10;
 }
 
-// spouse needs same as student (+1×), child needs half (+0.5×)
 function effectiveFundLac(country, p) {
   let mult = 1;
   if (p.hasSpouse) mult += 1;
@@ -178,23 +255,13 @@ function evaluate(country, p) {
   const reqFund = effectiveFundLac(country, p);
   if (p.budget > 0) {
     const diff = p.budget - reqFund;
-    if (diff >= 0) {
-      budgetStatus = "ok";
-      score += 5;
-    } else if (diff >= -(reqFund * 0.25)) {
-      budgetStatus = "tight";
-      score -= 20;
-    } else {
-      budgetStatus = "low";
-      score -= 40;
-    }
+    if (diff >= 0) { budgetStatus = "ok"; score += 5; }
+    else if (diff >= -(reqFund * 0.25)) { budgetStatus = "tight"; score -= 20; }
+    else { budgetStatus = "low"; score -= 40; }
   }
 
   const dhakaVisa = country.visaCities.includes("Dhaka");
-  if (!dhakaVisa) {
-    cons.push(`Visa submit in ${country.visaCities[0]}`);
-    score -= 10;
-  }
+  if (!dhakaVisa) { cons.push(`Visa submit in ${country.visaCities[0]}`); score -= 10; }
 
   if (p.hasSpouse && country.spouseAllowed) pros.push("Spouse dependent allowed");
   if (p.hasChild && country.childAllowed) pros.push("Child dependent allowed");
@@ -203,7 +270,8 @@ function evaluate(country, p) {
     const cgpaOk = !country.scholarshipCgpa || p.cgpa >= country.scholarshipCgpa;
     const pubsOk = !country.scholarshipPubs || p.publications >= country.scholarshipPubs;
     const workOk = !country.scholarshipWorkExp || p.workExp >= country.scholarshipWorkExp;
-    if (cgpaOk && pubsOk && workOk && p.cgpa > 0) {
+    const ieltsOk = !country.scholarshipMinIelts || p.ielts <= 0 || p.ielts >= country.scholarshipMinIelts;
+    if (cgpaOk && pubsOk && workOk && ieltsOk && p.cgpa > 0) {
       score += 15;
       pros.push(`Scholarship: ${country.scholarships.join(", ")}`);
     } else {
@@ -211,11 +279,69 @@ function evaluate(country, p) {
       if (!cgpaOk) need.push(`${country.scholarshipCgpa}+ CGPA`);
       if (!pubsOk) need.push(`${country.scholarshipPubs}+ pub`);
       if (!workOk) need.push(`${country.scholarshipWorkExp}yr exp`);
+      if (!ieltsOk) need.push(`IELTS ${country.scholarshipMinIelts}+`);
       cons.push(`Scholarship needs: ${need.join(", ")}`);
     }
   } else if (p.wantScholarship && country.dsuForAll) {
     pros.push("DSU scholarship for all students");
     score += 10;
+  }
+
+  let matchLevel = "possible";
+  if (score >= 110) matchLevel = "strong";
+  else if (score >= 90) matchLevel = "good";
+
+  return { score, matchLevel, pros, cons, budgetStatus, reqFund };
+}
+
+function isEligibleBachelor(country, p) {
+  if (p.combinedPct > 0 && p.combinedPct < country.minPct) return false;
+  if (p.ielts > 0 && p.ielts < country.minIelts) return false;
+  if (p.budget > 0 && p.budget < effectiveFundLac(country, p)) return false;
+  if (p.hasSpouse && !country.spouseAllowed) return false;
+  if (p.hasChild && !country.childAllowed) return false;
+  if (!p.canTravelIndia && !country.visaCities.includes("Dhaka")) return false;
+  return true;
+}
+
+function evaluateBachelor(country, p) {
+  let score = 100;
+  const pros = [];
+  const cons = [];
+  let budgetStatus = null;
+
+  const reqFund = effectiveFundLac(country, p);
+  if (p.budget > 0) {
+    const diff = p.budget - reqFund;
+    if (diff >= 0) { budgetStatus = "ok"; score += 5; }
+    else if (diff >= -(reqFund * 0.25)) { budgetStatus = "tight"; score -= 20; }
+    else { budgetStatus = "low"; score -= 40; }
+  }
+
+  const dhakaVisa = country.visaCities.includes("Dhaka");
+  if (!dhakaVisa) { cons.push(`Visa submit in ${country.visaCities[0]}`); score -= 10; }
+
+  if (p.hasSpouse && country.spouseAllowed) pros.push("Spouse dependent allowed");
+  if (p.hasChild && country.childAllowed) pros.push("Child dependent allowed");
+  if (country.entranceExam) cons.push(`Entrance exam required: ${country.entranceExam}`);
+
+  if (country.hasScholarship) {
+    if (country.scholarshipForAll) {
+      pros.push(`Scholarship: ${country.scholarshipName} (all students)`);
+      score += 10;
+    } else {
+      const pctOk = !country.scholarshipMinPct || p.combinedPct <= 0 || p.combinedPct >= country.scholarshipMinPct;
+      const ieltsOk = !country.scholarshipMinIelts || p.ielts <= 0 || p.ielts >= country.scholarshipMinIelts;
+      if (pctOk && ieltsOk) {
+        pros.push(`Scholarship: ${country.scholarshipName}`);
+        score += 15;
+      } else {
+        const need = [];
+        if (!pctOk) need.push(`${country.scholarshipMinPct}% combined`);
+        if (!ieltsOk) need.push(`IELTS ${country.scholarshipMinIelts}+`);
+        cons.push(`${country.scholarshipName} needs: ${need.join(", ")}`);
+      }
+    }
   }
 
   let matchLevel = "possible";
@@ -256,7 +382,7 @@ const Toggle = ({ value, onChange, label }) => (
   </button>
 );
 
-const PillGroup = ({ options, value, onChange, dark }) => (
+const PillGroup = ({ options, value, onChange }) => (
   <div className="flex gap-1.5">
     {options.map((opt) => (
       <button
@@ -267,8 +393,6 @@ const PillGroup = ({ options, value, onChange, dark }) => (
         style={
           value === opt.value
             ? { backgroundColor: primary, color: "#fff" }
-            : dark
-            ? { backgroundColor: "rgba(255,255,255,0.12)", color: "#cbd5e1" }
             : { backgroundColor: "#f1f5f9", color: "#475569" }
         }
       >
@@ -279,15 +403,25 @@ const PillGroup = ({ options, value, onChange, dark }) => (
 );
 
 export default function ProfileEvaluator() {
+  const [studyLevel, setStudyLevel] = useState("masters");
+
+  // Masters fields
   const [cgpa, setCgpa] = useState("");
-  const [ielts, setIelts] = useState("0");
-  const [budget, setBudget] = useState("");
   const [publications, setPublications] = useState(0);
   const [workExp, setWorkExp] = useState(0);
+  const [wantScholarship, setWantScholarship] = useState(false);
+
+  // Bachelor fields
+  const [sscGpa, setSscGpa] = useState("");
+  const [hscGpa, setHscGpa] = useState("");
+
+  // Shared fields
+  const [ielts, setIelts] = useState("0");
+  const [budget, setBudget] = useState("");
   const [hasSpouse, setHasSpouse] = useState(false);
   const [hasChild, setHasChild] = useState(false);
-  const [wantScholarship, setWantScholarship] = useState(false);
   const [canTravelIndia, setCanTravelIndia] = useState(true);
+
   const [rates, setRates] = useState({ EUR: 125, PLN: 28, NOK: 11 });
 
   useEffect(() => {
@@ -302,27 +436,53 @@ export default function ProfileEvaluator() {
     [rates]
   );
 
+  const computedBachelorCountries = useMemo(
+    () => BACHELOR_COUNTRIES.map((c) => ({ ...c, minFundLac: formatLac(toFundLac(c.fundAmount, c.fundCurrency, rates)) })),
+    [rates]
+  );
+
   const hasProfile = cgpa !== "" && parseFloat(cgpa) > 0;
+  const hasBachelorProfile = sscGpa !== "" && hscGpa !== "" && parseFloat(sscGpa) > 0 && parseFloat(hscGpa) > 0;
+
+  // Combined percentage for bachelor: average of SSC% and HSC% (each on 5.0 scale → ×20 = %)
+  const combinedPct = hasBachelorProfile
+    ? Math.round(((parseFloat(sscGpa) + parseFloat(hscGpa)) / 10) * 100 * 10) / 10
+    : 0;
 
   const results = useMemo(() => {
-    if (!hasProfile) return [];
-    const p = {
-      cgpa: parseFloat(cgpa) || 0,
-      ielts: parseFloat(ielts) || 0,
-      budget: parseFloat(budget) || 0,
-      publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia,
-    };
-    return computedCountries
-      .filter((c) => isEligible(c, p))
-      .map((c) => ({ country: c, ...evaluate(c, p) }))
-      .sort((a, b) => b.score - a.score);
-  }, [cgpa, ielts, budget, publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia, hasProfile, computedCountries]);
+    if (studyLevel === "masters") {
+      if (!hasProfile) return [];
+      const p = {
+        cgpa: parseFloat(cgpa) || 0,
+        ielts: parseFloat(ielts) || 0,
+        budget: parseFloat(budget) || 0,
+        publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia,
+      };
+      return computedCountries
+        .filter((c) => isEligible(c, p))
+        .map((c) => ({ country: c, ...evaluate(c, p) }))
+        .sort((a, b) => b.score - a.score);
+    } else {
+      if (!hasBachelorProfile) return [];
+      const p = {
+        combinedPct,
+        ielts: parseFloat(ielts) || 0,
+        budget: parseFloat(budget) || 0,
+        hasSpouse, hasChild, canTravelIndia,
+      };
+      return computedBachelorCountries
+        .filter((c) => isEligibleBachelor(c, p))
+        .map((c) => ({ country: c, ...evaluateBachelor(c, p) }))
+        .sort((a, b) => b.score - a.score);
+    }
+  }, [studyLevel, cgpa, sscGpa, hscGpa, ielts, budget, publications, workExp, hasSpouse, hasChild, wantScholarship, canTravelIndia, hasProfile, hasBachelorProfile, combinedPct, computedCountries, computedBachelorCountries]);
+
+  const activeProfile = studyLevel === "masters" ? hasProfile : hasBachelorProfile;
 
   return (
-    <section className="bg-white py-10 md:py-16">
+    <section id="profile-evaluator" className="bg-white py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Outer card — matches SessionInfoBanner style */}
         <div className="rounded-3xl border border-indigo-100 bg-gradient-to-b from-[#eef2ff] via-[#f5f7ff] to-white overflow-hidden shadow-sm">
           <div className="p-6 sm:p-8 md:p-10">
 
@@ -346,90 +506,197 @@ export default function ProfileEvaluator() {
             {/* Form card */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 mb-6">
 
-              {/* Row 1 — numeric inputs */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                    CGPA (out of 4.0)
-                  </label>
-                  <input
-                    type="number"
-                    min="0" max="4" step="0.01"
-                    value={cgpa}
-                    onChange={(e) => setCgpa(e.target.value)}
-                    placeholder="e.g. 3.20"
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
-                  />
-                </div>
+              {/* Study level toggle */}
+              <div className="flex gap-1 mb-6 bg-gray-100 p-1 rounded-xl w-fit">
+                <button
+                  type="button"
+                  onClick={() => setStudyLevel("masters")}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+                  style={studyLevel === "masters"
+                    ? { backgroundColor: primary, color: "#fff", boxShadow: "0 1px 6px rgba(54,75,197,0.3)" }
+                    : { backgroundColor: "transparent", color: "#6b7280" }}
+                >
+                  <GraduationCap className="w-3.5 h-3.5" />
+                  Masters
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setStudyLevel("bachelor")}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+                  style={studyLevel === "bachelor"
+                    ? { backgroundColor: primary, color: "#fff", boxShadow: "0 1px 6px rgba(54,75,197,0.3)" }
+                    : { backgroundColor: "transparent", color: "#6b7280" }}
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Bachelor
+                </button>
+              </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                    IELTS Score
-                  </label>
-                  <select
-                    value={ielts}
-                    onChange={(e) => setIelts(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
-                  >
-                    <option value="0">Not yet appeared</option>
-                    <option value="5.0">5.0 — Below B2</option>
-                    <option value="5.5">5.5 — B2 (minimum)</option>
-                    <option value="6.0">6.0 — B2+</option>
-                    <option value="6.5">6.5</option>
-                    <option value="7.0">7.0+</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                    Available Budget (lac ৳)
-                  </label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">৳</span>
+              {/* Row 1 — academic inputs */}
+              {studyLevel === "masters" ? (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      CGPA (out of 4.0)
+                    </label>
                     <input
-                      type="number"
-                      min="0" step="1"
-                      value={budget}
-                      onChange={(e) => setBudget(e.target.value)}
-                      placeholder="e.g. 15"
-                      className="w-full rounded-xl border border-gray-200 pl-7 pr-14 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
+                      type="number" min="0" max="4" step="0.01"
+                      value={cgpa} onChange={(e) => setCgpa(e.target.value)}
+                      placeholder="e.g. 3.20"
+                      className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
                     />
-                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">lac</span>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      IELTS Score
+                    </label>
+                    <select
+                      value={ielts} onChange={(e) => setIelts(e.target.value)}
+                      className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
+                    >
+                      <option value="0">Not yet appeared</option>
+                      <option value="5.0">5.0 — Below B2</option>
+                      <option value="5.5">5.5 — B2 (minimum)</option>
+                      <option value="6.0">6.0 — B2+</option>
+                      <option value="6.5">6.5</option>
+                      <option value="7.0">7.0+</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      Available Budget (lac ৳)
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">৳</span>
+                      <input
+                        type="number" min="0" step="1"
+                        value={budget} onChange={(e) => setBudget(e.target.value)}
+                        placeholder="e.g. 15"
+                        className="w-full rounded-xl border border-gray-200 pl-7 pr-14 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
+                      />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">lac</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      SSC / O-Level GPA
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="number" min="0" max="5" step="0.01"
+                        value={sscGpa} onChange={(e) => setSscGpa(e.target.value)}
+                        placeholder="e.g. 4.50"
+                        className="w-full rounded-xl border border-gray-200 px-4 pr-14 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
+                      />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">/ 5</span>
+                    </div>
+                  </div>
 
-              {/* Row 2 — pill selectors */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
-                    Publications
-                  </label>
-                  <PillGroup value={publications} onChange={setPublications}
-                    options={[{ label: "None", value: 0 }, { label: "1", value: 1 }, { label: "2+", value: 2 }]}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
-                    Work Experience
-                  </label>
-                  <PillGroup value={workExp} onChange={setWorkExp}
-                    options={[{ label: "None", value: 0 }, { label: "1 yr", value: 1 }, { label: "2+ yrs", value: 2 }]}
-                  />
-                </div>
-              </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      HSC / A-Level GPA
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="number" min="0" max="5" step="0.01"
+                        value={hscGpa} onChange={(e) => setHscGpa(e.target.value)}
+                        placeholder="e.g. 4.00"
+                        className="w-full rounded-xl border border-gray-200 px-4 pr-14 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
+                      />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">/ 5</span>
+                    </div>
+                    {hasBachelorProfile && (
+                      <p className="mt-1.5 text-xs font-semibold" style={{ color: primary }}>
+                        Combined: {combinedPct}%
+                      </p>
+                    )}
+                  </div>
 
-              {/* Row 3 — toggles */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      IELTS Score
+                    </label>
+                    <select
+                      value={ielts} onChange={(e) => setIelts(e.target.value)}
+                      className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
+                    >
+                      <option value="0">Not yet appeared</option>
+                      <option value="5.0">5.0</option>
+                      <option value="5.5">5.5</option>
+                      <option value="6.0">6.0</option>
+                      <option value="6.5">6.5</option>
+                      <option value="7.0">7.0+</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      Available Budget (lac ৳)
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">৳</span>
+                      <input
+                        type="number" min="0" step="1"
+                        value={budget} onChange={(e) => setBudget(e.target.value)}
+                        placeholder="e.g. 15"
+                        className="w-full rounded-xl border border-gray-200 pl-7 pr-14 py-2.5 text-sm font-semibold text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white"
+                      />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">lac</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Row 2 — publications + work exp (masters only) */}
+              {studyLevel === "masters" && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
+                      Publications
+                    </label>
+                    <PillGroup value={publications} onChange={setPublications}
+                      options={[{ label: "None", value: 0 }, { label: "1", value: 1 }, { label: "2+", value: 2 }]}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
+                      Work Experience
+                    </label>
+                    <PillGroup value={workExp} onChange={setWorkExp}
+                      options={[{ label: "None", value: 0 }, { label: "1 yr", value: 1 }, { label: "2+ yrs", value: 2 }]}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {/* Toggles */}
+              <div className={`grid gap-y-4 ${studyLevel === "masters" ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3"}`}>
                 <Toggle value={hasSpouse} onChange={setHasSpouse} label="Bringing Spouse" />
                 <Toggle value={hasChild} onChange={setHasChild} label="Bringing Child" />
-                <Toggle value={wantScholarship} onChange={setWantScholarship} label="Need Scholarship" />
+                {studyLevel === "masters" && (
+                  <Toggle value={wantScholarship} onChange={setWantScholarship} label="Need Scholarship" />
+                )}
                 <Toggle value={canTravelIndia} onChange={setCanTravelIndia} label="Visa via 3rd Country" />
               </div>
+
+              {/* Bachelor education years note */}
+              {studyLevel === "bachelor" && (
+                <div className="mt-5 flex items-start gap-2 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+                  <AlertTriangle className="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0" />
+                  <p className="text-xs text-amber-800 leading-relaxed">
+                    <span className="font-semibold">Education years note:</span> Bangladesh HSC = 12 years of education. Denmark & Germany require 13 years, Austria requires 14 years — HSC graduates are not directly eligible for those countries.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Results */}
-            {hasProfile && (
+            {activeProfile && (
               <>
                 {results.length === 0 ? (
                   <div className="text-center py-8 bg-white rounded-2xl border border-gray-100 mb-6">
@@ -552,7 +819,6 @@ export default function ProfileEvaluator() {
             </div>
 
           </div>
-          {/* Bottom accent bar — matches SessionInfoBanner */}
           <div className="h-1.5 bg-[#364bc5]" aria-hidden="true" />
         </div>
 
