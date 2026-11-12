@@ -259,9 +259,9 @@ const relocationReviews = [
     program: "FLE – Intensive French Language Program",
     university: "Sorbonne Paris, Paris — France",
     route: "🇧🇩 Bangladesh → 🇬🇧 UK → 🇫🇷 France",
-    date: "2025",
+    date: "January 2027",
     photo: "/students/Mohammod Hadi.jpeg",
-    text: "Alhamdulillah! I just received my French Student Visa from the UK for a one-year Intensive French Language Program at Sorbonne Paris. This was a challenging journey — visa rejections for language programs are notoriously high. Having completed my Masters in Diabetes at the University of Chester, UK, with my Post-Study Work visa ending in January and no suitable English-taught Masters starting in February, I consulted Ahsan Vai and enrolled in a French Language Course.\n\nI believe my three prior visit visas to France and a one-month A1–A2 course I completed in the UK also strengthened my application. I strongly recommend Ahsan Vai and Safkat Apu as the best career mentors for France.",
+    text: "Alhamdulillah! I just received my French Student Visa from the UK for a one-year Intensive French Language Program at Sorbonne Paris. This was a challenging journey — visa rejections for language programs are notoriously high. Having completed my Masters in Diabetes at the University of Chester, UK, with my Post-Study Work visa ending in January and no suitable English-taught Masters starting in February, I consulted Ahsan Vai and enrolled in a French Language Course.\n\nI believe my three prior visit visas to France and a one-month French A1–A2 course I completed in the UK also strengthened my application. I strongly recommend Ahsan Vai and Safkat Apu as the best career mentors for France.",
   },
 ];
 
