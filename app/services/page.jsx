@@ -254,6 +254,15 @@ const relocationReviews = [
     photo: "/students/anushree.png",
     text: "I received my French student visa for my second Master's in Biocontrol Solutions for Plant Health at Université Côte d'Azur, Nice. After completing my Bachelor's in Bangladesh and my first Master's in Horticulture Engineering in Hungary, I was uncertain about my next step in Europe. I found Ahsan Sunny Bhai's France playlist on YouTube, booked a 1:1 session, and later enrolled in the complete relocation guidance for France & Spain.\n\nOne thing I realised throughout this journey: there are many opportunities, practical strategies, and important details that are simply not discoverable through Google, YouTube, or even AI tools alone. An experienced mentor who truly understands the process can identify the right opportunities and guide you according to your individual situation.",
   },
+  {
+    name: "Mohammod Hadi",
+    program: "FLE – Intensive French Language Program",
+    university: "Sorbonne Paris, Paris — France",
+    route: "🇧🇩 Bangladesh → 🇬🇧 UK → 🇫🇷 France",
+    date: "January 2027",
+    photo: "/students/Mohammod Hadi.jpeg",
+    text: "Alhamdulillah! I just received my French Student Visa from the UK for a one-year Intensive French Language Program at Sorbonne Paris. This was a challenging journey — visa rejections for language programs are notoriously high. Having completed my Masters in Diabetes at the University of Chester, UK, with my Post-Study Work visa ending in January and no suitable English-taught Masters starting in February, I consulted Ahsan Vai and enrolled in a French Language Course.\n\nI believe my three prior visit visas to France and a one-month French A1–A2 course I completed in the UK also strengthened my application. I strongly recommend Ahsan Vai and Safkat Apu as the best career mentors for France.",
+  },
 ];
 
 export const metadata = {
