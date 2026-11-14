@@ -52,7 +52,7 @@ const Footer = () => {
     {
       name: "Whatsapp",
       icon: FaWhatsapp,
-      href: "https://chat.whatsapp.com/Lcbi3XgUSko1HEoBpgoKor?mode=ems_copy_t",
+      href: "https://wa.me/34743093378",
     },
   ];
 
