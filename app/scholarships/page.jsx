@@ -247,30 +247,9 @@ export default function ScholarshipsPage() {
         <Title title="Scholarships" subtitle="Scholarship Application Packages" />
 
         {/* ── Intro note ── */}
-        <p className="text-center text-sm text-gray-500 max-w-2xl mx-auto -mt-4 mb-8">
+        <p className="text-center text-sm text-gray-500 max-w-2xl mx-auto -mt-4 mb-10">
           Expert-guided support to help you put together the strongest possible scholarship application.
         </p>
-
-        {/* ── Bengali context block ── */}
-        <div
-          className="max-w-4xl mx-auto mb-10 rounded-2xl border p-5"
-          style={{ borderColor: `${primary}33`, borderLeft: `4px solid ${primary}`, backgroundColor: `${primary}06` }}
-        >
-          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-            আমাদের স্টুডেন্টদের মাঝে দেশে বিদেশের স্কলারশিপ গুলো নিয়ে সঠিক তথ্য ও রিসোর্স এর অভাব লক্ষ্য করা যায়। এছাড়া বর্তমানে সঠিক তথ্যের চেয়েও ফুলিয়ে ফাঁপিয়ে স্কলারশিপ গুলোকে দেখানো হয়। অথচ একাডেমিক প্রোফাইল, সিজিপিএ, টেস্ট স্কোর ভাল না হলে প্রতিযোগিতামূলক স্কলারশিপ গুলোর প্রাথমিক সিলেকশান থেকেই বাদ পড়তে হয়। কোন স্কলারশিপ হয়ে থাকে Merit Based, কোনটি আবার Financial Need Based, আবার কোনটি প্রফেশনাল এক্সপেরিয়েন্স ও লিডারশীপ বেইসড।
-          </p>
-          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed mt-3">
-            সঠিক প্রিপারেশন ও ডকুমেন্টেশনের কারণে ভাল একাডেমিক প্রোফাইল থাকা সত্ত্বেও স্টুডেন্টরা বিভিন্ন স্কলারশিপের সুযোগ মিস করে থাকে। এই প্যাকেজটি ইউরোপের বিভিন্ন স্কলারশিপ গুলোকে টার্গেট করে ডিজাইন করা, যেখানে একজন স্কলারশিপ উইনার আপনার প্রোফাইল জাজ করবেন, ডকুমেন্টেশন এ সহায়তা করবেন ও মেন্টরিং করবেন। কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
-            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-              Free Profile Evaluator
-            </Link>{" "}
-            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
-            <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-              1:1 পেইড সেশন
-            </Link>{" "}
-            বুক করুন।
-          </p>
-        </div>
 
         {/* ── Cards grid (client component — fetches live BDT rate) ── */}
         <ScholarshipsGrid scholarships={scholarships} />
@@ -278,24 +257,29 @@ export default function ScholarshipsPage() {
         {/* ── Bottom notes ── */}
         <div className="mt-14 space-y-4 max-w-4xl mx-auto">
 
-          {/* Eligibility note with mentors link */}
+          {/* Bengali eligibility note */}
           <div
             className="rounded-2xl border p-5"
             style={{ borderColor: `${primary}33`, borderLeft: `4px solid ${primary}`, backgroundColor: `${primary}06` }}
           >
             <div className="flex items-start gap-3">
               <Info className="h-5 w-5 shrink-0 mt-0.5" style={{ color: primary }} />
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Most scholarships require a balanced profile and academic excellence. Some scholarships like Erasmus, Eiffel and Italian Government Scholarship require a high CGPA. Some scholarships are need-based or family income-based like Italy Regional Scholarships. Some scholarships are leadership and SDG goal-based like SI Scholarship. To check your eligibility, please book an appointment with our{" "}
-                <Link
-                  href="/#mentors"
-                  className="font-semibold underline underline-offset-2"
-                  style={{ color: primary }}
-                >
-                  expert mentors
-                </Link>{" "}
-                for a paid 1:1 session.
-              </p>
+              <div>
+                <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+                  আমাদের স্টুডেন্টদের মাঝে দেশে বিদেশের স্কলারশিপ গুলো নিয়ে সঠিক তথ্য ও রিসোর্স এর অভাব লক্ষ্য করা যায়। এছাড়া বর্তমানে সঠিক তথ্যের চেয়েও ফুলিয়ে ফাঁপিয়ে স্কলারশিপ গুলোকে দেখানো হয়। অথচ একাডেমিক প্রোফাইল, সিজিপিএ, টেস্ট স্কোর ভাল না হলে প্রতিযোগিতামূলক স্কলারশিপ গুলোর প্রাথমিক সিলেকশান থেকেই বাদ পড়তে হয়। কোন স্কলারশিপ হয়ে থাকে Merit Based, কোনটি আবার Financial Need Based, আবার কোনটি প্রফেশনাল এক্সপেরিয়েন্স ও লিডারশীপ বেইসড।
+                </p>
+                <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed mt-3">
+                  সঠিক প্রিপারেশন ও ডকুমেন্টেশনের কারণে ভাল একাডেমিক প্রোফাইল থাকা সত্ত্বেও স্টুডেন্টরা বিভিন্ন স্কলারশিপের সুযোগ মিস করে থাকে। এই প্যাকেজটি ইউরোপের বিভিন্ন স্কলারশিপ গুলোকে টার্গেট করে ডিজাইন করা, যেখানে একজন স্কলারশিপ উইনার আপনার প্রোফাইল জাজ করবেন, ডকুমেন্টেশন এ সহায়তা করবেন ও মেন্টরিং করবেন। কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+                  <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                    Free Profile Evaluator
+                  </Link>{" "}
+                  টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
+                  <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                    1:1 পেইড সেশন
+                  </Link>{" "}
+                  বুক করুন।
+                </p>
+              </div>
             </div>
           </div>
 
