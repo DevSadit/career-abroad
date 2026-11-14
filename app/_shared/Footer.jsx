@@ -2,7 +2,7 @@ import React from "react";
 import {
   FaFacebook,
   FaYoutube,
-  FaLinkedin,
+  FaInstagram,
   FaTelegram,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -32,7 +32,7 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: FaFacebook,
-      href: "https://www.facebook.com/AhsanSunyOfficial",
+      href: "https://www.facebook.com/CareerAbroadMentors",
     },
     {
       name: "Youtube",
@@ -40,9 +40,9 @@ const Footer = () => {
       href: "https://www.youtube.com/@AhsanSuny",
     },
     {
-      name: "Linkedin",
-      icon: FaLinkedin,
-      href: "https://www.linkedin.com/company/career-abroad-mentor",
+      name: "Instagram",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/careerabroadmentor/",
     },
     {
       name: "Telegram",
