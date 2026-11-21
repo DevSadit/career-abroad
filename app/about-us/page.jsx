@@ -201,17 +201,6 @@ const Page = () => {
               </div>
             </div>
 
-            {/* Portfolio highlight banner */}
-            <div className="relative overflow-hidden">
-              <Image
-                src="/mentors/ahsan_banner.png"
-                alt="Ahsan Suny — PhD Researcher in AI & Robotics"
-                width={1200}
-                height={630}
-                className="w-full object-cover max-h-56 sm:max-h-64 md:max-h-72"
-              />
-            </div>
-
             <div className="p-5 sm:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
               {/* Photo + links */}
               <div className="flex-shrink-0 flex flex-col items-center gap-3">
