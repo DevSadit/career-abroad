@@ -255,10 +255,7 @@ const Page = () => {
               <div className="flex flex-col gap-3 text-[15px] sm:text-base leading-relaxed text-gray-700">
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Ahsan Suny</h2>
-                  <p className="text-sm font-medium mt-0.5" style={{ color: primary }}>PhD Researcher in AI &amp; Robotics</p>
-                  <p className="text-xs text-gray-500 mt-0.5">Self-driving labs · Agentic AI · Embedded systems</p>
-                  <p className="text-xs text-gray-500">ICIQ &amp; Universitat Rovira i Virgili, Spain</p>
-                  <p className="text-xs text-gray-400 mt-0.5">Founder, Career Abroad Mentors</p>
+                  <p className="text-sm text-gray-500 mt-0.5">Founder, Career Abroad Mentors</p>
                 </div>
 
                 <p>
@@ -278,18 +275,6 @@ const Page = () => {
                   <a href="https://scholar.google.com/citations?user=_7HPSf4AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-2" style={{ color: primary }}>Google Scholar</a>. He is committed to empowering the next generation of Bangladeshi students to achieve their own international academic and career milestones.
                 </p>
 
-                {/* Research focus tags */}
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {["Self-driving Labs", "Agentic AI", "Embedded Systems", "AI & Robotics", "Catalyst Development"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full px-3 py-1 text-xs font-medium border"
-                      style={{ borderColor: `${primary}33`, backgroundColor: `${primary}08`, color: primary }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
