@@ -305,6 +305,28 @@ const Page = () => {
         {/* VIDEOS */}
         <Videos videos={videos} />
 
+        {/* Contact note */}
+        <div
+          className="mt-8 rounded-2xl border p-4"
+          style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+        >
+          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Free Profile Evaluator
+            </Link>{" "}
+            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
+            <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              1:1 পেইড সেশন
+            </Link>{" "}
+            বুক করুন। আমাদের অফিশিয়াল{" "}
+            <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
+              WhatsApp
+            </a>{" "}
+            নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। এনরোলড স্টুডেন্ট ব্যতীত ফোনে কথা বলা সম্ভব হয় না — অনুগ্রহ করে ফোন কলের অনুরোধ করবেন না।
+          </p>
+        </div>
+
         {/* Footer CTA */}
         <div className="mt-12">
           <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6 sm:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
