@@ -329,7 +329,7 @@ export default function ServicesPage() {
                     <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
                       WhatsApp
                     </a>{" "}
-                    নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। অনুগ্রহ করে ফোনে কথা বলতে অনুরোধ করবেন না।
+                    নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। এনরোলড স্টুডেন্ট ব্যতীত ফোনে কথা বলা সম্ভব হয় না — অনুগ্রহ করে ফোন কলের অনুরোধ করবেন না।
                   </p>
                 </div>
               </div>
