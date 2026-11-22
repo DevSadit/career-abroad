@@ -17,6 +17,8 @@ import {
   Tag,
   RefreshCcw,
   Users,
+  CalendarCheck,
+  MessageCircle,
 } from "lucide-react";
 import PriceDisplay from "../complete-mentorship-program/PriceDisplay";
 
@@ -439,15 +441,40 @@ export default function ServicesPage() {
                       <p className="mt-2 text-xs text-gray-400">+75% of total fee for spouse / dependent</p>
                     )}
 
-                    <div className="mt-4">
+                    <div className="mt-4 flex flex-col gap-2">
+                      {/* Primary CTA */}
                       <a
-                        href={contactEmail}
+                        href={tier.id === "customized" ? contactEmail : "/#mentors"}
                         className="flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
                         style={{ backgroundColor: tier.color }}
                       >
-                        <Mail className="h-4 w-4" />
-                        {tier.id === "customized" ? "Get a Custom Quote" : "Apply for This Package"}
+                        {tier.id === "customized" ? (
+                          <><Mail className="h-4 w-4" /> Get a Custom Quote</>
+                        ) : (
+                          <><CalendarCheck className="h-4 w-4" /> Book a 1:1 Session</>
+                        )}
                       </a>
+
+                      {/* WhatsApp secondary */}
+                      {tier.id !== "customized" && (
+                        <a
+                          href="https://wa.me/34743093378"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-2.5 text-xs font-semibold text-gray-600 border border-gray-200 hover:border-green-300 hover:text-green-700 transition-colors"
+                        >
+                          <MessageCircle className="h-3.5 w-3.5" />
+                          WhatsApp — Enrollment queries only
+                        </a>
+                      )}
+
+                      {/* Disclaimer */}
+                      {tier.id !== "customized" && (
+                        <p className="text-[10px] text-gray-400 text-center leading-relaxed">
+                          We discuss over Zoom sessions, not phone calls.<br />
+                          WhatsApp is for specific enrollment queries only — questions already on our website will not be replied to.
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
