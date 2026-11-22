@@ -4,10 +4,10 @@
   "notice": "Lithuania has no Embassy in Bangladesh. Bangladeshi students can submit visa applications via VFS Global Dhaka → Lithuanian Embassy New Delhi, OR at Honorary Consulates in Malaysia, Philippines, or Thailand. Lithuania uses a TRP (Temporary Residence Permit) system via MIGRIS — not a standard long-stay visa.",
   "processSteps": [
     {
-      "label": "University Application : via admissions.lt or university portal",
+      "label": "University Application : via university portal",
       "bullets": [
-        "admissions.lt covers most major Lithuanian universities",
-        "Application window: March–June for September intake"
+        "Application window: January–April for September intake",
+        "University Application Fee : €0–30 depending on university"
       ],
       "color": "yellow"
     },
@@ -15,17 +15,18 @@
       "label": "Offer Letter → Request Mediation Letter from University",
       "bullets": [
         "Offer Letter is the prerequisite to request a Mediation Letter from the institution",
-        "Mediation Letter is mandatory for non-EU students applying for TRP — without it, TRP application cannot proceed"
+        "Mediation Letter is mandatory for non-EU students applying for TRP"
       ],
       "color": "green"
     },
+    { "label": "SKVC Academic Recognition Fee : ~€50–€100", "color": "purple" },
     {
-      "label": "Document Legalization : ৩ ধাপে বাধ্যতামূলক",
+      "label": "PCC Legalization : ৩ ধাপে বাধ্যতামূলক",
       "bullets": [
-        "Step 1 — Bangladesh MoFA: SSC, HSC, Degree, Transcript ও PCC Apostille/attestation",
+        "Step 1 — Bangladesh MoFA: PCC Apostille/attestation",
         "Step 2 — Bangladesh Embassy Poland: লিথুয়ানিয়ায় বাংলাদেশের কোনো Embassy নেই, নিকটস্থটি পোল্যান্ডে",
-        "Step 3 — Lithuanian MoFA: সবশেষে Lithuanian Ministry of Foreign Affairs থেকে legalization",
-        "⚠️ মোট খরচ: ~২৫,০০০ BDT | সময়: ৬–১০ সপ্তাহ — Offer Letter পাওয়ার সাথে সাথে শুরু করুন"
+        "Step 3 — Lithuanian MoFA: সবশেষে Lithuanian MOFA থেকে legalization",
+        "⚠️ মোট খরচ: ~২৫,০০০ BDT | সময়: ৬–১০ সপ্তাহ"
       ],
       "color": "red"
     },
@@ -33,10 +34,12 @@
       "label": "Financial Proof : minimum €8,077 in bank",
       "bullets": [
         "MIGRIS official requirement: €8,077 minimum",
-        "Bank statement: last 3–6 months, English certified | Sponsor letter if parent's account"
+        "Bank statement: last 3–6 months | With Income Source proof"
       ],
       "color": "orange"
-    },
+    }
+  ],
+  "costSteps": [
     {
       "label": "Book Student Housing / Dormitory",
       "bullets": [
@@ -53,40 +56,18 @@
       ],
       "color": "lightblue"
     },
+    
+    { "label": "Indian Visa : required to travel to New Delhi for visa submission", "color": "lightyellow" },
     {
-      "label": "Submit Application : VFS Dhaka / Honorary Consulate / New Delhi",
+      "label": "Submit Application :",
       "bullets": [
-        "Option A — VFS Global Dhaka → forwards to Lithuanian Embassy New Delhi",
-        "Option B — Honorary Consulates in Malaysia, Philippines, or Thailand",
-        "Option C — In person at Lithuanian Embassy New Delhi (in.mfa.lt/en)"
+        "Option A — MIGRIS → forwards to Lithuanian Embassy New Delhi",
+        "Option B — MIGRIS → Consulates in Malaysia, Philippines, or Thailand",
+        "MIGRIS + VFS Fee : ~€200 (~৩০,০০০–৩৫,০০০ BDT)"
       ],
       "color": "blue"
     },
-    {
-      "label": "Arrive in Lithuania — Apply for TRP via MIGRIS (migracija.lt)",
-      "bullets": [
-        "Within 3 months of arrival: apply at migracija.lt with Mediation Letter + all documents",
-        "MIGRIS fee + VFS fee: ~€200 total (~৩০,০০০–৩৫,০০০ BDT)",
-        "Collect TRP card from Vilnius Migration Department (3–4 weeks)",
-        "⚠️ Two-Strike Rule: দুইবার reject হলে system block — সব documents সঠিকভাবে দিন"
-      ],
-      "color": "green"
-    },
-    {
-      "label": "SKVC Academic Recognition",
-      "bullets": [
-        "skvc.lt — লিথুয়ানিয়ার Academic Recognition সংস্থায় বাংলাদেশি ডিগ্রির equivalency যাচাই",
-        "3-part legalized documents জমা দিন | Processing: 4–6 weeks | Fee: ~€50–€100",
-        "University registration ও TRP renewal-এর জন্য প্রয়োজন হতে পারে"
-      ],
-      "color": "purple"
-    }
-  ],
-  "costSteps": [
-    { "label": "Document Legalization (MoFA → Embassy Poland → Lithuanian MoFA) : ~২৫,০০০ BDT", "color": "red" },
-    { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
-    { "label": "MIGRIS + VFS Fee : ~€200 (~৩০,০০০–৩৫,০০০ BDT)", "color": "blue" },
-    { "label": "SKVC Academic Recognition Fee : ~€50–€100", "color": "purple" },
+
     { "label": "Air Ticket to Lithuania : varies by season and route", "color": "lightblue" }
   ],
   "resources": [
@@ -94,11 +75,6 @@
       "label": "MIGRIS — Official Residence Permit Portal",
       "url": "https://www.migracija.lt/home?lang=en",
       "icon": "file"
-    },
-    {
-      "label": "admissions.lt — Central Application Portal",
-      "url": "https://www.admissions.lt/",
-      "icon": "database"
     },
     {
       "label": "SKVC — Academic Recognition Lithuania",
@@ -128,13 +104,6 @@
       "accent": "#006A44",
       "email": "lt.amb.in@urm.lt",
       "address": "A-26, Vasant Marg, Vasant Vihar, New Delhi 110057, India"
-    },
-    {
-      "name": "VFS Global — Lithuania Visa (Dhaka)",
-      "logo": "/VFS.png",
-      "accent": "#003087",
-      "email": "info.devfd@vfshelpline.com",
-      "address": "VFS Global, Dhaka — forwards applications to Lithuanian Embassy New Delhi"
     }
   ]
 }

@@ -42,17 +42,18 @@
         "Processing: 3–5 months — apply as soon as you receive your admission letter"
       ],
       "color": "lightblue"
-    },
-    {
+    }
+
+  ],
+  "costSteps": [
+        {
       "label": "VFS Global Dhaka Biometrics Appointment",
       "bullets": [
         "Book appointment at vfsglobal.com well in advance",
         "Bring original passport, SIRI reference number, and photo"
       ],
       "color": "blue"
-    }
-  ],
-  "costSteps": [
+    },
     { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
     { "label": "Tuition Fee : 45,000–120,000 DKK/year — program dependent", "color": "orange" },
     { "label": "Air Ticket to Denmark : ~70,000–90,000 BDT", "color": "blue" }

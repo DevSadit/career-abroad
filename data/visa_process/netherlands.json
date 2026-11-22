@@ -42,25 +42,17 @@
         "Health insurance (Zorgverzekering) required within 4 months of arrival: ~120–160 EUR/month"
       ],
       "color": "gray"
-    },
-    {
-      "label": "Arrive in Netherlands & IND Check-In",
-      "bullets": [
-        "Register at Gemeente for BSN (Citizen Service Number)",
-        "Report to IND within 3 days — university coordinates; collect VVR card"
-      ],
-      "color": "blue"
-    },
-    {
+    }
+  ],
+  "costSteps": [
+      {
       "label": "Residence Permit (VVR) : valid for duration of studies",
       "bullets": [
         "Part-time work: 16 hours/week during term; full-time in summer",
         "Renewable as long as enrolled and conditions met"
       ],
       "color": "green"
-    }
-  ],
-  "costSteps": [
+    },
     { "label": "Tuition Fee : 8,000–20,000 EUR/year — varies by university and program", "color": "red" },
     { "label": "BSN Registration : free at Gemeente (City Hall)", "color": "green" },
     { "label": "Air Ticket to Netherlands : varies by season and route", "color": "blue" }

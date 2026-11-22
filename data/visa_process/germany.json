@@ -28,32 +28,18 @@
       "color": "gray"
     },
     {
-      "label": "Student Visa Application : via German Embassy Dhaka",
+      "label": "Student Visa Application : via CSP portal & VFS Dhaka",
       "bullets": [
         "Register at German Embassy Dhaka Consular Services Portal first",
-        "Master's: via VFS Global Dhaka | Bachelor's: submit directly at Embassy"
+        "Applicants will be classified on dynamic categories",
+        "Get Appointment at VFS for document and biometric submission"
       ],
       "color": "lightblue"
     },
-    {
-      "label": "Arrive in Germany & Register (Anmeldung)",
-      "bullets": [
-        "Register at Einwohnermeldeamt within 2 weeks — receive Steuer-ID",
-        "Register with health insurance provider"
-      ],
-      "color": "blue"
-    },
-    {
-      "label": "Residence Permit (Aufenthaltserlaubnis)",
-      "bullets": [
-        "Apply at local Ausländerbehörde — fee: ~100 EUR",
-        "Bring: enrollment certificate, blocked account proof, insurance"
-      ],
-      "color": "green"
-    }
+        { "label": "Blocked Account (Sperrkonto) : 11,904 EUR — withdrawn monthly (992 EUR/month) after arrival", "color": "orange" }
   ],
   "costSteps": [
-    { "label": "Blocked Account (Sperrkonto) : 11,904 EUR — withdrawn monthly (992 EUR/month) after arrival", "color": "orange" },
+
     { "label": "Student Visa Fee : EUR-based fixed amount, paid in BDT at time of submission", "color": "lightblue" },
     { "label": "VFS Global Service Fee : ~30–35 EUR — visa submission (Master's only)", "color": "blue" },
     { "label": "Semester Contribution : 150–350 EUR/semester — includes transport pass in many states", "color": "gray" },
