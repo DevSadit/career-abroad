@@ -1,7 +1,7 @@
 {
   "title": "Application to Study Permit Process Steps for Lithuania",
-  "infoLink": "https://www.migracija.lt/en/",
-  "notice": "Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi.",
+  "infoLink": "https://www.migris.lt/",
+  "notice": "Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi. Lithuania uses a TRP (Temporary Residence Permit) system via MIGRIS — not a standard long-stay visa.",
   "processSteps": [
     {
       "label": "University Application : via admissions.lt or university portal",
@@ -19,10 +19,19 @@
       "color": "green"
     },
     {
-      "label": "Financial Proof : ~€4,800–€8,000 in bank",
+      "label": "Document Legalization : Double Legalization বাধ্যতামূলক",
       "bullets": [
-        "Minimum €400/month; showing €6,000–€8,000 recommended",
-        "Bank statement must clearly show your name and balance"
+        "Step 1 — Bangladesh MoFA Apostille: SSC, HSC, Degree certificate ও transcript লিগালাইজ করুন",
+        "Step 2 — New Delhi Lithuanian Embassy Attestation: MoFA Apostille করা ডকুমেন্ট Embassy-তে জমা দিন",
+        "⚠️ বাংলাদেশি Apostille একা লিথুয়ানিয়া গ্রহণ করে না — উভয় ধাপ বাধ্যতামূলক"
+      ],
+      "color": "red"
+    },
+    {
+      "label": "Financial Proof : ~€7,000+ in bank",
+      "bullets": [
+        "Official requirement: €577/month × 12 = ~€6,924 | Recommended: €7,000–€8,000",
+        "Bank statement: last 3–6 months, English certified | Sponsor letter if parent's account"
       ],
       "color": "orange"
     },
@@ -37,38 +46,51 @@
     {
       "label": "Arrange Health Insurance",
       "bullets": [
-        "Mandatory for visa — must cover entire study period",
-        "Private insurance: ~€100–€300/year"
+        "Mandatory for visa — minimum €30,000 coverage, entire study period",
+        "Private insurance: ~€80–€250/year"
       ],
       "color": "lightblue"
     },
     {
       "label": "Lithuanian Embassy New Delhi : National D Visa Application",
       "bullets": [
-        "No Lithuanian Embassy in Bangladesh — apply via Embassy New Delhi or VFS Global Dhaka",
+        "No Lithuanian Embassy in Bangladesh — apply via VFS Global Dhaka or in person at Embassy New Delhi",
         "Visa fee: €80 | Processing: 4–8 weeks"
       ],
       "color": "blue"
     },
     {
-      "label": "Arrive in Lithuania — Register for Residence Permit",
+      "label": "Arrive in Lithuania — TRP via MIGRIS Online System",
       "bullets": [
-        "Register at Migration Department within 30 days of arrival",
-        "Obtain Lithuanian personal code (asmens kodas) for banking and work"
+        "Within 3 months of arrival: apply for Temporary Residence Permit at migris.lt",
+        "TRP fee: €100–€120 | Collect TRP card from Vilnius Migration Department (3–4 weeks)",
+        "⚠️ MIGRIS Two-Strike Rule: দুইবার reject হলে system block — প্রথমবার সব documents সঠিকভাবে দিন"
       ],
       "color": "green"
+    },
+    {
+      "label": "SKVC Academic Recognition",
+      "bullets": [
+        "skvc.lt — লিথুয়ানিয়ার Academic Recognition সংস্থায় বাংলাদেশি ডিগ্রির equivalency যাচাই",
+        "Double Legalized documents জমা দিন | Processing: 4–6 weeks | Fee: ~€50–€100",
+        "University registration ও TRP renewal-এর জন্য প্রয়োজন হতে পারে"
+      ],
+      "color": "purple"
     }
   ],
   "costSteps": [
+    { "label": "Document Legalization (MoFA Apostille) : ~৳৫০০–৮০০ per document", "color": "red" },
     { "label": "VFS Service Fee (if applicable) : ~€20–30", "color": "lightyellow" },
     { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
+    { "label": "TRP Application Fee : €100–€120", "color": "blue" },
+    { "label": "SKVC Academic Recognition Fee : ~€50–€100", "color": "purple" },
     { "label": "Air Ticket to Lithuania : varies by season and route", "color": "blue" }
   ],
   "resources": [
     {
-      "label": "Study in Lithuania — Official Portal",
-      "url": "https://www.studyinlithuania.lt/en/",
-      "icon": "graduation"
+      "label": "MIGRIS — Residence Permit Online System",
+      "url": "https://www.migris.lt/",
+      "icon": "file"
     },
     {
       "label": "admissions.lt — Central Application Portal",
@@ -76,23 +98,23 @@
       "icon": "database"
     },
     {
+      "label": "SKVC — Academic Recognition Lithuania",
+      "url": "https://www.skvc.lt/en/",
+      "icon": "graduation"
+    },
+    {
+      "label": "Study in Lithuania — Official Portal",
+      "url": "https://www.studyinlithuania.lt/en/",
+      "icon": "graduation"
+    },
+    {
       "label": "Lithuanian Government Scholarships (EMFSL)",
       "url": "https://www.emfsl.lt/en/",
       "icon": "award"
     },
     {
-      "label": "Migration Department Lithuania",
-      "url": "https://www.migracija.lt/en/",
-      "icon": "file"
-    },
-    {
       "label": "Lithuanian Embassy New Delhi",
       "url": "https://in.mfa.lt/in/en/",
-      "icon": "graduation"
-    },
-    {
-      "label": "Vilnius University International Admissions",
-      "url": "https://www.vu.lt/en/studies/international-students",
       "icon": "graduation"
     }
   ],
