@@ -1,79 +1,90 @@
 {
   "title": "Application to Study Permit Process Steps for Lithuania",
-  "infoLink": "https://www.migracija.lt/en/",
-  "notice": "Lithuania has no Embassy in Bangladesh — nearest Lithuanian Embassy is in New Delhi, India. Apply via VFS Global Dhaka or in person at the Embassy in Delhi.",
+  "infoLink": "https://www.migracija.lt/home?lang=en",
+  "notice": "Lithuania has no Embassy in Bangladesh. Bangladeshi students can submit visa applications via VFS Global Dhaka → Lithuanian Embassy New Delhi, OR at Honorary Consulates in Malaysia, Philippines, or Thailand. Lithuania uses a TRP (Temporary Residence Permit) system via MIGRIS — not a standard long-stay visa.",
   "processSteps": [
     {
-      "label": "University Application : via admissions.lt or university portal",
+      "label": "University Application : via university portal",
       "bullets": [
-        "admissions.lt covers most major Lithuanian universities",
-        "Application window: March–June for September intake"
+        "Application window: January–April for September intake",
+        "University Application Fee : €0–30 depending on university"
       ],
       "color": "yellow"
     },
     {
-      "label": "Offer / Admission Letter",
+      "label": "Offer Letter → Request Mediation Letter from University",
       "bullets": [
-        "Tuition: €1,500–€6,000/year | Lithuanian Government Scholarship can waive fees entirely"
+        "Offer Letter is the prerequisite to request a Mediation Letter from the institution",
+        "Mediation Letter is mandatory for non-EU students applying for TRP"
       ],
       "color": "green"
     },
+    { "label": "SKVC Academic Recognition Fee : ~€50–€100", "color": "purple" },
     {
-      "label": "Financial Proof : ~€4,800–€8,000 in bank",
+      "label": "PCC Legalization : ৩ ধাপে বাধ্যতামূলক",
       "bullets": [
-        "Minimum €400/month; showing €6,000–€8,000 recommended",
-        "Bank statement must clearly show your name and balance"
+        "Step 1 — Bangladesh MoFA: PCC Apostille/attestation",
+        "Step 2 — Bangladesh Embassy Poland: লিথুয়ানিয়ায় বাংলাদেশের কোনো Embassy নেই, নিকটস্থটি পোল্যান্ডে",
+        "Step 3 — Lithuanian MoFA: সবশেষে Lithuanian MOFA থেকে legalization",
+        "⚠️ মোট খরচ: ~২৫,০০০ BDT | সময়: ৬–১০ সপ্তাহ"
+      ],
+      "color": "red"
+    },
+    {
+      "label": "Financial Proof : minimum €8,077 in bank",
+      "bullets": [
+        "MIGRIS official requirement: €8,077 minimum",
+        "Bank statement: last 3–6 months | With Income Source proof"
       ],
       "color": "orange"
-    },
+    }
+  ],
+  "costSteps": [
     {
       "label": "Book Student Housing / Dormitory",
       "bullets": [
         "University dormitory: €100–€200/month — very affordable",
-        "Housing confirmation required for visa application"
+        "Housing confirmation required for TRP application"
       ],
       "color": "gray"
     },
     {
       "label": "Arrange Health Insurance",
       "bullets": [
-        "Mandatory for visa — must cover entire study period",
-        "Private insurance: ~€100–€300/year"
+        "Mandatory — minimum €30,000 coverage, entire study period",
+        "Private insurance: ~€80–€250/year"
       ],
       "color": "lightblue"
     },
+    
+    { "label": "Indian Visa : required to travel to New Delhi for visa submission", "color": "lightyellow" },
     {
-      "label": "Lithuanian Embassy New Delhi : National D Visa Application",
+      "label": "Submit Application :",
       "bullets": [
-        "No Lithuanian Embassy in Bangladesh — apply via Embassy New Delhi or VFS Global Dhaka",
-        "Visa fee: €80 | Processing: 4–8 weeks"
+        "Option A — MIGRIS → forwards to Lithuanian Embassy New Delhi",
+        "Option B — MIGRIS → Consulates in Malaysia, Philippines, or Thailand",
+        "MIGRIS + VFS Fee : ~€200 (~৩০,০০০–৩৫,০০০ BDT)"
       ],
       "color": "blue"
     },
-    {
-      "label": "Arrive in Lithuania — Register for Residence Permit",
-      "bullets": [
-        "Register at Migration Department within 30 days of arrival",
-        "Obtain Lithuanian personal code (asmens kodas) for banking and work"
-      ],
-      "color": "green"
-    }
-  ],
-  "costSteps": [
-    { "label": "VFS Service Fee (if applicable) : ~€20–30", "color": "lightyellow" },
-    { "label": "University Application Fee : €0–30 depending on university", "color": "gray" },
-    { "label": "Air Ticket to Lithuania : varies by season and route", "color": "blue" }
+
+    { "label": "Air Ticket to Lithuania : varies by season and route", "color": "lightblue" }
   ],
   "resources": [
+    {
+      "label": "MIGRIS — Official Residence Permit Portal",
+      "url": "https://www.migracija.lt/home?lang=en",
+      "icon": "file"
+    },
+    {
+      "label": "SKVC — Academic Recognition Lithuania",
+      "url": "https://www.skvc.lt/en/",
+      "icon": "graduation"
+    },
     {
       "label": "Study in Lithuania — Official Portal",
       "url": "https://www.studyinlithuania.lt/en/",
       "icon": "graduation"
-    },
-    {
-      "label": "admissions.lt — Central Application Portal",
-      "url": "https://www.admissions.lt/",
-      "icon": "database"
     },
     {
       "label": "Lithuanian Government Scholarships (EMFSL)",
@@ -81,18 +92,8 @@
       "icon": "award"
     },
     {
-      "label": "Migration Department Lithuania",
-      "url": "https://www.migracija.lt/en/",
-      "icon": "file"
-    },
-    {
       "label": "Lithuanian Embassy New Delhi",
-      "url": "https://in.mfa.lt/in/en/",
-      "icon": "graduation"
-    },
-    {
-      "label": "Vilnius University International Admissions",
-      "url": "https://www.vu.lt/en/studies/international-students",
+      "url": "https://in.mfa.lt/en",
       "icon": "graduation"
     }
   ],
@@ -103,13 +104,6 @@
       "accent": "#006A44",
       "email": "lt.amb.in@urm.lt",
       "address": "A-26, Vasant Marg, Vasant Vihar, New Delhi 110057, India"
-    },
-    {
-      "name": "VFS Global — Lithuania Visa (Dhaka)",
-      "logo": "/VFS.png",
-      "accent": "#003087",
-      "email": "info.devfd@vfshelpline.com",
-      "address": "VFS Global, Dhaka (check website for current procedure for Lithuania applications)"
     }
   ]
 }

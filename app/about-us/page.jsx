@@ -202,7 +202,7 @@ const Page = () => {
             </div>
 
             <div className="p-5 sm:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
-              {/* Photo */}
+              {/* Photo + links */}
               <div className="flex-shrink-0 flex flex-col items-center gap-3">
                 <div
                   className="relative h-40 w-40 sm:h-48 sm:w-48 rounded-2xl overflow-hidden border-2 shadow-md"
@@ -215,6 +215,17 @@ const Page = () => {
                     className="object-cover object-top"
                   />
                 </div>
+
+                {/* Portfolio CTA */}
+                <a
+                  href="https://info.ahsansuny.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-48 sm:w-56 flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5"
+                  style={{ backgroundColor: primary }}
+                >
+                  🌐 info.ahsansuny.com
+                </a>
 
                 {/* Social links */}
                 <div className="flex flex-wrap justify-center gap-2 w-48 sm:w-56">
@@ -248,7 +259,7 @@ const Page = () => {
                 </div>
 
                 <p>
-                  Meet <span className="font-semibold text-gray-900">Ahsan Suny</span>, the driving force behind Career Abroad Mentors. He is currently pursuing a Spanish Government-funded PhD in <span className="font-semibold text-gray-900">Robotics & AI</span> at the <span className="font-semibold text-gray-900">Nanosystems, Bioengineering and Energy department of University Rovira i Virgili and ICIQ</span>, Spain — a journey shaped by multiple competitive scholarships, research grants, and industry experience across three countries.
+                  Meet <span className="font-semibold text-gray-900">Ahsan Suny</span>, the driving force behind Career Abroad Mentors. He is currently pursuing a Spanish Government-funded PhD in <span className="font-semibold text-gray-900">Robotics &amp; AI</span> at the <span className="font-semibold text-gray-900">Nanosystems, Bioengineering and Energy department of University Rovira i Virgili and ICIQ</span>, Spain — a journey shaped by multiple competitive scholarships, research grants, and industry experience across three countries.
                 </p>
 
                 <p>
@@ -263,6 +274,7 @@ const Page = () => {
                   Ahsan has delivered <span className="font-semibold text-gray-900">8+ successful projects</span> for startups, research institutes, and multinational companies across Bangladesh, France, and Spain. His peer-reviewed journal articles and conference papers are indexed on his{" "}
                   <a href="https://scholar.google.com/citations?user=_7HPSf4AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-2" style={{ color: primary }}>Google Scholar</a>. He is committed to empowering the next generation of Bangladeshi students to achieve their own international academic and career milestones.
                 </p>
+
               </div>
             </div>
           </div>

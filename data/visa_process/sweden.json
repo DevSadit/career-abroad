@@ -28,9 +28,8 @@
       "color": "orange"
     },
     {
-      "label": "Arrange Accommodation : Student housing or private rental confirmation",
+      "label": "Arrange Accommodation : Student housing or private rental",
       "bullets": [
-        "Apply to student housing immediately after admission — queues fill fast",
         "Student housing: 4,000–7,000 SEK/month; private: 8,000–14,000 SEK/month in Stockholm"
       ],
       "color": "gray"
@@ -42,17 +41,17 @@
         "Processing time: 4–8 weeks"
       ],
       "color": "lightblue"
-    },
-    {
+    }
+  ],
+  "costSteps": [
+        {
       "label": "VFS Global Dhaka Biometrics Appointment",
       "bullets": [
         "Book appointment at vfsglobal.com",
         "Bring original passport, case reference number, and photo"
       ],
       "color": "blue"
-    }
-  ],
-  "costSteps": [
+    },
     { "label": "VFS Global Dhaka Service Fee : check vfsglobal.com for current rate", "color": "lightyellow" },
     { "label": "Tuition Fee : 80,000–180,000 SEK/year — program dependent", "color": "orange" },
     { "label": "Air Ticket to Sweden : ~70,000–90,000 BDT", "color": "blue" }

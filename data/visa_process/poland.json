@@ -56,8 +56,7 @@
     { "label": "Indian Visa : required to travel to New Delhi for Poland visa submission", "color": "lightyellow" },
     { "label": "Polish National D Visa Fee : €200 (from January 2026) — paid at VFS India", "color": "blue" },
     { "label": "VFS Global India Service Fee : check vfsglobal.com/Poland/India for current fee", "color": "blue" },
-    { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" },
-    { "label": "Karta Pobytu (Residence Card) : PLN 440 (~€103) — paid after arrival", "color": "green" }
+    { "label": "Air Ticket to Poland : varies by season and route", "color": "blue" }
   ],
   "mentor": {
     "name": "Nazim Uddin",

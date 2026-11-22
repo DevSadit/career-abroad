@@ -82,7 +82,7 @@
   {
     "id": 17,
     "question": "পোল্যান্ডে পরিবার নিয়ে যাওয়া যাবে?",
-    "answer": "হ্যাঁ, সম্ভব — তবে আলাদা Family Reunification Permit লাগবে:\n\n• Spouse ও সন্তানরা আলাদা Temporary Residence Permit-এর জন্য আবেদন করতে পারেন\n• Financial proof: নিজের ও পরিবারের জন্য যথেষ্ট অর্থের প্রমাণ দিতে হবে\n• Spouse কাজ করতে পারেন (তবে পৃথক work authorization প্রয়োজন হতে পারে)\n\nটিপস: নিজের Karta Pobytu ও পড়াশোনা stabilize হওয়ার পর পরিবার আনার পরিকল্পনা করুন।"
+    "answer": "না — স্টাডি ভিসায় আনা যায়না, আলাদা Family Reunification Permit লাগবে। \n• Financial proof: নিজের ও পরিবারের জন্য যথেষ্ট অর্থের প্রমাণ দিতে হবে\n\nটিপস: নিজের Karta Pobytu ও পড়াশোনা stabilize হওয়ার পর Work permit পেলে পরিবার আনার পরিকল্পনা করুন।"
   },
   {
     "id": 18,
@@ -98,15 +98,5 @@
     "id": 20,
     "question": "পোল্যান্ডে পড়ার পর EU Blue Card পাওয়া যায়?",
     "answer": "হ্যাঁ — পোল্যান্ড EU Blue Card দেয়, যা EU-wide উচ্চ-দক্ষ কর্মীদের জন্য:\n\n• EU-recognized degree + relevant job offer + minimum salary (~10,000 PLN/month)\n• Blue Card duration: সাধারণত ২ বছর (renewable)\n• EU Blue Card থাকলে পরে অন্য EU দেশেও move করা সহজ হয়\n• ১৮ মাস Blue Card-এর পর অন্য EU দেশে Blue Card renewal সম্ভব\n\nপোল্যান্ড থেকে graduation-এর পর IT বা Engineering-এ চাকরি পেলে Blue Card একটি চমৎকার পরবর্তী ধাপ।"
-  },
-  {
-    "id": 21,
-    "question": "পোল্যান্ডের জন্য ডকুমেন্টে Apostille কীভাবে করবো?",
-    "answer": "সুসংবাদ: বাংলাদেশ ৩০ মার্চ ২০২৫ থেকে Hague Apostille Convention-এর সদস্য হয়েছে।\n\nএর ফলে:\n• পররাষ্ট্র মন্ত্রণালয় (MoFA), ঢাকা থেকে Apostille নিলেই পোল্যান্ডে ডকুমেন্ট গ্রহণযোগ্য\n• আলাদাভাবে Polish Embassy থেকে legalization বা attestation করার প্রয়োজন নেই\n\nসাধারণত যে ডকুমেন্টে Apostille লাগতে পারে:\n• Degree Certificate ও Transcript\n• Birth Certificate (যদি University বা Embassy চায়)\n• অন্যান্য official government documents\n\nপ্রক্রিয়া:\n1. সংশ্লিষ্ট সরকারি দপ্তর থেকে মূল ডকুমেন্ট সংগ্রহ করুন\n2. MoFA-এর Apostille Cell (কনস্যুলার উইং, ঢাকা)-এ জমা দিন\n3. MoFA Apostille Stamp পাবেন — এটিই পোল্যান্ডের জন্য যথেষ্ট\n\nNote: ঠিক কোন কোন ডকুমেন্টে Apostille লাগবে তা University-ভেদে আলাদা হতে পারে — সরাসরি admissions team-কে জিজ্ঞেস করুন।"
-  },
-  {
-    "id": 22,
-    "question": "Karta Pobytu (Residence Card) কী এবং কখন আবেদন করতে হবে?",
-    "answer": "পোল্যান্ডে পৌঁছানোর পর প্রথম বছর National D Visa-তে (৩৬৫ দিন পর্যন্ত) থাকা যায়। দ্বিতীয় বছর ও তার পরের থাকার জন্য Karta Pobytu (Residence Card) নিতে হবে।\n\nKarta Pobytu সংক্ষেপে:\n• কোথায় আবেদন: Voivodeship Office (Urząd Wojewódzki) — আপনার শহরের অফিসে\n• কখন আবেদন করবেন: ভিসার মেয়াদ শেষ হওয়ার কমপক্ষে ৪৫ দিন আগে\n• ফি: PLN 440 (~€103)\n• প্রক্রিয়া: ১ জানুয়ারি ২০২৬ থেকে সম্পূর্ণ ডিজিটাল — MOS portal-এর মাধ্যমে অনলাইনে আবেদন\n• Processing time: ৪–৬ মাস পর্যন্ত লাগতে পারে; এই সময়ে একটি Sticker/stamp দেওয়া হয় stay proof হিসেবে\n\nআবেদনে যা লাগে:\n• University enrollment/registration certificate\n• Accommodation proof\n• Financial proof\n• Health insurance\n• Passport\n\nKarta Pobytu পাওয়ার পর Schengen Zone-এ freely travel করা যাবে।"
   }
 ]
