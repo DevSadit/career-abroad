@@ -280,27 +280,6 @@ const Page = () => {
           </div>
         </div>
 
-        {/* 1:1 SESSION CALLOUT */}
-        <div
-          className="mt-6 rounded-2xl border-l-4 border border-gray-200 px-5 py-4"
-          style={{ borderLeftColor: primary, backgroundColor: `${primary}06` }}
-        >
-          <p lang="bn" className="font-bn text-sm sm:text-base text-gray-700 leading-relaxed">
-            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
-            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-              Free Profile Evaluator
-            </Link>{" "}
-            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
-            <Link
-              href="/#mentors"
-              className="font-semibold underline underline-offset-2"
-              style={{ color: primary }}
-            >
-              1:1 পেইড সেশন
-            </Link>{" "}
-            বুক করুন
-          </p>
-        </div>
 
         {/* VIDEOS */}
         <Videos videos={videos} />
@@ -323,7 +302,7 @@ const Page = () => {
             <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
               WhatsApp
             </a>{" "}
-            নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। এনরোলড স্টুডেন্ট ব্যতীত ফোনে কথা বলা সম্ভব হয় না — অনুগ্রহ করে ফোন কলের অনুরোধ করবেন না।
+            নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। অনুগ্রহ করে এনরোলড স্টুডেন্ট ব্যতীত কেউ ফোন কলের অনুরোধ করবেন না।
           </p>
         </div>
 
