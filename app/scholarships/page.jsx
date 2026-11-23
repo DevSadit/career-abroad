@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Info, Tag } from "lucide-react";
+import { Tag } from "lucide-react";
 import Title from "@/app/_shared/Title";
 import ScholarshipsGrid from "./ScholarshipsGrid";
 import Videos from "@/app/_shared/Videos";
@@ -257,36 +257,45 @@ export default function ScholarshipsPage() {
         {/* ── Bottom notes ── */}
         <div className="mt-14 space-y-4 max-w-4xl mx-auto">
 
-          {/* Bengali eligibility note */}
+          {/* Scholarship context note */}
           <div
-            className="rounded-2xl border p-5"
-            style={{ borderColor: `${primary}33`, borderLeft: `4px solid ${primary}`, backgroundColor: `${primary}06` }}
+            className="rounded-2xl border p-4"
+            style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
           >
-            <div className="flex items-start gap-3">
-              <Info className="h-5 w-5 shrink-0 mt-0.5" style={{ color: primary }} />
-              <div>
-                <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-                  আমাদের স্টুডেন্টদের মাঝে দেশে বিদেশের স্কলারশিপ গুলো নিয়ে সঠিক তথ্য ও রিসোর্স এর অভাব লক্ষ্য করা যায়। এছাড়া বর্তমানে সঠিক তথ্যের চেয়েও ফুলিয়ে ফাঁপিয়ে স্কলারশিপ গুলোকে দেখানো হয়। অথচ একাডেমিক প্রোফাইল, সিজিপিএ, টেস্ট স্কোর ভাল না হলে প্রতিযোগিতামূলক স্কলারশিপ গুলোর প্রাথমিক সিলেকশান থেকেই বাদ পড়তে হয়। কোন স্কলারশিপ হয়ে থাকে Merit Based, কোনটি আবার Financial Need Based, আবার কোনটি প্রফেশনাল এক্সপেরিয়েন্স ও লিডারশীপ বেইসড।
-                </p>
-                <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed mt-3">
-                  সঠিক প্রিপারেশন ও ডকুমেন্টেশনের কারণে ভাল একাডেমিক প্রোফাইল থাকা সত্ত্বেও স্টুডেন্টরা বিভিন্ন স্কলারশিপের সুযোগ মিস করে থাকে। এই প্যাকেজটি ইউরোপের বিভিন্ন স্কলারশিপ গুলোকে টার্গেট করে ডিজাইন করা, যেখানে একজন স্কলারশিপ উইনার আপনার প্রোফাইল জাজ করবেন, ডকুমেন্টেশন এ সহায়তা করবেন ও মেন্টরিং করবেন। কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
-                  <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-                    Free Profile Evaluator
-                  </Link>{" "}
-                  টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
-                  <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-                    1:1 পেইড সেশন
-                  </Link>{" "}
-                  বুক করুন।
-                </p>
-              </div>
-            </div>
+            <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+              আমাদের স্টুডেন্টদের মাঝে দেশে বিদেশের স্কলারশিপ গুলো নিয়ে সঠিক তথ্য ও রিসোর্স এর অভাব লক্ষ্য করা যায়। এছাড়া বর্তমানে সঠিক তথ্যের চেয়েও ফুলিয়ে ফাঁপিয়ে স্কলারশিপ গুলোকে দেখানো হয়। অথচ একাডেমিক প্রোফাইল, সিজিপিএ, টেস্ট স্কোর ভাল না হলে প্রতিযোগিতামূলক স্কলারশিপ গুলোর প্রাথমিক সিলেকশান থেকেই বাদ পড়তে হয়। কোন স্কলারশিপ হয়ে থাকে Merit Based, কোনটি আবার Financial Need Based, আবার কোনটি প্রফেশনাল এক্সপেরিয়েন্স ও লিডারশীপ বেইসড।
+            </p>
+            <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed mt-3">
+              সঠিক প্রিপারেশন ও ডকুমেন্টেশনের কারণে ভাল একাডেমিক প্রোফাইল থাকা সত্ত্বেও স্টুডেন্টরা বিভিন্ন স্কলারশিপের সুযোগ মিস করে থাকে। এই প্যাকেজটি ইউরোপের বিভিন্ন স্কলারশিপ গুলোকে টার্গেট করে ডিজাইন করা, যেখানে একজন স্কলারশিপ উইনার আপনার প্রোফাইল জাজ করবেন, ডকুমেন্টেশন এ সহায়তা করবেন ও মেন্টরিং করবেন।
+            </p>
+          </div>
+
+          {/* Contact note */}
+          <div
+            className="rounded-2xl border p-4"
+            style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+          >
+            <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+              কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+              <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                Free Profile Evaluator
+              </Link>{" "}
+              টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
+              <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                1:1 পেইড সেশন
+              </Link>{" "}
+              বুক করুন। আমাদের অফিশিয়াল{" "}
+              <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
+                WhatsApp
+              </a>{" "}
+              নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। এনরোলড স্টুডেন্ট ব্যতীত ফোনে কথা বলা সম্ভব হয় না — অনুগ্রহ করে ফোন কলের অনুরোধ করবেন না।
+            </p>
           </div>
 
           {/* Discount note */}
           <div
-            className="rounded-2xl border p-5"
-            style={{ borderColor: "#05966933", borderLeft: "4px solid #059669", backgroundColor: "#05966906" }}
+            className="rounded-2xl border p-4"
+            style={{ borderColor: "#05966933", borderLeft: "3px solid #059669", backgroundColor: "#05966906" }}
           >
             <div className="flex items-start gap-3">
               <Tag className="h-5 w-5 shrink-0 mt-0.5 text-green-600" />
@@ -304,36 +313,14 @@ export default function ScholarshipsPage() {
 
           {/* Bengali disclaimer */}
           <div
-            className="rounded-2xl border p-5"
-            style={{ borderColor: "#d9770633", borderLeft: "4px solid #d97706", backgroundColor: "#d9770606" }}
+            className="rounded-2xl border p-4"
+            style={{ borderColor: "#d9770633", borderLeft: "3px solid #d97706", backgroundColor: "#d9770606" }}
           >
             <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
               উল্লেখ্য: ক্যারিয়ার এব্রোড মেন্টরস কোনো রকম এডমিশন, স্কলারশিপ কিংবা ভিসার গ্যারান্টি দেয় না, তবে এপ্লিকেন্টের জন্য সর্বোচ্চ এফোর্ট দেওয়ার চেষ্টা করে।
             </p>
           </div>
 
-        </div>
-
-        {/* Contact note */}
-        <div
-          className="rounded-2xl border p-4"
-          style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
-        >
-          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
-            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-              Free Profile Evaluator
-            </Link>{" "}
-            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
-            <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-              1:1 পেইড সেশন
-            </Link>{" "}
-            বুক করুন। আমাদের অফিশিয়াল{" "}
-            <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
-              WhatsApp
-            </a>{" "}
-            নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। এনরোলড স্টুডেন্ট ব্যতীত ফোনে কথা বলা সম্ভব হয় না — অনুগ্রহ করে ফোন কলের অনুরোধ করবেন না।
-          </p>
         </div>
 
         {/* ── Scholarship Videos ── */}
