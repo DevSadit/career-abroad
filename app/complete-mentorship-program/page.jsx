@@ -209,20 +209,24 @@ const Page = () => {
 
                 {/* 1:1 session callout */}
                 <div
-                  className="mt-5 rounded-2xl border p-4"
-                  style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
-                >
-                  <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
-                    কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
-                    <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-                      Free Profile Evaluator
-                    </Link>{" "}
-                    টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
-                    <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
-                      1:1 পেইড সেশন
-                    </Link>{" "}
-                    বুক করুন
-                  </p>
+          className="mt-8 rounded-2xl border p-4"
+          style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+        >
+                <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+                  কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+                  <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                    Free Profile Evaluator
+                  </Link>{" "}
+                  টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
+                  <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+                    1:1 পেইড সেশন
+                  </Link>{" "}
+                  বুক করুন। আমাদের অফিশিয়াল{" "}
+                  <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
+                    WhatsApp
+                  </a>{" "}
+                  নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। অনুগ্রহ করে এনরোলড স্টুডেন্ট ব্যতীত কেউ ফোন কলের অনুরোধ করবেন না।
+                </p>
                 </div>
               </div>
 
@@ -664,6 +668,28 @@ const Page = () => {
         >
           <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
             উল্লেখ্য: ক্যারিয়ার এব্রোড মেন্টরস কোনো রকম এডমিশন, স্কলারশিপ কিংবা ভিসার গ্যারান্টি দেয় না, তবে এপ্লিকেন্টর জন্য সর্বোচ্চ এফোর্ট দেওয়ার চেষ্টা করে।
+          </p>
+        </div>
+
+        {/* Contact note */}
+        <div
+          className="mt-8 rounded-2xl border p-4"
+          style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+        >
+          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+            কান্ট্রি স্পেসিফিক প্রোফাইল ইভালুয়েশনের জন্য আমাদের{" "}
+            <Link href="/#profile-evaluator" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Free Profile Evaluator
+            </Link>{" "}
+            টুলটি ব্যাবহার করুন। বিস্তারিত আলোচনার জন্য দেশভিত্তিক মেন্টরদের{" "}
+            <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              1:1 পেইড সেশন
+            </Link>{" "}
+            বুক করুন। আমাদের অফিশিয়াল{" "}
+            <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
+              WhatsApp
+            </a>{" "}
+            নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। অনুগ্রহ করে এনরোলড স্টুডেন্ট ব্যতীত কেউ ফোন কলের অনুরোধ করবেন না।
           </p>
         </div>
 

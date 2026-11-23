@@ -17,6 +17,7 @@ import {
   Tag,
   RefreshCcw,
   Users,
+  CalendarCheck,
 } from "lucide-react";
 import PriceDisplay from "../complete-mentorship-program/PriceDisplay";
 
@@ -324,7 +325,11 @@ export default function ServicesPage() {
                     <Link href="/#mentors" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
                       1:1 পেইড সেশন
                     </Link>{" "}
-                    বুক করুন
+                    বুক করুন। আমাদের অফিশিয়াল{" "}
+                    <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2" style={{ color: "#25D366" }}>
+                      WhatsApp
+                    </a>{" "}
+                    নাম্বারটি শুধুমাত্র এনরোলমেন্ট ও স্পেসিফিক প্রশ্নের জন্য। অনুগ্রহ করে এনরোলড স্টুডেন্ট ব্যতীত কেউ ফোন কলের অনুরোধ করবেন না।
                   </p>
                 </div>
               </div>
@@ -439,15 +444,20 @@ export default function ServicesPage() {
                       <p className="mt-2 text-xs text-gray-400">+75% of total fee for spouse / dependent</p>
                     )}
 
-                    <div className="mt-4">
+                    <div className="mt-4 flex flex-col gap-2">
+                      {/* Primary CTA */}
                       <a
-                        href={contactEmail}
+                        href={tier.id === "customized" ? contactEmail : "/#mentors"}
                         className="flex items-center justify-center gap-2 w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
                         style={{ backgroundColor: tier.color }}
                       >
-                        <Mail className="h-4 w-4" />
-                        {tier.id === "customized" ? "Get a Custom Quote" : "Apply for This Package"}
+                        {tier.id === "customized" ? (
+                          <><Mail className="h-4 w-4" /> Get a Custom Quote</>
+                        ) : (
+                          <><CalendarCheck className="h-4 w-4" /> Book a 1:1 Session</>
+                        )}
                       </a>
+
                     </div>
                   </div>
                 </div>
