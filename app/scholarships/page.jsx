@@ -255,7 +255,7 @@ export default function ScholarshipsPage() {
         <ScholarshipsGrid scholarships={scholarships} />
 
         {/* ── Bottom notes ── */}
-        <div className="mt-14 space-y-4 max-w-4xl mx-auto">
+        <div className="mt-14 space-y-4">
 
           {/* Scholarship context note */}
           <div
