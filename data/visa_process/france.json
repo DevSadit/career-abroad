@@ -1,24 +1,88 @@
 {
-  "title": "Application to Visa Process Steps for France",
-  "infoLink": "https://www.bangladesh.campusfrance.org/en/procedure",
-  "notice": "NEW (since 20 August 2025): First Campus France then Submit documents at the (VFS Global), Dhaka",
+  "title": "Application to Visa Process Steps for France (EEF 2026–27)",
+  "infoLink": "https://www.bangladesh.campusfrance.org/en/etudes-en-france-2026-2027-campaign-0",
+  "notice": "Applications for France now go through the Etudes en France (EEF) portal. For universities not listed on EEF, direct application through the individual university portal is required.",
   "processSteps": [
-    { "label": "University Application (No fees in most Public Universities)", "color": "yellow" },
     {
-      "label": "Offer Letter : With program details and fees",
+      "label": "University Application : Etudes en France (EEF) Portal",
       "bullets": [
-        "Tuition Fees 254–6000 euro (Varies program to program)",
-        "Initial Deposit for Seat Confirmation (A portion of Tuition Fees)"
+        "Apply via EEF — covers most public universities in France",
+        "Apply via University Portal if not listed on EEF"
+      ],
+      "color": "yellow"
+    },
+    {
+      "label": "EEF Application Fee : BDT 12,170",
+      "bullets": [
+        "Campus France will review preliminary application documents and provide instructions for payment"
+      ],
+      "color": "lightyellow"
+    },
+    {
+      "label": "Pre-Consular Interview : Campus France Dhaka",
+      "bullets": [
+        "Mandatory for EEF applicants: interview at Alliance Française Dhaka"
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Offer Letter",
+      "bullets": [
+        "Tuition Fees: 254–6,000 euro (varies by program and university)",
+        "Initial deposit for seat confirmation may be required"
       ],
       "color": "green"
     },
-    { "label": "Show Fund : (878 euros/month × Year of Studies) + Rest Tuition Fees", "color": "orange" },
-    { "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year", "color": "lightyellow" },
-    { "label": "Campus France Registration : 10k BDT", "color": "lightblue" },
-    { "label": "Accommodation Booking : 1k – 2k euros", "color": "gray" },
-    { "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro", "color": "blue" }
+    {
+      "label": "Direct Admission : Universities Not on EEF",
+      "bullets": [
+        "Students who directly applied in university portals and got offer",
+        "You need to open account in EEF, upload documents, pay EEF fee & attend pre-consular interview upon Campus france instruction",
+        "Students applied through EEF, did not got offer, but later got an offer through direct application can upload their documents also."
+      ],
+      "color": "lightyellow"
+    },
+            {
+      "label": "Student & Campus Contribution Fee (CVEC) : 105 euro/year",
+      "bullets": [
+        "Mandatory for all students — pay at messervices.etudiant.gouv.fr"
+      ],
+      "color": "blue"
+    },
+    {
+      "label": "Accommodation Booking : 1,000 – 2,000 euros",
+      "bullets": [
+        "University residence (CROUS) or private — booking confirmation needed for visa"
+      ],
+      "color": "violet"
+    }
+
   ],
-  "costSteps": [],
+  "costSteps": [
+
+    {
+      "label": "France-Visas Application",
+      "bullets": [
+        "Fill up visa application form at france-visas.gouv.fr",
+        "Wait for Campus France instruction to submit your documents at VFS"
+      ],
+      "color": "lightblue"
+    },
+    {
+      "label": "Show Fund : (878 euros/month × Years of Study) + Rest Tuition Fees",
+      "bullets": [
+        "Sponsors Source of Funds: Bank Statement, Salary Certificate, Income Tax Return, Business Trade License, etc."
+      ],
+      "color": "orange"
+    },
+    {
+      "label": "Visa Fee (D) : 99 euro | VFS Fee : 22 euro",
+      "bullets": [
+        "Submit at VFS Global Dhaka — Rangs Z Square, Level 7, Gulshan 2"
+      ],
+      "color": "blue"
+    }
+  ],
   "mentor": {
     "name": "Safkat Islam",
     "image": "/mentors/Tumpa_Mentor2.png",
@@ -36,6 +100,16 @@
       "url": "https://www.youtube.com/playlist?list=PLkMQGxQthE46tl8crq0xBJw720OppQ9Yn",
       "icon": "youtube",
       "thumbnail": "https://i.ytimg.com/vi/85ioGF1Rkwk/hqdefault.jpg"
+    },
+    {
+      "label": "EEF 2026–27 Campaign — Official Details",
+      "url": "https://www.bangladesh.campusfrance.org/en/etudes-en-france-2026-2027-campaign-0",
+      "icon": "graduation"
+    },
+    {
+      "label": "Etudes en France — EEF Application Portal",
+      "url": "https://etudesenfrance.diplomatie.gouv.fr/",
+      "icon": "database"
     },
     {
       "label": "Campus France Listed Universities",
