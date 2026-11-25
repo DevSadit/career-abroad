@@ -62,9 +62,8 @@
     "name": "Rahul Das",
     "image": "/mentors/Rahul.jpeg",
     "currentStatus": "Masters in Business Analytics",
-    "education": ["University of Lodz, Poland", "BSc in (CSE)"],
+    "education": ["University of Pannonia, Hungary", "BSc in (CSE)"],
     "expertiseCountries": [
-      { "code": "pl", "name": "Poland" },
       { "code": "hu", "name": "Hungary" }
     ],
     "book_a_session": "https://cal.com/ahsansuny2026/40min"
