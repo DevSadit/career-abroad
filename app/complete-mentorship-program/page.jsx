@@ -44,6 +44,7 @@ import {
   FolderOpen,
   FileDown,
   FileCheck2,
+  HelpCircle,
 } from "lucide-react";
 
 const Page = () => {
@@ -572,6 +573,34 @@ const Page = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* ── Feasibility FAQ card ── */}
+        <div
+          className="mt-8 rounded-2xl border p-4"
+          style={{ borderColor: `${primary}33`, borderLeft: `3px solid ${primary}`, backgroundColor: `${primary}06` }}
+        >
+          <div className="flex items-start gap-2 mb-2">
+            <HelpCircle className="h-4 w-4 shrink-0 mt-0.5" style={{ color: primary }} />
+            <p lang="bn" className="font-bn text-sm font-semibold text-gray-900 leading-relaxed">
+              মেন্টরশিপ প্রোগ্রামটি কি আমার জন্যে Feasible? কিংবা আমি কি আদৌ এই প্রোগ্রামটি থেকে পর্যাপ্ত সাপোর্ট পাব?
+            </p>
+          </div>
+          <p lang="bn" className="font-bn text-sm text-gray-700 leading-relaxed">
+            আমরা প্রায়শই এপলিকেন্ট-দের কাছ থেকে এরকম প্রশ্ন পেয়ে থাকি। আর তাই আমাদের{" "}
+            <Link href="/complete-mentorship-program" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Mentorship
+            </Link>{" "}
+            আর{" "}
+            <Link href="/services" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Services
+            </Link>{" "}
+            প্যাকেজের পার্থক্যটুকু বোঝা জরুরি। আমাদের এই ওয়েবসাইটে যথেষ্ট রিসোর্স, আপডেটেড ইনফরমেশন এবং রিলিভেন্ট ভিডিও প্লেলিস্ট দেয়া আছে। আমাদের ওয়েবসাইট থেকে ইনফরমেশন যদি আপনি Grab করে এপ্লাই করতে পারেন তবে মেন্টরশিপ আপনার জন্য। কেননা আমরা মেন্টরশিপে শুধুমাত্র ১:১ সেশনে স্টুডেন্টদের সমস্যাগুলোর কার্যকরী পরামর্শ দিয়ে থাকি, ডকুমেন্টস রিভিউ করে কারেকশন, কমেন্টস দিয়ে থাকি। পাশাপাশি আমাদের স্টাডি ম্যাটেরিয়ালস, রিসোর্স, রেকর্ডেড এপলিকেশন গাইডলাইনস, Successful Students SOP Database, স্কলারশিপ গাইডেন্স, ভিসা ডকুমেন্টস রিভিউ ও কারেকশান দিয়ে থাকি। মেন্টরশিপ প্রোগ্রামে আপনার হয়ে আমরা ইউনিভার্সিটি খুজে দেই না, ডকুমেন্টস তৈরী করে দেই না কিংবা এপলিকেশন করে দেই না। আপনি যদি এই ওয়েবসাইট এর রিসোর্সগুলো স্টাডি করে সেলফ কনফিডেন্ট হয়ে থাকেন তবেই মেন্টরশিপ প্রোগ্রামটি আপনার জন্য। অন্যথায় আমাদের{" "}
+            <Link href="/services" className="font-semibold underline underline-offset-2" style={{ color: primary }}>
+              Services
+            </Link>{" "}
+            প্যাকেজটি নিতে পারেন।
+          </p>
         </div>
 
         {/* ── Featured Video ── */}
