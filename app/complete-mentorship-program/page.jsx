@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import RelatedServices from "@/app/_shared/RelatedServices";
+import StudentPortalBanner from "@/app/courses/_components/StudentPortalBanner";
 
 export const metadata = {
   title: "Complete Mentorship Program | Career Abroad Mentors",
@@ -644,6 +645,9 @@ const Page = () => {
 
         {/* ── Student Reviews ── */}
         <ReviewsCarousel />
+
+        {/* ── Student Portal ── */}
+        <StudentPortalBanner className="mt-8" />
 
         {/* ── Contact Note ── */}
         <div lang="bn" className="font-bn mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8 sm:p-10 text-center">

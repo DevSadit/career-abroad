@@ -14,10 +14,9 @@ const Footer = () => {
   const primaryColor = "#364bc5";
 
   const helpfulLinks = [
-    { name: "Programs", href: "#courses" },
-    { name: "Privacy policy", href: "#privacy" },
-    { name: "Refund Policy", href: "#refund" },
-    { name: "Terms & Conditions", href: "#terms" },
+    { name: "Mentorship Policy", href: "/mentorship-policy" },
+    { name: "Service Package Policy", href: "/service-policy" },
+    { name: "Session Payment", href: "/session-payment" },
   ];
 
   const contactInfo = [
@@ -82,13 +81,23 @@ const Footer = () => {
             <ul className="space-y-3">
               {helpfulLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="flex items-center space-x-2 text-gray-600 transition-colors duration-200 hover:text-gray-900"
-                  >
-                    <span style={{ color: primaryColor }}>&rsaquo;</span>
-                    <span>{link.name}</span>
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link
+                      href={link.href}
+                      className="flex items-center space-x-2 text-gray-600 transition-colors duration-200 hover:text-gray-900"
+                    >
+                      <span style={{ color: primaryColor }}>&rsaquo;</span>
+                      <span>{link.name}</span>
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="flex items-center space-x-2 text-gray-600 transition-colors duration-200 hover:text-gray-900"
+                    >
+                      <span style={{ color: primaryColor }}>&rsaquo;</span>
+                      <span>{link.name}</span>
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
