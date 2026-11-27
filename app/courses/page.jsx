@@ -1,5 +1,6 @@
 import CoursesSection from "@/app/_landing/courses/CoursesSection";
 import Courses from "@/app/_shared/Courses";
+import StudentPortalBanner from "./_components/StudentPortalBanner";
 import vedio_courses from "@/data/vedio_courses.json";
 
 export const metadata = {
@@ -12,6 +13,7 @@ export default function CoursesPage() {
   return (
     <main className="min-h-screen bg-white">
       <CoursesSection />
+      <StudentPortalBanner />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <Courses courses={vedio_courses} />

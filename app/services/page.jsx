@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import RelatedServices from "@/app/_shared/RelatedServices";
+import StudentPortalBanner from "@/app/courses/_components/StudentPortalBanner";
 import {
   CheckCircle2,
   BadgeCheck,
@@ -766,6 +767,9 @@ export default function ServicesPage() {
           </div>
           <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
         </div>
+
+        {/* ── Student Portal ── */}
+        <StudentPortalBanner className="mt-8" />
 
         {/* ── Disclaimer ── */}
         <div

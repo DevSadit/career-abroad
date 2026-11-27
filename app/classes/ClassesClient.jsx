@@ -125,31 +125,44 @@ const ClassesClient = () => {
   // ── Gate phase ──────────────────────────────────────────────────────────────
   if (phase === "gate") {
     return (
-      <div className="mt-10 sm:mt-16 flex flex-col items-center">
+      <div className="mt-6 sm:mt-10 flex flex-col items-center">
+
+        {/* Back link */}
+        <div className="w-full max-w-md mb-6">
+          <a
+            href="/courses"
+            className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Back to Courses
+          </a>
+        </div>
+
         {/* Header */}
-        <div className="text-center mb-10 max-w-xl">
+        <div className="text-center mb-8 max-w-md">
           <div
             className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold mb-4"
             style={{ backgroundColor: `${primary}10`, color: primary }}
           >
             <GraduationCap className="w-3.5 h-3.5" />
-            Enrolled Students Only
+            Student Portal
           </div>
-          <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
             Class Recordings
           </h1>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            France · Italy · Belgium · Estonia course recordings. Enter your enrolled student email to watch the classes and download resources.
+          <p className="text-sm text-gray-500 leading-relaxed">
+            For students enrolled in a <span className="font-medium text-gray-700">Mentorship</span> or <span className="font-medium text-gray-700">Service Package</span> program. Enter the email you used at enrollment.
           </p>
         </div>
 
         {/* Email form card */}
-        <div className="w-full max-w-md rounded-3xl border border-gray-200 bg-white shadow-md p-7">
+        <div className="w-full max-w-md rounded-3xl border border-gray-200 bg-white shadow-sm p-7">
           <div className="flex items-center gap-2 mb-1">
-            <Mail className="w-5 h-5" style={{ color: primary }} />
-            <p className="text-base font-semibold text-gray-900">Student Verification</p>
+            <Mail className="w-4 h-4" style={{ color: primary }} />
+            <p className="text-sm font-semibold text-gray-900">Verify your enrollment</p>
           </div>
-          <p className="text-sm text-gray-500 mb-6">Enter your enrolled email address to access the recordings.</p>
+          <p className="text-xs text-gray-400 mb-5">No password needed — just your enrolled email address.</p>
+
           <form onSubmit={handleSubmit} className="space-y-3">
             <input
               type="email"
@@ -160,20 +173,55 @@ const ClassesClient = () => {
               className="w-full rounded-2xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
             />
             {status === "error" && (
-              <p className="text-xs text-red-500 px-1">
-                This email is not enrolled. Contact us if you think this is a mistake.
-              </p>
+              <div className="rounded-xl bg-red-50 border border-red-100 px-4 py-3">
+                <p className="text-xs text-red-600 font-medium">Email not found in enrolled students.</p>
+                <p className="text-xs text-red-400 mt-0.5">
+                  Contact us on{" "}
+                  <a href="https://wa.me/34743093378" target="_blank" rel="noreferrer" className="underline" style={{ color: "#25D366" }}>WhatsApp</a>
+                  {" "}or{" "}
+                  <a href="mailto:mentors.career.abroad26@gmail.com" className="underline text-red-500">email</a>
+                  {" "}if you believe this is a mistake.
+                </p>
+              </div>
             )}
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white disabled:opacity-60 transition hover:opacity-90"
+              className="w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white disabled:opacity-60 transition hover:opacity-90 flex items-center justify-center gap-2"
               style={{ backgroundColor: primary }}
             >
-              {status === "loading" ? "Verifying…" : "Access Class Recordings"}
+              {status === "loading" ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Verifying…
+                </>
+              ) : "Access My Recordings"}
             </button>
           </form>
+
+          {/* What's inside hint */}
+          <div className="mt-5 pt-4 border-t border-gray-100">
+            <p className="text-xs text-gray-400 mb-2">Class Recordings · Course Materials · SOP Book · Scholarship Notes</p>
+            <div className="flex flex-wrap gap-2">
+              {["🇫🇷 France", "🇮🇹 Italy", "🇧🇪 Belgium", "🇪🇪 Estonia", "🇪🇸 Spain", "🇭🇺 Hungary"].map((c) => (
+                <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-gray-50 border border-gray-100 text-gray-500">{c}</span>
+              ))}
+            </div>
+          </div>
         </div>
+
+        {/* Not enrolled */}
+        <p className="mt-6 text-xs text-gray-400 text-center">
+          Not enrolled yet?{" "}
+          <a href="/complete-mentorship-program" className="underline underline-offset-2" style={{ color: primary }}>
+            View Mentorship Program
+          </a>
+          {" "}or{" "}
+          <a href="/services" className="underline underline-offset-2" style={{ color: primary }}>
+            Service Packages
+          </a>
+        </p>
+
       </div>
     );
   }
