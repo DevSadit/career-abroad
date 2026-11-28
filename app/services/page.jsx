@@ -222,9 +222,14 @@ const feeStructure = [
     label: "Visa Consultation Fee",
     amount: 500,
     color: "#059669",
-    note: "Paid after admission is secured",
+    note: "After Getting Visa Decision",
     refundable: true,
-    refundNote: "Refundable if visa denied by consulate",
+    refundNote: "Fully refundable if visa denied by consulate",
+    conditions: [
+      "Students have email access: our representative collects your passport from the consulate, VFS, or BLS on your behalf",
+      "Passport will be returned after confirming last installment.",
+      "Unsuccessful applicants don't need to pay the last installment."
+    ],
   },
 ];
 
@@ -511,10 +516,10 @@ export default function ServicesPage() {
             <p className="text-xs uppercase tracking-wider text-gray-500">Fee structure</p>
             <h2 className="mt-2 text-2xl font-semibold text-gray-900">
               Transparent Pricing —{" "}
-              <span style={{ color: primary }}>Two-Part Fee Structure</span>
+              <span style={{ color: primary }}>3-Part Fee Structure</span>
             </h2>
             <p className="mt-1 text-sm text-gray-500">
-              The total fee is split into two parts, paid at different stages of your journey.
+              The total fee is split into 3 parts, paid at different stages of your journey.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -547,16 +552,30 @@ export default function ServicesPage() {
                     </div>
                   )}
 
-                  <div className="mt-2 flex items-center gap-1.5">
-                    {fee.refundable ? (
-                      <>
-                        <RefreshCcw className="h-3.5 w-3.5 text-green-600" />
-                        <span className="text-xs font-medium text-green-700">{fee.refundNote}</span>
-                      </>
-                    ) : (
-                      <span className="text-xs text-gray-400">{fee.refundNote}</span>
-                    )}
-                  </div>
+                  {/* Conditions */}
+                  {fee.conditions && (
+                    <div className="mt-3 space-y-1.5">
+                      {fee.conditions.map((c, ci) => (
+                        <div key={ci} className="flex items-start gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-green-500" />
+                          <span className="text-xs text-gray-600 leading-relaxed">{c}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {!fee.conditions && (
+                    <div className="mt-3 flex items-center gap-1.5">
+                      {fee.refundable ? (
+                        <>
+                          <RefreshCcw className="h-3.5 w-3.5 text-green-600" />
+                          <span className="text-xs font-medium text-green-700">{fee.refundNote}</span>
+                        </>
+                      ) : (
+                        <span className="text-xs text-gray-400">{fee.refundNote}</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -586,18 +605,6 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Refund policy callout */}
-            <div
-              className="mt-4 rounded-2xl p-5 border"
-              style={{ borderColor: "#05966933", borderLeft: "4px solid #059669", backgroundColor: "#05966908" }}
-            >
-              <p className="text-sm font-semibold text-gray-900">Visa Fee Refund Policy</p>
-              <p className="mt-1 text-sm text-gray-700 leading-relaxed">
-                The €500 visa consultation fee is fully refundable if your visa application is denied by the consulate.
-                The €300 admission consultation fee is non-refundable — it covers the university selection, document
-                preparation and application work already completed on your behalf.
-              </p>
-            </div>
           </div>
           <div className="h-1.5" style={{ backgroundColor: primary }} aria-hidden="true" />
         </div>
